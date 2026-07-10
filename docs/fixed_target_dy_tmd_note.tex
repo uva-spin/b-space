@@ -1,0 +1,677 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+\setlist[itemize]{topsep=3pt,itemsep=2pt,parsep=0pt}
+\setlist[enumerate]{topsep=3pt,itemsep=2pt,parsep=0pt}
+\newcommand{\bt}{b_T}
+\newcommand{\kt}{k_T}
+\newcommand{\qT}{q_T}
+\newcommand{\FNP}{F_{\rm NP}}
+\newcommand{\ftilde}{\widetilde f}
+\newcommand{\chisq}{\chi^2}
+\newcommand{\GeV}{\mathrm{GeV}}
+\newcommand{\NthreeLL}{\mathrm{N^{3}LL}}
+\newcommand{\NthreeLLp}{\mathrm{N^{3}LL}^{\prime}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\fpath}[1]{\path{#1}}
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+\newcommand{\figorplaceholder}[3]{%
+  \IfFileExists{#1}{\includegraphics[width=#3\linewidth]{#1}}{%
+  \fbox{\begin{minipage}[c][0.32\textheight][c]{#3\linewidth}\centering\small Missing figure file:\par\vspace{0.5em}\texttt{\detokenize{#1}}\par\vspace{0.5em}#2\end{minipage}}}}
+\title{A v23a \texorpdfstring{$\NthreeLL$}{N3LL} Fixed-Target Drell--Yan TMD Extraction:\\Perturbative Backend, Data Treatment, Replica Uncertainties, and \texorpdfstring{$\bt$/$\kt$}{bT/kT} Representations}
+\author{Internal note for the \texttt{bT-TMD} analysis}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note documents the present fixed-target Drell--Yan (DY) transverse-momentum-dependent parton distribution function (TMDPDF) extraction.  The result uses E288, E605, and E772 data, the v22 full perturbative backend with a $\NthreeLL$-accurate resummed $W$ term (implemented in the code as \code{resum-order n3llp}), a corrected low-$Q$ fixed-target data table, explicit normalization priors, a controlled point-to-point uncertainty sensitivity for E772 and E288\_400, experimental pseudo-data replicas, and a PDF-member overlay in the TMD reconstruction.  The primary production object is a smooth and audited $\bt$-space TMD ensemble.  A regularized finite-$\bt$ Hankel transform gives a companion $\kt$-space representation over $0\le \kt\le 4~\GeV$.
+
+The note also explains what is meant by the accuracy claim.  The claim is not that this is a complete global-DY uncertainty budget.  Rather, the fixed-target result is accurate within a precisely specified scheme: the $\NthreeLL$ resummed backend algebra closes at numerical precision, the fixed-target data conventions and one known bad row have been audited, experimental pseudo-data generation has been verified through the \code{target\_used} column, the 50-replica ensemble passes fit and random-split stability gates, the PDF uncertainty is propagated as an overlay in the TMD reconstruction, and the $\kt$ representation is stable against several finite-$\bt$ regularization choices.  Missing components are stated explicitly: PDF-through-refit effects, scale/profile variations, nuclear-model variations, model-form variations, and accelerator/collider DY data.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\section{Executive summary}
+
+The present fixed-target DY result is complete enough to serve as the baseline for the next project stage.  The finalized scope is:
+\begin{itemize}
+  \item data sets: E288\_200, E288\_300, E288\_400, E605, and E772;
+  \item one explicitly corrected row: E288\_300:99;
+  \item explicit 15\% normalization priors;
+  \item 5\% point-to-point (P2P) uncertainty sensitivity on E772 and E288\_400;
+  \item v22 full $\NthreeLL$-resummed perturbative backend (\code{resum-order n3llp}), including the NLO OPE/hard upgrade and the small-$b$ profile;
+  \item 50 accepted experimental data replicas for the fixed-target fit;
+  \item PDF-member overlay in the final TMD reconstruction;
+  \item primary production result in $\bt$ space;
+  \item regularized finite-$\bt$ Hankel-transform companion in $\kt$ space over $0\le \kt\le 4~\GeV$.
+\end{itemize}
+
+The word ``complete'' in this note should be read with the above scope.  We have not solved the full global-DY problem, and we have not produced a theory-envelope uncertainty.  What we have completed is a controlled fixed-target extraction in which the perturbative backend, data conventions, pseudo-data sampling, replica stability, PDF overlay, and $\bt/\kt$ representations have all passed explicit numerical gates.  Sections~\ref{sec:accuracy} and~\ref{sec:dnn} give the detailed basis for this statement.
+
+The most important final pass/fail summaries are collected in Table~\ref{tab:summary}.  The outcome is that the fixed-target DY $\bt$-space ensemble and the regularized $\kt$-space companion are both usable.  Accelerator/collider data are not yet part of this fit and require a separate v23b intake, covariance, electroweak-process, and bin-integration effort.
+
+\begin{table}[H]
+\centering
+\caption{Final audited status of the fixed-target DY result.}
+\label{tab:summary}
+\begin{tabular}{p{0.36\linewidth}p{0.20\linewidth}p{0.34\linewidth}}
+\toprule
+Component & Status & Key values \\
+\midrule
+Central v23a p2p5 refit & PASS & $\chisq_{\rm tot}=0.9583$, max dataset $\chisq=1.4252$, max norm pull $=0.2297$ \\
+$\NthreeLL$ resummed backend & PASS & \code{resum-order n3llp}; $\NthreeLL$ logarithmic accuracy in the $W$ term with v22 NLO hard/OPE matching \\
+50-rep fixed-PDF data-replica ensemble & PASS & $\chisq_{95}=2.1310$, norm-pull$_{95}=2.7074$, random-split width $q_{90}=0.6439$ \\
+$\bt$-space data+PDF overlay TMD & PASS & smooth bands; central PDF0 nearly on ensemble median for standard $d$, $x=0.1$, $Q=10~\GeV$ plot \\
+Regularized $\kt$ transform & PASS & expb2/expb/taper p90 difference $=0.0309$, max difference $=0.0430$ over active $\kt\le4~\GeV$ \\
+Remaining large-$\kt$ oscillations & diagnostic & worst median dip about $-1.72\%$ of peak; not clipped \\
+Full global/accelerator DY & NOT INCLUDED & requires separate data, covariance, EW, bin-integration, and FO/Y validation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{Meaning of the accuracy claim}
+\label{sec:accuracy}
+
+This note uses the word ``accuracy'' in a deliberately operational sense.  The result is accurate within the fixed v23a scheme if all of the following layers are under control:
+\begin{enumerate}[leftmargin=2em]
+  \item the perturbative/backend calculation is algebraically self-consistent and closes against independent implementations at numerical precision where such checks are available;
+  \item the data table used by the fit has stable column conventions, units, prefactors, row corrections, and uncertainty prescriptions;
+  \item the central fit describes the selected fixed-target data without large normalization pulls or pathological residuals;
+  \item pseudo-data replicas genuinely sample the experimental uncertainties used in the training objective;
+  \item the replica ensemble is stable under split/random-split tests;
+  \item the exported TMDs are smooth and finite in $\bt$ space;
+  \item the companion $\kt$ representation is stable against the finite-$\bt$ regularization choices used to define it.
+\end{enumerate}
+Each of these statements is tested below.  The accuracy claim does \emph{not} include accelerator/collider data, full electroweak $Z/W$ treatment, full covariance matrices for all experiments, PDF-through-refit effects, scale/profile variations, nuclear-model variations, or a model-form envelope.  Those are future extensions rather than hidden assumptions in the present result.
+
+
+\subsection{The perturbative accuracy label: \texorpdfstring{$\NthreeLL$}{N3LL}}
+\label{sec:n3ll-label}
+
+The perturbative accuracy label for this fixed-target extraction should be written explicitly as a $\NthreeLL$-resummed TMD extraction.  In the run scripts this is the setting
+\begin{center}
+\code{--resum-order n3llp}.
+\end{center}
+The code label \code{n3llp} is the historical backend label for the $\NthreeLL$-level resummed kernel used in the v22/v23a work.  In the text of this note we use the physics label $\NthreeLL$ because the relevant statement is the logarithmic accuracy of the resummed $W$ term.
+
+The schematic $\bt$-space singular contribution has the form
+\begin{equation}
+  W(\bt,Q,x_1,x_2)
+  = H(Q,\mu_Q)\,
+    e^{-S(\bt,Q)}
+    \left[C\otimes f\right]_{1}(x_1,\mu_b)
+    \left[C\otimes f\right]_{2}(x_2,\mu_b)
+    \FNP(x_1,x_2,\bt;\theta),
+\end{equation}
+where the Sudakov/Collins--Soper evolution exponent resums the large logarithms generated by the hierarchy between $Q$ and the transverse scale $1/\bt$.  Calling the result $\NthreeLL$ means that the logarithmic evolution in this resummed $W$ term is kept through next-to-next-to-next-to-leading-logarithmic accuracy in the backend scheme used here.  The hard factor and OPE coefficient insertions used in the final v22 kernel are included at strict NLO, and the profile-dependent general-scale OPE and small-$b$ profile are part of the same audited backend.
+
+It is important to say this accurately.  The fixed-target result should not be described merely as a neural-network fit with a generic perturbative kernel.  A central achievement of this work is that the nonperturbative DNN is fitted on top of a $\NthreeLL$-resummed perturbative TMD kernel, rather than absorbing large perturbative logarithms into the network.  This separation is central to the philosophy of the extraction: perturbative QCD controls the short-distance logarithmic evolution and matching, while the DNN is reserved for the genuinely nonperturbative transverse structure.
+
+At the same time, the label should not be overextended.  In this note $\NthreeLL$ refers to the resummed $W$-term accuracy used for the fixed-target TMD extraction.  The full matched observable, especially the finite-$Y$ contribution and high-$\qT$ tail relevant for accelerator/collider data, is not yet advertised as a fully externally validated $\NthreeLL$ global-DY prediction.  A concise and accurate label is therefore:
+\begin{center}
+\emph{$\NthreeLL$-resummed fixed-target DY TMD extraction with NLO hard/OPE matching in the $W$ term.}
+\end{center}
+
+\subsection{Validation stack}
+
+Table~\ref{tab:validationstack} summarizes the validation stack.  The important point is that the final TMD result is not supported by a single low $\chisq$ number.  It is supported by a chain of independent checks: backend bridge identities, perturbative finite-difference audits, data-convention audits, central-fit metrics, pseudo-data sampling audits, replica stability tests, PDF-overlay reconstruction checks, and $\kt$ regularization comparisons.
+
+\begin{table}[H]
+\centering
+\caption{Operational validation stack for the fixed-target result.  The final claim is limited to this stack.}
+\label{tab:validationstack}
+\begin{tabular}{p{0.30\linewidth}p{0.32\linewidth}p{0.28\linewidth}}
+\toprule
+Layer & What was tested & Representative outcome \\
+\midrule
+Born/luminosity bridge & independent luminosity and Bessel identities & relative closures at $10^{-15}$--$10^{-16}$ level in the bridge audits \\
+$\NthreeLL$ resummation & resummed $W$-term logarithmic accuracy through \code{resum-order n3llp} & short-distance evolution kept at $\NthreeLL$ while the DNN only fits $\FNP$ \\
+NLO OPE/hard backend & strict-linear NLO insertion and hard-factor combination & finite values, positivity after profiling, beyond-NLO diagnostics at the percent level \\
+Small-$b$ profile & behavior of OPE logs in the $q$-cap region & raw negative ratios removed; profiled minimum strict ratio $1.076$ \\
+Data convention & fixed-target prefactors, row keys, units, and uncertainties & E605/E772 consistent with $A/\mathrm{PreFactor}$; E288\_300:99 corrected \\
+Central fit & fixed-target p2p5 central refit & $\chisq_{\rm tot}=0.9583$, max dataset $\chisq=1.4252$, max norm pull $0.2297$ \\
+Pseudo-data sampling & rowwise variation of \code{target\_used} & median target spread $1.41\,\sigma_{\rm used}$; norm-stripped shape spread $1.04\,\sigma_{\rm used}$ \\
+Replica convergence & 50-replica fit/norm/split tests & $\chisq_{95}=2.1310$, norm-pull$_{95}=2.7074$, random-split pass \\
+PDF overlay & perturbative/OPE TMD reconstructed with PDF members 1--50 & exp+PDF overlay bands produced for the final $\bt$ grids \\
+$\kt$ representation & expb2/expb/taper regularization comparison & p90 regularization difference $0.0309$ over active $\kt\le4~\GeV$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{What is and is not being benchmarked}
+
+Several of the audits are numerical closure tests, not phenomenological validation against an independent experiment.  For example, the Born-luminosity and OPE bridge checks show that the new kernel is internally consistent with the intended normalization and leg conventions.  The MCFM/DYTurbo one-point exercise is an external finite-order normalization diagnostic, but it is not yet a full collider-scale $Y$-term validation.  Likewise, the $\kt$ closure integral is band-limited and regularization-dependent; it is used as a diagnostic rather than as a hard normalization theorem for the finite grid.
+
+The phenomenological accuracy statement is therefore narrower and stronger: within the selected fixed-target data, the specified $\NthreeLL$ v22 backend, the p2p5 uncertainty prescription, the stated normalization treatment, and the exp+PDF overlay TMD reconstruction, the result passes all gates we designed for a fixed-target baseline.  This is the reason it is suitable as the baseline before beginning the accelerator-data project.
+
+\section{$\NthreeLL$ perturbative/backend upgrades leading to v22}
+\label{sec:backend}
+
+The fixed-target result uses the v22 full backend, not the older v19/v21 perturbative kernel.  The backend work proceeded through several audited steps.
+
+
+The backend is not a phenomenological black box.  It is the $\NthreeLL$-resummed CSS/TMD perturbative kernel used to compute the singular $W$ term before multiplication by the fitted nonperturbative factor.  The trainer precomputes this perturbative kernel on the selected data rows and then learns only the smooth $\FNP$ correction.  This is why the $\NthreeLL$ label belongs in the title, abstract, and summary of the result.
+
+\subsection{Why $\NthreeLL$ matters in this extraction}
+
+Fixed-target DY at low transverse momentum contains logarithms of the form $\ln(Q^2\bt^2)$ that would spoil a fixed-order treatment in the small-$\qT$ region.  The $\NthreeLL$ backend resums these logarithms in the Sudakov/Collins--Soper evolution part of $W(\bt,Q)$.  The DNN therefore does not have to mimic missing perturbative logarithms.  Instead it fits the residual nonperturbative transverse structure after the $\NthreeLL$ perturbative evolution, hard factor, OPE matching, profile choice, and PDF convolution have been applied.
+
+This distinction is central to the accuracy claim.  A low $\chisq$ by itself would not be impressive if the DNN were compensating for a low-order or inconsistent perturbative kernel.  The v22/v23a result is stronger: the fitted $\FNP$ sits on a $\NthreeLL$-resummed kernel whose bridge identities, NLO hard/OPE insertion, general-scale behavior, and small-$b$ profile have been audited separately.
+
+\subsection{Canonical-window NLO OPE insertion}
+
+The first step was to verify the NLO operator-product-expansion (OPE) insertion in a canonical region where the bridge to the legacy Born luminosity and $W$ kernel could be checked directly.  The canonical audit found finite values and closed all bridge checks.  In the representative fixed-target points,
+\begin{align}
+  \frac{\delta W_{qq}}{W_{\rm Born}} &\in [-0.0781,-0.0682],\\
+  \frac{\delta W_{qg}}{W_{\rm Born}} &\in [0.0042,0.0203],\\
+  \frac{\delta W_{\rm OPE}}{W_{\rm Born}} &\in [-0.0720,-0.0516].
+\end{align}
+The maximum difference between the naive NLO product and strict linear NLO treatment was about $1.3\times10^{-3}$ relative to Born, so the strict-linear implementation was used.
+
+\subsection{Hard factor plus OPE}
+
+The hard correction was then added at strict NLO.  The hard factor is positive and partially cancels the negative OPE correction.  The representative ranges were
+\begin{align}
+  \frac{\delta W_{\rm hard}}{W_{\rm Born}} &\in [0.1201,0.1424],\\
+  \frac{\delta W_{\rm OPE}}{W_{\rm Born}} &\in [-0.0720,-0.0516],\\
+  \frac{\delta W_{\rm hard+OPE}}{W_{\rm Born}} &\in [0.0522,0.0908].
+\end{align}
+The maximum beyond-NLO term in the diagnostic was about $0.0081$, which was small enough for the strict NLO kernel to pass the audit.
+
+\subsection{General-scale OPE and profile support}
+
+The v22 backend had to support a nontrivial scale profile rather than only the canonical $\mu_b$ choice.  A profile-support audit showed that most bare perturbative Bessel weight lives in the $\mu$-floor region for the conservative no-$F_{\rm NP}$ diagnostic.  This made a general-scale OPE implementation operationally necessary.  The code path was therefore upgraded with a general-scale CSS2 OPE implementation and corresponding smoke checks.
+
+The important point is conceptual: the profile-support audit used bare perturbative support.  In the final fits the nonperturbative factor damps large $\bt$, so the audit was a conservative code-development diagnostic rather than a physics acceptance criterion.
+
+\subsection{Small-$b$ profile}
+
+The raw general-scale OPE logs produced unstable behavior at very small $b$.  A smooth small-$b$ profile was introduced for the perturbative coordinate entering the OPE logarithms.  The raw profile had negative strict ratios in the $q$-cap region, with very large beyond-NLO diagnostics, but the profiled version restored positivity and kept beyond-NLO terms at the percent level.  The final small-$b$ profile audit passed with:
+\begin{itemize}
+  \item raw global strict-ratio minimum: $-12.62$;
+  \item profiled global strict-ratio minimum: $1.076$;
+  \item raw nonpositive total: 4;
+  \item profiled nonpositive total: 0;
+  \item profiled maximum beyond-NLO diagnostic: about $0.0108$.
+\end{itemize}
+This profile is a theory/profile choice to be varied later; it was not fitted to data.
+
+\subsection{Standalone and integrated v22 kernel}
+
+The final standalone $W$-kernel audit gave, for four reference rows,
+\begin{align}
+  \frac{W_{\rm strict}}{W_{\rm old}} &\in [1.1415,1.2046],\\
+  \left|\Delta_{\rm beyond\,NLO}\right|_{\max} &\simeq 0.0108,
+\end{align}
+and passed positivity and bridge checks.  The full backend integration audit then confirmed that the full v22 backend reproduced the standalone reference and that the scheme-$Y$ flag behaved as expected.  The full $W$ ratio relative to the old kernel was roughly $1.14$--$1.21$ on the reference rows.
+
+\section{External finite-order/Y diagnostics}
+
+A singular-subtraction audit initially indicated a scheme-consistency mismatch and requested a $Y$ rebuild.  After aligning the singular subtraction, the same audit gave zero current-vs-v22 overlap difference and set \code{Y\_REBUILD\_REQUIRED=False}.  This means the internal scheme decomposition is algebraically consistent.
+
+A separate MCFM/DYTurbo one-point regression was used as an external normalization diagnostic.  The documented primary target was the E288\_400:80 onepoint bridgecut case, with a local MCFM integral of $0.00145969$ fb.  The backend itself is not in fb units, so this target was used to lock a local finite-order conversion through \code{FO\_real\_repaired}, not as a direct $W+Y$ pass/fail.  The final note should keep this caveat: the NLO finite-tail/Y path is scheme-consistent and useful, but a complete external collider-scale $Y$ validation is still future work.
+
+\section{Fixed-target data construction and corrections}
+\label{sec:data}
+
+\subsection{Initial issue: raw global-DY column convention}
+
+The first raw global-DY intake incorrectly treated new raw-file columns too directly.  In the new files the columns \code{A} and \code{dA} are the tabulated cross section-like entries, while the existing fixed-target data convention uses \code{CS} and \code{error}, with \code{PreFactor} where applicable.  Directly using \code{A} without the proper prefactor would silently change the E288/E605/E772 normalization.  This was caught by comparing the v23a candidate files to the current \code{Data/} files.
+
+The verified v23a fixed-target table was therefore built from the existing \code{Data/} source files, not the raw direct-A candidate.  The source-validation audit confirmed that E605 and E772 are consistent with \code{A/PreFactor} and \code{dA/PreFactor} to numerical precision.  Some E288 rows had known source inconsistencies in the prefactor columns, but only one matched-row inconsistency was truly suspect at the working tolerance.
+
+\subsection{Correcting E288\_300:99}
+
+The one problematic matched row was E288\_300:99.  It had
+\begin{align}
+  \code{CS} &= 0.353005714,\\
+  \code{A/PreFactor} &= 0.0353005714,
+\end{align}
+so the explicit \code{CS} value was a factor of ten above the prefactor-consistent value.  Neighboring rows in the same $Q$ and $\qT$ sequence were smooth in the prefactor-consistent convention.  The row was therefore corrected in the v23a working table, and the correction is tracked as a provenance/data-cleaning decision.
+
+\subsection{Matched/training rows}
+
+The verified source table contains 540 matched rows with $\qT/Q\le0.5$ over E288/E605/E772, and 332 TMD-core rows with $\qT/Q\le0.2$.  The trainer's final selection for the v23a p2p5 fixed-target fit used 418 rows, distributed as shown in Table~\ref{tab:centraldataset}.  The difference between the verified matched table and the trainer selection is due to the training-mode cuts and internal selection rules.
+
+\subsection{P2P sensitivity on E772 and E288\_400}
+
+The 20-replica v23a pilots without additional P2P uncertainty were stressed by extremely small reported point-to-point errors in E772 and selected E288\_400 bins.  Several dominant stress rows had relative errors as low as roughly $2$--$3\%$ in the raw diagonal uncertainty, which was implausibly restrictive for the fixed-target setting once only diagonal information was retained.  A controlled sensitivity branch was therefore created with an additional 5\% P2P uncertainty on E772 and E288\_400, while retaining explicit 15\% normalization priors.
+
+The p2p5 central run verified that this additional P2P component actually entered \code{sigma\_used}:
+\begin{itemize}
+  \item E772 minimum \code{sigma\_used/CS}: $0.05599$;
+  \item E288\_400 minimum \code{sigma\_used/CS}: $0.05311$;
+  \item E605 minimum \code{sigma\_used/CS}: $0.07251$.
+\end{itemize}
+This branch is still named as a sensitivity treatment because the 5\% P2P component should be replaced by documented covariance/P2P information if available.
+
+
+\section{DNN architecture and fitting philosophy}
+\label{sec:dnn}
+
+
+The DNN is deliberately not asked to learn the full cross section.  The hard/short-distance part of the calculation is supplied by the $\NthreeLL$-resummed v22 backend.  The neural network only supplies the residual nonperturbative factor $\FNP$, subject to positivity, smoothness, monotonicity, and anchoring constraints.  This is the defining architecture choice of the analysis: perturbative QCD is kept in the backend, and the DNN is a controlled nonperturbative interpolator.
+
+The neural network in this analysis is not an end-to-end surrogate for the cross section.  It learns only the nonperturbative $\bt$-space factor multiplying a fixed perturbative kernel.  The perturbative luminosities, coefficient functions, Sudakov evolution, Bessel weights, prefactors, target/isospin treatment, and $Y$ term are supplied by the backend or by precomputed grids.  This separation is central to the philosophy of the fit: the DNN should learn the minimal smooth nonperturbative information needed by the data, while perturbative QCD and the collinear PDFs remain explicit and auditable.
+
+\subsection{Prediction model}
+
+For a data row $i$, the backend supplies a precomputed kernel matrix $K_{i\ell}$ on a $\bt$ grid.  This kernel already contains the integration weights, the factor $\bt$, the Bessel function $J_0(q_{T,i}\bt)$, and the perturbative $W$ kernel in the chosen cross-section convention.  The model prediction before the fitted data-set normalization nuisance is schematically
+\begin{equation}
+  T_i(\theta)
+  =
+  Y_i
+  +
+  \sum_\ell K_{i\ell}\,
+  \FNP(x_{1i},b_{T,\ell};\theta)\,
+  \FNP(x_{2i},b_{T,\ell};\theta),
+\end{equation}
+where the fixed-target production runs use no additional learned Collins--Soper kernel.  A fitted data-set normalization nuisance $n_{d(i)}$ then gives
+\begin{equation}
+  \widehat T_i(\theta,n)=n_{d(i)}T_i(\theta).
+\end{equation}
+The fit minimizes a scaled mean-square residual plus nuisance and regularization terms,
+\begin{equation}
+\label{eq:loss}
+  {\cal L}
+  =
+  \frac{1}{N}\sum_i
+  \left[\frac{\widehat T_i-t_i}{\sigma_i}\right]^2
+  +
+  \lambda_N\,\frac{1}{N}\sum_d
+  \left(\frac{n_d-1}{\Delta_d}\right)^2
+  +
+  \lambda_{\rm anchor}\,
+  \left\langle
+    \left(\log\FNP-\log F_{{\rm NP},{\rm ref}}\right)^2
+  \right\rangle_{x,b}
+  +\cdots .
+\end{equation}
+Here $t_i$ is the training target.  For central fits $t_i$ is the corrected cross section.  For replica fits $t_i$ is \code{target\_used}, the explicit pseudo-data target sampled from the experimental errors and the data-set normalization draws.  The ellipsis denotes optional smoothness and monotonicity scaffolds; for the final replica protocol the dominant stabilizer is the log-$\FNP$ anchor.
+
+\subsection{The FiLM nonperturbative factor}
+
+The fitted object is a shared single-TMD nonperturbative factor $\FNP(x,\bt)$.  In the direct form it is parameterized as
+\begin{equation}
+  \FNP(x,\bt)=\exp[-\bt^2 A_\theta(x,\bt)],\qquad A_\theta\ge0,
+\end{equation}
+which enforces $\FNP(x,0)=1$ and positive damping.  The code also supports a monotone cumulative form,
+\begin{equation}
+  \FNP(x,\bt)=
+  \exp\left[-\int_0^{b_T} d\beta\,2\beta\,A_\theta(x,\beta)\right],
+  \qquad A_\theta\ge0,
+\end{equation}
+which guarantees nonincreasing behavior on the supplied $\bt$ grid.  The final exported grids pass the monotonicity and endpoint-tail audits.
+
+The scalar field $A_\theta(x,\bt)$ is represented by a FiLM-modulated residual network.  The radial input features are
+\begin{equation}
+  r(\bt)=\left(\bt,\bt^2,\sqrt{\bt+\epsilon},\log(1+\bt)\right),
+\end{equation}
+while the conditioning features are
+\begin{equation}
+  c(x)=\left(x,\log\frac{x}{1-x}\right).
+\end{equation}
+The radial stream is passed through residual FiLM blocks.  Each block uses the $x$-conditioner to produce a multiplicative scale and additive shift for the radial features before applying the residual nonlinearity.  The production architecture used a compact network, with width 48, conditioning width 32, and three FiLM blocks.  The final head is initialized to a Gaussian-like damping baseline so that the central solution begins close to a simple positive $\FNP$ rather than an arbitrary function.
+
+\subsection{Why this architecture was chosen}
+
+The fixed-target data constrain a universal smooth damping function, not a completely arbitrary high-dimensional function of flavor, $x$, $Q$, and $\bt$.  The architecture therefore deliberately imposes several physics biases:
+\begin{itemize}
+  \item $\FNP(x,0)=1$ so that the small-$\bt$ normalization is controlled by the perturbative OPE and PDFs;
+  \item $\FNP>0$ so that the nonperturbative factor does not introduce artificial sign changes in $\bt$ space;
+  \item smooth radial features rather than a bin-by-bin free function;
+  \item a shared flavor-independent $\FNP$, with flavor dependence entering through the collinear PDFs and OPE coefficients;
+  \item optional monotone/cumulative damping and a smooth late-$\bt$ damping floor;
+  \item a function-space log-$\FNP$ trust region for pseudo-data replicas.
+\end{itemize}
+These biases are not cosmetic.  Without them the fixed-target-only problem is underconstrained: large-$\bt$ oscillations, normalization degeneracies, and overfitting of individual bins can produce equally good cross-section fits but unstable TMDs.  The DNN is therefore used as a controlled nonparametric interpolator for a physically constrained nonperturbative factor, not as an unconstrained black box.
+
+\subsection{Central fit versus replica fits}
+
+The central fit is allowed to find the best smooth $\FNP$ for the corrected fixed-target table.  The replica fits are then initialized from the central checkpoint.  For the final 50-replica protocol, the replica training is intentionally more conservative: the training scope is restricted mainly to the final nonperturbative head, and a log-$\FNP$ anchor with strength $\lambda_{\log F}=3$ keeps the replica functions in a trust region around the central solution.  This is why the final $\bt$-space uncertainty band is smooth and modest even though the pseudo-data cross sections fluctuate at the intended experimental level.
+
+This design choice explains the interpretation of the uncertainty band.  The band is a stable fixed-target experimental+PDF overlay band within the specified model class.  It is not a model-form uncertainty envelope.  Varying the anchor strength, relaxing the training scope, changing the $\FNP$ ansatz, or including scale/profile variations would enlarge the uncertainty budget and belongs to a later systematic-study layer.
+
+\section{Central v23a refit}
+
+The central v23a fixed-target refit using the corrected row, 15\% normalization priors, and p2p5 E772/E288\_400 treatment passed cleanly.  The central metrics are in Table~\ref{tab:central}.
+
+\begin{table}[H]
+\centering
+\caption{Central v23a p2p5 fixed-target refit summary.}
+\label{tab:central}
+\begin{tabular}{lr}
+\toprule
+Metric & Value \\
+\midrule
+Number of prediction rows & 418 \\
+Total $\chisq$-like value & 0.9582974964 \\
+Maximum dataset $\chisq$-like value & 1.4252333189 \\
+Maximum absolute normalization pull & 0.2296765596 \\
+Core prediction columns finite & True \\
+Central refit basic pass & True \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Per-dataset central refit metrics for the p2p5 branch.}
+\label{tab:centraldataset}
+\begin{tabular}{lrrrr}
+\toprule
+Dataset & Rows & $\chisq$-like & median $|$pull$|$ & median pred/data \\
+\midrule
+E288\_200 & 64  & 0.618053 & 0.396916 & 0.997194 \\
+E288\_300 & 80  & 0.708016 & 0.547287 & 0.976842 \\
+E288\_400 & 113 & 0.816300 & 0.493654 & 1.011486 \\
+E605      & 74  & 1.425233 & 0.842772 & 0.917378 \\
+E772      & 87  & 1.226006 & 0.696276 & 0.941540 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The central refit lowered the replica stress without spoiling the fixed-target description.  The largest remaining central $\chisq$-like contribution was E605, but it was still well below the central pass threshold.
+
+\section{Experimental pseudo-data replicas and normalization treatment}
+\label{sec:replicas}
+
+\subsection{Replica generation}
+
+The trainer samples experimental pseudo-data through a target column written as \code{target\_used}.  The generator draws one multiplicative normalization shift per dataset and then adds rowwise Gaussian noise using the uncorrelated/P2P training uncertainty.  The important audit outcome is that \code{target\_used}, not \code{target}, is the sampled training target.
+
+The 50-replica target audit found:
+\begin{itemize}
+  \item \code{target\_used} rowwise standard deviation is nonzero for all 418 rows;
+  \item median \code{target\_std/sigma\_used}: 1.405681;
+  \item median \code{target\_std/CS}: 0.226483;
+  \item the mean sampled target is centered on the data: mean \code{(target\_mean-CS)/sigma\_used} $\simeq -0.007$;
+  \item dataset-level median \code{target/CS} standard deviations are about 15\% for all five datasets.
+\end{itemize}
+
+After stripping an estimated dataset-level normalization draw, the rowwise shape fluctuation was also correct:
+\begin{align}
+  {\rm median}\left(\frac{\sigma_{\rm shape}}{\sigma_{\rm used}}\right) &= 1.037652,\\
+  {\rm mean}\left(\frac{\sigma_{\rm shape}}{\sigma_{\rm used}}\right) &= 1.042339.
+\end{align}
+Thus the experimental pseudo-data sampling is working.  The narrowness of the $\bt$-space TMD band is not caused by missing rowwise experimental fluctuations.
+
+\subsection{Why the TMD band is narrower than observable-space errors}
+
+The observable-space prediction spread is roughly 15\% in relative halfwidth, consistent with the normalization-draw and experimental-replica protocol.  The TMDPDF band is much narrower because it is a universal, profiled-nuisance, smooth, flavor-independent $\FNP$ shape multiplied by a perturbative/PDF factor.  Dataset normalization nuisance parameters absorb much of the correlated normalization variation.  Many rowwise fluctuations average out in a smooth universal nonperturbative function.  The current $\lambda_{\log F}=3$ anchor further stabilizes the shape.
+
+This interpretation is important for labels.  The fixed-PDF data-replica band alone should not be called a full experimental TMD uncertainty.  After adding the PDF overlay, the correct label is ``experimental+PDF overlay,'' with the explicit caveat that the PDF uncertainty has not been propagated through a refit.
+
+\subsection{Fifty-replica fit and split stability}
+
+The 50-replica fixed-PDF data-replica ensemble passed the q95 and random-split gates, as shown in Table~\ref{tab:replica}.  This was necessary because the 20-replica pilots had acceptable fit/norm values but unstable width split diagnostics.
+
+\begin{table}[H]
+\centering
+\caption{Final 50-replica data-replica stability summary.}
+\label{tab:replica}
+\begin{tabular}{lr}
+\toprule
+Metric & Value \\
+\midrule
+Number of replicas & 50 \\
+$\chisq$ median & 1.8586031651 \\
+$\chisq_{95}$ & 2.1310145686 \\
+$\chisq_{\max}$ & 2.1866746954 \\
+Norm-pull$_{95}$ & 2.7074333429 \\
+Norm-pull$_{\max}$ & 3.0173649788 \\
+Random-split width $q_{90}$ & 0.6439466887 \\
+Random-split center $q_{90}$ & 0.0217491809 \\
+Fit pass & True \\
+Norm pass & True \\
+Band pass & True \\
+Random-split pass & True \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{PDF overlay uncertainty}
+\label{sec:pdfoverlay}
+
+The fixed-target data-replica fits were initially built with the central PDF member, \code{NNPDF40\_nnlo\_as\_01180} member 0.  This means the collinear PDF/OPE/Sudakov factor was deterministic in the original 50-replica $\bt$-space TMD band.  To include a first realistic PDF uncertainty without spending multiple days rebuilding fixed-target cross-section caches and retraining for every PDF member, a PDF overlay was constructed.
+
+For replica $r$ with fitted nonperturbative function $\FNP^{(r)}$ and assigned PDF member $m_r$, the overlay TMD is
+\begin{equation}
+\label{eq:tmd_overlay}
+  \widetilde f_q^{(r,m_r)}(x,\bt;Q)
+  =
+  \left[ C_{q\leftarrow j}\otimes f_j^{(m_r)}\right](x;\mu_b)
+  \exp\left[-\frac{1}{2}S^{(m_r)}(\bt,Q)\right]
+  \FNP^{(r)}(x,\bt).
+\end{equation}
+The final overlay used 50 experimental data-replica $\FNP$ fits paired with PDF members 1--50.  This is not the same as PDF-through-refit, because $\FNP^{(r)}$ was not refit with the PDF member $m_r$.  It is nevertheless the correct next level of TMD uncertainty for a note: the TMD reconstruction itself now varies over both experimental data replicas and PDF members.
+
+\section{$\bt$-space TMD result}
+\label{sec:bspace}
+
+The $\bt$-space TMD is the primary production object.  In the final grid the hard factor is excluded from the single-TMD object, and the definition is
+\begin{equation}
+  \widetilde f_q(x,\bt;Q)
+  =
+  \left[ C_{q\leftarrow j}\otimes f_j\right](x;\mu_b,\zeta_b=\mu_b^2)
+  \exp\left[-\frac{1}{2}S(\bt,Q)\right]
+  \FNP(x,\bt).
+\end{equation}
+The fitted $\FNP$ is flavor independent in this model.  The flavor dependence of the TMDPDF enters through the collinear PDFs and the OPE coefficient functions.
+
+The standard $\bt$-space sanity plot is the $d$-quark, $x=0.1$, $Q=10~\GeV$ curve.  It is shown in Fig.~\ref{fig:btstd}.  The plot shows a smooth $\bt$ dependence, a visible but modest 68\% experimental+PDF overlay band, selected thin replicas clustered around the median, and a central PDF0 curve nearly on top of the ensemble median.
+
+\begin{figure}[H]
+\centering
+    \figorplaceholder{bspace-result.png}{Standard $b_T$-space figure: copy or generate \code{bspace-result.png} in the note directory.}{0.90}
+\caption{Standard $\bt$-space TMDPDF example: $d$ quark, $x=0.1$, $Q=10~\GeV$.  The shaded band is the 68\% experimental+PDF overlay interval.  The dashed black curve is the central fit with PDF member 0.  The thin gray curves are selected replica curves for visual diagnostics.}
+\label{fig:btstd}
+\end{figure}
+
+The caption used for the note/paper should emphasize that this is an overlay uncertainty, not a PDF-through-refit uncertainty:
+\begin{quote}
+The shaded band is the 68\% interval over the fixed-target DY data-replica ensemble with a PDF-member overlay in the perturbative/OPE TMD factor.  The dashed curve is the central fit with PDF member 0.  This band includes experimental pseudo-data variation and PDF-member variation in the TMD reconstruction, but not PDF-through-refit, profile/scale, nuclear-model, or functional-form variations.
+\end{quote}
+
+\section{Regularized $\kt$-space companion}
+\label{sec:kspace}
+
+\subsection{Transform convention}
+
+The $\kt$-space companion is obtained by a finite-$\bt$ regularized Hankel transform,
+\begin{equation}
+\label{eq:hankel}
+  f_q(x,\kt;Q)
+  =
+  \frac{1}{2\pi}\int_0^\infty d\bt\,\bt\,J_0(\kt\bt)\,
+  \widetilde f_q(x,\bt;Q).
+\end{equation}
+Formally,
+\begin{equation}
+  \widetilde f_q(x,\bt=0;Q)
+  =2\pi\int_0^\infty d\kt\,\kt\,f_q(x,\kt;Q).
+\end{equation}
+Because the numerical $\bt$ grid is finite and the high-$\kt$ tail is not a perturbative fixed-order calculation, Eq.~\eqref{eq:hankel} is implemented as a regularized finite-$\bt$ representation.  The default prescription is:
+\begin{itemize}
+  \item large-$\bt$ continuation: $\exp(-a\bt^2)$ fitted from the tail (\code{expb2});
+  \item transform range: $\bt\le 24~\GeV^{-1}$;
+  \item endpoint taper starts at $0.92\,\bt^{\rm max}$;
+  \item final quoted range: $0\le\kt\le4~\GeV$;
+  \item negative lobes are retained and audited, not clipped.
+\end{itemize}
+
+\subsection{Regularization stability}
+
+Three tail/regularization modes were compared: \code{expb2}, \code{expb}, and direct \code{taper}.  The median curves are stable over the active $\kt\le4~\GeV$ region:
+\begin{align}
+  \max\left[\Delta_{90}^{\rm rel}(\text{tail modes})\right] &= 0.03091254598,\\
+  \max\left[\Delta_{\max}^{\rm rel}(\text{tail modes})\right] &= 0.04304417062.
+\end{align}
+The stability comparison passed with \code{KT\_REGULARIZATION\_STABILITY\_PASS=True}.
+
+The default \code{expb2} curve audit found:
+\begin{itemize}
+  \item all transformed values finite;
+  \item worst median negative dip relative to peak: $-0.0171855$;
+  \item worst negative area fraction: $0.134224$;
+  \item maximum active-region 68\% relative halfwidth $q_{90}$: $0.759784$.
+\end{itemize}
+The largest relative bands occur mainly for high-$x$ sea-quark curves where the absolute TMD is tiny.  For example, $\bar d$, $x=0.5$, $Q=5~\GeV$ has a very small peak and therefore a large relative band.  Main valence/moderate-$x$ curves have much smaller relative bands.
+
+\subsection{Status of $\kt$ representation}
+
+The regularized $\kt$ companion is now finalized with the following status:
+\begin{quote}
+PASS as a regularized finite-$\bt$ Hankel-transform companion over $0\le\kt\le4~\GeV$.
+\end{quote}
+This should not be described as a standalone high-$\kt$ perturbative-tail prediction.  It is the $\kt$ representation of the fitted $\bt$ ensemble under a stated regularization prescription.
+
+\subsection{Standard $\kt$ figure}
+
+The standard $\kt$ figure should match the $\bt$ figure: $d$ quark, $x=0.1$, $Q=10~\GeV$, using \code{ftilde}.  The recommended caption is:
+\begin{quote}
+Regularized $\kt$-space companion for the fixed-target DY extraction.  The curves are obtained from the fitted $\bt$-space ensemble by a finite-$\bt$ Hankel transform with $\exp(-a\bt^2)$ large-$\bt$ continuation and smooth endpoint taper.  The shaded band is the 68\% experimental+PDF overlay interval; the dashed curve is the central PDF0 result.  The result is shown over the $\kt$ range stable under \code{expb2}/\code{expb}/\code{taper} regularization comparisons.
+\end{quote}
+
+A placeholder for the final $\kt$ plot is shown in Fig.~\ref{fig:ktstd}.  Replace the placeholder with the output of \code{plot\_v23a\_traditional\_kspace\_tmd.py}.
+
+\begin{figure}[H]
+    \centering
+    \figorplaceholder{kspace-result.png}{Standard $k_T$-space figure: copy or generate \code{kspace-result.png} in the note directory.}{0.90}
+    \caption{Standard $k_T$-space TMDPDF companion for the fixed-target Drell--Yan extraction. Shown is the $d$-quark TMDPDF at $x=0.1$ and $Q=10~\GeV$. The solid curve is the median of the 50-replica experimental+PDF ensemble, the shaded band denotes the $68\%$ uncertainty interval, and the dashed curve is the central (PDF0) fit. The $k_T$-space distribution is obtained from the fitted $b_T$-space ensemble using the regularized finite-$b_T$ Hankel transform with the default \texttt{expb2} prescription.}
+    \label{fig:ktstd}
+\end{figure}
+
+\section{Reproducibility commands and artifact paths}
+\label{sec:repro}
+
+\subsection{Primary fixed-target artifact names}
+
+The final fixed-target result should be frozen with explicit names:
+\begin{Verbatim}[fontsize=\small]
+v23a_lambda3_normpriors15_p2p5_E772_E288400_50rep_DYonly_bspace_sensitivity
+v23a_lambda3_normpriors15_p2p5_E772_E288400_50rep_DYonly_kspace_regularized_expPDF_overlay
+\end{Verbatim}
+The first is the primary $\bt$-space extraction.  The second is the regularized $\kt$ companion.
+
+\subsection{Key paths}
+
+\begin{longtable}{p{0.30\linewidth}p{0.62\linewidth}}
+\caption{Main repository paths used by the final fixed-target result.}\label{tab:paths}\\
+\toprule
+Object & Path \\
+\midrule
+\endfirsthead
+\toprule
+Object & Path \\
+\midrule
+\endhead
+Central p2p5 run & \fpath{outputs/v23a_fixed_target_lowQ_corrected_central_refit_normpriors15_p2p5_E772_E288400_s303} \\
+50 data-replica root & \fpath{replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda} \\
+PDF-overlay $\bt$ bands & \fpath{replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/tmd_bspace_bands_expPDF_overlay} \\
+Regularized $\kt$ default & \fpath{replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb2} \\
+Regularization comparison & \fpath{replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_comparison} \\
+Traditional $\bt$ example & \fpath{plots/v23a_traditional_expPDF_overlay/ftilde_dataPDF_bands_improved.pdf} \\
+Traditional $\kt$ example & \fpath{plots/v23a_traditional_kspace_TMDPDF_d_x0p10_Q10.pdf} \\
+\bottomrule
+\end{longtable}
+
+
+
+\subsection{Minimal command skeleton}
+
+The exact long paths are listed in Table~\ref{tab:paths}.  The reproducibility sequence is:
+\begin{enumerate}[leftmargin=2em]
+  \item Create the PDF-overlay plan from the existing fixed-PDF 50-replica run directories with \texttt{make\_v23a\_pdf\_overlay\_plan\_from\_runs.py}.
+  \item Construct the PDF-overlay \(b_T\)-space TMD bands with \texttt{construct\_v23a\_data\_pdf\_bspace\_tmd\_bands\_v2.py}, using \texttt{--pdf-member-source plan}.
+  \item Make the traditional \(b_T\) figure with \texttt{plot\_v23a\_data\_pdf\_bspace\_bands\_improved.py}.
+  \item Build three regularized \(k_T\) transforms with \texttt{construct\_v23a\_regularized\_kspace\_tmd.py}, using \texttt{expb2}, \texttt{expb}, and \texttt{taper} tail modes.
+  \item Compare the three \(k_T\) regularization modes with \texttt{compare\_v23a\_regularized\_kspace\_modes.py}.
+  \item Make the traditional \(k_T\) figure with \texttt{plot\_v23a\_traditional\_kspace\_tmd.py}.
+\end{enumerate}
+
+The important short options for the production commands are:
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Task & Essential options \\
+\midrule
+PDF-overlay plan & \texttt{--pdf-members 1-50}, \texttt{--member-strategy cycle} \\
+\(b_T\) grid & \texttt{--x-values 0.10 0.20 0.30 0.50}, \texttt{--Q-values 5 10} \\
+Traditional \(b_T\) plot & \texttt{--quantity ftilde}, \texttt{--flavor d}, \texttt{--x 0.10}, \texttt{--Q 10} \\
+Regularized \(k_T\) grids & \texttt{--b-transform-max 24}, \texttt{--n-b-transform 6001}, \texttt{--k-max 4} \\
+Regularization comparison & reference mode \texttt{expb2}; alternatives \texttt{expb}, \texttt{taper} \\
+Traditional \(k_T\) plot & \texttt{--quantity ftilde}, \texttt{--flavor d}, \texttt{--x 0.10}, \texttt{--Q 10} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Limitations and next steps}
+
+
+The $\NthreeLL$ label is a key strength of the result, but it also has a precise scope.  It applies to the resummed $W$ term used for the fixed-target TMD extraction.  It should not be read as a claim that every component needed for a full global accelerator-DY matched prediction has already been externally validated at the same level.  In particular, the high-$\qT$ finite-$Y$ tail, collider electroweak/fiducial effects, and future scale/profile envelopes remain separate work items.
+
+The current result is a strong fixed-target DY result, but it is not yet a full global DY extraction and not yet a complete theory/model-form uncertainty budget.  The remaining limitations are:
+\begin{itemize}
+  \item PDF uncertainty is included as an overlay in TMD reconstruction, not through refitting $\FNP$ for each PDF member;
+  \item scale/profile variations are not included in the uncertainty band;
+  \item nuclear/isospin model variations are not included;
+  \item the DNN architecture is intentionally constrained: $\FNP$ is flavor independent, smooth, positive, and anchored in replica fits;
+  \item the 5\% P2P treatment for E772 and E288\_400 is a sensitivity prescription, not a documented full covariance;
+  \item the $\kt$ result is a regularized finite-$\bt$ representation, not a high-$\kt$ fixed-order tail;
+  \item accelerator/collider data are not included.
+\end{itemize}
+
+The next project stage is v23b accelerator data incorporation.  That will require dataset-by-dataset unit and covariance locking, electroweak/Z/W process support, bin integration over $\qT$, rapidity, and mass windows, and external fixed-order/Y validation at collider kinematics.
+
+\appendix
+\section{Recommended GitHub README bullets}
+
+A concise GitHub summary could read:
+\begin{itemize}
+  \item Completed v23a fixed-target DY TMD extraction with E288, E605, and E772.
+  \item Accuracy claim is operational: backend, data convention, pseudo-data sampling, replica convergence, PDF overlay, and $\kt$ regularization all pass explicit gates.
+  \item Uses corrected E288\_300:99, 15\% normalization priors, and a 5\% P2P sensitivity on E772/E288\_400.
+  \item v22 full backend includes NLO OPE/hard corrections and a small-$b$ OPE profile.
+  \item Central p2p5 refit passes with $\chisq_{\rm tot}=0.9583$ and max norm pull $0.2297$.
+  \item 50-replica fixed-target data-replica ensemble passes q95 and random-split gates.
+  \item Experimental pseudo-data sampling verified through \code{target\_used}; norm-stripped shape fluctuations have median $\sigma_{\rm shape}/\sigma_{\rm used}=1.04$.
+  \item TMD bands include a PDF-member overlay in the perturbative/OPE TMD reconstruction.
+  \item Primary result is $\bt$ space; $\kt$ companion is a regularized finite-$\bt$ Hankel transform stable over $0\le\kt\le4~\GeV$.
+  \item Accelerator/collider data are the next project and are not part of this fixed-target result.
+\end{itemize}
+
+\section{Short note-to-self on terminology}
+
+Use ``experimental+PDF overlay'' for the final plotted band.  Do not use ``full experimental+PDF uncertainty'' without qualification, because PDF-through-refit and profile/scale/model variations are not included.  Use ``regularized $\kt$ companion'' rather than ``production high-$\kt$ TMD tail.''
+
+
+\subsection*{Terminology update: always state the perturbative order}
+
+In talks, notes, and GitHub summaries, the preferred short label is:
+\begin{center}
+\textbf{$\NthreeLL$ fixed-target DY TMD extraction with experimental+PDF overlay uncertainty.}
+\end{center}
+If more detail is needed, use:
+\begin{center}
+$\NthreeLL$-resummed $W$ term, NLO hard/OPE matching, fixed v22 profile, 50 experimental replicas, and PDF-member overlay in the TMD reconstruction.
+\end{center}
+This avoids the misleading impression that the main technical advance was only the DNN.  The main advance is the combination of a $\NthreeLL$ perturbative TMD kernel with a constrained neural nonperturbative factor and a reproducible fixed-target uncertainty workflow.
+
+\end{document}

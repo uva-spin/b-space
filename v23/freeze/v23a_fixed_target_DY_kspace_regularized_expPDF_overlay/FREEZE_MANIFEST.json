@@ -1,0 +1,11 @@
+{
+  "name": "v23a_fixed_target_DY_kspace_regularized_expPDF_overlay",
+  "primary_object": "regularized kT-space companion",
+  "tail_mode": "expb2",
+  "kT_range": "0 <= kT <= 4 GeV",
+  "regularization_p90_max_rel_diff": 0.030912545977260095,
+  "regularization_max_rel_diff": 0.04304417062181683,
+  "min_over_peak_min": -0.01718554577009812,
+  "negative_area_fraction_max": 0.13422350979037503,
+  "status": "PASS as regularized kT companion"
+}

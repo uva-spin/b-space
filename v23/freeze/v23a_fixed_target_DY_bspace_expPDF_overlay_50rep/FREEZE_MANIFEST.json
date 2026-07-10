@@ -1,0 +1,8 @@
+{
+  "name": "v23a_fixed_target_DY_bspace_expPDF_overlay_50rep",
+  "primary_object": "b-space TMDPDF",
+  "n_experimental_replicas": 50,
+  "pdf_overlay_members": "1-50",
+  "status": "PASS as fixed-target b-space exp+PDF overlay ensemble",
+  "caveat": "PDF overlay, not PDF-through-refit; no scale/profile/nuclear/model-form envelope"
+}
