@@ -1,0 +1,25 @@
+{
+  "status": "isolated_matched_baseline_crossed_96start_experimental_not_production",
+  "start_count": 96,
+  "experimental_replica_count": 50,
+  "crossed_member_count_per_flavor": 4800,
+  "metrics": {
+    "u": {
+      "max_lower_relative_excursion": 0.08648267850297002,
+      "max_upper_relative_excursion": 0.14476777344916342,
+      "max_full_width_relative": 0.21256740756384393,
+      "baseline_max_full_width_relative_same_active": 0.23996770478880355
+    },
+    "d": {
+      "max_lower_relative_excursion": 0.08733747590443383,
+      "max_upper_relative_excursion": 0.15305758117082396,
+      "max_full_width_relative": 0.22480180890575754,
+      "baseline_max_full_width_relative_same_active": 0.2553179594428333
+    }
+  },
+  "band_interpretation": "empirical q16-q84 after crossing 96 stationary lambda=1 starts with conditional experimental-replica residuals",
+  "start_only_summary": "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/summaries/lambda1_start_expansion96/summary.json",
+  "bspace_ensemble": "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/summaries/lambda1_start_expansion96_bspace/bspace_tmd_ensemble_long.csv",
+  "kspace_ensemble": "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/summaries/lambda1_start_expansion96_kspace/kspace_tmd_ensemble_long.csv",
+  "production_sources_modified": false
+}

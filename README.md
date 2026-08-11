@@ -28,6 +28,21 @@ with the corrected `E288_300:99` row, explicit normalization priors, a controlle
 | \(k_T\)-space representation | **Regularized companion** | \(k_T\)-space curves are obtained by a regularized finite-\(b_T\) Hankel transform. |
 | Accelerator/collider DY data | **Next project** | Tevatron, RHIC, and LHC datasets require separate unit, covariance, EW/Z, and bin-integration review. |
 
+## Current lambda=1 production update
+
+The current campaign production package is
+[`production/lambda1_empirical_reference_full96x50`](production/lambda1_empirical_reference_full96x50/).
+It uses the lambda=1 empirical-reference objective on `x=0.1` and
+`0.1 <= bT <= 2.0 GeV^-1`, with 96 stationary starts crossed with 50
+conditional experimental replicas (4,800 members per flavor). All 48 newly
+added starts passed the FNP stationarity gate.
+
+The production package reports operational q16--q84 full widths of 21.257%
+for `u` and 22.480% for `d` in the active k-space region. These are ensemble
+bands, not calibrated 68% confidence intervals. The earlier 24-start package
+is retained as the rollback reference; frozen source outputs were not
+overwritten.
+
 Expected fixed-target high-level result:
 
 ```text
@@ -204,8 +219,14 @@ A typical public checkout is expected to have the following structure:
 │   └── README.md
 ├── replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/
 │   └── README.md
-└── replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/
-    └── README.md
+├── replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/
+│   └── README.md
+└── production/
+    └── lambda1_empirical_reference_full96x50/
+        ├── PRODUCTION_MANIFEST.json
+        ├── PRODUCTION_AUDIT.json
+        ├── bspace_combined_bands.csv
+        └── kspace_combined_bands.csv
 ```
 
 Large replica outputs and backend caches may be distributed through a release asset or archived artifact rather than committed directly to git.
