@@ -1,0 +1,27 @@
+# Generated fits, caches, plots, and logs
+outputs/
+plots/
+logs/
+**/outputs/
+**/plots/
+**/logs/
+**/backend_cache/
+**/pdf_caches/
+
+# Local environments and Python products
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.so
+
+# Large local fit artifacts
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.pkl
+
+# External benchmark installations and raw logs are not part of the source release
+v22/external/
+v22/reference/external_tail_benchmark/

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-27",
+  "candidate_id": "D020_E772",
+  "lambda_F_length": 0.3,
+  "stationary_source_tag": "flength_D020_E772_lam3em01_s703_continue",
+  "pilot_perturbations": [
+    {"seed": 1201, "relative_scale": 0.02},
+    {"seed": 1202, "relative_scale": 0.02},
+    {"seed": 1203, "relative_scale": 0.05},
+    {"seed": 1204, "relative_scale": 0.05},
+    {"seed": 1205, "relative_scale": 0.10},
+    {"seed": 1206, "relative_scale": 0.10},
+    {"seed": 1211, "relative_scale": 0.0002},
+    {"seed": 1212, "relative_scale": 0.0002},
+    {"seed": 1213, "relative_scale": 0.0005},
+    {"seed": 1214, "relative_scale": 0.0005},
+    {"seed": 1215, "relative_scale": 0.001},
+    {"seed": 1216, "relative_scale": 0.001},
+    {"seed": 1217, "relative_scale": 0.0002},
+    {"seed": 1218, "relative_scale": 0.0002},
+    {"seed": 1219, "relative_scale": 0.0005},
+    {"seed": 1220, "relative_scale": 0.0005},
+    {"seed": 1221, "relative_scale": 0.001},
+    {"seed": 1222, "relative_scale": 0.001}
+  ],
+  "promotion_gate": "At least five stationary fits with comparable penalized objectives; split-half and bootstrap-stable Fig. 6 non-uniqueness below the 16-17% benchmark.",
+  "max_epochs": 20000,
+  "min_epochs": 5000,
+  "plateau_patience": 3000,
+  "lbfgs_max_iter": 30000,
+  "production_sources_modified": false
+}

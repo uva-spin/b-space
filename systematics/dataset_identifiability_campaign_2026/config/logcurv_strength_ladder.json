@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-24",
+  "penalty": "dimensionlessly scaled mean squared second derivative of log(F_NP) over 0.1 <= bT <= 3.0",
+  "candidate_ids": [
+    "D020_E772",
+    "D025_E772",
+    "D025_ALL"
+  ],
+  "pilot_strengths": [
+    1e-7,
+    3e-7,
+    1e-6,
+    3e-6,
+    1e-5,
+    3e-5
+  ],
+  "extension_strengths": [
+    1e-4,
+    3e-4,
+    1e-3,
+    3e-3
+  ],
+  "calibration": {
+    "method": "finite-difference estimate on the three polished FNP grids",
+    "typical_unweighted_roughness": "approximately 2300--5100",
+    "interpretation": "lambda=1e-6 initially contributes roughly 0.0023--0.0051 objective per row; lambda=1e-5 contributes roughly 0.023--0.051 per row. The completed D020_E772 pilots through 3e-5 reduced measured roughness by only about 3%, so an upward extension through 3e-3 is required to locate the actual fit-quality/roughness knee."
+  },
+  "selection_rule": "advance the weakest strength that preserves unregularized fit quality and passes stationary three-start FNP stability; do not select by band width alone",
+  "production_sources_modified": false
+}

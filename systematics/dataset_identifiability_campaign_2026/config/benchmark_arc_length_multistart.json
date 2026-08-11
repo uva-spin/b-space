@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-25",
+  "purpose": "Find the weakest arc-length prior whose Fig. 6 non-uniqueness is narrower than the saved 24-start worst-case benchmark without sacrificing fit quality.",
+  "candidate_id": "D020_E772",
+  "pilot_strengths": [0.0003, 0.001, 0.003, 0.01],
+  "pilot_initialization_seeds": [303, 307, 311, 315, 319, 323],
+  "expansion_initialization_seeds": [
+    303, 304, 305, 306, 307, 308, 309, 310,
+    311, 312, 313, 314, 315, 316, 317, 318,
+    319, 320, 321, 322, 323, 324, 325, 326
+  ],
+  "benchmark": {
+    "artifact": "/home/dustin/Desktop/fig6_updated_ud_central_1sigma.png",
+    "max_active_relative_excursion_u": 0.162788654851753,
+    "max_active_relative_excursion_d": 0.1728548598526842
+  },
+  "pilot_rule": "Advance the weakest strength with delta unpenalized chi2 <= 1, stationary closures, positive transform, and six-start Fig. 6 q16-q84 excursions below the benchmark for u and d.",
+  "expansion_rule": "Expand the selected strength to all 24 independent old-basin initializations and require split-half and bootstrap endpoint stability before final propagation.",
+  "b_min_GeV_inverse": 0.1,
+  "b_max_GeV_inverse": 3.0,
+  "max_epochs": 20000,
+  "min_epochs": 5000,
+  "plateau_patience": 3000,
+  "lbfgs_max_iter": 10000,
+  "production_sources_modified": false
+}

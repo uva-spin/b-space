@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-29",
+  "status": "prospective_isolated_lagrange_weight_ladder",
+  "candidate_id": "D020_E772",
+  "purpose": "Find the smallest smooth likelihood multiplier that retains the selected F_NP smoothness functional while keeping independent endpoints in the fixed cross-section fit region.",
+  "source_basins": [304, 312, 313],
+  "likelihood_weights": [2.0, 4.0, 8.0],
+  "adaptive_rule": "Run weights in ascending order and stop at the first weight for which all three endpoints satisfy the unweighted fit-quality ceiling.",
+  "regularization": {
+    "lambda_fnp_logcurv": 5e-5,
+    "lambda_fnp_f_slope": 0.004,
+    "lambda_fnp_x_slope": 0.0003,
+    "remote_transform_closure": false
+  },
+  "fit_quality_ceiling_total_chi2": 119.8021,
+  "primary_measure": "cross-start F_NP distribution at x=0.1 and bT<=2 GeV^-1",
+  "interpretation": "This is the Lagrangian form of minimizing the declared F_NP roughness subject to cross-section fit quality; unweighted chi2 remains the eligibility statistic.",
+  "production_sources_modified": false
+}

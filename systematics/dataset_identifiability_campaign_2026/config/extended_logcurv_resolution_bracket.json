@@ -1,0 +1,39 @@
+{
+  "status": "preregistered_extended_isolated_study_not_production",
+  "reason": "lambda_logcurv=1.5e-5 and 2e-5 fail the global same-objective functional-drift gate; extend before inspecting completed lambda=3e-5 endpoints",
+  "objective_family": {
+    "regularizer": "dense origin-anchored dimensionless squared curvature of log(F_NP)",
+    "bT_range_GeV_inverse": [0.1, 3.0],
+    "transform_closure": {
+      "lambda": 0.001,
+      "coordinate": "C2 tail",
+      "bT_start_GeV_inverse": 5.5,
+      "bT_end_GeV_inverse": 8.0,
+      "maximum_F_NP_at_8": 0.0001
+    }
+  },
+  "strengths": [0.00005, 0.0001],
+  "common_source_basins": [307, 317, 320],
+  "optimization": {
+    "initial_perturbation": 0.0,
+    "float64": true,
+    "adam_learning_rate": 0.00001,
+    "adam_max_epochs": 20000,
+    "adam_min_epochs": 5000,
+    "adam_plateau_patience": 3000,
+    "lbfgs_max_iter": 15000,
+    "same_objective_continuation_required_if_stationarity_gate_fails": true
+  },
+  "selection": {
+    "rule": "Select the weakest strength satisfying every fit-quality, stationarity-drift, physical-shape, transform, and common-source gate; if 3e-5 passes, retain it and do not prefer a stronger value merely for a narrower band",
+    "unpenalized_total_chi2_max": 119.8021,
+    "near_optimal_total_penalized_objective_delta_max": 1.0,
+    "global_fnp_continuation_drift_max": 0.01,
+    "prediction_continuation_drift_sigma_max": 0.05,
+    "fig6_physical_shape_required": true,
+    "transform_relative_change_max": 0.02,
+    "start_ensemble_minimum": 12,
+    "uncertainty_semantics": "Experimental replicas are a conditional 68% interval; residual local-start/model spread is a separately labeled nonprobabilistic envelope."
+  },
+  "production_files_modified": false
+}

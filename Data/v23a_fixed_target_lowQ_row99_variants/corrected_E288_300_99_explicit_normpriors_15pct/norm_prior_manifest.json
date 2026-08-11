@@ -1,0 +1,27 @@
+{
+  "source_data_dir": "Data/v23a_fixed_target_lowQ_row99_variants/corrected_E288_300_99",
+  "out_data_dir": "Data/v23a_fixed_target_lowQ_row99_variants/corrected_E288_300_99_explicit_normpriors_15pct",
+  "datasets": [
+    "E288_200",
+    "E288_300",
+    "E288_400",
+    "E605",
+    "E772"
+  ],
+  "priors_fraction": {
+    "E288_200": 0.15,
+    "E288_300": 0.15,
+    "E288_400": 0.15,
+    "E605": 0.15,
+    "E772": 0.15
+  },
+  "priors_percent_text": {
+    "E288_200": "15%",
+    "E288_300": "15%",
+    "E288_400": "15%",
+    "E605": "15%",
+    "E772": "15%"
+  },
+  "ptp_mode": "keep",
+  "note": "CS/error/kinematics are unchanged. Only sysNorm and optionally sysP2P are rewritten."
+}

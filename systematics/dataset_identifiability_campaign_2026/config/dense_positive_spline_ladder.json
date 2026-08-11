@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-27",
+  "candidate_id": "D020_E772",
+  "preflight_grid": [
+    {"nx": 9, "nb": 17},
+    {"nx": 17, "nb": 17},
+    {"nx": 25, "nb": 17},
+    {"nx": 17, "nb": 25},
+    {"nx": 25, "nb": 25},
+    {"nx": 33, "nb": 25},
+    {"nx": 25, "nb": 33},
+    {"nx": 33, "nb": 33}
+  ],
+  "preflight_gate": "Initial interpolant data chi2 <= 1.5 times the unconstrained reference; only passing or closest bracketing resolutions receive optimization.",
+  "full_fit_gate": "delta unpenalized chi2 <= 1, stationary gradient, positive stable transform, and independent-start Fig. 6 ambiguity below the 17.3% benchmark.",
+  "full_max_epochs": 20000,
+  "full_min_epochs": 5000,
+  "full_plateau_patience": 3000,
+  "full_lbfgs_max_iter": 15000,
+  "production_sources_modified": false
+}

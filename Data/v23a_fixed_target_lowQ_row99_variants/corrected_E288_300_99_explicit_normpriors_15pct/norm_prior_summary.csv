@@ -1,0 +1,6 @@
+dataset,n_rows,old_sysNorm_nfinite,old_sysNorm_min,old_sysNorm_median,old_sysNorm_max,new_sysNorm_fraction,new_sysNorm_percent_text,ptp_mode
+E288_200,84,84,0.0,0.0,0.0,0.15,15%,keep
+E288_300,107,107,0.0,0.0,0.0,0.15,15%,keep
+E288_400,158,158,0.0,0.0,0.0,0.15,15%,keep
+E605,93,93,0.15,0.15,0.15,0.15,15%,keep
+E772,98,98,0.0,0.0,0.0,0.15,15%,keep

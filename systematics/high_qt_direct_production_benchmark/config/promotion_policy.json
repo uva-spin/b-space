@@ -1,0 +1,42 @@
+{
+  "study": "high_qt_collider_direct_production_benchmark",
+  "production_reference": "rowidfix_stageFT_all_qmax0p20_lam0p50",
+  "candidate_region": {
+    "qT_over_Q_min_exclusive": 0.2,
+    "datasets": ["CDF_RUN_1", "CDF_RUN_2", "D0_RUN_1", "LHCb_7"]
+  },
+  "tiers": [
+    {"name": "tier1_boundary", "min_exclusive": 0.2, "max_inclusive": 0.3},
+    {"name": "tier2_high_qt", "min_exclusive": 0.3, "max_inclusive": 0.5},
+    {"name": "tier3_exceptional", "min_exclusive": 0.5, "max_inclusive": null}
+  ],
+  "external_code_gate": {
+    "codes": ["DYTurbo 1.4.2 fixed-order V+jet", "MCFM 10.3 LO Z+jet"],
+    "pdf_set": "NNPDF40_nnlo_as_01180",
+    "pdf_member": 0,
+    "symmetric_relative_difference_max": 0.05,
+    "required_row_level_coverage": true,
+    "max_relative_mc_uncertainty_each_code": 0.01
+  },
+  "scale_variation": {
+    "prescription": "correlated seven-point muR/muF variation",
+    "points": [[1.0, 1.0], [0.5, 0.5], [2.0, 2.0], [0.5, 1.0], [1.0, 0.5], [1.0, 2.0], [2.0, 1.0]],
+    "excluded_antipodal_points": [[0.5, 2.0], [2.0, 0.5]]
+  },
+  "seed_reproducibility": {
+    "dyturbo_seeds": [123456, 723451],
+    "mcfm_seeds": [0, 7919],
+    "symmetric_relative_shift_max": 0.01
+  },
+  "required_followup_gates": [
+    "observable_identity",
+    "independent_fixed_order_agreement",
+    "numerical_precision",
+    "perturbative_scale_stability",
+    "pdf_stability",
+    "matched_tail_continuity",
+    "staged_fit_impact",
+    "replica_and_bspace_stability"
+  ],
+  "policy": "No row is directly production-approved from external central-scale agreement alone."
+}

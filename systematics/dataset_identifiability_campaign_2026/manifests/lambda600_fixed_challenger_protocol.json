@@ -1,0 +1,41 @@
+{
+  "status": "locked_before_complete_candidate_evidence",
+  "purpose": "Complete one fixed lambda600 challenger and compare its final propagated Fig. 2 and Fig. 6 uncertainty with the immutable lambda1 incumbent before considering any further constraint trial.",
+  "candidate": {
+    "model": "FiLM production-objective diagnostic",
+    "reference_distance_lambda": 600.0,
+    "reference_distance_b_min_GeV_inverse": 0.1,
+    "reference_distance_b_max_GeV_inverse": 4.0,
+    "fit_quality_barrier_strength": 100.0,
+    "fit_quality_barrier_power": 2,
+    "start_seeds": [303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326],
+    "required_start_count": 24,
+    "central_requested_capacity_horizon": 300000,
+    "experimental_replica_seeds": [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050],
+    "required_experimental_replica_count": 50
+  },
+  "incumbent": {
+    "champion_id": "empirical_reference_lambda1_b0p1_2p0_full24",
+    "record": "summaries/champion_registry/empirical_reference_lambda1_b0p1_2p0_full24.json",
+    "strict_max_active_relative_full_width": {
+      "u": 0.11772613918747582,
+      "d": 0.12490071924111977
+    },
+    "status_during_challenge": "unchanged incumbent"
+  },
+  "required_order": [
+    "finish and provenance-audit all 24 candidate starts",
+    "train the selected candidate central through its full requested horizon",
+    "finish and provenance-audit all 50 candidate experimental replicas",
+    "construct the 1200-member centered-log-FNP start-by-replica ensemble",
+    "render candidate Fig. 2 and Fig. 6 plus explicit candidate-versus-incumbent comparisons",
+    "evaluate width improvement separately for u and d with the finite-ensemble allowance",
+    "promote or reject the candidate",
+    "only then decide whether another controlled trial is scientifically warranted"
+  ],
+  "completion_semantics": "Scientific stationarity or fit failures are recorded but do not truncate the requested 24-start, central, 50-replica, and final-figure evidence collection.",
+  "promotion_semantics": "The candidate must pass coverage, provenance, fit preservation, FNP stationarity, band integrity, and robust full-width improvement separately for u and d. Start-only widths cannot promote it.",
+  "comparison_caveat": "The lambda1 incumbent uses its historical training and replica protocol. Post-processing is harmonized, but the candidate also changes the reference-distance domain and fit-quality barrier, so this is a fixed incumbent replacement test rather than an assertion of fully identical training protocols.",
+  "other_constraint_authorized_before_completion": false,
+  "production_sources_modified": false
+}

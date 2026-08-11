@@ -1,0 +1,229 @@
+{
+  "status": "pinned_read_only_input_manifest",
+  "purpose": "Immutable evidence fingerprint for the post-processing-harmonized lambda1 24x50 comparator",
+  "champion_id": "empirical_reference_lambda1_b0p1_2p0_full24",
+  "file_count": 55,
+  "files": {
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/summaries/champion_registry/empirical_reference_lambda1_b0p1_2p0_full24.json": {
+      "sha256": "3ed8ae1fab22999710ee053e3bf2049a6be309120b18d460438c11d4084a8097",
+      "bytes": 5201
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/summaries/exact_baseline_fnp_median/fnp_median.csv": {
+      "sha256": "596265ecdbce156b549883d86d92799aa1902a5e5c7440cae95a9fb97505ec04",
+      "bytes": 146308
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/replicas/rowidfix_stageFT_all_qmax0p20_lam0p50_lambda3_50rep/tmd_bspace_bands_exactx_50rep/v22_tmd_replica_bspace_long.csv": {
+      "sha256": "5645c3b89327998f08da205fd64ec73393cf641e7bfc54ef85fd1805574e6018",
+      "bytes": 152851368
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/replicas/rowidfix_stageFT_all_qmax0p20_lam0p50_lambda3_50rep/tmd_bspace_bands_exactx_50rep/v22_tmd_replica_band_manifest.json": {
+      "sha256": "766cb13d0640027cad5a73c7e2c4dbd2ec928cb3296955157733256486528142",
+      "bytes": 1196
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/replicas/rowidfix_stageFT_all_qmax0p20_lam0p50_lambda3_50rep/audit_convergence_q95/lambda3_ensemble_q95_summary.json": {
+      "sha256": "07fd420ee611404433d419742879e4d3dacd24f06d2851dca561d3f14464a120",
+      "bytes": 1173
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/plots/rowidfix_stageFT_all_qmax0p20_lam0p50_central_exactx/v22_scheme_tmd_bspace_long.csv": {
+      "sha256": "e0ef0b92018ffd5cca49c1dda6339640fd4912c6f4277cb0228816ec7e9fa639",
+      "bytes": 9490807
+    },
+    "/home/dustin/work/project/bT-TMD/construct_v23a_regularized_kspace_tmd_v2.py": {
+      "sha256": "8fe59a438a3ff26394d0858634620632496ddf2c58875ee03c67fad254eff71f",
+      "bytes": 20345
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s303/fit_status.json": {
+      "sha256": "9015c085d137cb7ace1c401408c03954967753f7e6bf0f86c1a1e02c1ef363f6",
+      "bytes": 5621
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s303/fnp_grid.csv": {
+      "sha256": "114f765f1f3e7728a0c9771d3f7a1dd1b5acfa623a9b4fdcd2db5fd759ca010c",
+      "bytes": 67743
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s304/fit_status.json": {
+      "sha256": "171f3caab2e03edf0e96128adefea60beb746f26f84db635b4f0bccac3106a8d",
+      "bytes": 5628
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s304/fnp_grid.csv": {
+      "sha256": "3a63b99f09d7fb614d1b7b433823d1ff91357d39601f8c0761284b5af8f77306",
+      "bytes": 67831
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s305/fit_status.json": {
+      "sha256": "0ec8b61810e952cb1b2cb5af1c0d9791121aeafd89c76473531cf1f7c47cbc21",
+      "bytes": 5624
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s305/fnp_grid.csv": {
+      "sha256": "e5838e00f010843bfb1715f2d97c442aefa370b990c8142f766dc257d572a23c",
+      "bytes": 67825
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s306/fit_status.json": {
+      "sha256": "0ab7bd6a0303a7a060f558a5f6e371e5b37dbd2e96d11c925525b5fb4322e790",
+      "bytes": 5625
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s306/fnp_grid.csv": {
+      "sha256": "ee36eb594c24f29726dc5c21baa1c66f4b914ac7e4b86ff85fc5376253a272f7",
+      "bytes": 67835
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s307/fit_status.json": {
+      "sha256": "f96a9b1fcc03d0a08fa75fc45c9745db57a92ab88c33f5aa3eb45f92f9c86d67",
+      "bytes": 5625
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s307/fnp_grid.csv": {
+      "sha256": "65e4f48ea6b2d2caca81c3a4fb6fd75477977994c0520e03e3fb35646caa4e3c",
+      "bytes": 67768
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s308/fit_status.json": {
+      "sha256": "f260664054637d7f0f8c52fb8c00c76fb1c572294d0f4d04b7ab9987a1bbd11c",
+      "bytes": 5623
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s308/fnp_grid.csv": {
+      "sha256": "3f90e1d46d491000d0b801e745e70fcc6dcc46e2895485c388bf8a6b08f8b18b",
+      "bytes": 67771
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s309/fit_status.json": {
+      "sha256": "85d563449726d76a7184cf7e39a7462b931e545424ff0908b9a1bb48b508ff66",
+      "bytes": 5623
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s309/fnp_grid.csv": {
+      "sha256": "f0eeef865dec9c562e5070e4b3148aafb34016f4a56fef3e808a26cd0c516717",
+      "bytes": 67838
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s310/fit_status.json": {
+      "sha256": "b01bd795b1fa5f33832027d0502cb59c998a9aa4649ce55d00c241477271c9d4",
+      "bytes": 5626
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s310/fnp_grid.csv": {
+      "sha256": "284658f86a2614e23bb46af777edb849e932a3c3ce10e88a74d47ce970612fae",
+      "bytes": 67819
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s311/fit_status.json": {
+      "sha256": "b9e1d03ec24bea7ddb13ce6175a62369d1aac8d22e528c898072fbdf171b7195",
+      "bytes": 5625
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s311/fnp_grid.csv": {
+      "sha256": "e99e95813a56a27bd870d04f7da837385225db6a75fb9e3ea637c08e7076b055",
+      "bytes": 67886
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s312/fit_status.json": {
+      "sha256": "bcd25b83ae1fe025e44c6210f4e68215c472212231eb5a57d9a91a3be40b48fb",
+      "bytes": 5625
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s312/fnp_grid.csv": {
+      "sha256": "ad82c72497490eac31cdb90828256ef9a5de2c008c217198c27bca035ae7323b",
+      "bytes": 67830
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s313/fit_status.json": {
+      "sha256": "11ade8ddffa4d4406101a4e386a4861c61cd9ab00af5d9b9f8a464cae748404a",
+      "bytes": 5628
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s313/fnp_grid.csv": {
+      "sha256": "ff1ca9e40c76c3d31564729bc829cb14a45314375d221987d257deae87a17464",
+      "bytes": 67827
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s314/fit_status.json": {
+      "sha256": "f86e993ed431c06b26ce7b5bac8809eea93f70001545f9660d10d8e8065e26c4",
+      "bytes": 5624
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s314/fnp_grid.csv": {
+      "sha256": "14d3119d3fd693a4a33635c09b410e02d2a8b139ce4bad57d9425262e5f34735",
+      "bytes": 67833
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s315/fit_status.json": {
+      "sha256": "a9a33bb0b9eac15210999f875b2a231e6a2755f883b4dff881b6a237fc4e9443",
+      "bytes": 5623
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s315/fnp_grid.csv": {
+      "sha256": "ef39ab4036a94a9c285c2b8f5bee2815399f5212b62d3377e419d9a091ce36f1",
+      "bytes": 67861
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s316/fit_status.json": {
+      "sha256": "0bb5f9e20e328904d1663aa54ee324512fc3f1500c798a9bd817007c4acc4e17",
+      "bytes": 5626
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s316/fnp_grid.csv": {
+      "sha256": "5d08e24c3de735bb0223b888366d4126453a4b9a5b560b5b9b824b54a7a6f4cf",
+      "bytes": 67826
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s317/fit_status.json": {
+      "sha256": "02ca0c12b731122b67eb1868ba78c80fb96957592e39864989dcd12ab6cbb959",
+      "bytes": 5624
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s317/fnp_grid.csv": {
+      "sha256": "8988a5d0e779865c992f41c83cba642d3be1b40425d1e4a2b6172354d8ac4443",
+      "bytes": 67798
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s318/fit_status.json": {
+      "sha256": "d9d721306fa979bfa8e3f8b1a8afc8d4b8fb50e7bf0c464f8b761a76b15c6f8d",
+      "bytes": 5623
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s318/fnp_grid.csv": {
+      "sha256": "84bcd31cb735d41062a297aa3f45ffb3b6adb36b2f6cad8d472bad79651ef682",
+      "bytes": 67960
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s319/fit_status.json": {
+      "sha256": "fbf21d8b05a6c3502c4740c9c01026b3d1d0d3c579b9a61c484316e4b628e0a4",
+      "bytes": 5627
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s319/fnp_grid.csv": {
+      "sha256": "99a1b2f251f3833019417c416683606d9b6b451beeae760291fe454b18b06c57",
+      "bytes": 67767
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s320/fit_status.json": {
+      "sha256": "d59fde72696f6e87711e8fd7748fe6ae4f2f52624fd0996b73419fc2071076df",
+      "bytes": 5625
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s320/fnp_grid.csv": {
+      "sha256": "afb447f480266ccb1fe5522c2afc4ff867e329db28d3eac8b81381382f40e4ba",
+      "bytes": 67854
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s321/fit_status.json": {
+      "sha256": "0b8d2661f67e1399330099bcbdab56432721e433ae657042f8fde7e22ffc0000",
+      "bytes": 5625
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s321/fnp_grid.csv": {
+      "sha256": "c44159b602ac6db0820c0271cd7565210aeff240051800df1815f7da149d19b6",
+      "bytes": 67785
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s322/fit_status.json": {
+      "sha256": "63faf558710598f54d5032ab1c0aa14ee8a5ad5aa77d237ddc5961cbafca7349",
+      "bytes": 5624
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s322/fnp_grid.csv": {
+      "sha256": "bb7ffbd22aced7c524de2a1f7f18cc30639bfaedde9ae8123831651e859553fc",
+      "bytes": 67730
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s323/fit_status.json": {
+      "sha256": "ce06ab8c8013c781e8f6ab7e59adbd3aaa2a473ff1afb347d12b7f350d634a9f",
+      "bytes": 5621
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s323/fnp_grid.csv": {
+      "sha256": "b0140c5441e9d6d29927b8ffa7cae178ebead28a803dbf5bbd0c0a1825a7ddd1",
+      "bytes": 67796
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s324/fit_status.json": {
+      "sha256": "2d4eef771ae5d96ca5960b975d60bdad1ae4878d93c0361973a020f4f37c660f",
+      "bytes": 5627
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s324/fnp_grid.csv": {
+      "sha256": "1257deddffe21303bebd178646ae2d96abc0918fb09f9086343955b8f5293e65",
+      "bytes": 67818
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s325/fit_status.json": {
+      "sha256": "57c51e46b46dd2c447ec4d458a7c264b7ee281afd055ddf4ac8dd092d103d0ef",
+      "bytes": 5627
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s325/fnp_grid.csv": {
+      "sha256": "79e8561252bc0d626170d4cffe0fa3b0617bcca8861a494eda9a67215084c4f5",
+      "bytes": 67807
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s326/fit_status.json": {
+      "sha256": "36a34ed3a164d43580a881cca5952d0ee608723f3c3c42bbf88dc96d6dee60cb",
+      "bytes": 5623
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/exactbaseline_matched_reference_distance_b0p1_2p0_lam1e00_s326/fnp_grid.csv": {
+      "sha256": "4d723b99f22a44fcb757fe6715b55613869f39afbc067f7cdd5331c827c14969",
+      "bytes": 67792
+    }
+  },
+  "production_sources_modified": false
+}

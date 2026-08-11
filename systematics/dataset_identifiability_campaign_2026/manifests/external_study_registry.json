@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "updated": "2026-07-23",
+  "purpose": "Register relevant higher-qT and uncertainty-completeness studies that are not ordinary fixed-theory dataset candidates.",
+  "studies": [
+    {
+      "id": "D020_T1TEV_NLO24",
+      "kind": "constructed_dataset_with_correlated_theory_nuisances",
+      "base_candidate": "D020_ALL",
+      "added_rows": 24,
+      "total_rows": 353,
+      "source": "../../high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/unitary_smootherstep_v1_nlo_24row/gate_status.json",
+      "result": "frozen-state gate failed; differentiable exploratory refit was subsequently authorized",
+      "ordinary_runner_compatible": false
+    },
+    {
+      "id": "D020_T1TEV_DIFFERENTIABLE_3START",
+      "kind": "joint_fnp_and_correlated_theory_nuisance_refit",
+      "starts": 3,
+      "epoch_horizon": 20000,
+      "source": "../../high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/unitary_smootherstep_v1_differentiable_fnp_convergence_campaign/campaign_status.json",
+      "all_runs_converged": false,
+      "max_prediction_range_over_sigma": 0.08943463285534788,
+      "max_fnp_relative_range_active": 0.7822453379631042,
+      "result": "prediction-stable but functionally non-identifiable; replicas blocked"
+    },
+    {
+      "id": "D020_T1TEV_ANCHOR1000",
+      "kind": "conditional_frozen_fnp_nuisance_polish",
+      "starts": 3,
+      "source": "../../high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/unitary_smootherstep_v1_regularized_fnp_anchor1000_scipy_nuisance_polish_convergence_campaign/campaign_status.json",
+      "all_runs_conditionally_converged": true,
+      "max_fnp_relative_range_active": 0.008631769567728043,
+      "result": "conditional stability passes but joint FNP stationarity is unestablished; replicas blocked"
+    },
+    {
+      "id": "D020_ALL_FIG6_12START_COMPLETENESS",
+      "kind": "central_start_distribution_completeness_test",
+      "starts": 12,
+      "source": "../../high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/fig6_completeness_validation/summary.json",
+      "all_runs_plateaued": false,
+      "max_split_endpoint_difference_relative": 0.1059853407741564,
+      "max_long_training_median_drift_relative": 0.13348181733365416,
+      "result": "combined diagnostic band is not a complete one-sigma interval"
+    },
+    {
+      "id": "PRODUCTION_RATE_CURVATURE_LAMBDA3E5",
+      "kind": "derivative_only_smoothness_prior",
+      "source": "../../high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/production_fnp_ratecurv_lam3em5_stability_control/campaign_status.json",
+      "starts": 3,
+      "all_runs_converged": true,
+      "max_fnp_relative_range_bT_le_1": 0.012791753746569157,
+      "max_fnp_relative_range_bT_le_2": 0.2593129277229309,
+      "result": "rejected; stabilized only below bT=1 and left 26% spread through bT=2"
+    },
+    {
+      "id": "PRODUCTION_A_SLOPE_LAMBDA1E2",
+      "kind": "derivative_only_smoothness_prior",
+      "source": "../../high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/production_fnp_aslope_lam1em2_stability_control/campaign_status.json",
+      "starts": 3,
+      "all_runs_converged": false,
+      "max_fnp_relative_range_bT_le_2": 0.49802836775779724,
+      "result": "rejected; moved instability toward the matching region and failed convergence"
+    },
+    {
+      "id": "PRODUCTION_REDUCED_CONSTANT_A_TAIL",
+      "kind": "reduced_tail_architecture",
+      "source": "../../high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/production_fnp_reduced_tail_pilots/pilot_status.json",
+      "result": "rejected before multistart; both tested matching windows failed fit-quality gates"
+    },
+    {
+      "id": "PRODUCTION_GLOBAL_REDUCED_FORMS",
+      "kind": "globally_reduced_architectures",
+      "source": "../../high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/production_fnp_global_reduced_pilots/pilot_status.json",
+      "result": "rejected before multistart; tested low-dimensional global forms failed fit-quality gates"
+    },
+    {
+      "id": "PRODUCTION_C1_MATCHED_LOGF_TAIL",
+      "kind": "matched_low_dimensional_tail_architecture",
+      "source": "../../high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/production_fnp_c1logtail_decision/decision_status.json",
+      "starts": 3,
+      "result": "rejected; early matching damaged fit quality while late matching relocated rather than removed the FiLM-core degeneracy"
+    },
+    {
+      "id": "PRODUCTION_TAIL_REGULARIZATION_SCAN",
+      "kind": "smoothness_prior_family_scan",
+      "source": "../../high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/production_fnp_tail_regularization_scan/scan_status.json",
+      "result": "derivative-only tail constraints were insufficient; neither tested family was promoted"
+    },
+    {
+      "id": "PRODUCTION_FILM_CAPACITY_EXPLORATION",
+      "kind": "reduced_capacity_film_architecture_pilots",
+      "source": "../../high_qt_direct_production_benchmark/experimental_unitary_transition/outputs/fig6_complexity_*",
+      "result": "promising but incomplete; several 16--32 width FiLM variants preserved or improved the old dataset fit, but only single starts were available and none established stationarity",
+      "campaign_followup": "config/film_capacity_ladder.json"
+    }
+  ],
+  "policy": "These studies enter dataset selection evidence and the handoff, but are not pooled with fixed-theory candidates unless their correlated theory nuisance model is fitted explicitly."
+}

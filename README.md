@@ -13,6 +13,13 @@ E288_200, E288_300, E288_400, E605, E772
 
 with the corrected `E288_300:99` row, explicit normalization priors, a controlled point-to-point uncertainty sensitivity for E772/E288_400, experimental pseudo-data replicas, and a PDF-member overlay in the final TMD reconstruction.
 
+The complete source stack is included in this checkout. Start with:
+
+- [Matching and perturbative backend](docs/MATCHING.md)
+- [Reproducibility and execution guide](docs/REPRODUCIBILITY.md)
+- [Source map and publication boundary](docs/SOURCE_MAP.md)
+- [Systematics and identifiability campaign](docs/SYSTEMATICS.md)
+
 ---
 
 ## Status at a glance
@@ -180,7 +187,9 @@ PYTHONPATH=. python v23/tools/draw_v23a_tmd_dnn_node_architecture_clean2.py \
 
 ## Repository layout
 
-A typical public checkout is expected to have the following structure:
+The public checkout contains source, data, workflow entry points, audits, and
+frozen outputs. Generated fits and caches remain excluded; see
+[SOURCE_MAP.md](docs/SOURCE_MAP.md).
 
 ```text
 .
@@ -190,6 +199,10 @@ A typical public checkout is expected to have the following structure:
 ├── requirements.txt
 ├── pyproject.toml
 ├── docs/
+│   ├── MATCHING.md
+│   ├── REPRODUCIBILITY.md
+│   ├── SOURCE_MAP.md
+│   ├── SYSTEMATICS.md
 │   ├── fixed_target_dy_tmd_note.pdf
 │   └── fixed_target_dy_tmd_note.tex
 ├── figures/
@@ -198,29 +211,31 @@ A typical public checkout is expected to have the following structure:
 │   └── v23a_tmd_dnn_node_architecture.png
 ├── v22/
 │   ├── backends/
-│   │   └── bt_internal_css_backend_v22_full.py
 │   ├── src/
+│   ├── tests/
 │   └── tools/
 ├── v23/
-│   ├── tools/
-│   │   ├── plot_v23a_paper_bspace_d_tmd.py
-│   │   ├── plot_v23a_traditional_kspace_tmd.py
-│   │   ├── construct_v23a_regularized_kspace_tmd.py
-│   │   ├── compare_v23a_regularized_kspace_modes.py
-│   │   ├── make_v23a_pdf_overlay_plan_from_runs.py
-│   │   ├── construct_v23a_data_pdf_bspace_tmd_bands_v2.py
-│   │   └── draw_v23a_tmd_dnn_node_architecture_clean2.py
+│   ├── backends/
+│   ├── experimental/
+│   ├── freeze/
+│   └── tools/
+├── v21_tail_release_amp0p019_candidate/
+│   ├── train_bt_dnn_v21_replica_stable.py
+│   └── train_bt_dnn_v21_smoothedA_tail.py
+├── systematics/
+│   ├── dataset_identifiability_campaign_2026/scripts/
+│   ├── finite_y_tail_benchmark/
+│   └── high_qt_direct_production_benchmark/
 │   └── freeze/
 │       ├── v23a_lambda3_normpriors15_p2p5_E772_E288400_50rep_DYonly_bspace_sensitivity/
 │       └── v23a_lambda3_normpriors15_p2p5_E772_E288400_50rep_DYonly_kspace_regularized_expPDF_overlay/
 ├── Data/
-│   └── README.md
-├── outputs/
-│   └── README.md
-├── replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/
-│   └── README.md
-├── replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/
-│   └── README.md
+│   ├── E288_200.csv
+│   ├── E288_300.csv
+│   ├── E288_400.csv
+│   ├── E605.csv
+│   ├── E772.csv
+│   └── v23a_fixed_target_lowQ_row99_variants/
 └── production/
     └── lambda1_empirical_reference_full96x50/
         ├── PRODUCTION_MANIFEST.json
@@ -244,6 +259,19 @@ pip install -r requirements.txt
 ```
 
 Some workflows require LHAPDF and the `NNPDF40_nnlo_as_01180` set.  If the full artifact bundle is present, you can regenerate the standard plots without retraining.
+
+For the complete source-to-result sequence, follow
+[docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md). For the perturbative
+matching details, follow [docs/MATCHING.md](docs/MATCHING.md).
+
+Run the source-level checks before launching a fit:
+
+```bash
+python -m pytest -q v22/tests/test_conventions.py
+python v22/tests/run_css2_ope_nlo_smoke.py
+python v22/tests/run_dy_hard_nlo_smoke.py
+python v22/tests/run_dy_w_nlo_reference_smoke.py
+```
 
 Generate the standard \(b_T\)-space paper figure:
 

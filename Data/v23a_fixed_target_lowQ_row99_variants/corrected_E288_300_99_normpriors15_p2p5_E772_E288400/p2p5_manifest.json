@@ -1,0 +1,9 @@
+{
+  "source": "Data/v23a_fixed_target_lowQ_row99_variants/corrected_E288_300_99_explicit_normpriors_15pct",
+  "out": "Data/v23a_fixed_target_lowQ_row99_variants/corrected_E288_300_99_normpriors15_p2p5_E772_E288400",
+  "patched_datasets": {
+    "E772": "5.00%",
+    "E288_400": "5.00%"
+  },
+  "note": "Sensitivity only: adds 5% point-to-point systematic to E772 and E288_400. CS/error/kinematics/sysNorm unchanged."
+}

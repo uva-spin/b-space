@@ -1,0 +1,78 @@
+{
+  "schema_version": 2,
+  "updated": "2026-08-06T05:10:13-04:00",
+  "status": "lambda600_fixed_challenger_in_progress",
+  "active_stage": "exact_24_start_long_horizon_verification_and_provenance_audit",
+  "authoritative_protocol": {
+    "path": "manifests/lambda600_fixed_challenger_protocol.json",
+    "sha256": "cfadc53c2d5d277fb711715606977c632e9792852ea5669e8278f7b0ce4ae371",
+    "locked": true
+  },
+  "incumbent": {
+    "champion_id": "empirical_reference_lambda1_b0p1_2p0_full24",
+    "reference_distance_lambda": 1.0,
+    "status": "unchanged_until_the_complete_challenger_verdict",
+    "strict_fig6_max_active_relative_full_width": {
+      "u": 0.11772613918747582,
+      "d": 0.12490071924111977
+    }
+  },
+  "fixed_challenger": {
+    "model": "FiLM production-objective diagnostic",
+    "reference_distance_lambda": 600.0,
+    "reference_distance_b_min_GeV_inverse": 0.1,
+    "reference_distance_b_max_GeV_inverse": 4.0,
+    "fit_quality_barrier_strength": 100.0,
+    "fit_quality_barrier_power": 2,
+    "role": "one fixed incumbent-replacement challenger, not a lambda scan or minimum-prior claim"
+  },
+  "required_execution_order": [
+    "finish and provenance-audit exactly 24 long-horizon starts",
+    "select and train one candidate central through 300000 requested capacity",
+    "finish and provenance-audit exactly 50 experimental replicas",
+    "construct the 1200-member centered-log-FNP start-by-replica product ensemble",
+    "complete the stratified nested-interaction validation and directional convergence envelopes",
+    "render final candidate Fig. 2 and Fig. 6 plus direct candidate-versus-incumbent comparisons",
+    "promote or reject lambda600 from the complete final result",
+    "only after that verdict decide the next controlled study"
+  ],
+  "progress_snapshot": {
+    "observed_at": "2026-08-06T04:53:56-04:00",
+    "source": "summaries/replica_robust_reference_full24/summary.json",
+    "source_sha256": "3cce2c37b8f288a0440d30ad05b7654ec471951d86f1726fd268ba4648c1d50c",
+    "source_status": "in_progress",
+    "source_reported_completed_start_members": 11,
+    "required_start_members": 24,
+    "source_reported_failed_seeds_so_far": [
+      306,
+      310
+    ],
+    "interpretation": "timestamped operational progress only; it is not a lambda600-versus-lambda1 result and cannot change the incumbent"
+  },
+  "live_progress_observer": {
+    "path": "summaries/lambda600_live_progress/summary.json",
+    "refresh": "read-only observer scheduled every five minutes during the full24 stage",
+    "decision_authority": false,
+    "required_flags": {
+      "provisional": true,
+      "promotable": false
+    },
+    "authoritative_decision_source": "the terminal, audited full24 and final lambda600 evidence graph; never this live observer"
+  },
+  "authorization": {
+    "other_lambda_prior_or_architecture_before_lambda600_verdict": false,
+    "production_modification_authorized": false
+  },
+  "final_uncertainty_semantics": {
+    "central_line": "audited trained 300000-capacity central and its paired transform, not an ensemble median",
+    "band": "24-by-50 product distribution plus directional convergence and nested-interaction envelopes",
+    "confidence_level_claim": null,
+    "note": "the final directional envelope is not labeled one sigma or 68 percent"
+  },
+  "post_verdict_scope": {
+    "campaign_goal_complete_at_lambda600_verdict": false,
+    "next": "the broader dataset-identifiability and minimum-required-constraint objective continues after promotion or rejection; lambda600 becomes the new incumbent only if the locked complete-result gates pass"
+  },
+  "frozen_sources_modified": false,
+  "production_sources_modified": false
+}

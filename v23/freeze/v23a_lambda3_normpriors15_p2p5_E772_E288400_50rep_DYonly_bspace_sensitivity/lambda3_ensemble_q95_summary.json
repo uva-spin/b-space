@@ -1,0 +1,29 @@
+{
+  "n_replicas": 50,
+  "chi2_median": 1.858603165144339,
+  "chi2_q95": 2.1310145686109365,
+  "chi2_max": 2.1866746953618357,
+  "norm_pull_q95": 2.707433342933655,
+  "norm_pull_max": 3.017364978790283,
+  "fit_distribution_pass": true,
+  "norm_distribution_pass": true,
+  "band_technical_pass": true,
+  "band_uncertainty_useful_pass": true,
+  "max_relative_68_halfwidth_active": 0.033509424782098216,
+  "max_central_vs_replica_median_rel_p90_active": 0.012321568672877726,
+  "center_split_p90_q95": 0.01784218873456105,
+  "center_split_p90_max": 0.017874529233980647,
+  "width_split_p90_q95": 0.45151187934870735,
+  "width_split_p90_max": 0.4536583330696729,
+  "split_half_distribution_pass": true,
+  "V22_LAMBDA3_BSPACE_ENSEMBLE_Q95_PASS": true,
+  "thresholds": {
+    "min_replicas": 50,
+    "chi2_q95_max": 2.2,
+    "norm_q95_max": 4.0,
+    "center_split_p90_q95_max": 0.08,
+    "width_split_p90_q95_max": 0.8,
+    "width_split_p90_max_info": 0.9
+  },
+  "interpretation": "This is a distribution-based ensemble gate. Max chi2 is informational; q95 is the fit criterion. If this fails only by split-width q95, append more replicas rather than changing physics settings."
+}

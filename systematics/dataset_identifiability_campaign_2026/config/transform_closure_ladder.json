@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-25",
+  "status": "preregistered_before_transform_closure_results",
+  "scope": "isolated D020_E772 central pilots; never production",
+  "base_regularization": {
+    "lambda_logf_arc_length": 0.0001,
+    "lambda_damping_rate_curvature": 0.001,
+    "b_min_GeV_inverse": 0.1,
+    "b_max_GeV_inverse": 3.0,
+    "ratecurv_b_min_GeV_inverse": 0.25,
+    "ratecurv_b_max_GeV_inverse": 4.0
+  },
+  "closure_definition": {
+    "kind": "one_sided_logF_hinge",
+    "b_min_GeV_inverse": 6.0,
+    "interpretation": "No tail form or preferred amplitude is imposed below the threshold; the penalty acts only when the sampled finite-b interval has not numerically closed."
+  },
+  "calibration_threshold": 0.0001,
+  "lambda_ladder": [0.0001, 0.0003, 0.001, 0.003],
+  "threshold_robustness_values": [0.001, 0.0001, 0.00001],
+  "explicit_coordinate_robustness": {
+    "kind": "positive_logx_knot_amplitude_times_C2_remote_tail_window",
+    "b_windows_GeV_inverse": [
+      [4.0, 8.0],
+      [4.5, 8.0],
+      [5.0, 8.0],
+      [5.5, 8.0],
+      [6.0, 8.0],
+      [6.5, 8.0]
+    ],
+    "initial_pilot_window_GeV_inverse": [6.0, 8.0],
+    "initial_lambda": 0.001,
+    "interpretation": "The C2 attenuation coordinate is exactly zero below b_start and constant after b_end, so it supplies a well-conditioned numerical-closure direction without modifying the fitted core or the base asymptotic rate."
+  },
+  "selection": "Use the weakest lambda satisfying the declared Fourier gate, then require stability across adjacent closure thresholds before any multistart promotion.",
+  "production_sources_modified": false
+}

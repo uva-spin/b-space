@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-24",
+  "purpose": "Combine amplitude selection from the weakest viable log-FNP arc-length prior with Gaussian-like tail-geometry control from damping-rate curvature.",
+  "candidate_ids": [
+    "D020_E772",
+    "D025_E772",
+    "D025_ALL"
+  ],
+  "fixed_lambda_loglength": 0.0001,
+  "lambda_ratecurv_ladder": [
+    1e-06,
+    3e-06,
+    1e-05,
+    3e-05,
+    0.0001,
+    0.0003,
+    0.001
+  ],
+  "conditional_upper_extension_rule": "Run 3e-4 and then 1e-3 only if the preceding strength fails the transform gate while its unpenalized delta chi2 remains below 1, thereby bracketing the weakest possible gate crossing without post-hoc optimization of the final band.",
+  "b_min_GeV_inverse": 0.1,
+  "b_max_GeV_inverse": 8.0,
+  "selection_rule": "Choose the weakest rate-curvature addition that preserves the frozen fit-quality gate, passes multi-start and continuation gates, and removes finite-b transform sensitivity and negative active-region oscillations.",
+  "interpretation": "Arc length primarily selects damping magnitude; damping-rate curvature suppresses super-Gaussian or wiggly geometry without fixing an endpoint amplitude.",
+  "production_sources_modified": false
+}

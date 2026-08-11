@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "project": "/home/dustin/work/project/bT-TMD",
+  "systematics": "/home/dustin/work/project/bT-TMD/systematics",
+  "files": {
+    "/home/dustin/work/project/bT-TMD/outputs/v23a_tevatron_plus_lhcb7_fidacc_lowqt010_central_s303/predictions.csv": {
+      "sha256": "4e95a308840fed95b013f02e2397d56567647178ec4e2ceb63110bab46513e72",
+      "bytes": 135862
+    },
+    "/home/dustin/work/project/bT-TMD/outputs/v23a_tevatron_plus_lhcb7_fidacc_lowqt010_central_s303/metrics.json": {
+      "sha256": "a066ad335d71d17bd69dcd9122e442460a946e769195eb6c8daef8ad18d64aac",
+      "bytes": 9815
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_all_qmax0p15_lam0p50_central_s303/predictions.csv": {
+      "sha256": "ea596b292400a0b0381b7bf02e2b19ca4f4009633ef2a17413e4024bb8b7bc55",
+      "bytes": 234778
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_all_qmax0p15_lam0p50_central_s303/metrics.json": {
+      "sha256": "b673d593b6a8ce5836ba9417138b8bf465024c45cd9968b7a1add3d1cf9c2cb9",
+      "bytes": 10109
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E772_qmax0p20_lam0p50_central_s303/predictions.csv": {
+      "sha256": "9db098b5d1def74da4933951e11df61fd82614744b99a84caf26cd7adbaa1686",
+      "bytes": 242737
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E772_qmax0p20_lam0p50_central_s303/metrics.json": {
+      "sha256": "90892588d67bd8d6ef6dd1de3e617a37640b1b00556e2fcfdc8b14afc9fd8a2e",
+      "bytes": 10108
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E605_qmax0p20_lam0p50_central_s303/predictions.csv": {
+      "sha256": "760429529dc33af8c081cf9dc54d87c51bcaebff0bbcf1c7bb7bf47e71050de8",
+      "bytes": 246299
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E605_qmax0p20_lam0p50_central_s303/metrics.json": {
+      "sha256": "827be2c749a477623ddbb41648d65ee4dc7e01bd0b710cbd96f620fbe6694bd5",
+      "bytes": 10098
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E605E772_qmax0p20_lam0p50_central_s303/predictions.csv": {
+      "sha256": "3442efa99c9e80da3654eb5d8c51c977f0516916e393c8b775ff00ace1988065",
+      "bytes": 255320
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E605E772_qmax0p20_lam0p50_central_s303/metrics.json": {
+      "sha256": "6f48452c65a39a650d84c647241e739349eae1b458a1a9fb9c8d554b23806c47",
+      "bytes": 10119
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E288_qmax0p20_lam0p50_central_s303/predictions.csv": {
+      "sha256": "a63b6d38b5eb7f2b9dc393b74aba468d8b3de53dea321934c19f08b0338340bd",
+      "bytes": 261283
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E288_qmax0p20_lam0p50_central_s303/metrics.json": {
+      "sha256": "142aca5799fd6a24185bbd210226a37b8833dd922992d72e86ae1b48f98a3f54",
+      "bytes": 10115
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_all_qmax0p20_lam0p50_central_s303/predictions.csv": {
+      "sha256": "945e713a8a3ac6445576a63acb31708a59bf86c5260be4bc46a1fe4133df6ef6",
+      "bytes": 280279
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_all_qmax0p20_lam0p50_central_s303/metrics.json": {
+      "sha256": "a95a53cfa776a5628f5076f08fcbe5320dc7f1a08d9d9c243482ab3ccb5b6864",
+      "bytes": 10111
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E772_qmax0p25_lam0p50_central_s303/predictions.csv": {
+      "sha256": "8142d3933c942e73b32d9cc01e3aa143bbcabb122be9e152dd8242f32ab73dbf",
+      "bytes": 298526
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E772_qmax0p25_lam0p50_central_s303/metrics.json": {
+      "sha256": "3af909f67f5391d91da0c0e8f9af18300bf78de49e22a9cea87f7734d1d3c061",
+      "bytes": 10119
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E605_qmax0p25_lam0p50_central_s303/predictions.csv": {
+      "sha256": "c67e6c96c9dc0cc00d332e22efc2fa97bce0efcdefbd16ba9ad45ec5d17dbb89",
+      "bytes": 300471
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E605_qmax0p25_lam0p50_central_s303/metrics.json": {
+      "sha256": "cc0dc9ffa1c49aab1c4c2e3b846023127c970535c050da79500e8c9ab74ac691",
+      "bytes": 10118
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E288_qmax0p25_lam0p50_central_s303/predictions.csv": {
+      "sha256": "a6bc34ee9cdf62a09ea0bc036a22ee940f3f81fc77f5ea21f84acd63a9acf5b8",
+      "bytes": 313736
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_E288_qmax0p25_lam0p50_central_s303/metrics.json": {
+      "sha256": "20dc4b2a0a638c2b4c2d97bbfeeb19979d403cda05672dcb5b008232a4e9e4b0",
+      "bytes": 10110
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_all_qmax0p25_lam0p50_central_s303/predictions.csv": {
+      "sha256": "4ae4a234f36dec378b2bf74c3b12afb9b934a40ee8542b290645a240020a840e",
+      "bytes": 328521
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_all_qmax0p25_lam0p50_central_s303/metrics.json": {
+      "sha256": "8d135e8e80270d0d0193f8b70e2755bc781b303edcb841dfa0b1cc73c457604d",
+      "bytes": 10116
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/high_qt_direct_production_benchmark/README.md": {
+      "sha256": "52c8c353986e0512a239d092832ee5a2d956c88c78b0eea7c5b0c5b6e47aa434",
+      "bytes": 6118
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/high_qt_direct_production_benchmark/config/promotion_policy.json": {
+      "sha256": "0620d1cadd9dbcc9e541c34b5b0cff9612c3b0814e804cae61fa30df43e72620",
+      "bytes": 1579
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/high_qt_direct_production_benchmark/summaries/high_qt_candidate_inventory.csv": {
+      "sha256": "3590126616179334946939844d32be61d89cd0fc09f100999ae42e7582dd5d7e",
+      "bytes": 17492
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/finite_y_tail_benchmark/summaries/tail_benchmark_row_gate.csv": {
+      "sha256": "fb29af7f2e2ecdd8b4cda18f5f0a6d0d9f60bb6551ff1026ae350f76e53cb622",
+      "bytes": 45290
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/production_candidate_v23a_collins_q020_tailbench/PRODUCTION_CANDIDATE_MANIFEST.json": {
+      "sha256": "a4ca7baa808b59c6c41b9d5c0d6de28f18ee728654e3be5c4cd65c49c49497c4",
+      "bytes": 2543
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_all_qmax0p20_lam0p50_central_s303/model_state.pt": {
+      "sha256": "79e565cbd1b06efdbba1cdf318b76e0fe7fd162827e1c7fb4ee5fe7e7be1a53d",
+      "bytes": 324960
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_all_qmax0p20_lam0p50_central_s303/dataset_norms.csv": {
+      "sha256": "ff19361b13c73dd7919f290a3279bc576b59560a20345a44b82b51434c6a50d7",
+      "bytes": 423
+    },
+    "/home/dustin/work/project/bT-TMD/outputs/v23a_tevatron_plus_lhcb7_fidacc_merged_cache/backend_cache/wpert_v23a_tevatron_plus_lhcb7_fidacc_b160.csv": {
+      "sha256": "b329285c621beda814e5c29b20c6f11f1a807b710bc930e4509f8fa7d6c1aca2",
+      "bytes": 19315902
+    },
+    "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/plots/rowidfix_stageFT_all_qmax0p20_lam0p50_central_exactx/v22_scheme_tmd_bspace_long.csv": {
+      "sha256": "e0ef0b92018ffd5cca49c1dda6339640fd4912c6f4277cb0228816ec7e9fa639",
+      "bytes": 9490807
+    },
+    "/home/dustin/work/project/bT-TMD/construct_v23a_regularized_kspace_tmd_v2.py": {
+      "sha256": "8fe59a438a3ff26394d0858634620632496ddf2c58875ee03c67fad254eff71f",
+      "bytes": 20345
+    }
+  }
+}

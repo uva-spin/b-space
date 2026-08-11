@@ -1,5 +1,10 @@
 numpy
 scipy
 pandas
+python-dateutil
+pytz
 matplotlib
+pillow
+pyparsing
 torch
+pytest

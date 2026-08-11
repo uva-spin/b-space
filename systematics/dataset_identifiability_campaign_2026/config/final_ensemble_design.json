@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-24",
+  "central_nonuniqueness_ensemble": {
+    "minimum_starts": 12,
+    "initialization_distribution": "independent torch seeds with Gaussian parameter perturbations at 1% of each selected-central parameter RMS scale",
+    "data": "unchanged accepted central targets",
+    "purpose": "measure residual optimization/start dependence under the selected dataset, architecture, and prior",
+    "completion": "increase starts until bT- and kT-space q16/q84 endpoints pass the preregistered bootstrap and split-half 2% stability gates"
+  },
+  "joint_full_uncertainty_ensemble": {
+    "construction": "one independently initialized converged fit for each independently generated experimental pseudo-data replica",
+    "experimental_sampling": "dataset-correlated normalization draw plus rowwise uncorrelated Gaussian draw, using the accepted covariance decomposition recorded by the isolated runner",
+    "initialization_sampling": "independent fit seed and 1% Gaussian parameter perturbation for every pseudo-data replica",
+    "initial_batch_size": 24,
+    "batch_increment": 24,
+    "minimum_members_before_final_test": 48,
+    "maximum_planned_members_without_reassessment": 192,
+    "completion": "append batches until bT- and kT-space q16/q84 endpoints pass the preregistered bootstrap and split-half 2% stability gates",
+    "reported_interval": "q16 to q84 of the converged joint procedural ensemble",
+    "interpretation": "68% full procedural interval including experimental propagation and residual randomized-start variation; not a Gaussian quadrature construction"
+  },
+  "required_component_outputs": [
+    "central-data start-only distribution",
+    "experimental-plus-randomized-start joint distribution",
+    "bT-space endpoint stability",
+    "kT-space endpoint stability",
+    "finite-b transform robustness"
+  ],
+  "selection_independence": "dataset, architecture, and prior strength must pass central gates before any final-band width is inspected",
+  "production_sources_modified": false
+}

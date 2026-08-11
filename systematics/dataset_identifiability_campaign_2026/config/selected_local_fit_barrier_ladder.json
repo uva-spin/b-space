@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "prospective_isolated_barrier_ladder",
+  "candidate": {
+    "lambda_fnp_logcurv": 5e-5,
+    "lambda_fnp_f_slope": 0.004,
+    "lambda_fnp_x_slope": 0.0003,
+    "lambda_fnp_transform_closure": 0.001,
+    "closure_tail_b_start": 5.5,
+    "closure_tail_b_end": 8.0
+  },
+  "source_basins": [304, 312, 313],
+  "source_requirement": "independent data-fit endpoint has unpenalized total chi2 <= 119.8021",
+  "fit_quality_ceiling_total_chi2": 119.8021,
+  "barrier": {
+    "definition": "mu * relu(unpenalized_total_chi2 - ceiling)^2",
+    "power": 2,
+    "strengths": [1.0, 10.0, 100.0],
+    "adaptive_rule": "Run strengths in ascending order and stop at the first strength for which all three final endpoints satisfy the fit ceiling."
+  },
+  "primary_measure": "cross-start FNP distribution at fixed x and bT",
+  "interpretation": "Fit quality is an eligibility constraint; the barrier is not itself an FNP-stability metric.",
+  "production_sources_modified": false
+}

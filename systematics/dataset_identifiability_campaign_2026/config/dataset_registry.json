@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-23",
+  "candidates": [
+    {
+      "id": "D010",
+      "label": "historical strict core",
+      "central_output": "../../outputs/v23a_tevatron_plus_lhcb7_fidacc_lowqt010_central_s303",
+      "expected_rows": 180,
+      "theory_model": "strict_low_qt"
+    },
+    {
+      "id": "D015",
+      "label": "all applicable datasets through qT/Q=0.15",
+      "central_output": "../collins_factorization_validity/outputs/rowidfix_stageFT_all_qmax0p15_lam0p50_central_s303",
+      "expected_rows": 278,
+      "theory_model": "collins_envelope_lambda0p50"
+    },
+    {
+      "id": "D020_E772",
+      "label": "E772 extension through qT/Q=0.20",
+      "central_output": "../collins_factorization_validity/outputs/rowidfix_stageFT_E772_qmax0p20_lam0p50_central_s303",
+      "expected_rows": 287,
+      "theory_model": "collins_envelope_lambda0p50"
+    },
+    {
+      "id": "D020_E605",
+      "label": "E605 extension through qT/Q=0.20",
+      "central_output": "../collins_factorization_validity/outputs/rowidfix_stageFT_E605_qmax0p20_lam0p50_central_s303",
+      "expected_rows": 291,
+      "theory_model": "collins_envelope_lambda0p50"
+    },
+    {
+      "id": "D020_E605E772",
+      "label": "E605 and E772 extensions through qT/Q=0.20",
+      "central_output": "../collins_factorization_validity/outputs/rowidfix_stageFT_E605E772_qmax0p20_lam0p50_central_s303",
+      "expected_rows": 300,
+      "theory_model": "collins_envelope_lambda0p50"
+    },
+    {
+      "id": "D020_E288",
+      "label": "E288 extensions through qT/Q=0.20",
+      "central_output": "../collins_factorization_validity/outputs/rowidfix_stageFT_E288_qmax0p20_lam0p50_central_s303",
+      "expected_rows": 307,
+      "theory_model": "collins_envelope_lambda0p50"
+    },
+    {
+      "id": "D020_ALL",
+      "label": "all applicable datasets through qT/Q=0.20",
+      "central_output": "../collins_factorization_validity/outputs/rowidfix_stageFT_all_qmax0p20_lam0p50_central_s303",
+      "expected_rows": 329,
+      "theory_model": "collins_envelope_lambda0p50"
+    },
+    {
+      "id": "D025_E772",
+      "label": "E772 extension toward qT/Q=0.25",
+      "central_output": "../collins_factorization_validity/outputs/rowidfix_stageFT_E772_qmax0p25_lam0p50_central_s303",
+      "expected_rows": 349,
+      "theory_model": "collins_envelope_lambda0p50"
+    },
+    {
+      "id": "D025_E605",
+      "label": "E605 extension toward qT/Q=0.25",
+      "central_output": "../collins_factorization_validity/outputs/rowidfix_stageFT_E605_qmax0p25_lam0p50_central_s303",
+      "expected_rows": 351,
+      "theory_model": "collins_envelope_lambda0p50"
+    },
+    {
+      "id": "D025_E288",
+      "label": "E288 extensions toward qT/Q=0.25",
+      "central_output": "../collins_factorization_validity/outputs/rowidfix_stageFT_E288_qmax0p25_lam0p50_central_s303",
+      "expected_rows": 364,
+      "theory_model": "collins_envelope_lambda0p50"
+    },
+    {
+      "id": "D025_ALL",
+      "label": "all applicable datasets through qT/Q=0.25",
+      "central_output": "../collins_factorization_validity/outputs/rowidfix_stageFT_all_qmax0p25_lam0p50_central_s303",
+      "expected_rows": 380,
+      "theory_model": "collins_envelope_lambda0p50"
+    },
+    {
+      "id": "D020_T1TEV",
+      "label": "D020_ALL plus 24 Tier-1 Tevatron transition rows",
+      "central_output": null,
+      "expected_rows": 353,
+      "theory_model": "unitary_transition_with_endpoint_separated_matching_and_scale_nuisances",
+      "maturity": "exploratory_kernels_available"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-29",
+  "status": "prospective_isolated_core_only_smoothness_test",
+  "purpose": "Measure F_NP identifiability without confounding the fitted core with a remote transform-closure coordinate.",
+  "candidate_id": "D020_E772",
+  "source_basins": [304, 312, 313],
+  "regularization": {
+    "lambda_fnp_logcurv": 5e-5,
+    "lambda_fnp_f_slope": 0.004,
+    "lambda_fnp_x_slope": 0.0003,
+    "b_min": 0.1,
+    "b_max": 3.0,
+    "remote_transform_closure": false
+  },
+  "optimization": {
+    "max_epochs": 20000,
+    "min_epochs": 5000,
+    "plateau_patience": 3000,
+    "learning_rate": 1e-5,
+    "lbfgs_max_iter": 15000,
+    "float64": true
+  },
+  "gates": {
+    "fit_quality_ceiling_total_chi2": 119.8021,
+    "primary_measure": "cross-start F_NP distribution",
+    "reported_region": "x=0.1 and bT<=2 GeV^-1 with median F_NP>0.05",
+    "initial_start_count": 3,
+    "extension_rule": "Extend to at least 12 independent basins only if the three-start test preserves fit quality and materially improves F_NP stability."
+  },
+  "interpretation": "Transform closure and Fourier-tail handling are downstream numerical questions and are deliberately absent from this DNN-core identifiability test.",
+  "production_sources_modified": false
+}

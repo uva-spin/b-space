@@ -1,0 +1,53 @@
+{
+  "created_utc": "2026-07-22T02:49:25.315830+00:00",
+  "host": "erdos",
+  "platform": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+  "campaign": "high_qt_direct_production_benchmark",
+  "files": {
+    "dyturbo_executable": {
+      "path": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+      "sha256": "01bdca152d16a87472e7528296137c486a5410240a5b5036198a2d531363d5bb"
+    },
+    "mcfm_executable": {
+      "path": "/home/dustin/work/MCFM-10.3/Bin/mcfm",
+      "sha256": "1d862e6c32b4ba32dc17d84aeb43e0993df3d3fb91d8a1d832082628a504cf6c"
+    },
+    "python": {
+      "path": "/home/dustin/miniforge3/envs/pdf-fit/bin/python3.11",
+      "sha256": "262f08cf3c82aeb367e1658506a5175b416412eab808b7e7e4ddada1bbe515aa"
+    },
+    "source_gate": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/finite_y_tail_benchmark/summaries/tail_benchmark_row_gate.csv",
+      "sha256": "fb29af7f2e2ecdd8b4cda18f5f0a6d0d9f60bb6551ff1026ae350f76e53cb622"
+    },
+    "policy": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/high_qt_direct_production_benchmark/config/promotion_policy.json",
+      "sha256": "0620d1cadd9dbcc9e541c34b5b0cff9612c3b0814e804cae61fa30df43e72620"
+    },
+    "tevatron_dyturbo_runner": {
+      "path": "/home/dustin/work/project/bT-TMD/v23/tools/run_tevatron_dyturbo_benchmark.py",
+      "sha256": "08a9696afdcd2303d9d034bdbb4d1a6e953e15e6acfeac8c794051bfb874cc65"
+    },
+    "tevatron_mcfm_runner": {
+      "path": "/home/dustin/work/project/bT-TMD/v23/tools/run_tevatron_mcfm_benchmark.py",
+      "sha256": "4fbe206daa462b060721fd74c0b54095b98139e17b775cf242fc6f3a4625bd2a"
+    },
+    "lhcb_dyturbo_runner": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/finite_y_tail_benchmark/scripts/run_lhcb7_dyturbo_benchmark.py",
+      "sha256": "1f85e3b77d68feafcfa35834eb40df19696442d0e3e6ce84fc332c7f083b7e80"
+    },
+    "lhcb_mcfm_runner": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/finite_y_tail_benchmark/scripts/run_lhcb7_mcfm_benchmark.py",
+      "sha256": "e1da7058c351946b70b8b87fd327bdb17d40b7455f591578e73a4d48832025f7"
+    }
+  },
+  "pdf": {
+    "set": "NNPDF40_nnlo_as_01180",
+    "member": 0,
+    "mcfm_pdf_matches": [
+      "/home/dustin/work/MCFM-10.3/Bin/PDFs/NNPDF40_nnlo_as_01180"
+    ]
+  },
+  "git": "workspace is not a Git worktree",
+  "cpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           48 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  24\nOn-line CPU(s) list:                     0-23\nVendor ID:                               AuthenticAMD\nModel name:                              AMD Ryzen 9 7900X 12-Core Processor\nCPU family:                              25\nModel:                                   97\nThread(s) per core:                      2\nCore(s) per socket:                      12\nSocket(s):                               1\nStepping:                                2\nFrequency boost:                         enabled\nCPU(s) scaling MHz:                      56%\nCPU max MHz:                             5737.9858\nCPU min MHz:                             414.7950\nBogoMIPS:                                9399.98\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpuid_fault cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid overflow_recov succor smca fsrm flush_l1d amd_lbr_pmc_freeze\nVirtualization:                          AMD-V\nL1d cache:                               384 KiB (12 instances)\nL1i cache:                               384 KiB (12 instances)\nL2 cache:                                12 MiB (12 instances)\nL3 cache:                                64 MiB (2 instances)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-23\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Mitigation; Safe RET\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; STIBP always-on; PBRSB-eIBRS Not affected; BHI Not affected\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Mitigation; Clear CPU buffers\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Mitigation; IBPB before exit to userspace\n"
+}

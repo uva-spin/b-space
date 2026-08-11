@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-24",
+  "purpose": "Test whether reduced FiLM capacity supplies the minimum non-physics identifiability constraint without imposing a fixed tail form.",
+  "candidate_ids": [
+    "D020_E772",
+    "D025_E772",
+    "D025_ALL"
+  ],
+  "architectures_ordered_small_to_large": [
+    {
+      "id": "w16_c12_b2",
+      "np_width": 16,
+      "np_cond_width": 12,
+      "np_blocks": 2
+    },
+    {
+      "id": "w20_c16_b2",
+      "np_width": 20,
+      "np_cond_width": 16,
+      "np_blocks": 2
+    },
+    {
+      "id": "w24_c16_b2",
+      "np_width": 24,
+      "np_cond_width": 16,
+      "np_blocks": 2
+    },
+    {
+      "id": "w32_c24_b2",
+      "np_width": 32,
+      "np_cond_width": 24,
+      "np_blocks": 2
+    },
+    {
+      "id": "w32_c24_b3",
+      "np_width": 32,
+      "np_cond_width": 24,
+      "np_blocks": 3,
+      "conditional": true
+    },
+    {
+      "id": "w40_c28_b3",
+      "np_width": 40,
+      "np_cond_width": 28,
+      "np_blocks": 3,
+      "conditional": true
+    },
+    {
+      "id": "w48_c32_b2",
+      "np_width": 48,
+      "np_cond_width": 32,
+      "np_blocks": 2,
+      "conditional": true
+    }
+  ],
+  "initialization": {
+    "distill_steps": 5000,
+    "prediction_distill_steps": 5000,
+    "target": "read-only accepted FNP for the selected dataset candidate",
+    "b_weight_scale_GeV_inverse": 2.0,
+    "b_weight_power": 4.0,
+    "dense_logx_nodes": 64,
+    "metric": "weighted mean squared log-FNP difference on 64 dense log-x nodes plus diagnostic knots, with b weight 1/(1+(b/2)^4), preventing sparse-x interpolation and the unconstrained extreme tail from overwhelming the data-sensitive region",
+    "interpretation": "Function distillation is followed by selected-source prediction distillation in the experimental-sigma metric. Both are initialization aids only; the subsequent objective contains no anchor to the accepted FNP or predictions."
+  },
+  "conditional_extension_rule": "If no initial two-block architecture passes fit quality, run w32_c24_b3 and w40_c28_b3 to isolate depth from width, and w48_c32_b2 to isolate depth at production width. Do not run the extension if an initial architecture already passes all central gates.",
+  "pilot_rule": "Find the smallest capacity preserving the frozen unpenalized fit-quality gate; then apply independent starts and, if needed, the weakest viable soft smoothness prior.",
+  "production_sources_modified": false
+}

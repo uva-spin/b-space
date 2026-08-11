@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "status": "phase_A_convention_lock",
+  "published_object": {
+    "name": "f_tilde_1_q_over_h",
+    "arguments": ["x", "bT_GeV_inv", "mu_GeV", "zeta_GeV2"],
+    "default_publication_point": {
+      "mu": "Q",
+      "zeta": "Q^2"
+    },
+    "b_space_dimension": "dimensionless",
+    "k_space_dimension": "GeV^-2"
+  },
+  "fourier_transform": {
+    "forward": "f_tilde(b)=integral d^2k exp(+i k.b) f(k)",
+    "inverse": "f(k)=integral d^2b/(2pi)^2 exp(-i k.b) f_tilde(b)",
+    "radial_inverse": "f(k)=1/(2pi) integral_0^infinity db b J0(k b) f_tilde(b)"
+  },
+  "dy_structure_function": {
+    "radial_transform": "W(qT)=1/(2pi) integral_0^infinity db b J0(qT b) W_tilde(b)",
+    "lo_flavor_sum": "sum_q e_q^2 [f_q/A f_qbar/B + f_qbar/A f_q/B]",
+    "hard_factor_location": "multiplicative in W_tilde"
+  },
+  "collinear_pdf_input": {
+    "lhapdf_method": "xfxQ",
+    "conversion": "f_i(x,Q)=xfxQ(i,x,Q)/x"
+  },
+  "perturbative_series": {
+    "internal_expansion_parameter": "a_s=alpha_s/(4*pi)",
+    "coefficient_functions": "C=delta+sum_n a_s^n C^(n)",
+    "hard_factor": "H=1+sum_n a_s^n H^(n)"
+  },
+  "collins_soper_convention": {
+    "rapidity_equation": "d ln f_tilde / d ln sqrt(zeta) = K(b;mu)",
+    "kernel_rg": "d K(b;mu) / d ln mu = -gamma_K(alpha_s)"
+  },
+  "nonperturbative_boundary": {
+    "normalization": "F_NP(x,bT=0)=1",
+    "small_b_behavior": "F_NP=1+O(bT^2 Lambda_QCD^2)",
+    "kT_positivity_required": false
+  },
+  "external_validation": {
+    "observable_benchmarks": ["MCFM", "DYTurbo"],
+    "external_TMD_extractions_used_as_targets": false
+  }
+}

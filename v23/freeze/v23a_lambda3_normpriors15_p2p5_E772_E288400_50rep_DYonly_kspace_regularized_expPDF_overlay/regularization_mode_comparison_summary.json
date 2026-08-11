@@ -1,0 +1,112 @@
+{
+  "modes": [
+    "expb2",
+    "expb",
+    "taper"
+  ],
+  "reference": "expb2",
+  "active_frac": 0.05,
+  "max_rel_diff_pass": 0.1,
+  "rel_diff_p90_global_max": 0.030912545977260095,
+  "rel_diff_max_global_max": 0.04304417062181683,
+  "KT_REGULARIZATION_STABILITY_PASS": true,
+  "interpretation": "Compares median kT-space curves across tail/regularization modes. Use this to choose a conservative kT range. If the full kT<=kmax comparison fails, rerun the constructor with a smaller --k-max and compare again.",
+  "summaries": {
+    "expb2": {
+      "n_input_groups_times_quantities": 3200,
+      "b_transform_max": 24.0,
+      "n_b_transform": 6001,
+      "k_max": 4.0,
+      "n_k": 401,
+      "tail_mode": "expb2",
+      "tail_fit_bmin": null,
+      "end_taper_start_fraction": 0.92,
+      "transform_convention": "f(k)=1/(2*pi) int db b J0(kb) ftilde(b)",
+      "n_curves": 64,
+      "all_values_finite": true,
+      "min_over_peak_min": -0.01718554577009812,
+      "negative_area_fraction_max": 0.13422350979037503,
+      "relative_68_halfwidth_p90_max": 0.7597840832064348,
+      "REGULARIZED_KT_TECHNICAL_PASS": true,
+      "interpretation": "This is a regularized finite-b Hankel transform.  Negative lobes and bandlimited closure are diagnostics, not automatic vetoes.  Final kT range should be set only after comparing tail-mode/profile stability.",
+      "input": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/tmd_bspace_bands_expPDF_overlay/v23a_dataPDF_tmd_replica_bspace_long.csv",
+      "out": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb2",
+      "quantities": [
+        "ftilde",
+        "x_ftilde"
+      ],
+      "outputs": {
+        "long": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb2/v23a_regularized_kspace_replica_long.csv",
+        "bands": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb2/v23a_regularized_kspace_bands.csv",
+        "curve_audit": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb2/v23a_regularized_kspace_curve_audit.csv",
+        "summary": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb2/v23a_regularized_kspace_summary.json",
+        "b0_medians": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb2/bspace_b0_medians.csv"
+      },
+      "recommended_next_step": "Run at least two alternate tail modes, e.g. expb and taper, then compare stability before freezing a kT range."
+    },
+    "expb": {
+      "n_input_groups_times_quantities": 3200,
+      "b_transform_max": 24.0,
+      "n_b_transform": 6001,
+      "k_max": 4.0,
+      "n_k": 401,
+      "tail_mode": "expb",
+      "tail_fit_bmin": null,
+      "end_taper_start_fraction": 0.92,
+      "transform_convention": "f(k)=1/(2*pi) int db b J0(kb) ftilde(b)",
+      "n_curves": 64,
+      "all_values_finite": true,
+      "min_over_peak_min": -0.017188141148454614,
+      "negative_area_fraction_max": 0.13422349227100847,
+      "relative_68_halfwidth_p90_max": 0.7597840820165692,
+      "REGULARIZED_KT_TECHNICAL_PASS": true,
+      "interpretation": "This is a regularized finite-b Hankel transform.  Negative lobes and bandlimited closure are diagnostics, not automatic vetoes.  Final kT range should be set only after comparing tail-mode/profile stability.",
+      "input": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/tmd_bspace_bands_expPDF_overlay/v23a_dataPDF_tmd_replica_bspace_long.csv",
+      "out": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb",
+      "quantities": [
+        "ftilde",
+        "x_ftilde"
+      ],
+      "outputs": {
+        "long": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb/v23a_regularized_kspace_replica_long.csv",
+        "bands": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb/v23a_regularized_kspace_bands.csv",
+        "curve_audit": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb/v23a_regularized_kspace_curve_audit.csv",
+        "summary": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb/v23a_regularized_kspace_summary.json",
+        "b0_medians": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_expb/bspace_b0_medians.csv"
+      },
+      "recommended_next_step": "Run at least two alternate tail modes, e.g. expb and taper, then compare stability before freezing a kT range."
+    },
+    "taper": {
+      "n_input_groups_times_quantities": 3200,
+      "b_transform_max": 24.0,
+      "n_b_transform": 6001,
+      "k_max": 4.0,
+      "n_k": 401,
+      "tail_mode": "taper",
+      "tail_fit_bmin": null,
+      "end_taper_start_fraction": 0.92,
+      "transform_convention": "f(k)=1/(2*pi) int db b J0(kb) ftilde(b)",
+      "n_curves": 64,
+      "all_values_finite": true,
+      "min_over_peak_min": -0.018120655819540674,
+      "negative_area_fraction_max": 0.13423128449237595,
+      "relative_68_halfwidth_p90_max": 0.7597843513777025,
+      "REGULARIZED_KT_TECHNICAL_PASS": true,
+      "interpretation": "This is a regularized finite-b Hankel transform.  Negative lobes and bandlimited closure are diagnostics, not automatic vetoes.  Final kT range should be set only after comparing tail-mode/profile stability.",
+      "input": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/tmd_bspace_bands_expPDF_overlay/v23a_dataPDF_tmd_replica_bspace_long.csv",
+      "out": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_taper",
+      "quantities": [
+        "ftilde",
+        "x_ftilde"
+      ],
+      "outputs": {
+        "long": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_taper/v23a_regularized_kspace_replica_long.csv",
+        "bands": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_taper/v23a_regularized_kspace_bands.csv",
+        "curve_audit": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_taper/v23a_regularized_kspace_curve_audit.csv",
+        "summary": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_taper/v23a_regularized_kspace_summary.json",
+        "b0_medians": "replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_expPDF_overlay_taper/bspace_b0_medians.csv"
+      },
+      "recommended_next_step": "Run at least two alternate tail modes, e.g. expb and taper, then compare stability before freezing a kT range."
+    }
+  }
+}

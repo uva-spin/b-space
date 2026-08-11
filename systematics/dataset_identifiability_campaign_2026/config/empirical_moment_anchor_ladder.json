@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-29",
+  "status": "prospective_empirical_moment_anchor_ladder",
+  "candidate_id": "D020_E772",
+  "purpose": "Lift the residual smooth F_NP amplitude/width degeneracy with one scalar b-moment per x, rather than anchoring the full function.",
+  "source_basins": [304, 312, 313],
+  "moment_definition": {
+    "b_min": 0.1,
+    "b_max": 2.0,
+    "target": "pointwise-in-x median of twelve independent unregularized data-fit basin moments",
+    "target_csv": "summaries/empirical_fnp_moment_anchor/moment_anchor.csv",
+    "descriptive_nonuniqueness": "The source q16/q84 moment distribution is retained for later propagation and is not collapsed into a Gaussian error."
+  },
+  "fixed_shape_regularization": {
+    "lambda_fnp_logcurv": 5e-5,
+    "lambda_fnp_f_slope": 0.004,
+    "lambda_fnp_x_slope": 0.0003,
+    "remote_transform_closure": false
+  },
+  "moment_strengths": [0.1, 0.3, 1.0, 3.0],
+  "adaptive_rule": "Advance strengths in ascending order. Stop at the weakest strength for which all three endpoints pass the unweighted fit ceiling and the x=0.1,bT<=2 cross-start F_NP full range is at most 5%.",
+  "fit_quality_ceiling_total_chi2": 119.8021,
+  "initial_fnp_range_gate": 0.05,
+  "stationarity_rule": "A passing initial range must undergo unchanged-objective continuation before extension to the final independent-start ensemble.",
+  "primary_measure": "cross-start F_NP distribution",
+  "production_sources_modified": false
+}

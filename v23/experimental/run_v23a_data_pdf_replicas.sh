@@ -30,7 +30,7 @@ TRAIN="${TRAIN:-${ROOT}/v21_tail_release_amp0p019_candidate/train_bt_dnn_v21_smo
 BACKEND="${BACKEND:-${ROOT}/v22/backends/bt_internal_css_backend_v22_full.py}"
 
 # Set DATA_DIR to the exact p2p5/normpriors15 table you want.
-DATA_DIR="${DATA_DIR:-${ROOT}/Data/v23a_fixed_target_lowQ_row99_variants/corrected_E288_300_99_explicit_normpriors_15pct_p2p5_E772_E288400}"
+DATA_DIR="${DATA_DIR:-${ROOT}/Data/v23a_fixed_target_lowQ_row99_variants/corrected_E288_300_99_normpriors15_p2p5_E772_E288400}"
 
 # A good default for this branch, but override if your central run has a different path.
 CENTRAL_RUN="${CENTRAL_RUN:-${ROOT}/outputs/v23a_fixed_target_lowQ_corrected_central_refit_normpriors15_p2p5_E772_E288400_s303}"

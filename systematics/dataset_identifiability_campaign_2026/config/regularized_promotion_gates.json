@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-24",
+  "scope": "isolated regularized central candidates before experimental replicas",
+  "fit_quality": {
+    "max_unpenalized_delta_chi2_from_best_unregularized": 1.0,
+    "require_dataset_level_audit": true,
+    "interpretation": "The smoothing prior may select within a shallow likelihood valley but may not buy smoothness with a material degradation of the data objective."
+  },
+  "independent_start_stability": {
+    "minimum_start_count_for_initial_gate": 3,
+    "max_prediction_range_over_experimental_sigma": 0.1,
+    "max_relative_fnp_range_active_bT_le_2": 0.02,
+    "active_definition": "cross-start median FNP > 0.05"
+  },
+  "same_objective_stationarity": {
+    "max_relative_fnp_drift_active_bT_le_2": 0.01,
+    "max_prediction_drift_over_experimental_sigma": 0.05,
+    "continuation_must_use_identical_dataset_model_and_regularizer": true
+  },
+  "hyperparameter_robustness": {
+    "require_adjacent_strength_comparison": true,
+    "max_relative_central_fnp_change_active_bT_le_2": 0.02,
+    "max_relative_fig6_central_change_in_active_region": 0.02,
+    "interpretation": "A result that is unique only at one finely tuned lambda is not robust."
+  },
+  "finite_b_transform_robustness": {
+    "tail_modes": ["expb2", "expb", "zero", "taper"],
+    "max_relative_central_change_active": 0.02,
+    "max_relative_endpoint_change_active": 0.02,
+    "minimum_median_over_reference_peak": -0.01,
+    "active_definition": "absolute expb2 median >5% of each flavor peak for kT<=2.25 GeV"
+  },
+  "ensemble_completion": {
+    "minimum_independent_starts_for_final_nonuniqueness_distribution": 12,
+    "require_split_half_endpoint_stability": true,
+    "max_split_half_relative_endpoint_difference": 0.02,
+    "require_bootstrap_endpoint_stability": true,
+    "experimental_replica_count": "determine adaptively until 16th and 84th percentile curves are stable; do not assume the legacy count is sufficient"
+  },
+  "selection_rule": "Select the weakest regularization strength satisfying every gate. Fig. 6 band width is optimized only among gate-passing dataset/model choices.",
+  "production_sources_modified": false
+}

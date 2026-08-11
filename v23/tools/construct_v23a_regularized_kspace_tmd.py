@@ -56,6 +56,10 @@ try:
     from numpy import trapezoid as _trapezoid
 except Exception:
     from scipy.integrate import trapezoid as _trapezoid
+try:
+    from numpy import trapezoid as _trapezoid
+except Exception:
+    from scipy.integrate import trapezoid as _trapezoid
 
 
 QUANTITY_LABELS = {

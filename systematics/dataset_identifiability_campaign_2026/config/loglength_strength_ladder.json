@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "created": "2026-07-24",
+  "prior": "dimensionless excess arc length of log(F_NP)",
+  "candidate_ids": [
+    "D020_E772",
+    "D025_E772",
+    "D025_ALL"
+  ],
+  "pilot_strengths": [
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01,
+    0.03
+  ],
+  "b_min_GeV_inverse": 0.1,
+  "b_max_GeV_inverse": 3.0,
+  "selection_rule": "The weakest strength satisfying the frozen fit-quality, stationarity, independent-start, adjacent-strength, and transform gates may advance.",
+  "comparison_policy": "This first-derivative prior is evaluated separately from log-curvature because it can bias the physical damping magnitude as well as suppress complexity.",
+  "production_sources_modified": false
+}

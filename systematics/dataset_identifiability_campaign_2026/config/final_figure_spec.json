@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "figure_2": {
+    "space": "bT",
+    "quantity": "ftilde",
+    "x": 0.1,
+    "Q_GeV": 7.5,
+    "bT_max_GeV_inverse": 4.0,
+    "flavors": ["u", "d", "s", "ubar", "dbar", "sbar"],
+    "reference_style_artifact": "plots/prd_q020_figures/v23a_q020_bspace_all_flavors_x0p10_Q7p5.pdf",
+    "required_content": "selected updated central curves and full propagated uncertainty; no legacy conditional band"
+  },
+  "figure_6": {
+    "space": "kT",
+    "quantity": "ftilde",
+    "x": 0.1,
+    "Q_GeV": 10.0,
+    "kT_max_GeV": 2.25,
+    "flavors": ["u", "d"],
+    "reference_style_artifact": "plots/prd_q020_figures/kspace-result2-ud.pdf",
+    "required_content": "one updated central curve per flavor and one full one-sigma band; no individual-start curves and no legacy conditional result"
+  },
+  "uncertainty_semantics": {
+    "experimental_component": "central 68% interval from converged experimental replicas",
+    "nonuniqueness_component": "empirical distribution from independently initialized converged starts, with endpoint stability demonstrated",
+    "full_band": "jointly propagated ensemble if statistically constructed; otherwise components and conservative combination must remain explicitly distinguished",
+    "forbidden_label": "Do not label an envelope as 68% or one sigma unless the combined ensemble construction supports that interpretation."
+  },
+  "production_sources_modified": false
+}

@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "purpose": "Dataset-level review metadata for the Tevatron collider-DY pilot intake. This file is the authority for converting raw CDF/D0 tables into reviewed diagnostic fit inputs.",
+  "review_status": "absolute_subset_fit_ready; normalized_d0_run2_requires_normalized_observable",
+  "global_policy": {
+    "beam_config": "pbar_p",
+    "process": "pbar p -> gamma*/Z -> lepton pair + X",
+    "default_qT_over_Q_max": 0.5,
+    "tmd_core_qT_over_Q_max": 0.2,
+    "qT_bin_center_policy": "use_published_or_midpoint_center_for_first_backend_check",
+    "bin_integration_policy": "required_before_production_fit_if_bin_width_effect_is_non-negligible",
+    "diagonal_uncertainty_policy": "Use the uncertainty components released in the local CSVs. Where no covariance matrix is released locally, use the table point-to-point uncertainty as diagonal and encode explicit normalization/luminosity components as dataset nuisance parameters. Do not fabricate unreleased bin-to-bin covariance.",
+    "normalization_policy": "absolute spectra require dataset normalization nuisance; normalized spectra require a shape-only or normalized-theory treatment"
+  },
+  "datasets": {
+    "CDF_RUN_1": {
+      "include": true,
+      "diagnostic_ready": true,
+      "production_ready": true,
+      "experiment": "CDF",
+      "run_period": "Run I",
+      "sqrtS_GeV": 1800.0,
+      "raw_file": "Data/global_dy_raw/CDF_RUN_1.csv",
+      "source": {
+        "publication": "CDF Collaboration, Transverse Momentum and Total Cross Section of e+e- Pairs in the Z-Boson Region from p pbar Collisions at sqrt(s)=1.8 TeV",
+        "journal": "Phys. Rev. Lett. 84, 845 (2000)",
+        "doi": "10.1103/PhysRevLett.84.845",
+        "arxiv": "hep-ex/0001021",
+        "table_reference": "raw CSV table; exact publication table number still needs confirmation"
+      },
+      "observable": {
+        "raw_value_column": "A",
+        "raw_uncertainty_column": "dA",
+        "name": "differential transverse-momentum cross section in the Z-boson mass region",
+        "type": "absolute_differential_cross_section",
+        "unit": "pb/GeV",
+        "unit_status": "confirmed_from_publication_table",
+        "bin_width_convention": "per_GeV",
+        "mass_window_GeV": [66.0, 116.0],
+        "rapidity_acceptance": "unfolded/inclusive acceptance needs confirmation",
+        "final_state": "raw_table_label_muon; publication mapping needs confirmation"
+      },
+      "uncertainties": {
+        "diagonal_total_column": "dA",
+        "stat_columns": [],
+        "uncorrelated_systematic_columns": [],
+        "normalization_columns": ["sys,Normalisation error"],
+        "normalization_relative": 0.039,
+        "correlated_systematic_columns": [],
+        "covariance_available": "no_separate_covariance_matrix_in_local_release",
+        "production_covariance_status": "released_table_errors_as_diagonal_plus_norm_nuisance"
+      },
+      "row_exclusions": []
+    },
+    "CDF_RUN_2": {
+      "include": true,
+      "diagnostic_ready": true,
+      "production_ready": true,
+      "experiment": "CDF",
+      "run_period": "Run II",
+      "sqrtS_GeV": 1960.0,
+      "raw_file": "Data/global_dy_raw/CDF_RUN_2.csv",
+      "source": {
+        "publication": "CDF Collaboration, Transverse momentum cross section of e+e- pairs in the Z-boson region from p pbar collisions at sqrt(s)=1.96 TeV",
+        "journal": "Phys. Rev. D 86, 052010 (2012)",
+        "doi": "10.1103/PhysRevD.86.052010",
+        "arxiv": "1207.7138",
+        "table_reference": "raw CSV table; exact publication table number still needs confirmation"
+      },
+      "observable": {
+        "raw_value_column": "A",
+        "raw_uncertainty_column": "dA",
+        "name": "differential transverse-momentum cross section in the Z-boson mass region",
+        "type": "absolute_differential_cross_section",
+        "unit": "pb/GeV",
+        "unit_status": "confirmed_from_publication_table",
+        "bin_width_convention": "per_GeV",
+        "mass_window_GeV": [66.0, 116.0],
+        "rapidity_acceptance": "extrapolated acceptance needs confirmation",
+        "final_state": "e+e-"
+      },
+      "uncertainties": {
+        "diagonal_total_column": "dA",
+        "stat_columns": ["stat. +", "stat. -"],
+        "uncorrelated_systematic_columns": ["sys. B +", "sys. B -"],
+        "normalization_columns": ["sys. C +", "sys. C -"],
+        "normalization_relative": 0.058,
+        "correlated_systematic_columns": ["sys. B +", "sys. B -"],
+        "covariance_available": "paper_describes_fractional_covariance_matrix_but_local_release_contains_only_table_components",
+        "production_covariance_status": "released_table_errors_as_diagonal_plus_norm_nuisance; cdf_efficiency_correlation_not_separately_encoded_by_current_trainer"
+      },
+      "row_exclusions": []
+    },
+    "D0_RUN_1": {
+      "include": true,
+      "diagnostic_ready": true,
+      "production_ready": true,
+      "experiment": "D0",
+      "run_period": "Run I",
+      "sqrtS_GeV": 1800.0,
+      "raw_file": "Data/global_dy_raw/D0_RUN_1.csv",
+      "source": {
+        "publication": "D0 Collaboration, Measurement of the inclusive differential cross section for Z bosons as a function of transverse momentum in p pbar collisions at sqrt(s)=1.8 TeV",
+        "journal": "Phys. Rev. D 61, 032004 (2000)",
+        "doi": "10.1103/PhysRevD.61.032004",
+        "arxiv": "hep-ex/9907044",
+        "table_reference": "raw CSV table; exact publication table number still needs confirmation"
+      },
+      "observable": {
+        "raw_value_column": "A",
+        "raw_uncertainty_column": "dA",
+        "name": "differential Z-boson transverse-momentum cross section",
+        "type": "absolute_differential_cross_section",
+        "unit": "pb/GeV",
+        "unit_status": "confirmed_from_publication_table",
+        "bin_width_convention": "per_GeV",
+        "mass_window_GeV": [75.0, 105.0],
+        "rapidity_acceptance": "inclusive acceptance needs confirmation",
+        "final_state": "e+e-"
+      },
+      "uncertainties": {
+        "diagonal_total_column": "dA",
+        "stat_columns": [],
+        "uncorrelated_systematic_columns": ["sys. B +", "sys. B -"],
+        "normalization_columns": ["sys,Normalisation error"],
+        "normalization_relative": 0.044,
+        "correlated_systematic_columns": [],
+        "covariance_available": "no_separate_covariance_matrix_in_local_release",
+        "production_covariance_status": "released_table_errors_as_diagonal_plus_norm_nuisance"
+      },
+      "row_exclusions": []
+    },
+    "D0_RUN_2": {
+      "include": true,
+      "diagnostic_ready": true,
+      "production_ready": false,
+      "experiment": "D0",
+      "run_period": "Run II",
+      "sqrtS_GeV": 1960.0,
+      "raw_file": "Data/global_dy_raw/D0_RUN_2.csv",
+      "source": {
+        "publication": "D0 Collaboration, Measurement of the shape of the boson transverse momentum distribution in p pbar -> Z/gamma* -> e+e- + X events produced at sqrt(s)=1.96 TeV",
+        "journal": "Phys. Rev. Lett. 100, 102002 (2008)",
+        "doi": "10.1103/PhysRevLett.100.102002",
+        "arxiv": "unknown",
+        "table_reference": "raw CSV table; exact publication table number still needs confirmation"
+      },
+      "observable": {
+        "raw_value_column": "A",
+        "raw_uncertainty_column": "dA",
+        "auxiliary_normalized_column": "normalizedCS",
+        "auxiliary_fiducial_cross_section_column": " fidcs",
+        "name": "normalized Z/gamma* transverse-momentum distribution converted in the raw table to an absolute-like A column",
+        "type": "normalized_shape_with_raw_absolute_conversion",
+        "unit": "pb/GeV",
+        "unit_status": "confirmed_normalized_distribution; raw_absolute_conversion_still_requires_policy_decision",
+        "bin_width_convention": "per_GeV",
+        "mass_window_GeV": [70.0, 110.0],
+        "rapidity_acceptance": "raw y columns are zero; fiducial/absolute rapidity handling needs confirmation",
+        "final_state": "e+e-"
+      },
+      "uncertainties": {
+        "diagonal_total_column": "dA",
+        "stat_columns": ["stat. +", "stat. -"],
+        "uncorrelated_systematic_columns": ["sys. B +", "sys. B -"],
+        "normalization_columns": [],
+        "normalization_relative": null,
+        "correlated_systematic_columns": [],
+        "covariance_available": "paper_notes_bin_correlations_but_local_release_contains_only_table_stat_systematic_errors",
+        "production_covariance_status": "released_table_errors_as_diagonal; normalized_shape_policy_not_final"
+      },
+      "row_exclusions": [
+        {
+          "source_row": 23,
+          "reason": "non-measurement note row: absolute rapidity region > 2 and PT < 30 GeV"
+        }
+      ]
+    },
+    "D0_RUN_2N": {
+      "include": true,
+      "diagnostic_ready": true,
+      "production_ready": false,
+      "experiment": "D0",
+      "run_period": "Run II",
+      "sqrtS_GeV": 1960.0,
+      "raw_file": "Data/global_dy_raw/D0_RUN_2N.csv",
+      "source": {
+        "publication": "D0 Collaboration, Measurement of the normalized Z/gamma* -> mu+mu- transverse momentum distribution in p pbar collisions at sqrt(s)=1.96 TeV",
+        "journal": "Phys. Lett. B 693, 522-530 (2010)",
+        "doi": "10.1016/j.physletb.2010.09.012",
+        "arxiv": "1006.0618",
+        "table_reference": "raw CSV table; exact publication table number still needs confirmation"
+      },
+      "observable": {
+        "raw_value_column": "A",
+        "raw_uncertainty_column": "dA",
+        "auxiliary_calculated_value_column": "A_Calc",
+        "auxiliary_normalized_column": "NormCS",
+        "auxiliary_fiducial_cross_section_column": "fidcs",
+        "name": "normalized Z/gamma* transverse-momentum distribution converted in the raw table to an absolute-like A column",
+        "type": "normalized_shape_with_raw_absolute_conversion",
+        "unit": "pb/GeV",
+        "unit_status": "confirmed_normalized_distribution; raw_absolute_conversion_still_requires_policy_decision",
+        "bin_width_convention": "per_GeV",
+        "mass_window_GeV": [65.0, 115.0],
+        "rapidity_acceptance": "particle/fiducial-level treatment needs confirmation",
+        "final_state": "mu+mu-"
+      },
+      "uncertainties": {
+        "diagonal_total_column": "dA",
+        "stat_columns": ["stat +", "stat -", "stat"],
+        "uncorrelated_systematic_columns": ["sys_1", "sys_2", "sys_3", "sys_4"],
+        "normalization_columns": ["sys_5"],
+        "normalization_relative": 0.08,
+        "correlated_systematic_columns": ["sys_5"],
+        "covariance_available": "local_release_contains_stat_uncorrelated_and_correlated_components_but_no_full_matrix",
+        "production_covariance_status": "released_components_available; normalized_shape_policy_not_final"
+      },
+      "row_exclusions": []
+    }
+  }
+}

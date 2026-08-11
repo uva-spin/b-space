@@ -1,0 +1,106 @@
+{
+  "n_replicas_from_runs": 50,
+  "n_replicas_in_band_long": 50,
+  "n_random_splits": 500,
+  "chi2_median": 1.858603165144339,
+  "chi2_q95": 2.1310145686109365,
+  "chi2_max": 2.1866746953618357,
+  "norm_pull_q95": 2.707433342933655,
+  "norm_pull_max": 3.017364978790283,
+  "fit_pass": true,
+  "norm_pass": true,
+  "norm_marginal_pass": true,
+  "band_pass": true,
+  "random_split_width_q90": 0.6439466887345098,
+  "random_split_center_q90": 0.021749180926595522,
+  "random_split_pass": true,
+  "STRICT_20REP_FREEZE_PASS": true,
+  "CONDITIONAL_20REP_BSPACE_PILOT_PASS": true,
+  "top_norm_pull_rows": [
+    {
+      "seed": "1030",
+      "run": "replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/outputs/v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda_s1030",
+      "dataset": "E772",
+      "norm_pull": 3.017364978790283,
+      "abs_norm_pull": 3.017364978790283
+    },
+    {
+      "seed": "1050",
+      "run": "replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/outputs/v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda_s1050",
+      "dataset": "E288_200",
+      "norm_pull": 2.9194767475128174,
+      "abs_norm_pull": 2.9194767475128174
+    },
+    {
+      "seed": "1013",
+      "run": "replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/outputs/v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda_s1013",
+      "dataset": "E605",
+      "norm_pull": 2.7258880138397217,
+      "abs_norm_pull": 2.7258880138397217
+    },
+    {
+      "seed": "1006",
+      "run": "replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/outputs/v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda_s1006",
+      "dataset": "E605",
+      "norm_pull": 2.684877634048462,
+      "abs_norm_pull": 2.684877634048462
+    },
+    {
+      "seed": "1008",
+      "run": "replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/outputs/v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda_s1008",
+      "dataset": "E605",
+      "norm_pull": 2.5833685398101807,
+      "abs_norm_pull": 2.5833685398101807
+    },
+    {
+      "seed": "1042",
+      "run": "replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/outputs/v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda_s1042",
+      "dataset": "E288_300",
+      "norm_pull": -2.5654807090759277,
+      "abs_norm_pull": 2.5654807090759277
+    },
+    {
+      "seed": "1033",
+      "run": "replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/outputs/v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda_s1033",
+      "dataset": "E288_300",
+      "norm_pull": -2.555239200592041,
+      "abs_norm_pull": 2.555239200592041
+    },
+    {
+      "seed": "1024",
+      "run": "replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/outputs/v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda_s1024",
+      "dataset": "E288_400",
+      "norm_pull": 2.4438157081604004,
+      "abs_norm_pull": 2.4438157081604004
+    },
+    {
+      "seed": "1008",
+      "run": "replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/outputs/v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda_s1008",
+      "dataset": "E288_400",
+      "norm_pull": 2.362283706665039,
+      "abs_norm_pull": 2.362283706665039
+    },
+    {
+      "seed": "1012",
+      "run": "replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/outputs/v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda_s1012",
+      "dataset": "E772",
+      "norm_pull": -2.292576551437378,
+      "abs_norm_pull": 2.292576551437378
+    },
+    {
+      "seed": "1042",
+      "run": "replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/outputs/v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda_s1042",
+      "dataset": "E288_200",
+      "norm_pull": 2.254584550857544,
+      "abs_norm_pull": 2.254584550857544
+    },
+    {
+      "seed": "1042",
+      "run": "replica_pilot_v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda/outputs/v23a_lambda3_normpriors15_p2p5_E772_E288400_cached_cuda_s1042",
+      "dataset": "E605",
+      "norm_pull": 2.2220571041107178,
+      "abs_norm_pull": 2.2220571041107178
+    }
+  ],
+  "interpretation": "If deterministic split fails but random split pass holds, the deterministic seed ordering is likely an unlucky partition. If norm fails only marginally and one seed/dataset dominates, inspect the outlier before changing physics settings."
+}

@@ -1,0 +1,52 @@
+{
+  "status": "preregistered_isolated_combined_logx_smoothness_study_not_production",
+  "created": "2026-07-29",
+  "reason": "Direct FNP slope energy in log(x) at 3e-4 stabilized x=0.1 but left a localized continuation mode near x=0.003; log-x curvature alone left a nearly linear endpoint mode. Test their minimum interaction rather than escalating either failed one-dimensional ladder.",
+  "dataset": "D020_E772",
+  "objective_family": {
+    "fixed_logF_b_curvature": {
+      "lambda": 0.00005,
+      "bT_range_GeV_inverse": [0.1, 3.0]
+    },
+    "fixed_FNP_b_slope_energy": {
+      "lambda": 0.004,
+      "bT_range_GeV_inverse": [0.1, 3.0]
+    },
+    "fixed_FNP_logx_slope_energy": {
+      "lambda": 0.0003,
+      "bT_range_GeV_inverse": [0.1, 3.0],
+      "selection_reason": "best continuation behavior in the completed direct-x-slope ladder"
+    },
+    "logx_curvature_ladder": [1e-7, 3e-7, 1e-6],
+    "transform_closure": {
+      "lambda": 0.001,
+      "coordinate": "C2 tail",
+      "bT_start_GeV_inverse": 5.5,
+      "bT_end_GeV_inverse": 8.0,
+      "maximum_F_NP_at_8": 0.0001
+    }
+  },
+  "optimization": {
+    "initial_perturbation": 0.0,
+    "float64": true,
+    "adam_learning_rate": 0.00001,
+    "adam_max_epochs": 20000,
+    "adam_min_epochs": 5000,
+    "adam_plateau_patience": 3000,
+    "lbfgs_max_iter": 15000,
+    "same_objective_continuation_required_if_stationarity_gate_fails": true
+  },
+  "selection": {
+    "rule": "Select the weakest combined strength satisfying every gate; never select by final band width.",
+    "unpenalized_total_chi2_max": 119.8021,
+    "global_fnp_continuation_drift_max": 0.01,
+    "prediction_continuation_drift_sigma_max": 0.05,
+    "fig6_positive_monotone_shape_required": true,
+    "minimum_positive_branch_kT_GeV": 1.5,
+    "maximum_negative_lobe_fraction_of_peak": 0.01,
+    "transform_relative_change_max": 0.02,
+    "start_ensemble_minimum": 12,
+    "uncertainty_semantics": "Experimental replicas are a conditional 68% interval; residual local-start/model spread is separately reported."
+  },
+  "production_files_modified": false
+}
