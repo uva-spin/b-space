@@ -1,0 +1,26 @@
+{
+  "status": "production_active",
+  "production_id": "lambda1_empirical_reference_full96x50",
+  "promoted_at": "2026-08-11",
+  "method": "pointwise distance to empirical median FNP on 0.1<=bT<=2, lambda=1; 96 stationary starts crossed with 50 conditional replica residuals",
+  "audit": "PRODUCTION_AUDIT.json",
+  "audit_sha256": "39a4e5dd6bda5c7f52f682b607a954a635b9b090fcfc8926bbd2dda0930a69a1",
+  "artifact_sha256": {
+    "combined_summary": "22e119d5af9f37a7c378a7865016c203dc88e02fb0b14f61b5318a2995709bee",
+    "bspace_combined_bands": "edb4b074ab06d097a54d214ad85cbcfc5de9658a89f76cf9e5346e2b0aa41484",
+    "kspace_combined_bands": "2ec58430db605d32df7fd11281fdf924240aa2e31d94590e88babab79d5105cb",
+    "start_only_summary": "d0a5c526fd7b8a397d21916d45acfa4b48cfb07fd3fe5f0db2518f3917e2c1a0",
+    "start_only_handoff": "8fd21fec1c4bb36222b5e665c87cbbf08875c5e8fcecd878252d79b848018d41",
+    "fig2_png": "b7a97e3e12d2ea014045b752489a894a55a8c4fb55575286df8e6566766f9341",
+    "fig2_pdf": "e13c6efc392bf105c72331a3ece7559968a72842bb6f5760bd9b97e9b03df7fd",
+    "fig6_png": "1d5cc7ec40e2f3ef6d2d2ebcbca2549f8d2293ceab7c391d35fed2d0fd5d6706",
+    "fig6_pdf": "ef6fed93dcf16596d03661c1af39312c63de221a0ef7ad56f008739c4ac42e79"
+  },
+  "rollback_reference": "lambda1_empirical_reference_full24x50 in the source campaign",
+  "limitations": [
+    "empirical reference median is not reciprocal-cross-fitted",
+    "combined q16-q84 interval is operational and has no calibrated confidence-level interpretation",
+    "96-start non-uniqueness completeness is established for the declared perturbation family and objective"
+  ],
+  "production_sources_modified_by_transaction": false
+}

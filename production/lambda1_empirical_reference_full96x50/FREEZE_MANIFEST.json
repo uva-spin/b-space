@@ -1,0 +1,14 @@
+{
+  "name": "lambda1_empirical_reference_full96x50",
+  "status": "production_active",
+  "promoted_at": "2026-08-11",
+  "objective": "pointwise distance to empirical median FNP",
+  "reference_region": "x=0.1, 0.1 <= bT <= 2.0 GeV^-1",
+  "lambda": 1,
+  "start_count": 96,
+  "experimental_replica_count": 50,
+  "crossed_member_count_per_flavor": 4800,
+  "frozen_production_outputs_overwritten": false,
+  "band_interpretation": "operational empirical q16-q84; no calibrated confidence-level interpretation",
+  "artifact_integrity": "see PRODUCTION_MANIFEST.json and PRODUCTION_AUDIT.json"
+}
