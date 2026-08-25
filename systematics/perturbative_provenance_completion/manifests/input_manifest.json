@@ -46,7 +46,7 @@
       "sha256": "ae196ae27505598642cbc641a0ae3b15118773da44b5633e26a626894deec2e4"
     },
     {
-      "path": "export_v22_backend_cache.sh",
+      "path": "workflows/v22/utilities/export_v22_backend_cache.sh",
       "size_bytes": 2819,
       "sha256": "bbe87ba5be72e35c110a19c4eed1e16e740c738c4aa8f44f54bad02bf3eef0dc"
     },

@@ -29,6 +29,7 @@ bash Data/data_check.py
 ## 2. Public source layout
 
 ```text
+workflows/                       organized legacy workflow drivers
 v22/src/                         perturbative and convolution primitives
 v22/backends/                   fixed-target W backend and W-expansion scheme
 v22/tests/                      source-level smoke tests
@@ -48,10 +49,10 @@ systematics/perturbative_provenance_completion/
                                 perturbative organization and accuracy audits
 ```
 
-The top-level `run_*`, `audit_*`, `construct_*`, and `bootstrap_*` files are
-compatibility entry points retained from the working campaign. They expect to
-be launched from the repository root and write generated results under
-`outputs/`, `plots/`, or `v23/outputs/`.
+The former top-level `run_*`, `audit_*`, `construct_*`, and `bootstrap_*` files
+are organized under `workflows/v22/` and `workflows/v23a/`. They still expect
+to be launched from the repository root and write generated results under
+`outputs/`, `plots/`, or an explicitly supplied external directory.
 
 ## 3. Data paths
 
@@ -112,14 +113,14 @@ For the fixed-target backend, the primary entry point is:
 TRAIN="$PWD/v21_tail_release_amp0p019_candidate/train_bt_dnn_v21_replica_stable.py" \
 BACKEND="$PWD/v22/backends/bt_internal_css_backend_v22_full.py" \
 DATA_DIR="$PWD/Data/v23a_fixed_target_lowQ_row99_variants/corrected_E288_300_99_normpriors15_p2p5_E772_E288400" \
-./run_v23a_fixed_target_checkonly_cache.sh
+./workflows/v23a/runs/run_v23a_fixed_target_checkonly_cache.sh
 ```
 
 That command may require local adjustments to the output and device settings.
 The lower-level backend cache export is:
 
 ```bash
-./export_v22_backend_cache.sh
+./workflows/v22/utilities/export_v22_backend_cache.sh
 ```
 
 The expected cache handoff is a file such as:
@@ -140,7 +141,7 @@ The central workflow uses the staged trainer and the v22 full backend:
 TRAIN="$PWD/v21_tail_release_amp0p019_candidate/train_bt_dnn_v21_smoothedA_tail.py" \
 BACKEND="$PWD/v22/backends/bt_internal_css_backend_v22_full.py" \
 DATA_DIR="$PWD/Data/v23a_fixed_target_lowQ_row99_variants/corrected_E288_300_99" \
-./run_v23a_fixed_target_corrected_central_refit_v2.sh
+./workflows/v23a/runs/run_v23a_fixed_target_corrected_central_refit_v2.sh
 ```
 
 For the production-style 15% normalization-prior and 5% point-to-point
@@ -158,7 +159,7 @@ The older v22 stage-1 route is retained for backend closure checks:
 ```bash
 FROZEN=/path/to/compatible/frozen/reference \
 TRAIN="$PWD/v21_tail_release_amp0p019_candidate/train_bt_dnn_v21_smoothedA_tail.py" \
-./run_v22_central_refit_stage1.sh
+./workflows/v22/runs/run_v22_central_refit_stage1.sh
 ```
 
 ## 7. Construct the b-space TMD grid
@@ -186,7 +187,7 @@ The main output is:
 plots/central_bspace_grid/v22_scheme_tmd_bspace_long.csv
 ```
 
-The convenience wrapper `run_v23a_central_tmd_grid_and_audit.sh` performs the
+The convenience wrapper `workflows/v23a/runs/run_v23a_central_tmd_grid_and_audit.sh` performs the
 same construction and then calls the v23a central-grid audit.
 
 ## 8. Experimental replicas and PDF overlays

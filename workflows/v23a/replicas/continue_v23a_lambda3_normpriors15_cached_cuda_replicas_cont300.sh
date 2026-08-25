@@ -1,58 +1,49 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Generic v23a cached-CUDA replica runner for log-F anchor scans.
+# Continue the existing v23a lambda=3 normpriors15 cached-CUDA replica pilot.
 #
-# Default use:
-#   LAMBDA_LOGF=1 \
-#   SEEDS="1001 1002 ... 1010" \
-#   MAX_PARALLEL=1 \
-#   DEVICE=cuda \
-#   ./append_v23a_logf_anchor_normpriors15_cached_cuda_replicas.sh
+# This is not a physics change.  It starts from the existing seed checkpoints
+# and trains the same pseudo-data replicas for additional epochs.
 #
-# Scope:
-#   v23a fixed-target low-Q DY, corrected E288_300:99, explicit 15% norm priors.
+# Default input:
+#   replica_pilot_v23a_lambda3_normpriors15_cached_cuda/outputs/v23a_lambda3_normpriors15_cached_cuda_s1001...
 #
-# Output default:
-#   replica_pilot_v23a_lambda${LAMBDA_LOGF}_normpriors15_cached_cuda/outputs/
+# Default output:
+#   replica_pilot_v23a_lambda3_normpriors15_cached_cuda_cont300/outputs/v23a_lambda3_normpriors15_cached_cuda_cont300_s1001...
 #
-# This is for pilot/scan use, not final production freeze.
+# Run from ~/work/bT-TMD.
 
 ROOT="$(pwd)"
 export PYTHONPATH="${ROOT}:${PYTHONPATH:-}"
 
-LAMBDA_LOGF="${LAMBDA_LOGF:-1}"
-LAMBDA_LABEL="${LAMBDA_LABEL:-lambda${LAMBDA_LOGF}}"
-
 CACHE_ENV="${CACHE_ENV:-${ROOT}/outputs/v23a_fixed_target_lowQ_corrected_checkonly_cache/backend_cache/cache_paths.env}"
 TRAIN="${TRAIN:-${ROOT}/v21_tail_release_amp0p019_candidate/train_bt_dnn_v21_replica_stable.py}"
-PREP="${PREP:-${ROOT}/v21_tail_release_amp0p019_candidate/prepare_v21_replica_norm_inits.py}"
-CENTRAL_RUN="${CENTRAL_RUN:-${ROOT}/outputs/v23a_fixed_target_lowQ_corrected_central_refit_normpriors_15pct_s303}"
 DATA_DIR="${DATA_DIR:-${ROOT}/Data/v23a_fixed_target_lowQ_row99_variants/corrected_E288_300_99_explicit_normpriors_15pct}"
+CENTRAL_RUN="${CENTRAL_RUN:-${ROOT}/outputs/v23a_fixed_target_lowQ_corrected_central_refit_normpriors_15pct_s303}"
 
-OUT_ROOT="${OUT_ROOT:-${ROOT}/replica_pilot_v23a_${LAMBDA_LABEL}_normpriors15_cached_cuda}"
-RUN_PREFIX="${RUN_PREFIX:-v23a_${LAMBDA_LABEL}_normpriors15_cached_cuda}"
+IN_ROOT="${IN_ROOT:-${ROOT}/replica_pilot_v23a_lambda3_normpriors15_cached_cuda}"
+IN_PREFIX="${IN_PREFIX:-v23a_lambda3_normpriors15_cached_cuda}"
+
+OUT_ROOT="${OUT_ROOT:-${ROOT}/replica_pilot_v23a_lambda3_normpriors15_cached_cuda_cont300}"
+OUT_PREFIX="${OUT_PREFIX:-v23a_lambda3_normpriors15_cached_cuda_cont300}"
 
 SEEDS=(${SEEDS:-1001 1002 1003 1004 1005 1006 1007 1008 1009 1010})
 DEVICE="${DEVICE:-cuda}"
 MAX_PARALLEL="${MAX_PARALLEL:-1}"
+EPOCHS_CONT="${EPOCHS_CONT:-300}"
 
 die() {
   echo "$*" >&2
   exit 1
 }
 
-if [[ ! -f "${PREP}" ]]; then
-  PREP="${ROOT}/v21_tail_release_amp0p019_candidate/prepare_v21_replica_norm_inits.py"
-fi
-
 for path in \
   "${CACHE_ENV}" \
   "${TRAIN}" \
-  "${PREP}" \
+  "${DATA_DIR}" \
   "${CENTRAL_RUN}/model_state.pt" \
-  "${CENTRAL_RUN}/predictions.csv" \
-  "${DATA_DIR}"
+  "${CENTRAL_RUN}/predictions.csv"
 do
   [[ -e "${path}" ]] || die "Missing required path: ${path}"
 done
@@ -64,59 +55,58 @@ for path in "${W_GRID}" "${Y_GRID}"; do
   [[ -f "${path}" ]] || die "Missing cache file: ${path}"
 done
 
-mkdir -p "${OUT_ROOT}/outputs" "${OUT_ROOT}/logs" "${OUT_ROOT}/append_manifests"
+mkdir -p "${OUT_ROOT}/outputs" "${OUT_ROOT}/logs" "${OUT_ROOT}/continue_manifests"
 
 STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
-NORM_INIT_ROOT="${OUT_ROOT}/norm_inits_append_${STAMP}"
-mkdir -p "${NORM_INIT_ROOT}"
-
-cat > "${OUT_ROOT}/append_manifests/append_${STAMP}.json" <<EOF
+cat > "${OUT_ROOT}/continue_manifests/continue_${STAMP}.json" <<EOF
 {
+  "input_root": "${IN_ROOT}",
+  "input_prefix": "${IN_PREFIX}",
+  "output_root": "${OUT_ROOT}",
+  "output_prefix": "${OUT_PREFIX}",
   "central_run": "${CENTRAL_RUN}",
   "data_dir": "${DATA_DIR}",
   "w_grid": "${W_GRID}",
   "y_grid": "${Y_GRID}",
   "train_script": "${TRAIN}",
-  "prep_script": "${PREP}",
   "device": "${DEVICE}",
-  "lambda_replica_logf_anchor": ${LAMBDA_LOGF},
-  "replica_anchor_x_values": [0.10, 0.20, 0.30, 0.50],
+  "epochs_continuation": ${EPOCHS_CONT},
+  "lambda_replica_logf_anchor": 3,
   "seeds": [$(printf '%s\n' "${SEEDS[@]}" | paste -sd, -)],
-  "max_parallel": ${MAX_PARALLEL},
-  "norm_init_root": "${NORM_INIT_ROOT}",
   "norm_source": "csv",
   "ptp_source": "csv"
 }
 EOF
 
-echo "Preparing normalization initializations for v23a seeds..."
-python3 "${PREP}" \
-  --central-predictions "${CENTRAL_RUN}/predictions.csv" \
-  --seeds "${SEEDS[@]}" \
-  --out "${NORM_INIT_ROOT}"
-
 run_seed() {
   local S="$1"
-  local OUT="${OUT_ROOT}/outputs/${RUN_PREFIX}_s${S}"
-  local LOG="${OUT_ROOT}/logs/${RUN_PREFIX}_s${S}.log"
-  local NORM_INIT="${NORM_INIT_ROOT}/s${S}/dataset_norms.csv"
+  local OLD="${IN_ROOT}/outputs/${IN_PREFIX}_s${S}"
+  local OUT="${OUT_ROOT}/outputs/${OUT_PREFIX}_s${S}"
+  local LOG="${OUT_ROOT}/logs/${OUT_PREFIX}_s${S}.log"
+
+  for path in \
+    "${OLD}/model_state.pt" \
+    "${OLD}/dataset_norms.csv" \
+    "${OLD}/metrics.json" \
+    "${OLD}/predictions.csv"
+  do
+    [[ -e "${path}" ]] || {
+      echo "seed ${S}: missing required input ${path}" >&2
+      exit 1
+    }
+  done
 
   if [[ -f "${OUT}/metrics.json" && -f "${OUT}/predictions.csv" && -f "${OUT}/model_state.pt" ]]; then
-    echo "seed ${S}: already complete, skipping"
+    echo "seed ${S}: continuation already complete, skipping"
     return 0
   fi
 
   [[ ! -e "${OUT}" ]] || {
-    echo "Output directory exists but is incomplete/refused: ${OUT}" >&2
+    echo "seed ${S}: output exists but incomplete/refused: ${OUT}" >&2
     exit 1
   }
 
-  [[ -f "${NORM_INIT}" ]] || {
-    echo "Missing norm init ${NORM_INIT}" >&2
-    exit 1
-  }
-
-  echo "Running v23a cached CUDA ${LAMBDA_LABEL} replica seed ${S}"
+  echo "Continuing v23a seed ${S} for ${EPOCHS_CONT} more epochs"
 
   python3 "${TRAIN}" \
     --data-dir "${DATA_DIR}" \
@@ -139,10 +129,10 @@ run_seed() {
     --b-max 8 \
     --b-star-max 1.5 \
     --q0 2.0 \
-    --epochs 300 \
+    --epochs "${EPOCHS_CONT}" \
     --batch-size 10000 \
-    --lr 1e-4 \
-    --dataset-norm-lr 1e-3 \
+    --lr 5e-5 \
+    --dataset-norm-lr 5e-4 \
     --weight-decay 0 \
     --grad-clip 10 \
     --patience 100 \
@@ -164,7 +154,7 @@ run_seed() {
     --np-a-tail-b0 3.5 \
     --np-a-tail-width 0.25 \
     --replica-train-scope head \
-    --lambda-replica-logf-anchor "${LAMBDA_LOGF}" \
+    --lambda-replica-logf-anchor 3 \
     --replica-anchor-x-values 0.10 0.20 0.30 0.50 \
     --replica-anchor-bmin 0 \
     --replica-anchor-bmax 8 \
@@ -183,29 +173,28 @@ run_seed() {
     --lambda-dataset-norm 1.0 \
     --norm-source csv \
     --ptp-source csv \
-    --init-model-state "${CENTRAL_RUN}/model_state.pt" \
-    --init-dataset-norms-from "${NORM_INIT}" \
+    --init-model-state "${OLD}/model_state.pt" \
+    --init-dataset-norms-from "${OLD}/dataset_norms.csv" \
     --replica-seed "${S}" \
     --seed "${S}" \
     --out "${OUT}" \
     > "${LOG}" 2>&1
 
-  echo "seed ${S}: complete"
+  echo "seed ${S}: continuation complete"
 }
 
 export -f run_seed
-export ROOT OUT_ROOT RUN_PREFIX TRAIN W_GRID Y_GRID DEVICE CENTRAL_RUN NORM_INIT_ROOT DATA_DIR LAMBDA_LOGF LAMBDA_LABEL
+export ROOT OUT_ROOT OUT_PREFIX IN_ROOT IN_PREFIX TRAIN W_GRID Y_GRID DEVICE CENTRAL_RUN DATA_DIR EPOCHS_CONT
 
 printf '%s\n' "${SEEDS[@]}" \
   | xargs -n 1 -P "${MAX_PARALLEL}" bash -c 'run_seed "$1"' _
 
 echo
-echo "v23a ${LAMBDA_LABEL} replica append/run complete."
-echo "Output root: ${OUT_ROOT}"
+echo "Continuation complete."
 echo
 echo "Postprocess with:"
 echo "  OUT_ROOT='${OUT_ROOT}' \\"
-echo "  RUN_PREFIX='${RUN_PREFIX}' \\"
+echo "  RUN_PREFIX='${OUT_PREFIX}' \\"
 echo "  BAND_DIR='${OUT_ROOT}/tmd_bspace_bands_exactx' \\"
-echo "  MIN_REPLICAS=${#SEEDS[@]} \\"
-echo "  ./postprocess_v23a_lambda3_normpriors15_replica_pilot_rescue.sh"
+echo "  MIN_REPLICAS=10 \\"
+echo "  OUT_ROOT='${OUT_ROOT}' ./workflows/v23a/replicas/postprocess_v23a_lambda3_normpriors15_replica_pilot_rescue.sh"

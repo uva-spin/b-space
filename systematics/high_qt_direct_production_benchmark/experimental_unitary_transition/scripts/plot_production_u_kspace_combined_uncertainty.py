@@ -24,7 +24,7 @@ BASE = ROOT / "systematics/high_qt_direct_production_benchmark/experimental_unit
 CENTRAL_BSPACE = ROOT / "systematics/collins_factorization_validity/plots/rowidfix_stageFT_all_qmax0p20_lam0p50_central_exactx/v22_scheme_tmd_bspace_long.csv"
 EXPERIMENTAL_BAND = ROOT / "plots/prd_q020_figures/kspace_fixedx_q10_u_current/v23a_regularized_kspace_bands.csv"
 FNP_COMPARISON = BASE / "summaries/production_fnp_stability_control/fnp_grid_comparison.csv"
-TRANSFORMER = ROOT / "construct_v23a_regularized_kspace_tmd_v2.py"
+TRANSFORMER = ROOT / "workflows/v23a/construction/construct_v23a_regularized_kspace_tmd_v2.py"
 TARGET = BASE / "summaries/production_fnp_stability_control/kspace_u_x0p1_Q10"
 SEEDS = (303, 304, 305)
 

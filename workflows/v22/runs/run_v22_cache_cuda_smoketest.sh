@@ -4,7 +4,7 @@ set -euo pipefail
 # Validate that external cached W/Y grids plus CUDA reproduce the v22 central
 # refit predictions at zero learning rate.
 #
-# Run after export_v22_backend_cache.sh.
+# Run after workflows/v22/utilities/export_v22_backend_cache.sh.
 
 ROOT="$(pwd)"
 export PYTHONPATH="${ROOT}:${PYTHONPATH:-}"

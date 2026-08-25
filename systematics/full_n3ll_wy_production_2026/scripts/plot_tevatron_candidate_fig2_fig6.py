@@ -26,7 +26,7 @@ SYSTEMATICS = Path(__file__).resolve().parents[2]
 ROOT = SYSTEMATICS.parent
 CENTRAL = ROOT / "systematics/collins_factorization_validity/plots/rowidfix_stageFT_all_qmax0p20_lam0p50_central_exactx/v22_scheme_tmd_bspace_long.csv"
 REPLICAS = SYSTEMATICS / "full_n3ll_wy_production_2026/reports/tevatron_gaussian_np_replica_profile/replica_members.json"
-TRANSFORMER = ROOT / "construct_v23a_regularized_kspace_tmd_v2.py"
+TRANSFORMER = ROOT / "workflows/v23a/construction/construct_v23a_regularized_kspace_tmd_v2.py"
 TARGET = SYSTEMATICS / "full_n3ll_wy_production_2026/reports/tevatron_candidate_fig2_fig6_g1_1p0"
 
 

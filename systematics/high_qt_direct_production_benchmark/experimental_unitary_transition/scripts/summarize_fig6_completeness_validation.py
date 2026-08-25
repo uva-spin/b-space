@@ -20,7 +20,7 @@ CENTRAL_BSPACE = (
     "rowidfix_stageFT_all_qmax0p20_lam0p50_central_exactx/"
     "v22_scheme_tmd_bspace_long.csv"
 )
-TRANSFORMER = ROOT / "construct_v23a_regularized_kspace_tmd_v2.py"
+TRANSFORMER = ROOT / "workflows/v23a/construction/construct_v23a_regularized_kspace_tmd_v2.py"
 FIG6_SUMMARY = BASE / "summaries/fig6_updated_ud_band/summary.json"
 TARGET = BASE / "summaries/fig6_completeness_validation"
 CONTINUED_SEEDS = (304, 307, 313)

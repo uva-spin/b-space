@@ -77,7 +77,7 @@ REFERENCE_B = (
     "rowidfix_stageFT_all_qmax0p20_lam0p50_central_exactx/"
     "v22_scheme_tmd_bspace_long.csv"
 )
-TRANSFORMER = ROOT / "construct_v23a_regularized_kspace_tmd_v2.py"
+TRANSFORMER = ROOT / "workflows/v23a/construction/construct_v23a_regularized_kspace_tmd_v2.py"
 FROZEN_MANIFEST = BASE / "manifests/input_files.json"
 SELECTED = BASE / "summaries/replica_robust_reference_full24/summary.json"
 REPLICAS = BASE / "summaries/selected_reference_central_replicas/summary.json"

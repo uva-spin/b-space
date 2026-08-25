@@ -15,7 +15,7 @@ import pandas as pd
 
 BASE = Path(__file__).resolve().parents[1]
 PROJECT = BASE.parents[1]
-TRANSFORMER = PROJECT / "construct_v23a_regularized_kspace_tmd_v2.py"
+TRANSFORMER = PROJECT / "workflows/v23a/construction/construct_v23a_regularized_kspace_tmd_v2.py"
 MODES = ("expb2", "expb", "zero", "taper")
 
 

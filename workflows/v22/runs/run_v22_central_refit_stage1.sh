@@ -6,9 +6,9 @@ set -euo pipefail
 # Run from ~/work/bT-TMD.
 #
 # Optional overrides:
-#   FROZEN=/path/to/PRIMARY_ONE_REPLICA ./run_v22_central_refit_stage1.sh
-#   TRAIN=/path/to/train_bt_dnn_v21_smoothedA_tail.py ./run_v22_central_refit_stage1.sh
-#   OUT=outputs/my_refit ./run_v22_central_refit_stage1.sh
+#   FROZEN=/path/to/PRIMARY_ONE_REPLICA ./workflows/v22/runs/run_v22_central_refit_stage1.sh
+#   TRAIN=/path/to/train_bt_dnn_v21_smoothedA_tail.py ./workflows/v22/runs/run_v22_central_refit_stage1.sh
+#   OUT=outputs/my_refit ./workflows/v22/runs/run_v22_central_refit_stage1.sh
 
 ROOT="$(pwd)"
 export PYTHONPATH="${ROOT}:${PYTHONPATH:-}"

@@ -19,6 +19,7 @@ The complete source stack is included in this checkout. Start with:
 - [Reproducibility and execution guide](docs/REPRODUCIBILITY.md)
 - [Source map and publication boundary](docs/SOURCE_MAP.md)
 - [Systematics and identifiability campaign](docs/SYSTEMATICS.md)
+- [Workflow-driver index](workflows/README.md)
 
 ---
 
@@ -237,6 +238,10 @@ frozen outputs. Generated fits and caches remain excluded; see
 │   ├── bspace-result.png
 │   ├── kspace-result.png
 │   └── v23a_tmd_dnn_node_architecture.png
+├── workflows/
+│   ├── v22/                 legacy v22 bootstrap, fit, audit, and replica drivers
+│   ├── v23a/               legacy v23a fit, replica, and plotting drivers
+│   └── compatibility/       source-staging helper
 ├── v22/
 │   ├── backends/
 │   ├── src/

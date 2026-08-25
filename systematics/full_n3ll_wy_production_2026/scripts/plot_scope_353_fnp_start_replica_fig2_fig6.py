@@ -25,7 +25,7 @@ import pandas as pd
 BASE = Path(__file__).resolve().parents[1]
 ROOT = BASE.parent
 CENTRAL = ROOT / "collins_factorization_validity/plots/rowidfix_stageFT_all_qmax0p20_lam0p50_central_exactx/v22_scheme_tmd_bspace_long.csv"
-TRANSFORMER = ROOT.parent / "construct_v23a_regularized_kspace_tmd_v2.py"
+TRANSFORMER = ROOT.parent / "workflows/v23a/construction/construct_v23a_regularized_kspace_tmd_v2.py"
 DEFAULT_SOURCE = BASE / "reports/scope_353_start_replica_propagation_final/fnp_start_replica_crossed_long_x0p1.csv"
 DEFAULT_TARGET = BASE / "reports/scope_353_final_fig2_fig6"
 

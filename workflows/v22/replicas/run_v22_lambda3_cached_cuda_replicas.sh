@@ -4,7 +4,7 @@ set -euo pipefail
 # Cached + CUDA v22 lambda=3 profiled-replica run.
 #
 # Intended use after cache/CUDA smoke test passes:
-#   SEEDS="1001 1002 1003 1004 1005 1006 1007 1008 1009 1010" ./run_v22_lambda3_cached_cuda_replicas.sh
+#   SEEDS="1001 1002 1003 1004 1005 1006 1007 1008 1009 1010" ./workflows/v22/replicas/run_v22_lambda3_cached_cuda_replicas.sh
 #
 # Run from ~/work/bT-TMD.
 

@@ -39,7 +39,7 @@ PRIOR_COMPONENTS = (
     BASE / "summaries/production_fnp_stability_control/kspace_u_x0p1_Q10/"
     "u_kspace_uncertainty_components.csv"
 )
-TRANSFORMER = ROOT / "construct_v23a_regularized_kspace_tmd_v2.py"
+TRANSFORMER = ROOT / "workflows/v23a/construction/construct_v23a_regularized_kspace_tmd_v2.py"
 TARGET = BASE / "summaries/fig6_crossed_start_replica_pilot"
 SEEDS = (303, 304, 305, 306, 307, 308)
 

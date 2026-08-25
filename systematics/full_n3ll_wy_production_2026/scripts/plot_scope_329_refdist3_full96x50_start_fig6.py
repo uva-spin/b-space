@@ -27,7 +27,7 @@ import pandas as pd
 BASE = Path(__file__).resolve().parents[1]
 SYSTEMATICS = BASE.parent
 REPORTS = BASE / "reports"
-TRANSFORMER = SYSTEMATICS.parent / "construct_v23a_regularized_kspace_tmd_v2.py"
+TRANSFORMER = SYSTEMATICS.parent / "workflows/v23a/construction/construct_v23a_regularized_kspace_tmd_v2.py"
 BASELINE_BSPACE = (
     SYSTEMATICS / "dataset_identifiability_campaign_2026"
     / "production_lambda1_empirical_reference_full96x50/bspace_combined_bands.csv"

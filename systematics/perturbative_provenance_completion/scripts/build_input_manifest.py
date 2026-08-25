@@ -22,7 +22,7 @@ FILES = [
     ROOT / "v22" / "src" / "css2_ope_nlo.py",
     ROOT / "v22" / "src" / "css2_ope_nlo_general.py",
     ROOT / "v22" / "src" / "small_b_profile.py",
-    ROOT / "export_v22_backend_cache.sh",
+    ROOT / "b-space-public" / "workflows" / "v22" / "utilities" / "export_v22_backend_cache.sh",
     ROOT / "production_frozen" / "v22_lambda3_50rep_DYonly_bspace" / "backend_cache" / "metadata_v22full_n3llp_nloQ96_b160_qToQ05.json",
     ROOT / "production_frozen" / "v22_lambda3_50rep_DYonly_bspace" / "backend_cache" / "cache_paths.json",
     ROOT / "production_frozen" / "v22_lambda3_50rep_DYonly_bspace" / "PRODUCTION_MANIFEST.json",

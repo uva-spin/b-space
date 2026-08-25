@@ -69,7 +69,7 @@ REFERENCE_B = (
     "rowidfix_stageFT_all_qmax0p20_lam0p50_central_exactx/"
     "v22_scheme_tmd_bspace_long.csv"
 )
-TRANSFORMER = ROOT / "construct_v23a_regularized_kspace_tmd_v2.py"
+TRANSFORMER = ROOT / "workflows/v23a/construction/construct_v23a_regularized_kspace_tmd_v2.py"
 HARMONIZED_BUILDER = BASE / "scripts/build_harmonized_lambda1_logfnp_comparator.py"
 TARGET = SUMMARIES / "lambda600_postfit_tail_transform_audit"
 TAIL_MODES = ("expb2", "expb", "taper")

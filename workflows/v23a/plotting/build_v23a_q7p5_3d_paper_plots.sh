@@ -15,11 +15,11 @@ set -euo pipefail
 # Run from the bT-TMD repository root:
 #
 #   chmod +x build_v23a_q7p5_3d_paper_plots.sh
-#   ./build_v23a_q7p5_3d_paper_plots.sh
+#   ./workflows/v23a/plotting/build_v23a_q7p5_3d_paper_plots.sh
 #
 # To erase and rebuild the Q=7.5-only products:
 #
-#   REBUILD=1 ./build_v23a_q7p5_3d_paper_plots.sh
+#   REBUILD=1 ./workflows/v23a/plotting/build_v23a_q7p5_3d_paper_plots.sh
 
 ROOT="${ROOT:-$(pwd)}"
 cd "${ROOT}"

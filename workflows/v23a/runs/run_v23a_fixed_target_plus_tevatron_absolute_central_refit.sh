@@ -1,24 +1,21 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# v23a central refit using explicit CSV normalization priors.
+# Central refit for v23a fixed-target plus fit-ready absolute Tevatron CDF/D0 rows.
 #
-# Before running, create DATA_DIR with make_v23a_explicit_csv_norm_prior_dir.py.
-#
-# Example:
-#   DATA_DIR=$PWD/Data/v23a_fixed_target_lowQ_row99_variants/corrected_E288_300_99_normpriors_trial \
-#   OUT=$PWD/outputs/v23a_fixed_target_lowQ_corrected_central_refit_normpriors_trial_s303 \
-#   DEVICE=cuda ./run_v23a_fixed_target_corrected_central_refit_explicit_csvnorm.sh
+# Run the matching check-only cache first:
+#   ./workflows/v23a/runs/run_v23a_fixed_target_plus_tevatron_absolute_checkonly_cache.sh
 
 ROOT="$(pwd)"
 export PYTHONPATH="${ROOT}:${PYTHONPATH:-}"
 
+PYTHON="${PYTHON:-/home/dustin/miniforge3/envs/pdf-fit/bin/python}"
 TRAIN="${TRAIN:-${ROOT}/v21_tail_release_amp0p019_candidate/train_bt_dnn_v21_smoothedA_tail.py}"
-BACKEND="${BACKEND:-${ROOT}/v22/backends/bt_internal_css_backend_v22_full.py}"
-DATA_DIR="${DATA_DIR:?Set DATA_DIR to an explicit-prior data directory}"
-CACHE_ENV="${CACHE_ENV:-${ROOT}/outputs/v23a_fixed_target_lowQ_corrected_checkonly_cache/backend_cache/cache_paths.env}"
-INIT_STATE="${INIT_STATE:-${ROOT}/outputs/v22_full_backend_central_refit_stage1_s303/model_state.pt}"
-OUT="${OUT:?Set OUT for this run}"
+BACKEND="${BACKEND:-${ROOT}/v23/backends/bt_internal_css_backend_v22_tevatron.py}"
+DATA_DIR="${DATA_DIR:-${ROOT}/Data/v23a_fixed_target_plus_tevatron_absolute_fit_ready}"
+CACHE_ENV="${CACHE_ENV:-${ROOT}/outputs/v23a_fixed_target_plus_tevatron_absolute_fit_ready_ewpty_checkonly_cache/backend_cache/cache_paths.env}"
+INIT_STATE="${INIT_STATE:-${ROOT}/outputs/v23a_fixed_target_lowQ_corrected_central_refit_normpriors15_p2p5_E772_E288400_s303/model_state.pt}"
+OUT="${OUT:-${ROOT}/outputs/v23a_fixed_target_plus_tevatron_absolute_fit_ready_ewpty_core_central_refit_s303}"
 DEVICE="${DEVICE:-cuda}"
 SEED="${SEED:-303}"
 
@@ -27,7 +24,7 @@ die() {
   exit 1
 }
 
-for path in "${TRAIN}" "${BACKEND}" "${DATA_DIR}" "${CACHE_ENV}" "${INIT_STATE}"; do
+for path in "${PYTHON}" "${TRAIN}" "${BACKEND}" "${DATA_DIR}" "${CACHE_ENV}" "${INIT_STATE}"; do
   [[ -e "${path}" ]] || die "Missing required path: ${path}"
 done
 
@@ -42,21 +39,22 @@ if [[ -e "${OUT}" ]]; then
   die "Refusing to overwrite existing output: ${OUT}"
 fi
 
+echo "Python:     ${PYTHON}"
 echo "Trainer:    ${TRAIN}"
+echo "Backend:    ${BACKEND}"
 echo "Data dir:   ${DATA_DIR}"
 echo "W grid:     ${W_GRID}"
 echo "Y grid:     ${Y_GRID}"
 echo "Init state: ${INIT_STATE}"
 echo "Device:     ${DEVICE}"
 echo "Output:     ${OUT}"
-echo "Norm/P2P:   csv"
 
-python3 "${TRAIN}" \
+"${PYTHON}" "${TRAIN}" \
   --backend-script "${BACKEND}" \
   --data-dir "${DATA_DIR}" \
-  --datasets E288_200 E288_300 E288_400 E605 E772 \
+  --datasets E288_200 E288_300 E288_400 E605 E772 CDF_RUN_1 CDF_RUN_2 D0_RUN_1 \
   --mode matched \
-  --qT-max-over-Q 0.5 \
+  --qT-max-over-Q 0.2 \
   --tmd-qT-max-over-Q 0.2 \
   --w-backend external \
   --w-grid "${W_GRID}" \

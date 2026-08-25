@@ -23,7 +23,7 @@ CENTRAL_BSPACE = (
     "v22_scheme_tmd_bspace_long.csv"
 )
 FNP_COMPARISON = BASE / "summaries/production_fnp_stability_control/fnp_grid_comparison.csv"
-TRANSFORMER = ROOT / "construct_v23a_regularized_kspace_tmd_v2.py"
+TRANSFORMER = ROOT / "workflows/v23a/construction/construct_v23a_regularized_kspace_tmd_v2.py"
 REPLICA_DIR = ROOT / "plots/prd_q020_figures"
 TARGET = BASE / "summaries/fig6_updated_ud_band"
 SEEDS = tuple(range(303, 327))

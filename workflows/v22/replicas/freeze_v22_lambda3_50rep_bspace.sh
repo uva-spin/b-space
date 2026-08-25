@@ -82,11 +82,11 @@ copy_optional "${ROOT}/v22/tools" "${FREEZE_DIR}/code/v22/tools"
 
 # Key runner scripts if present
 for f in \
-  export_v22_backend_cache.sh \
-  run_v22_cache_cuda_smoketest.sh \
-  run_v22_lambda3_cached_cuda_replicas.sh \
-  append_v22_lambda3_cached_cuda_replicas.sh \
-  run_v22_central_refit_stage1.sh
+  workflows/v22/utilities/export_v22_backend_cache.sh \
+  workflows/v22/runs/run_v22_cache_cuda_smoketest.sh \
+  workflows/v22/replicas/run_v22_lambda3_cached_cuda_replicas.sh \
+  workflows/v22/replicas/append_v22_lambda3_cached_cuda_replicas.sh \
+  workflows/v22/runs/run_v22_central_refit_stage1.sh
 do
   copy_optional "${ROOT}/${f}" "${FREEZE_DIR}/code/${f}"
 done

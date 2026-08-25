@@ -6,10 +6,10 @@ set -euo pipefail
 # Run from ~/work/bT-TMD, where v22/backends/bt_internal_css_backend_v22_full.py exists.
 #
 # Optional overrides:
-#   FROZEN=/path/to/production_frozen/PRIMARY_ONE_REPLICA ./run_v22_full_warmcheck_v2.sh
-#   TRAIN=/path/to/train_bt_dnn_v21_smoothedA_tail.py ./run_v22_full_warmcheck_v2.sh
-#   DATA_DIR=/path/to/Data ./run_v22_full_warmcheck_v2.sh
-#   OUT=outputs/custom_name ./run_v22_full_warmcheck_v2.sh
+#   FROZEN=/path/to/production_frozen/PRIMARY_ONE_REPLICA ./workflows/v22/runs/run_v22_full_warmcheck_v2.sh
+#   TRAIN=/path/to/train_bt_dnn_v21_smoothedA_tail.py ./workflows/v22/runs/run_v22_full_warmcheck_v2.sh
+#   DATA_DIR=/path/to/Data ./workflows/v22/runs/run_v22_full_warmcheck_v2.sh
+#   OUT=outputs/custom_name ./workflows/v22/runs/run_v22_full_warmcheck_v2.sh
 
 ROOT="$(pwd)"
 export PYTHONPATH="${ROOT}:${PYTHONPATH:-}"

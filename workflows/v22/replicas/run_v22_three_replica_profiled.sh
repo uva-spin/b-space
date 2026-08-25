@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# v22 profiled-replica anchor-strength scan.
+# v22 three-replica profiled pilot.
 #
-# Default scan:
-#   lambda_logF = 30, 10, 3
-#   seeds = 1001,1002,1003
+# This adapts the validated v21 profiled-replica protocol to the v22 full W+Y
+# backend and the v22 stage-1 central refit checkpoint.
 #
 # Run from ~/work/bT-TMD.
 #
-# Optional:
-#   ANCHORS="30 10" SEEDS="1001 1002 1003" MAX_PARALLEL=1 ./run_v22_anchor_scan_profiled.sh
+# Optional overrides:
+#   SEEDS="1001 1002 1003" ./workflows/v22/replicas/run_v22_three_replica_profiled.sh
+#   MAX_PARALLEL=2 ./workflows/v22/replicas/run_v22_three_replica_profiled.sh
+#   CENTRAL_RUN=/path/to/central_refit ./workflows/v22/replicas/run_v22_three_replica_profiled.sh
+#   TRAIN=/path/to/train_bt_dnn_v21_replica_stable.py ./workflows/v22/replicas/run_v22_three_replica_profiled.sh
+#   PREP=/path/to/prepare_v21_replica_norm_inits.py ./workflows/v22/replicas/run_v22_three_replica_profiled.sh
 
 ROOT="$(pwd)"
 export PYTHONPATH="${ROOT}:${PYTHONPATH:-}"
@@ -23,8 +26,7 @@ die() {
 CENTRAL_RUN="${CENTRAL_RUN:-${ROOT}/outputs/v22_full_backend_central_refit_stage1_s303}"
 BACKEND="${BACKEND:-${ROOT}/v22/backends/bt_internal_css_backend_v22_full.py}"
 DATA_DIR="${DATA_DIR:-${ROOT}/Data}"
-OUT_ROOT="${OUT_ROOT:-${ROOT}/replica_scan_v22_stage1_logf_anchor}"
-ANCHORS=(${ANCHORS:-30 10 3})
+OUT_ROOT="${OUT_ROOT:-${ROOT}/replica_pilot_v22_stage1_profiled}"
 SEEDS=(${SEEDS:-1001 1002 1003})
 MAX_PARALLEL="${MAX_PARALLEL:-1}"
 
@@ -74,47 +76,48 @@ if [[ -e "${OUT_ROOT}" ]]; then
   die "Refusing to overwrite existing output root: ${OUT_ROOT}"
 fi
 
-mkdir -p "${OUT_ROOT}"
+mkdir -p \
+  "${OUT_ROOT}/outputs" \
+  "${OUT_ROOT}/logs" \
+  "${OUT_ROOT}/norm_inits"
 
-cat > "${OUT_ROOT}/ANCHOR_SCAN_MANIFEST.json" <<EOF
+cat > "${OUT_ROOT}/RUN_MANIFEST.json" <<EOF
 {
   "central_run": "${CENTRAL_RUN}",
   "backend": "${BACKEND}",
   "train_script": "${TRAIN}",
   "prep_script": "${PREP}",
-  "anchors": [$(printf '%s\n' "${ANCHORS[@]}" | paste -sd, -)],
+  "data_dir": "${DATA_DIR}",
   "seeds": [$(printf '%s\n' "${SEEDS[@]}" | paste -sd, -)],
   "max_parallel": ${MAX_PARALLEL},
-  "purpose": "Find weakest log-F_NP anchor that preserves fit quality while giving non-collapsed b-space TMD bands"
+  "protocol": "v22 stage-1 central refit, profiled experimental replicas, head-only NP training, log-F_NP anchor"
 }
 EOF
 
-sanitize_anchor() {
-  echo "$1" | sed 's/\./p/g; s/-/m/g'
-}
+echo "Preparing profiled normalization initializations..."
+python3 "${PREP}" \
+  --central-predictions "${CENTRAL_PRED}" \
+  --seeds "${SEEDS[@]}" \
+  --out "${OUT_ROOT}/norm_inits"
 
-run_one_seed() {
-  local LAMBDA="$1"
-  local S="$2"
-  local TAG
-  TAG="$(sanitize_anchor "${LAMBDA}")"
-  local SCAN="${OUT_ROOT}/lambda_${TAG}"
-  local OUT="${SCAN}/outputs/v22_stage1_profiled_lambda${TAG}_s${S}"
-  local LOG="${SCAN}/logs/v22_stage1_profiled_lambda${TAG}_s${S}.log"
-  local NORM_INIT="${SCAN}/norm_inits/s${S}/dataset_norms.csv"
+run_seed() {
+  local S="$1"
+  local OUT="${OUT_ROOT}/outputs/v22_stage1_profiled_s${S}"
+  local LOG="${OUT_ROOT}/logs/v22_stage1_profiled_s${S}.log"
+  local NORM_INIT="${OUT_ROOT}/norm_inits/s${S}/dataset_norms.csv"
 
+  if [[ -e "${OUT}" ]]; then
+    echo "Refusing to overwrite existing output: ${OUT}" >&2
+    exit 1
+  fi
   [[ -f "${NORM_INIT}" ]] || {
     echo "Missing norm init: ${NORM_INIT}" >&2
-    exit 1
-  }
-  [[ ! -e "${OUT}" ]] || {
-    echo "Refusing to overwrite existing replica output: ${OUT}" >&2
     exit 1
   }
 
   echo
   echo "============================================================"
-  echo "v22 profiled replica: lambda_logF=${LAMBDA}, seed=${S}"
+  echo "v22 profiled experimental replica seed ${S}"
   echo "Output: ${OUT}"
   echo "Log:    ${LOG}"
   echo "============================================================"
@@ -175,7 +178,7 @@ run_one_seed() {
     --np-a-tail-b0 3.5 \
     --np-a-tail-width 0.25 \
     --replica-train-scope head \
-    --lambda-replica-logf-anchor "${LAMBDA}" \
+    --lambda-replica-logf-anchor 100 \
     --replica-anchor-x-values 0.15 0.20 0.30 0.40 0.50 \
     --replica-anchor-bmin 0 \
     --replica-anchor-bmax 8 \
@@ -201,45 +204,36 @@ run_one_seed() {
     --out "${OUT}" \
     > "${LOG}" 2>&1
 
-  echo "lambda ${LAMBDA}, seed ${S}: complete"
+  echo "seed ${S}: complete"
 }
 
-export -f run_one_seed sanitize_anchor
+export -f run_seed
 export OUT_ROOT TRAIN BACKEND DATA_DIR CENTRAL_STATE
 
-for LAMBDA in "${ANCHORS[@]}"; do
-  TAG="$(sanitize_anchor "${LAMBDA}")"
-  SCAN="${OUT_ROOT}/lambda_${TAG}"
-  mkdir -p "${SCAN}/outputs" "${SCAN}/logs" "${SCAN}/norm_inits"
+printf '%s\n' "${SEEDS[@]}" \
+  | xargs -n 1 -P "${MAX_PARALLEL}" bash -c 'run_seed "$1"' _
 
-  echo
-  echo "Preparing normalization initializations for lambda=${LAMBDA}..."
-  python3 "${PREP}" \
-    --central-predictions "${CENTRAL_PRED}" \
-    --seeds "${SEEDS[@]}" \
-    --out "${SCAN}/norm_inits"
-
-  printf '%s\n' "${SEEDS[@]}" \
-    | xargs -n 1 -P "${MAX_PARALLEL}" bash -c 'run_one_seed "$1" "$2"' _ "${LAMBDA}"
-
-  EXPECTED="${#SEEDS[@]}"
-  FOUND=0
-  for S in "${SEEDS[@]}"; do
-    OUT="${SCAN}/outputs/v22_stage1_profiled_lambda${TAG}_s${S}"
-    if [[ -f "${OUT}/metrics.json" && -f "${OUT}/predictions.csv" && -f "${OUT}/model_state.pt" ]]; then
-      FOUND=$((FOUND + 1))
-    fi
-  done
-
-  if [[ "${FOUND}" -ne "${EXPECTED}" ]]; then
-    echo "lambda=${LAMBDA}: expected ${EXPECTED}, found ${FOUND} successful outputs" >&2
-    exit 1
+EXPECTED="${#SEEDS[@]}"
+FOUND=0
+for S in "${SEEDS[@]}"; do
+  OUT="${OUT_ROOT}/outputs/v22_stage1_profiled_s${S}"
+  if [[ -f "${OUT}/metrics.json" \
+        && -f "${OUT}/predictions.csv" \
+        && -f "${OUT}/model_state.pt" ]]; then
+    FOUND=$((FOUND + 1))
   fi
-
-  echo "lambda=${LAMBDA}: all ${FOUND} replicas complete"
 done
 
+if [[ "${FOUND}" -ne "${EXPECTED}" ]]; then
+  echo "Expected ${EXPECTED} requested replicas, found ${FOUND} successful outputs." >&2
+  exit 1
+fi
+
 echo
-echo "Anchor scan complete."
-echo "Postprocess with:"
-echo "  ./postprocess_v22_anchor_scan.sh"
+echo "v22 three-replica profiled pilot complete."
+echo
+echo "Analyze with:"
+echo "  python3 v22/tools/audit_v22_replica_pilot_basic.py \\"
+echo "    --glob '${OUT_ROOT}/outputs/v22_stage1_profiled_s*' \\"
+echo "    --central-run '${CENTRAL_RUN}' \\"
+echo "    --out '${OUT_ROOT}/audit_basic'"

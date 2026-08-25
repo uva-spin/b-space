@@ -34,7 +34,7 @@ REPLICAS = ROOT / (
     "tmd_bspace_bands_exactx_50rep/v22_tmd_replica_bspace_long.csv"
 )
 TRAINER = ROOT / "v21_smoothedA_tail_candidate/train_bt_dnn_v21_smoothedA_tail.py"
-TRANSFORM = ROOT / "construct_v23a_regularized_kspace_tmd_v2.py"
+TRANSFORM = ROOT / "workflows/v23a/construction/construct_v23a_regularized_kspace_tmd_v2.py"
 X_EXACT = np.array([0.1, 0.2, 0.3, 0.5])
 
 

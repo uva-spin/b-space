@@ -33,7 +33,7 @@ PRODUCTION = SYSTEMATICS / "dataset_identifiability_campaign_2026/production_lam
 BASE_BANDS = PRODUCTION / "bspace_combined_bands.csv"
 BASE_LONG = SYSTEMATICS / "dataset_identifiability_campaign_2026/summaries/lambda1_start_expansion96_bspace/bspace_tmd_ensemble_long.csv"
 BASE_K = PRODUCTION / "kspace_combined_bands.csv"
-TRANSFORMER = SYSTEMATICS.parent / "construct_v23a_regularized_kspace_tmd_v2.py"
+TRANSFORMER = SYSTEMATICS.parent / "workflows/v23a/construction/construct_v23a_regularized_kspace_tmd_v2.py"
 SEEDS = tuple(range(303, 311))
 
 CASES = {
