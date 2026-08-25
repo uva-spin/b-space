@@ -1,0 +1,123 @@
+{
+  "status": "isolated_tevatron_conventional_y_grid_extracted_not_promoted",
+  "formula": "W=RES; ASY=-CT; FO=VJREAL+VJVIRTUAL; Y=FO-ASY=VJ+CT",
+  "engine": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+  "order": 3,
+  "primed": false,
+  "g1_GeV2": 1.017,
+  "random_seed": 20260823,
+  "row_count": 122,
+  "precision_override_count": 19,
+  "precision_overrides": [
+    {
+      "dataset": "CDF_RUN_1",
+      "row_id": "CDF_RUN_1:1",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_1_1_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_1",
+      "row_id": "CDF_RUN_1:5",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_1_5_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:1",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_1_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:2",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_2_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:3",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_3_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:4",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_4_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:5",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_5_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:7",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_7_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:8",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_8_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:10",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_10_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:11",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_11_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:12",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_12_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:13",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_13_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:18",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_18_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:19",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_19_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:25",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_25_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:28",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_28_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:33",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_33_g1_1p017_refined_300m.log"
+    },
+    {
+      "dataset": "CDF_RUN_2",
+      "row_id": "CDF_RUN_2:44",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/precision_refinement/logs/CDF_RUN_2_44_g1_1p017_refined_300m.log"
+    }
+  ],
+  "checks": {
+    "all_finite": true,
+    "all_positive_reconstructed_full_wy": true,
+    "max_abs_term_reconstruction_difference_pb_per_GeV": 0.009070082896261766,
+    "median_abs_term_reconstruction_difference_pb_per_GeV": 0.0002946781678150323
+  },
+  "logs": {
+    "CDF_RUN_1": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/logs/CDF_RUN_1_full_n3ll_nnlo_grid_g1_1p017_seed_20260823.log",
+    "CDF_RUN_2": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/logs/CDF_RUN_2_full_n3ll_nnlo_grid_g1_1p017_seed_20260823.log",
+    "D0_RUN_1": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/logs/D0_RUN_1_full_n3ll_nnlo_grid_g1_1p017_seed_20260823.log"
+  },
+  "artifact": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/conventional_y/tevatron_y_grid.csv",
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false,
+  "promotion_authorized": false
+}

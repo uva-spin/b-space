@@ -1,0 +1,153 @@
+{
+  "status": "accuracy_inventory_complete_for_current_source_not_target",
+  "campaign": "full_n3ll_wy_production_2026",
+  "candidate": "tevatron_n3ll_nlo_wy_v1",
+  "generated_at": "2026-08-18",
+  "scope": {
+    "primary_rows": 353,
+    "low_qt_core_rows": 329,
+    "tevatron_boundary_rows": 24,
+    "excluded_rows": "LHCb high-qT rows 10-13 pending fixed-order observable/covariance closure"
+  },
+  "declared_target": {
+    "resummation": "unprimed N3LL",
+    "fixed_order": "NNLO",
+    "matching": "conventional additive W_N3LL + (FO_NNLO - ASY_NNLO)",
+    "primed": false
+  },
+  "current_source_findings": {
+    "sudakov": {
+      "A_coefficients": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "B_coefficients": [
+        "B1",
+        "B2"
+      ],
+      "declared_n3ll_pilot_aliases": true,
+      "n3ll_pilot_same_coefficients_as_nnll": true,
+      "evidence": {
+        "alias_line": 455,
+        "same_as_nnll_line": 464
+      }
+    },
+    "hard_and_ope": {
+      "hard_source": "one-loop NLO hard module in the current backend",
+      "ope_source": "one-loop NLO OPE module(s) in the current backend",
+      "alpha_s2_hard_constants_verified": false,
+      "alpha_s2_ope_coefficients_verified": false,
+      "full_N3LL_hard_ope_inventory": false
+    },
+    "w_organization": {
+      "default_v22_organization": "multiplicative_nlo",
+      "strict_one_loop_branch_present": true,
+      "evidence": {
+        "default_line": 69,
+        "strict_branch_line": 206
+      }
+    },
+    "finite_y": {
+      "default_y_mode": "zero",
+      "development_path": "FO_real_dev - singular_dev with a switch/damping prescription",
+      "conventional_FO_minus_ASY_production_path": false,
+      "same_scheme_ASY_closure_complete": false,
+      "evidence": {
+        "y_mode_line": 420,
+        "development_y_line": 981,
+        "nonfinal_warning_line": 1204,
+        "scheme_y_wexp_numeric": 232
+      }
+    },
+    "external_dyturbo": {
+      "engine_path": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+      "supports_unprimed_n3ll_and_nnlo_fixed_order": true,
+      "four_loop_cusp_symbols_present": true,
+      "three_loop_non_cusp_symbols_present": true,
+      "alpha_s2_hard_and_matching_symbols_present": true,
+      "note": "External engine is an observable-level NNLO/N3LL oracle; its coefficients are not yet imported into the fitted v22 W backend."
+    }
+  },
+  "required_before_promotion": [
+    "freeze the explicit unprimed N3LL convention table and coefficient sources",
+    "supply and test the missing higher-order hard/OPE/evolution ingredients required by that convention",
+    "derive ASY_NNLO from the same W scheme and normalization used by the exact transform",
+    "validate independent fiducial NNLO FO against the 24 Tevatron boundary observables",
+    "demonstrate conventional W+Y continuity, positivity, refinement stability, and FO approach",
+    "only then refit/propagate replicas and start variation"
+  ],
+  "known_nonproduction_labels": [
+    "resum_order=n3llp/n3ll_pilot is explicitly a pilot alias, not proof of full N3LL",
+    "match_order=nlo/nlo_dev is a development finite-tail path, not a promoted conventional Y",
+    "y_mode=zero is W-only in the strict low-qT core"
+  ],
+  "source_records": {
+    "css_backend": {
+      "path": "bt_internal_css_backend_v19_smoothprofile.py",
+      "sha256": "14bb311644a4681ba33178a208eca52f62683f68bacbf6d95b81e861262a925f",
+      "exists": true
+    },
+    "v22_full_w_backend": {
+      "path": "v22/backends/bt_internal_css_backend_v22_full.py",
+      "sha256": "4a70c174f8374a71a4251949dd1894f1f55a9b2d88e33758c7dc17845bd239a1",
+      "exists": true
+    },
+    "v22_scheme_y_backend": {
+      "path": "v22/backends/bt_internal_css_backend_v22_scheme_y.py",
+      "sha256": "cd027bc4cb721306bb56dda1b3e29698ed58a6fbd9155dfb906c95b3d7e85f92",
+      "exists": true
+    },
+    "dy_hard_nlo": {
+      "path": "v22/src/dy_hard_nlo.py",
+      "sha256": "b89b56f177ddeb94a03d9c41f725fa6f0647e5900cfc6cf491f4a709ef9618d6",
+      "exists": true
+    },
+    "css2_ope_nlo": {
+      "path": "v22/src/css2_ope_nlo.py",
+      "sha256": "6b695d14a05ee7c482423e4ebb52f0a5ccdeecd39b45e36022b4bcc287e62276",
+      "exists": true
+    },
+    "css2_ope_general_nlo": {
+      "path": "v22/src/css2_ope_nlo_general.py",
+      "sha256": "62a6ba7b1c676dc737fc911e16ed4c8d5311bc15260282ca0a55e9be332f7700",
+      "exists": true
+    },
+    "dyturbo_rescoeff": {
+      "path": "/home/dustin/src/dyturbo-1.4.2/resum/rescoeff.f",
+      "sha256": null,
+      "exists": false
+    },
+    "dyturbo_resconst": {
+      "path": "/home/dustin/src/dyturbo-1.4.2/resum/resconst.h",
+      "sha256": "c015512a4acc2fdcf3f404d1de9274c2e7563cba6db92958793a1431ae4be480",
+      "exists": true
+    },
+    "dyturbo_hcoeff": {
+      "path": "/home/dustin/src/dyturbo-1.4.2/resum/hcoeff.h",
+      "sha256": "98f3bce3959aa81b06eb00428e7cf1cf108b5e28be3e4ac6075f76966704fca3",
+      "exists": true
+    },
+    "dyturbo_ccoeff": {
+      "path": "/home/dustin/src/dyturbo-1.4.2/resum/ccoeff.h",
+      "sha256": "ab2d5143c3279c3d94c593333323c155a57c1be7368a1e9f89d205d65f4e67b1",
+      "exists": true
+    },
+    "dyturbo_gamma4": {
+      "path": "/home/dustin/src/dyturbo-1.4.2/resum/gamma4sg.h",
+      "sha256": "1c234a8ad9f574ef5f30cd3434bf86d707fa4cfe7b4e088e3e4c4c514967f079",
+      "exists": true
+    },
+    "dyturbo_binary": {
+      "path": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+      "sha256": "01bdca152d16a87472e7528296137c486a5410240a5b5036198a2d531363d5bb",
+      "exists": true
+    }
+  },
+  "missing_sources": [
+    "dyturbo_rescoeff"
+  ],
+  "frozen_baseline_untouched": true,
+  "production_outputs_modified": false,
+  "promotion_authorized": false
+}

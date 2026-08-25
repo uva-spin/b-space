@@ -19,6 +19,10 @@ The public repository is a cleaned source release from the working tree
 | `systematics/dataset_identifiability_campaign_2026/scripts/` | same public path | Source-only identifiability, crossing, promotion, and integrity campaign. |
 | `systematics/high_qt_direct_production_benchmark/` | same public path | Experimental W/Y and unitary-transition matching studies. |
 | `systematics/finite_y_tail_benchmark/` | same public path | External finite-tail benchmark drivers and summary metadata. |
+| `systematics/finite_y_completion_2026/` | same public path | Lambda=1 Tevatron unitary finite-Y completion and LHCb closure handoff. |
+| `systematics/perturbative_provenance_completion/` | same public path | W organization, coefficient inventory, strict/multiplicative closure, and accuracy provenance. |
+| `systematics/full_n3ll_wy_production_2026/` | same public path | Isolated Tevatron N³LL+NNLO W+Y source, diagnostics, candidate figures, and paper handoff. |
+| `systematics/prd_empirical_reference_lambda1_dossier/` | same public path | Paper-ready lambda=1 reconstruction figures and methods dossier. |
 | `production/lambda1_empirical_reference_full96x50/` | same public path | Frozen active production outputs and integrity metadata. |
 
 ## Exclusions

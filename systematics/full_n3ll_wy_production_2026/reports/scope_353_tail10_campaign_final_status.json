@@ -1,0 +1,27 @@
+{
+  "status": "isolated_scope_353_tail10_campaign_complete",
+  "model": "v19 monotone FiLM with lambda_fnp_tail=10, bmin=6, target=0.05",
+  "start_count": 24,
+  "replica_count": 50,
+  "long_start_seeds": [
+    303,
+    310,
+    314
+  ],
+  "long_replica_seeds": [
+    1016,
+    1021,
+    1033,
+    1040
+  ],
+  "rejected_start_seeds": [],
+  "rejected_replica_seeds": [
+    1033
+  ],
+  "accepted_start_count": 24,
+  "accepted_replica_count": 49,
+  "full_crossed_member_count": 1200,
+  "accepted_crossed_member_count": 1176,
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

@@ -1,0 +1,40 @@
+{
+  "status": "correction_required_lambda1_baseline_rerun",
+  "candidate": "Y_unitary=p*(FO_NLO-W), matched=(1-p)W+p*FO_NLO",
+  "profiles": [
+    {"name": "early", "r_start": 0.18, "r_end": 0.28},
+    {"name": "central", "r_start": 0.20, "r_end": 0.30},
+    {"name": "late", "r_start": 0.22, "r_end": 0.32}
+  ],
+  "scope": "Tevatron rows with existing node-level genuine-NLO fixed-order results",
+  "production_modification_authorized": false,
+  "paper_modification_authorized": false,
+  "central_fnp_refit": {
+    "status": "rejected_no_stationary_trial",
+    "trials": ["unanchored_50000", "anchor_1000_50000", "anchor_100000_20000"],
+    "fallback": "established_fnp_frozen_unitary_audit"
+  },
+  "replica_start_audit": {
+    "status": "superseded_wrong_frozen_baseline",
+    "replicas": 200,
+    "randomized_nuisance_starts": 48,
+    "all_converged": true,
+    "accepted_as_lambda1_result": false
+  },
+  "fiducial_acceptance": {
+    "status": "lhcb_unitary_node_campaign_missing",
+    "tevatron_unitary_rows": 24,
+    "high_qt_candidate_rows": 46,
+    "externally_benchmarked_high_qt_rows": 5
+  },
+  "source_inputs": {
+    "unitary_node_campaign": "systematics/high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/unitary_smootherstep_v1_simpson_node_campaign",
+    "genuine_nlo_campaign": "systematics/high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/unitary_smootherstep_v1_nlo_24row",
+    "boundary_audit": "systematics/high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/unitary_smootherstep_v1_w_nlo_boundary_audit"
+  },
+  "required_outputs": [
+    "algebraic_closure.json",
+    "tevatron_unitary_validation.json",
+    "decision_status.json"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "status": "lhcb_nnlo_positive_arm_rapidity_semantics_complete_diagnostic",
+  "order": "DYTurbo fixedorder_only=true, order=2, doVJREAL/doVJVIRT=true",
+  "calls": 10000000,
+  "positive_arm_open_y": [
+    0.0,
+    6.0
+  ],
+  "metadata_y_window": [
+    2.0,
+    4.25
+  ],
+  "open_y_row10": {
+    "row_id": "LHCb_7:10",
+    "data_pb_per_GeV": 1.003090909,
+    "theory_pb_per_GeV": 0.8272693821276851,
+    "theory_unc_pb_per_GeV": 0.0191403677030986,
+    "theory_data_ratio": 0.824720246894078
+  },
+  "metadata_y_row10": {
+    "row_id": "LHCb_7:10",
+    "data_pb_per_GeV": 1.003090909,
+    "theory_pb_per_GeV": 0.8520413243866883,
+    "theory_unc_pb_per_GeV": 0.015124657008454327,
+    "theory_data_ratio": 0.8494158572687138
+  },
+  "open_y_rows11_13": [
+    {
+      "row_id": "LHCb_7:11",
+      "data_pb_per_GeV": 0.575263158,
+      "theory_pb_per_GeV": 0.4711770335688618,
+      "theory_unc_pb_per_GeV": 0.0042586250126464,
+      "theory_data_ratio": 0.8190634616807179
+    },
+    {
+      "row_id": "LHCb_7:12",
+      "data_pb_per_GeV": 0.19962069,
+      "theory_pb_per_GeV": 0.1543864557409395,
+      "theory_unc_pb_per_GeV": 0.002930780886154,
+      "theory_data_ratio": 0.7733990687084566
+    },
+    {
+      "row_id": "LHCb_7:13",
+      "data_pb_per_GeV": 0.007323671,
+      "theory_pb_per_GeV": 0.0065046602082933,
+      "theory_unc_pb_per_GeV": 5.651268588766392e-05,
+      "theory_data_ratio": 0.8881693631913967
+    }
+  ],
+  "interpretation": "Opening the positive-arm boson rapidity from 2--4.25 to 0--6 leaves rows 11--13 unchanged within Monte Carlo uncertainty and shifts row 10 by only about 3%. The repeated metadata y window is not the source of the NNLO residual. A -10--10 diagnostic includes the negative pp arm and is not the LHCb observable.",
+  "production_outputs_modified": false
+}

@@ -1,0 +1,128 @@
+{
+  "status": "lhcb_nnlo_pdf_scan_complete_diagnostic_not_production",
+  "order": "DYTurbo fixedorder_only=true, order=2, positive-arm 0<yZ<6",
+  "calls_per_point": 2000000,
+  "pdf_sets": [
+    "NNPDF40_nnlo_as_01180",
+    "CT18NNLO",
+    "MSHT20nnlo_as118"
+  ],
+  "rows": [
+    {
+      "pdf_set": "NNPDF40_nnlo_as_01180",
+      "row_id": "LHCb_7:10",
+      "data_pb_per_GeV": 1.003090909,
+      "theory_pb_per_GeV": 0.8272693821276851,
+      "theory_unc_pb_per_GeV": 0.0191403677030986,
+      "theory_data_ratio": 0.824720246894078
+    },
+    {
+      "pdf_set": "NNPDF40_nnlo_as_01180",
+      "row_id": "LHCb_7:11",
+      "data_pb_per_GeV": 0.575263158,
+      "theory_pb_per_GeV": 0.4711770335688618,
+      "theory_unc_pb_per_GeV": 0.0042586250126464,
+      "theory_data_ratio": 0.8190634616807179
+    },
+    {
+      "pdf_set": "NNPDF40_nnlo_as_01180",
+      "row_id": "LHCb_7:12",
+      "data_pb_per_GeV": 0.19962069,
+      "theory_pb_per_GeV": 0.1543864557409395,
+      "theory_unc_pb_per_GeV": 0.002930780886154,
+      "theory_data_ratio": 0.7733990687084566
+    },
+    {
+      "pdf_set": "NNPDF40_nnlo_as_01180",
+      "row_id": "LHCb_7:13",
+      "data_pb_per_GeV": 0.007323671,
+      "theory_pb_per_GeV": 0.0065046602082933,
+      "theory_unc_pb_per_GeV": 5.651268588766392e-05,
+      "theory_data_ratio": 0.8881693631913967
+    },
+    {
+      "pdf_set": "CT18NNLO",
+      "row_id": "LHCb_7:10",
+      "data_pb_per_GeV": 1.003090909,
+      "theory_pb_per_GeV": 0.78960566652563,
+      "theory_unc_pb_per_GeV": 0.0324173119142266,
+      "theory_data_ratio": 0.7871725876897864
+    },
+    {
+      "pdf_set": "CT18NNLO",
+      "row_id": "LHCb_7:11",
+      "data_pb_per_GeV": 0.575263158,
+      "theory_pb_per_GeV": 0.4658712363113494,
+      "theory_unc_pb_per_GeV": 0.0129014585735137,
+      "theory_data_ratio": 0.809840209359191
+    },
+    {
+      "pdf_set": "CT18NNLO",
+      "row_id": "LHCb_7:12",
+      "data_pb_per_GeV": 0.19962069,
+      "theory_pb_per_GeV": 0.1524554056978021,
+      "theory_unc_pb_per_GeV": 0.0028474494993906,
+      "theory_data_ratio": 0.7637254720329948
+    },
+    {
+      "pdf_set": "CT18NNLO",
+      "row_id": "LHCb_7:13",
+      "data_pb_per_GeV": 0.007323671,
+      "theory_pb_per_GeV": 0.0065294098173538,
+      "theory_unc_pb_per_GeV": 8.997097408303783e-05,
+      "theory_data_ratio": 0.8915487625473345
+    },
+    {
+      "pdf_set": "MSHT20nnlo_as118",
+      "row_id": "LHCb_7:10",
+      "data_pb_per_GeV": 1.003090909,
+      "theory_pb_per_GeV": 0.8175059872862036,
+      "theory_unc_pb_per_GeV": 0.0405086345198588,
+      "theory_data_ratio": 0.8149869368282787
+    },
+    {
+      "pdf_set": "MSHT20nnlo_as118",
+      "row_id": "LHCb_7:11",
+      "data_pb_per_GeV": 0.575263158,
+      "theory_pb_per_GeV": 0.44803482619349,
+      "theory_unc_pb_per_GeV": 0.010165659903269,
+      "theory_data_ratio": 0.778834555912044
+    },
+    {
+      "pdf_set": "MSHT20nnlo_as118",
+      "row_id": "LHCb_7:12",
+      "data_pb_per_GeV": 0.19962069,
+      "theory_pb_per_GeV": 0.1512973753406384,
+      "theory_unc_pb_per_GeV": 0.0040078700837814,
+      "theory_data_ratio": 0.757924318068625
+    },
+    {
+      "pdf_set": "MSHT20nnlo_as118",
+      "row_id": "LHCb_7:13",
+      "data_pb_per_GeV": 0.007323671,
+      "theory_pb_per_GeV": 0.0064586259443727,
+      "theory_unc_pb_per_GeV": 9.059373864824804e-05,
+      "theory_data_ratio": 0.8818836816089499
+    }
+  ],
+  "ratio_range_by_row": {
+    "LHCb_7:10": {
+      "min": 0.7871725876897864,
+      "max": 0.824720246894078
+    },
+    "LHCb_7:11": {
+      "min": 0.778834555912044,
+      "max": 0.8190634616807179
+    },
+    "LHCb_7:12": {
+      "min": 0.757924318068625,
+      "max": 0.7733990687084566
+    },
+    "LHCb_7:13": {
+      "min": 0.8818836816089499,
+      "max": 0.8915487625473345
+    }
+  },
+  "interpretation": "CT18NNLO and MSHT20nnlo_as118 shift the NNLO boundary prediction by only a few percent relative to NNPDF40, far less than the residual 15--23% in rows 10--12. PDF choice does not close the LHCb mismatch.",
+  "production_outputs_modified": false
+}

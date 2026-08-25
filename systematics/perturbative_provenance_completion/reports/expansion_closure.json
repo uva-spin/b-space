@@ -1,0 +1,51 @@
+{
+  "status": "expansion_closure_passed",
+  "created_utc": "2026-08-17T16:46:56.423399+00:00",
+  "source_tree": "b-space-public/v22",
+  "checks": [
+    {
+      "check": "run_convolution_smoke.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "19 convolution checks passed",
+      "stderr": ""
+    },
+    {
+      "check": "run_css2_ope_nlo_smoke.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "13 canonical CSS2 NLO OPE checks passed",
+      "stderr": ""
+    },
+    {
+      "check": "run_css2_ope_nlo_general_smoke.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "15 general-scale CSS2 OPE checks passed",
+      "stderr": ""
+    },
+    {
+      "check": "run_dy_hard_nlo_smoke.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "8 Drell--Yan hard-factor checks passed",
+      "stderr": ""
+    },
+    {
+      "check": "run_dy_w_nlo_reference_smoke.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "6 standalone DY W-kernel checks passed",
+      "stderr": ""
+    },
+    {
+      "check": "run_small_b_profile_smoke.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "8 small-b profile checks passed",
+      "stderr": ""
+    }
+  ],
+  "scope": "source-level closure only; not an external fixed-order observable validation",
+  "production_outputs_modified": false
+}

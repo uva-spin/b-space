@@ -1,0 +1,70 @@
+{
+  "status": "lhcb_true_nnlo_scale_scan_complete_diagnostic_not_production",
+  "order": "DYTurbo fixedorder_only=true, order=2 (NNLO), doVJREAL/doVJVIRT=true",
+  "central_calls": 10000000,
+  "noncentral_calls": 5000000,
+  "rows": [
+    {
+      "row_id": "LHCb_7:12",
+      "data_pb_per_GeV": 0.19962069,
+      "ratio_min": 0.7280924893816298,
+      "ratio_central": 0.7734005981137427,
+      "ratio_max": 0.8503172459639915,
+      "max_scale": "mur0p5_muf1",
+      "theory_min_pb_per_GeV": 0.1453423251141786,
+      "theory_central_pb_per_GeV": 0.154386761041878,
+      "theory_max_pb_per_GeV": 0.1697409153582317,
+      "max_relative_mc_uncertainty": 0.02529122998970164
+    },
+    {
+      "row_id": "LHCb_7:13",
+      "data_pb_per_GeV": 0.007323671,
+      "ratio_min": 0.8364250941389366,
+      "ratio_central": 0.8881693626985838,
+      "ratio_max": 0.9675057584864476,
+      "max_scale": "mur0p5_muf0p5",
+      "theory_min_pb_per_GeV": 0.0061257022056176,
+      "theory_central_pb_per_GeV": 0.0065046602046841,
+      "theory_max_pb_per_GeV": 0.0070856938657602,
+      "max_relative_mc_uncertainty": 0.016415252113438732
+    },
+    {
+      "row_id": "LHCb_7:10",
+      "data_pb_per_GeV": 1.003090909,
+      "ratio_min": 0.7560254226959209,
+      "ratio_central": 0.8494158572687138,
+      "ratio_max": 0.8494158572687138,
+      "max_scale": "central",
+      "theory_min_pb_per_GeV": 0.7583622284791605,
+      "theory_central_pb_per_GeV": 0.8520413243866883,
+      "theory_max_pb_per_GeV": 0.8520413243866883,
+      "max_relative_mc_uncertainty": 0.035470671326469645
+    },
+    {
+      "row_id": "LHCb_7:11",
+      "data_pb_per_GeV": 0.575263158,
+      "ratio_min": 0.7586680762637934,
+      "ratio_central": 0.8190645585551987,
+      "ratio_max": 0.8912991013766821,
+      "max_scale": "mur0p5_muf1",
+      "theory_min_pb_per_GeV": 0.4364337934252947,
+      "theory_central_pb_per_GeV": 0.47117766456033955,
+      "theory_max_pb_per_GeV": 0.5127315357805123,
+      "max_relative_mc_uncertainty": 0.0416296195630591
+    }
+  ],
+  "bin_integrated_ratio_by_scale": {
+    "central": 0.8194944991435081,
+    "mur0p5_muf0p5": 0.8609810589753932,
+    "mur0p5_muf1": 0.8669374734031874,
+    "mur1_muf0p5": 0.7956597295786426,
+    "mur1_muf2": 0.8400036941014593,
+    "mur2_muf1": 0.7576670657667286,
+    "mur2_muf2": 0.7630736922825458
+  },
+  "maximum_ratio_to_data": 0.9675057584864476,
+  "maximum_ratio_row": "LHCb_7:13",
+  "maximum_ratio_scale": "mur0p5_muf0p5",
+  "interpretation": "NNLO raises the boundary prediction substantially relative to NLO: central theory/data ratios are approximately 0.85, 0.82, 0.77, and 0.89 for rows 10--13. The standard scale envelope reaches at most about 0.97 pointwise (row 13) but remains below data in the first three boundary bins. Thus the NLO deficit was partly a missing-order effect, while a residual LHCb observable/covariance or higher-order closure remains before universal promotion.",
+  "production_outputs_modified": false
+}

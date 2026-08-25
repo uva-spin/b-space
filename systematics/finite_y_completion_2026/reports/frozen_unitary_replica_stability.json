@@ -1,0 +1,46 @@
+{
+  "status": "provisional_wrong_frozen_baseline_not_lambda1",
+  "profile": "central_0p20_0p30",
+  "row_count": 24,
+  "replicas": 200,
+  "randomized_optimizer_starts_per_replica": 48,
+  "seed": 20260817,
+  "nominal_fit": {
+    "success": true,
+    "nfev": 9,
+    "total_chi2": 25.53535831773598,
+    "total_chi2_per_row": 1.063973263238999,
+    "matching_nuisance_sigma": 1.3505140621838572,
+    "nlo_scale_nuisance_sigma": 0.943630648174465,
+    "max_absolute_pull": 2.4305243797615246,
+    "all_starts_success": true,
+    "start_objective_range": 1.2789769243681803e-13
+  },
+  "replica_fit": {
+    "all_success": true,
+    "all_starts_success": true,
+    "chi2_per_row_q16_median_q84": [
+      1.473385437225855,
+      1.8741213477684284,
+      2.4065096491407076
+    ],
+    "matching_nuisance_q16_median_q84": [
+      1.3039764097589905,
+      1.3543575634641818,
+      1.4033892387370532
+    ],
+    "nlo_scale_nuisance_q16_median_q84": [
+      0.7924270886856314,
+      0.9348293228178006,
+      1.1166192958131833
+    ],
+    "max_absolute_pull_q84": 3.5855105881886766,
+    "max_start_objective_range": 8.668621376273222e-13
+  },
+  "interpretation": "This audit used the older lambda=0.5 frozen state and is superseded for the lambda=1 question. It must be rerun after recomputing boundary W values from the registered lambda=1 endpoint ensemble.",
+  "production_promotion": false,
+  "sources": {
+    "boundary_input": "/home/dustin/work/project/bT-TMD/systematics/high_qt_direct_production_benchmark/experimental_unitary_transition/summaries/unitary_smootherstep_v1_nlo_24row/nlo_frozen_unitary_pulls.csv",
+    "frozen_fnp_production": "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/outputs/rowidfix_stageFT_all_qmax0p20_lam0p50_central_s303"
+  }
+}

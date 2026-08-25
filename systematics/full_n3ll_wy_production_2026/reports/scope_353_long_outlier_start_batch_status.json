@@ -1,0 +1,18 @@
+{
+  "status": "isolated_scope_353_long_outlier_start_batch_complete",
+  "seeds": [
+    317
+  ],
+  "epochs": 15000,
+  "patience": 2500,
+  "runs": [
+    {
+      "seed": 317,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_s317_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_s317_csvnorm_long.log"
+    }
+  ],
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

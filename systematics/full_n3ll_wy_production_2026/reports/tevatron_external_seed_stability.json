@@ -1,0 +1,15 @@
+{
+  "status": "isolated_external_seed_stability_complete",
+  "base_grid": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p0/tevatron_full_wy_grid.csv",
+  "independent_grid": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p0_seed1357911/tevatron_full_wy_grid.csv",
+  "row_count": 122,
+  "checks": {
+    "median_absolute_relative_difference": 0.035270744323360186,
+    "max_absolute_relative_difference": 0.7582962600494568,
+    "rms_difference_over_combined_mc_sigma": 0.7993258372632516,
+    "max_difference_over_combined_mc_sigma": 1.7415804338853804
+  },
+  "interpretation": "independent numerical-integration check only; not a model-start or experimental-replica variation",
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

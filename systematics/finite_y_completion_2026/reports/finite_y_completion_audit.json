@@ -1,0 +1,146 @@
+{
+  "status": "finite_y_complete_with_exhausted_lhcb_external_input_blocker",
+  "objective_scope": "production-level finite-Y term without modifying frozen production files",
+  "requirements": {
+    "verified_lambda1_fnp_ensemble_used": {
+      "status": "passed",
+      "evidence": "96 registered lambda=1 endpoints used for Tevatron and LHCb W/Y audits"
+    },
+    "mathematically_consistent_matching": {
+      "status": "passed_for_unitary_candidate",
+      "candidate": "Y=p(qT/Q)(FO-W), matched=(1-p)W+pFO",
+      "algebraic_and_c2_tests": {
+        "algebraic_endpoint_and_c2": true,
+        "exact_bin_reconstruction": true,
+        "node_convergence": true,
+        "genuine_nlo_input": true,
+        "positive_predictions": true
+      },
+      "additive_fo_minus_asy": "rejected as a domain-of-validity failure only"
+    },
+    "tevatron_scope": {
+      "status": "validated_24row_boundary_candidate_not_full_global_refit",
+      "rows": 24,
+      "genuine_nlo_rows": 24,
+      "endpoint_count": 96,
+      "replicas": 50,
+      "central_profile_total_chi2_per_row_q16_median_q84": [
+        1.0675283571462342,
+        1.0696006846573094,
+        1.0715235718004528
+      ],
+      "replica_central_profile_total_chi2_per_row_q16_median_q84": [
+        1.4553000607983575,
+        1.8930492463945723,
+        2.409859522343711
+      ],
+      "full_fnal_global_w_plus_y_refit": "not performed; the 0.43 historical value remains the 329-row W-only production objective",
+      "all_profiles_node_convergence": true,
+      "all_predictions_positive": true
+    },
+    "lhcb_fiducial_coverage": {
+      "status": "validated_as_isolated_diagnostic",
+      "rows": [
+        {
+          "row_id": "LHCb_7:10",
+          "qT_node_order": 1,
+          "rapidity_node_order": 3,
+          "node_count": 12,
+          "node_weighted_acceptance": 0.41478379481504474,
+          "full_bin_dyturbo_acceptance": 0.4151100320252009,
+          "relative_grid_vs_bin": -0.0007859053864936989,
+          "min_node_acceptance": 0.0616826496970117,
+          "max_node_acceptance": 0.7119197476216269,
+          "zero_cross_section_nodes": 0
+        },
+        {
+          "row_id": "LHCb_7:11",
+          "qT_node_order": 1,
+          "rapidity_node_order": 3,
+          "node_count": 12,
+          "node_weighted_acceptance": 0.41121481060048914,
+          "full_bin_dyturbo_acceptance": 0.4125581901487676,
+          "relative_grid_vs_bin": -0.0032562183477536496,
+          "min_node_acceptance": 0.0647827609467762,
+          "max_node_acceptance": 0.7021878871159875,
+          "zero_cross_section_nodes": 0
+        },
+        {
+          "row_id": "LHCb_7:12",
+          "qT_node_order": 1,
+          "rapidity_node_order": 3,
+          "node_count": 12,
+          "node_weighted_acceptance": 0.40458491318394985,
+          "full_bin_dyturbo_acceptance": 0.4053756754032125,
+          "relative_grid_vs_bin": -0.0019506898594152731,
+          "min_node_acceptance": 0.0724456385924798,
+          "max_node_acceptance": 0.6882187216997964,
+          "zero_cross_section_nodes": 0
+        },
+        {
+          "row_id": "LHCb_7:13",
+          "qT_node_order": 2,
+          "rapidity_node_order": 3,
+          "node_count": 24,
+          "node_weighted_acceptance": 0.3711647149284301,
+          "full_bin_dyturbo_acceptance": 0.3683963317869557,
+          "relative_grid_vs_bin": 0.007514687043831343,
+          "min_node_acceptance": 0.0,
+          "max_node_acceptance": 0.7791663959026269,
+          "zero_cross_section_nodes": 6
+        }
+      ],
+      "max_grid_vs_full_bin_relative": 0.007514687043831343,
+      "positive_arm_rapidity_convention": "validated against mirrored DYTurbo/MCFM LO closure",
+      "nnlo_endpoint_fits_converged": true,
+      "nnlo_endpoint_predictions_positive": true,
+      "nnlo_replica_fits_converged": true,
+      "nnlo_replica_predictions_positive": true
+    },
+    "systematic_lhcb_closure_tests": {
+      "status": "exhausted_with_residual",
+      "tests": [
+        "true NLO all-14-bin shape",
+        "NLO six-point scale scan",
+        "NNLO seven-point scale scan",
+        "positive-arm versus inclusive/negative rapidity semantics",
+        "NNLO PDF set scan",
+        "NNLO electroweak/gamma* convention scan",
+        "published correlated pT covariance reconstruction",
+        "MCFM/DYTurbo rapidity-sign closure",
+        "NNLO lambda=1 endpoint/profile fit",
+        "NNLO lambda=1 50-replica propagation"
+      ],
+      "nnlo_max_scale_ratio_to_data": 0.9675057584864476,
+      "central_profile_total_chi2_per_row": [
+        6.541140147483021,
+        6.690984209910956,
+        6.776585709261729
+      ],
+      "replica_central_profile_total_chi2_per_row": [
+        5.566939677140005,
+        7.158727100737085,
+        9.227540982158224
+      ]
+    }
+  },
+  "remaining_blocker": {
+    "status": "scientifically_explicit_and_exhausted",
+    "statement": "Positive-arm LHCb high-qT data remain above the converged NNLO fixed-order input in the first three boundary bins; published covariance and normalization/provenance are not approved for a production fit.",
+    "not_a_failure_of": [
+      "unitary W/Y algebra",
+      "lambda=1 FNP endpoint stability",
+      "LHCb node acceptance coverage",
+      "rapidity-sign convention"
+    ],
+    "prohibited_shortcut": "data-driven rescaling of FO or W/Y term",
+    "next_external_input_required": "formal LHCb observable/covariance/normalization clarification or an independently validated fixed-order prediction that closes the published spectrum"
+  },
+  "scope_decision": {
+    "tevatron": "unitary finite-Y is a validated production-level candidate",
+    "lhcb": "W/Y machinery is complete diagnostically but universal production promotion is withheld",
+    "frozen_production_files_modified": false,
+    "goal_completion_basis": "A production-level finite-Y candidate is obtained for the verified Tevatron scope, and the universal-LHCb blocker is explicit and exhausted under the available inputs."
+  },
+  "authoritative_decision_record": "reports/decision_status.json"
+}

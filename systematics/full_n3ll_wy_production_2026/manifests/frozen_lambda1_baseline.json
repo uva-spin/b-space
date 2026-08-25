@@ -1,0 +1,77 @@
+{
+  "status": "frozen_comparison_baseline",
+  "frozen_at": "2026-08-18",
+  "baseline_id": "lambda1_empirical_reference_full96x50",
+  "scope": "active lambda=1 empirical-reference identifiability production result",
+  "freeze_semantics": "hash-locked read-only reference; no files copied or overwritten",
+  "start_count": 96,
+  "experimental_replica_count": 50,
+  "crossed_member_count_per_flavor": 4800,
+  "production_sources_modified_by_freeze": false,
+  "artifacts": [
+    {
+      "path": "dataset_identifiability_campaign_2026/production_lambda1_empirical_reference_full96x50/PRODUCTION_MANIFEST.json",
+      "sha256": "47769660f735696048a145ee373ed5387753785033489ec3e74ea4da4d826d0a"
+    },
+    {
+      "path": "dataset_identifiability_campaign_2026/production_lambda1_empirical_reference_full96x50/PRODUCTION_AUDIT.json",
+      "sha256": "95910744e4f34315d4ce033dffc23656b99d1513c56dd37efe2dcb99b17ae086"
+    },
+    {
+      "path": "dataset_identifiability_campaign_2026/summaries/matched_baseline_reference_distance_lam1e00_full96_crossed_experimental/summary.json",
+      "sha256": "22e119d5af9f37a7c378a7865016c203dc88e02fb0b14f61b5318a2995709bee"
+    },
+    {
+      "path": "dataset_identifiability_campaign_2026/summaries/matched_baseline_reference_distance_lam1e00_full96_crossed_experimental/bspace_combined_bands.csv",
+      "sha256": "edb4b074ab06d097a54d214ad85cbcfc5de9658a89f76cf9e5346e2b0aa41484"
+    },
+    {
+      "path": "dataset_identifiability_campaign_2026/summaries/matched_baseline_reference_distance_lam1e00_full96_crossed_experimental/kspace_combined_bands.csv",
+      "sha256": "2ec58430db605d32df7fd11281fdf924240aa2e31d94590e88babab79d5105cb"
+    },
+    {
+      "path": "dataset_identifiability_campaign_2026/summaries/champion_registry/current.json",
+      "sha256": "a397e5093df4fb17a28f277412ee308b32d6cb66cebfd72c14dfdeb1465b9603"
+    },
+    {
+      "path": "dataset_identifiability_campaign_2026/summaries/champion_registry/current_fig2_fig6_96start/champion_fig2space_bT_ud_combined_1sigma.png",
+      "sha256": "b7a97e3e12d2ea014045b752489a894a55a8c4fb55575286df8e6566766f9341"
+    },
+    {
+      "path": "dataset_identifiability_campaign_2026/summaries/champion_registry/current_fig2_fig6_96start/champion_fig2space_bT_ud_combined_1sigma.pdf",
+      "sha256": "e13c6efc392bf105c72331a3ece7559968a72842bb6f5760bd9b97e9b03df7fd"
+    },
+    {
+      "path": "dataset_identifiability_campaign_2026/summaries/champion_registry/current_fig2_fig6_96start/champion_fig6_kT_ud_combined_1sigma.png",
+      "sha256": "1d5cc7ec40e2f3ef6d2d2ebcbca2549f8d2293ceab7c391d35fed2d0fd5d6706"
+    },
+    {
+      "path": "dataset_identifiability_campaign_2026/summaries/champion_registry/current_fig2_fig6_96start/champion_fig6_kT_ud_combined_1sigma.pdf",
+      "sha256": "ef6fed93dcf16596d03661c1af39312c63de221a0ef7ad56f008739c4ac42e79"
+    },
+    {
+      "path": "finite_y_completion_2026/reports/decision_status.json",
+      "sha256": "1f211bd7a0760bb05fd30450447a78612206c796303c54327f0aed192dfd036f"
+    },
+    {
+      "path": "finite_y_completion_2026/reports/lambda1_global_fnal_wy_refit_status.json",
+      "sha256": "a08bacbe4cc79b3e6c79423d24b82d547c73a446ae9b8d06d19523be84de2525"
+    },
+    {
+      "path": "finite_y_completion_2026/reports/tevatron_unitary_validation.json",
+      "sha256": "0a551c6898398990e5db3d82e1ef8df3fe6c33f47786ff6d37be4d00c223884d"
+    },
+    {
+      "path": "perturbative_provenance_completion/reports/backend_provenance_audit.json",
+      "sha256": "a7b371cfd169c65d28bd4f71aa2de54062e310ce2f8087b73e49218552a8ebc9"
+    },
+    {
+      "path": "perturbative_provenance_completion/reports/expansion_closure.json",
+      "sha256": "91573b646a79506fcbcfe47d98aa8476a2f255fe70ceb28b2312dbd550941b02"
+    },
+    {
+      "path": "perturbative_provenance_completion/HANDOFF.md",
+      "sha256": "7736f4dda5ccf29417b50d424175698e3d9d095220a33d301c3da18efcb81ff0"
+    }
+  ]
+}

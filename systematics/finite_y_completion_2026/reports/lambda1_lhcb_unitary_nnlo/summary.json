@@ -1,0 +1,20 @@
+{
+  "status": "lambda1_lhcb_unitary_nnlo_endpoint_recompute_complete_diagnostic_not_production",
+  "endpoint_count": 96,
+  "row_count": 4,
+  "profiles": [
+    "early_0p18_0p28",
+    "central_0p20_0p30",
+    "late_0p22_0p32"
+  ],
+  "device": "cuda",
+  "all_matched_positive": true,
+  "matched_min": 0.0065046602082933,
+  "matched_max": 0.8143163250062423,
+  "fo_input_units": "DYTurbo text-table fb/bin converted to pb/GeV before matching",
+  "fo_input_source": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb7_external_true_nnlo_positive_y_10m_combined/dyturbo_true_nnlo_summary.csv",
+  "production_outputs_modified": false,
+  "next_step": "Audit the NNLO endpoint ensemble with published correlated LHCb covariance and scale variations.",
+  "fixed_order_order": "DYTurbo order=2 (NNLO), doVJREAL/doVJVIRT=true",
+  "rapidity_scope": "positive boson rapidity arm 0<y_Z<6"
+}

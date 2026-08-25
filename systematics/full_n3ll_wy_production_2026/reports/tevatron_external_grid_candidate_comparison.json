@@ -1,0 +1,28 @@
+{
+  "status": "isolated_external_n3ll_nnlo_np_candidate_comparison_complete",
+  "g1_zero": {
+    "row_count": 122,
+    "median_ratio_to_data": 0.9740058595668234,
+    "mean_ratio_to_data": 1.0125730857815145,
+    "mean_relative_mc_uncertainty": 0.04176980096603605,
+    "max_relative_mc_uncertainty": 0.07929164533306811,
+    "rms_stat_only_data_pull": 3.575897113475501,
+    "stat_only_chi2_per_row": 12.78704016616242
+  },
+  "g1_one": {
+    "row_count": 122,
+    "median_ratio_to_data": 1.0007435981918802,
+    "mean_ratio_to_data": 1.0016991990858366,
+    "mean_relative_mc_uncertainty": 0.043695473174159914,
+    "max_relative_mc_uncertainty": 0.08990023361860768,
+    "rms_stat_only_data_pull": 1.5601609522138604,
+    "stat_only_chi2_per_row": 2.43410219681286
+  },
+  "ratio_change": {
+    "qT_zero_median_g1_one_over_zero": 0.5022477948602253,
+    "transition_median_g1_one_over_zero": 1.0338271225450173,
+    "all_bin_median_g1_one_over_zero": 1.0227551362253702
+  },
+  "interpretation": "candidate NP-form comparison only; no production promotion or replacement of the frozen DNN baseline",
+  "production_outputs_modified": false
+}

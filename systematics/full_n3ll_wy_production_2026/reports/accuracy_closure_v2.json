@@ -1,0 +1,23 @@
+{
+  "status": "isolated_external_unprimed_n3ll_nnlo_conventional_y_closure_passed",
+  "engine": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+  "convention": {
+    "resummation": "unprimed N3LL, order=3, primed=false",
+    "fixed_order": "NNLO V+jet (order_vjet=2)",
+    "terms": "W=RES; ASY=-CT; FO=VJ; Y=FO-ASY=VJ+CT",
+    "full": "RES+CT+VJ"
+  },
+  "checks": {
+    "tevatron_boundary_24_rows_g1_1": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p0/boundary_full_wy_status.json",
+    "tevatron_grid_122_rows_g1_1": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p0/grid_status.json",
+    "term_level_cdf_run_2_17": "reports/dyturbo_term_decomposition/term_decomposition_status.json"
+  },
+  "scope_limits": [
+    "external-engine candidate only",
+    "fixed-target 329-row core not yet evaluated with this engine",
+    "LHCb high-qT rows remain outside scope",
+    "no production promotion or uncertainty replacement authorized"
+  ],
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

@@ -1,0 +1,27 @@
+{
+  "status": "isolated_refdist3_full96x50_surface_figures_not_production",
+  "scope": "lambda_ref=3; non-LHCb finite-Y; LHCb retained W-only",
+  "Q_GeV": 7.5,
+  "x_knots": [
+    0.1,
+    0.2,
+    0.3,
+    0.5
+  ],
+  "start_count": 96,
+  "replica_count": 50,
+  "crossed_member_count": 4800,
+  "band": "pointwise empirical q16--q84 of transformed crossed members",
+  "surface_quantity": "x * ftilde transformed to x * f_1(x,kT;Q)",
+  "uncertainty_color": "relative propagated q16--q84 half-width; not a Gaussian confidence interval",
+  "transform": {
+    "b_input_points": 160,
+    "k_points": 181
+  },
+  "figures": {
+    "fig7": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_refdist3_full96x50_long50k_final_fig2_fig6/fig7.png",
+    "fig8": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_refdist3_full96x50_long50k_final_fig2_fig6/fig8.png"
+  },
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

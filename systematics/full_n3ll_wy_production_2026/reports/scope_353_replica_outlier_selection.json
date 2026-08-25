@@ -1,0 +1,53 @@
+{
+  "median_objective_per_row": 0.05272926352179422,
+  "mad_objective_per_row": 0.005101149885917859,
+  "robust_threshold": 0.08272926352179422,
+  "candidates": [
+    {
+      "seed": 1008,
+      "objective": 0.17868461284691484,
+      "best_epoch": 5000,
+      "epochs_run": 5000
+    },
+    {
+      "seed": 1033,
+      "objective": 0.12208655468127545,
+      "best_epoch": 4988,
+      "epochs_run": 5000
+    },
+    {
+      "seed": 1040,
+      "objective": 0.10869884761129493,
+      "best_epoch": 3932,
+      "epochs_run": 4932
+    },
+    {
+      "seed": 1010,
+      "objective": 0.09380403253917316,
+      "best_epoch": 3253,
+      "epochs_run": 4253
+    },
+    {
+      "seed": 1038,
+      "objective": 0.0551081000914317,
+      "best_epoch": 2366,
+      "epochs_run": 3366
+    },
+    {
+      "seed": 1026,
+      "objective": 0.04837247400040667,
+      "best_epoch": 2931,
+      "epochs_run": 3931
+    }
+  ],
+  "selected_seeds": [
+    1008,
+    1033,
+    1040,
+    1010,
+    1038,
+    1026
+  ],
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

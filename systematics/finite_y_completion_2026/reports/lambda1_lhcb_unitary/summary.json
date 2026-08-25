@@ -1,0 +1,18 @@
+{
+  "status": "lambda1_lhcb_unitary_endpoint_recompute_complete",
+  "endpoint_count": 96,
+  "row_count": 4,
+  "profiles": [
+    "early_0p18_0p28",
+    "central_0p20_0p30",
+    "late_0p22_0p32"
+  ],
+  "device": "cuda",
+  "all_matched_positive": true,
+  "matched_min": 0.0042711439820796,
+  "matched_max": 0.7555989335014301,
+  "fo_input_units": "DYTurbo text-table fb/bin converted to pb/GeV before matching",
+  "fo_input_source": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb7_external_true_nlo/dyturbo_true_nlo_summary.csv",
+  "production_outputs_modified": false,
+  "next_step": "Fit the four LHCb rows with the lambda=1 endpoint ensemble and explicit correlated nuisance model; retain the Tevatron scope audit separately."
+}

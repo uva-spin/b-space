@@ -1,0 +1,63 @@
+{
+  "status": "diagnostic_decomposition_complete_not_production",
+  "comparison_warning": "The historical 0.434190 value is a 329-row lambda=0.5 W-only objective; the corrected global calculation has 329 core rows plus 24 finite-Y boundary rows and includes matching/scale nuisance penalties.",
+  "historical_lambda0p5_w_only": {
+    "rows": 329,
+    "total_chi2": 142.84860229492188,
+    "data_chi2": 140.07318115234375,
+    "norm_penalty": 2.7754158973693848,
+    "objective_per_row": 0.4341902805316774
+  },
+  "lambda1_endpoint_before_boundary": {
+    "rows": 329,
+    "total_chi2": 132.73291015625,
+    "data_chi2": 130.10580444335938,
+    "norm_penalty": 2.607003927230835,
+    "reference_distance_penalty": 0.020096,
+    "objective_per_row": 0.4034434959156535,
+    "interpretation": "same accepted W-only scope with the verified lambda=1 endpoint"
+  },
+  "lambda1_frozen_fnp_global_profile": {
+    "rows": 353,
+    "accepted_rows": 329,
+    "boundary_rows": 24,
+    "initial_norms_source": "lambda1_start_expansion96_s353_cont120000/dataset_norms.csv",
+    "accepted_data_chi2": 131.0158477654275,
+    "accepted_norm_penalty_share": 2.1292405625188913,
+    "accepted_core_objective_if_boundary_terms_removed": 0.40475701613995866,
+    "boundary_data_chi2": 25.77320298600834,
+    "theory_penalty": 3.414486715511061,
+    "total_chi2": 162.3327780294658,
+    "total_chi2_per_row": 0.4598662267123677,
+    "interpretation": "direct Y/boundary impact with FNP fixed; the accepted core changes only at the sub-percent objective level"
+  },
+  "lambda1_unfreezed_global_attempt": {
+    "rows": 353,
+    "total_chi2": 160.72030639648438,
+    "total_chi2_per_row": 0.45529831840363844,
+    "accepted_data_chi2": 130.35537719726562,
+    "boundary_data_chi2": 24.908248901367188,
+    "norm_penalty": 2.152662992477417,
+    "theory_penalty": 3.3040194511413574,
+    "accepted_max_relative_prediction_shift": 0.0695732831954956,
+    "fnp_parameter_relative_l2_shift": 0.019566436478175703,
+    "fnp_gradient_l2_per_row_objective": 0.04390589892864227,
+    "stationarity_threshold": 0.0001,
+    "stationarity_gate_pass": false,
+    "interpretation": "unconverged FiLM response to added boundary rows; not evidence that the Y term changes the accepted core"
+  },
+  "direct_unitary_y_diagnostic": {
+    "profile": "central_0p20_0p30",
+    "accepted_rows": "Y=0 by construction",
+    "boundary_median_relative_Y_to_W": 0.35406967602356054,
+    "boundary_max_relative_Y_to_W": 2.0594908127883724,
+    "interpretation": "Y is intentionally non-negligible only in the newly added transition/high-qT rows"
+  },
+  "normalization_bug_found_and_fixed": {
+    "old_runner_initialization": "loaded dataset norms from lambda=0.5 production predictions while loading a lambda=1 FNP endpoint",
+    "symptom": "accepted initial data chi2 138.0825 instead of the endpoint's 130.1058",
+    "fixed_runner_option": "--initial-norms-path",
+    "corrected_initialization": "lambda=1 endpoint model plus lambda=1 endpoint control_norm values"
+  },
+  "production_state_modified": false
+}

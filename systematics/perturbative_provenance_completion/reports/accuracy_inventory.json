@@ -1,0 +1,47 @@
+{
+  "status": "implemented_inventory_not_a_conventional_full_N3LL_prime_claim",
+  "source_commit": "b-space-public@5fb979c4241eb483e2b6dcfa7352f27e3abd93b3",
+  "inventory_date": "2026-08-17",
+  "conventions": {
+    "sudakov_expansion": "sum_n (alpha_s/pi)^n coefficient_n",
+    "ope_and_hard_expansion": "delta + sum_n (alpha_s/(4 pi))^n coefficient_n",
+    "publication_scale": "mu=Q, zeta=Q^2",
+    "fourier_convention": "radial J0 transform with 1/(2 pi)",
+    "source": "b-space-public/v22/CONVENTIONS.md"
+  },
+  "sudakov": {
+    "source": "b-space-public/bt_internal_css_backend_v19_smoothprofile.py:426-466",
+    "implemented_A": ["A1", "A2", "A3"],
+    "implemented_B": ["B1", "B2"],
+    "missing_from_source": ["A4", "B3"],
+    "n3llp_dispatch": "n3llp -> n3ll_pilot -> [A1,A2,A3],[B1,B2]",
+    "interpretation": "n3ll_pilot is deliberately identical to NNLL in this backend"
+  },
+  "ope_matching": {
+    "canonical_source": "b-space-public/v22/src/css2_ope_nlo.py",
+    "general_scale_source": "b-space-public/v22/src/css2_ope_nlo_general.py",
+    "implemented_order": "one-loop",
+    "implemented_channels": ["qq delta", "qq regular", "qg regular"],
+    "missing_orders": ["two-loop OPE coefficient functions"]
+  },
+  "dy_hard": {
+    "source": "b-space-public/v22/src/dy_hard_nlo.py",
+    "implemented_order": "one-loop H^(1)",
+    "missing_orders": ["two-loop hard coefficient H^(2)"]
+  },
+  "w_organization": {
+    "source": "b-space-public/v22/backends/bt_internal_css_backend_v22_full.py and v22/src/dy_w_nlo_reference.py",
+    "implemented": ["strict_nlo", "multiplicative_nlo"],
+    "historical_default": "multiplicative_nlo",
+    "historical_cache_metadata": "does not explicitly record the organization",
+    "isolated_diagnostic": "8 rows, 160 b points; max integrated strict/multiplicative difference 2.79%",
+    "manuscript_claim_in_downloaded_pdf": "strict-NLO hard/OPE matching in W",
+    "claim_consistency_status": "requires_resolution_before_paper_update: active v22 entrypoint defaults to multiplicative and historical cache metadata omits the organization"
+  },
+  "finite_y": {
+    "production_mode": "y_mode=zero",
+    "development_path": "nlo_dev finite-tail scaffold",
+    "status": "not an audited external fixed-order Y closure"
+  },
+  "minimum_claim_correction": "Describe the active result as an NNLL Sudakov pilot with one-loop OPE and one-loop DY hard factor, using the multiplicative NLO W organization; do not call it a conventional full N3LL-prime calculation until the missing higher-order inventory and external matching closure are supplied."
+}

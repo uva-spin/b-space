@@ -1,0 +1,99 @@
+{
+  "manifest_version": 1,
+  "status": "isolated_tevatron_n3ll_nnlo_wy_batch_complete_not_promoted",
+  "candidate_id": "tevatron_n3ll_nnlo_wy_g1_1p017_highstat",
+  "formula": "W_N3LL + (FO_NNLO - ASY_NNLO)",
+  "engine": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+  "order": {
+    "resummation": "N3LL_unprimed",
+    "fixed_order": "NNLO_VJ",
+    "cusp": "alpha_s^4",
+    "non_cusp": "alpha_s^3",
+    "hard_and_collinear_boundary": "alpha_s^2",
+    "matching": "NNLO"
+  },
+  "nonperturbative": {
+    "model": "DYTurbo_npff_0_Gaussian",
+    "g1_GeV2": 1.017,
+    "center_selection": "directly evaluated candidate; interpolation minimum at g1=1.013 rejected"
+  },
+  "scope": {
+    "tevatron_qT_rows": 122,
+    "transition_oracle_rows": 24,
+    "fixed_target_dnn_core_rows": 329,
+    "fixed_target_status": "pending_same_scheme_external_engine_closure",
+    "datasets": [
+      "CDF_RUN_1",
+      "CDF_RUN_2",
+      "D0_RUN_1"
+    ]
+  },
+  "batch": {
+    "output_directory": "reports/tevatron_n3ll_nnlo_wy_production_g1_1p017",
+    "calls_per_vegas_component": 100000000,
+    "random_seed": 20260818,
+    "started_utc": "2026-08-18",
+    "expected_outputs": [
+      "tevatron_full_wy_grid.csv",
+      "grid_status.json",
+      "cards/",
+      "logs/"
+    ]
+  },
+  "stationarity_batch": {
+    "output_directory": "reports/tevatron_n3ll_nnlo_wy_stationarity_g1_1p017_seed_20260820",
+    "calls_per_vegas_component": 30000000,
+    "random_seed": 20260820,
+    "purpose": "independent Monte Carlo stationarity check at the retained direct center",
+    "promotion_authorized": false
+  },
+  "completed_inputs": {
+    "frozen_lambda1_baseline": {
+      "manifest": "manifests/frozen_lambda1_baseline.json",
+      "verification": "16/16 hashes pass; zero writes"
+    },
+    "boundary_input": {
+      "path": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p017/tevatron_boundary_input.csv",
+      "sha256": "2dbecb713e7f4f495aa7eee4cceb4bca82ca9aa3471c82e93a03473b3f046ec9"
+    },
+    "boundary_status": {
+      "path": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p017/boundary_full_wy_status.json",
+      "sha256": "f7bf3cb4c5e928ba7191e7e278936df39ed7f5a54072e065f61fae1b85e03c27"
+    },
+    "direct_grid_reference": {
+      "path": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p017_30m/tevatron_full_wy_grid.csv",
+      "sha256": "c818dbf9a7bf1563685f195d3e95ee3a71d301367d939e83fc89ee2fca97e34f"
+    }
+  },
+  "promotion_gates": [
+    "all 122 rows finite and positive",
+    "integration uncertainty below documented precision floor",
+    "independent-seed and high-stat stationarity",
+    "full correlated experimental plus replica/PDF propagation",
+    "F_NP model-form and start propagation",
+    "no modification of frozen production files"
+  ],
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false,
+  "promotion_authorized": false,
+  "completed_batch": {
+    "grid": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/tevatron_full_wy_grid.csv",
+      "sha256": "0c7d4a86470280c8ad6cbac2ee428ce8b080206b8268b5a967577f2459662a5c"
+    },
+    "status": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/grid_status.json",
+      "sha256": "cf4eb9abb22ebb0ccf43ee70a55d9562278aee487dd1bb19c8152d3db4a07bf8"
+    }
+  },
+  "completed_checks": {
+    "row_count": true,
+    "all_finite": true,
+    "all_positive": true,
+    "mean_relative_mc_uncertainty": 0.011525930185297675,
+    "max_relative_mc_uncertainty": 0.16544556067529234,
+    "median_prediction_to_data": 1.0035503664887728,
+    "min_prediction_to_data": 0.7786706745502051,
+    "max_prediction_to_data": 1.1916334238870203
+  }
+}

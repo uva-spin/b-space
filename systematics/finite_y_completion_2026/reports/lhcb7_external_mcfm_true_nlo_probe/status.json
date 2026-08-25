@@ -1,0 +1,8 @@
+{
+  "status": "isolated_mcfm_true_nlo_probe_not_converged",
+  "scope": ["LHCb_7:10", "LHCb_7:11"],
+  "attempt": "MCFM process 41, part=nlo, absolute-rapidity user cut",
+  "outcome": "The first boundary bin remained in adaptive NLO real-emission warmup and repeatedly doubled the call count; no final integral was accepted.",
+  "decision": "Do not use this unconverged probe for the finite-Y promotion decision. The independent true-NLO DYTurbo spectrum and the MCFM LO rapidity-sign closure remain the accepted evidence.",
+  "production_outputs_modified": false
+}

@@ -1,0 +1,124 @@
+{
+  "status": "complete_candidate_vs_frozen_lambda1_comparison",
+  "candidate": {
+    "lambda_reference_distance": 3.0,
+    "reference_b_range": [
+      0.1,
+      8.0
+    ],
+    "finite_y": "non-LHCb rows; six LHCb_7 rows retained with Y=0",
+    "start_count": 96,
+    "replica_count": 50,
+    "crossed_member_count": 4800
+  },
+  "baseline": {
+    "lambda_reference_distance": 1.0,
+    "reference_b_range": [
+      0.1,
+      2.0
+    ],
+    "finite_y": "W-only historical production ensemble",
+    "start_count": 96,
+    "replica_count": 50,
+    "crossed_member_count": 4800
+  },
+  "fit_objectives": {
+    "candidate_start_count": 96,
+    "candidate_start_objective_per_row": {
+      "median": 0.4152335226535797,
+      "min": 0.3126283586025238,
+      "max": 0.4446629285812378
+    },
+    "baseline_stationary_start_count": 96,
+    "baseline_objective_per_row": {
+      "median": 0.40303953222953076,
+      "min": 0.394695757370227,
+      "max": 0.4342388860360467
+    }
+  },
+  "band_metrics": {
+    "b": {
+      "u": {
+        "baseline": {
+          "max_active_relative_full_width": 0.23983384365121255,
+          "median_active_relative_full_width": 0.031125126994755694,
+          "active_x_max": 4.0
+        },
+        "candidate": {
+          "max_active_relative_full_width": 0.2980360639795385,
+          "median_active_relative_full_width": 0.11711691158601488,
+          "active_x_max": 4.0
+        }
+      },
+      "d": {
+        "baseline": {
+          "max_active_relative_full_width": 0.23983384365121288,
+          "median_active_relative_full_width": 0.03112512699475567,
+          "active_x_max": 4.0
+        },
+        "candidate": {
+          "max_active_relative_full_width": 0.29803606397953863,
+          "median_active_relative_full_width": 0.11711691158601488,
+          "active_x_max": 4.0
+        }
+      }
+    },
+    "k": {
+      "u": {
+        "baseline": {
+          "max_active_relative_full_width": 0.2125674075638438,
+          "median_active_relative_full_width": 0.11096193681675107,
+          "active_x_max": 1.73
+        },
+        "candidate": {
+          "max_active_relative_full_width": 0.2848402098333267,
+          "median_active_relative_full_width": 0.13907968371257157,
+          "active_x_max": 1.77
+        }
+      },
+      "d": {
+        "baseline": {
+          "max_active_relative_full_width": 0.22480180890575735,
+          "median_active_relative_full_width": 0.11544192740491321,
+          "active_x_max": 1.69
+        },
+        "candidate": {
+          "max_active_relative_full_width": 0.2768747697353307,
+          "median_active_relative_full_width": 0.14294544602013104,
+          "active_x_max": 1.74
+        }
+      }
+    }
+  },
+  "candidate_fnp_crossed_probes": {
+    "1.0": {
+      "bT": 1.0063767433166504,
+      "candidate_crossed_relative_q16_q84_width": 0.0828454827115872
+    },
+    "2.0": {
+      "bT": 2.012653350830078,
+      "candidate_crossed_relative_q16_q84_width": 0.275690561040293
+    },
+    "4.0": {
+      "bT": 3.974893093109131,
+      "candidate_crossed_relative_q16_q84_width": 0.1051594397941546
+    },
+    "8.0": {
+      "bT": 8.0,
+      "candidate_crossed_relative_q16_q84_width": 0.7444622199017172
+    }
+  },
+  "interpretation": {
+    "improvement": "The candidate narrows the kT\u22480 endpoint and suppresses the bT\u22483-4 spread.",
+    "regression": "It broadens the bT<2 core and the intermediate/high active kT envelope; it is not a smaller total uncertainty band.",
+    "central_shift": "The candidate central F_NP is about 6-8% lower than baseline at bT=1-2 and about 8% higher near bT=4, so it is a genuine shape change rather than only an error-band change.",
+    "causal_limit": "The comparison changes the W grid, W-only versus non-LHCb finite-Y objective, and reference prior simultaneously.",
+    "decision": "Do not promote lambda_ref=3 as an improved replacement. Retain it as a useful candidate showing that the stronger full-range prior relocates, rather than removes, the core non-uniqueness."
+  },
+  "frozen_production_modified": false,
+  "promotion_authorized": false,
+  "artifacts": {
+    "probes": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_refdist3_full96x50_long50k_final_fig2_fig6/full_production_comparison_probes.csv",
+    "candidate_figures": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_refdist3_full96x50_long50k_final_fig2_fig6"
+  }
+}

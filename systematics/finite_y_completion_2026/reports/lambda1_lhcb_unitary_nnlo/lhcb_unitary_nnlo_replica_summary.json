@@ -1,0 +1,107 @@
+{
+  "status": "lambda1_lhcb_unitary_nnlo_replica_propagation_complete_diagnostic_not_production",
+  "replicas": 50,
+  "seed": 20260817,
+  "endpoint_count": 96,
+  "profiles": [
+    "early_0p18_0p28",
+    "central_0p20_0p30",
+    "late_0p22_0p32"
+  ],
+  "rows": [
+    "LHCb_7:10",
+    "LHCb_7:11",
+    "LHCb_7:12",
+    "LHCb_7:13"
+  ],
+  "covariance": "published pT correlations plus fully correlated beam/luminosity components",
+  "fixed_order": "DYTurbo order=2 (NNLO), positive y_Z arm",
+  "scale_treatment": "symmetric largest-absolute six-point NNLO excursion per row",
+  "all_optimizer_success": true,
+  "all_predictions_positive": true,
+  "profile_summary": {
+    "early_0p18_0p28": {
+      "data_chi2_per_row_q16_median_q84": [
+        1.9469303893895735,
+        3.2256899222600475,
+        4.788222912421818
+      ],
+      "total_chi2_per_row_q16_median_q84": [
+        3.642322743587399,
+        5.065763088171801,
+        6.723497670565424
+      ],
+      "matching_nuisance_sigma_q16_median_q84": [
+        0.49500376133359936,
+        0.9468715259299074,
+        1.2981767319016386
+      ],
+      "nnlo_scale_nuisance_sigma_q16_median_q84": [
+        2.2528437468811955,
+        2.531331363213819,
+        2.74763207202342
+      ],
+      "max_whitened_pull_q16_median_q84": [
+        2.2126796214092725,
+        3.069253470396755,
+        3.9929778408644787
+      ]
+    },
+    "central_0p20_0p30": {
+      "data_chi2_per_row_q16_median_q84": [
+        2.7100518541985372,
+        4.159636020147201,
+        5.728229535969465
+      ],
+      "total_chi2_per_row_q16_median_q84": [
+        5.566939677140005,
+        7.158727100737085,
+        9.227540982158224
+      ],
+      "matching_nuisance_sigma_q16_median_q84": [
+        2.2042968210471887,
+        2.6738441017380596,
+        3.006351107505535
+      ],
+      "nnlo_scale_nuisance_sigma_q16_median_q84": [
+        2.026328472461849,
+        2.27002659910042,
+        2.5497341026698987
+      ],
+      "max_whitened_pull_q16_median_q84": [
+        2.4063132026865848,
+        3.2796590732177155,
+        4.218102414057779
+      ]
+    },
+    "late_0p22_0p32": {
+      "data_chi2_per_row_q16_median_q84": [
+        3.0282214871946804,
+        4.469779005540868,
+        6.092567838973188
+      ],
+      "total_chi2_per_row_q16_median_q84": [
+        6.722353180003121,
+        8.340783791815607,
+        10.364377715358025
+      ],
+      "matching_nuisance_sigma_q16_median_q84": [
+        2.979750646902583,
+        3.359916085897124,
+        3.7159223472696077
+      ],
+      "nnlo_scale_nuisance_sigma_q16_median_q84": [
+        1.8458799356864144,
+        2.1038806922144992,
+        2.3755988944506354
+      ],
+      "max_whitened_pull_q16_median_q84": [
+        2.4440844479885135,
+        3.2515011239853777,
+        4.212844463593834
+      ]
+    }
+  },
+  "production_outputs_modified": false,
+  "interpretation": "Experimental replica sampling is propagated through the complete endpoint ensemble. The resulting spread quantifies the LHCb statistical/systematic input contribution; the much larger fixed central residual remains an observable-level closure issue."
+}

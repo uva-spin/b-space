@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "label": "scope_353_wy_control_wonly_lambda10_single",
+  "modes": [
+    "wonly"
+  ],
+  "seeds": [
+    303
+  ],
+  "epochs": 5000,
+  "patience": 1000,
+  "lambda_tail": 10.0,
+  "fnp_tail_bmin": 6.0,
+  "fnp_tail_target": 0.05,
+  "runs": [
+    {
+      "mode": "wonly",
+      "seed": 303,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_wy_control_wonly_lambda10_single_wonly_s303",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_wy_control_wonly_lambda10_single_wonly_s303.log"
+    }
+  ],
+  "purpose": "same 353 rows, same external W, same optimizer; W-only versus fixed W+Y",
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

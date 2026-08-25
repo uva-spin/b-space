@@ -1,0 +1,274 @@
+{
+  "status": "isolated_wy_film_interface_diagnosis_complete_not_production",
+  "conclusion": "The original large W+Y band was not a FiLM flexibility result. It combined stale row-ID pairing, raw rather than frozen-baseline effective errors, and a duplicate LHCb fiducial factor in the external W grid. After repairing those interfaces, W-only reproduces the frozen objective scale. The remaining W+Y fit degradation is localized to the six LHCb Y rows, whose full-minus-RES Monte-Carlo cancellation uncertainty is larger than their central values.",
+  "matched_control": {
+    "wonly": {
+      "runs": [
+        {
+          "seed": 303,
+          "best_chi2_like_per_row": 0.30525726079940796,
+          "best_epoch": 2998,
+          "per_dataset": {
+            "CDF_RUN_1": 0.39420162681676524,
+            "CDF_RUN_2": 0.275566943673858,
+            "D0_RUN_1": 0.4628981294343002,
+            "E288_200": 0.10561494755423838,
+            "E288_300": 0.16085191491830045,
+            "E288_400": 0.22770985616980693,
+            "E605": 0.4136543765051813,
+            "E772": 0.45135965734322286,
+            "LHCb_7": 0.21285548349275685
+          }
+        },
+        {
+          "seed": 304,
+          "best_chi2_like_per_row": 0.30464187264442444,
+          "best_epoch": 3000,
+          "per_dataset": {
+            "CDF_RUN_1": 0.3933787389427998,
+            "CDF_RUN_2": 0.27477086141753365,
+            "D0_RUN_1": 0.4660594723064752,
+            "E288_200": 0.10503758431117348,
+            "E288_300": 0.15889254231328748,
+            "E288_400": 0.2257678695701722,
+            "E605": 0.4139781261591664,
+            "E772": 0.45152634837063477,
+            "LHCb_7": 0.21297332550319106
+          }
+        },
+        {
+          "seed": 305,
+          "best_chi2_like_per_row": 0.3026842772960663,
+          "best_epoch": 3000,
+          "per_dataset": {
+            "CDF_RUN_1": 0.390906658563041,
+            "CDF_RUN_2": 0.27249182518389337,
+            "D0_RUN_1": 0.45341236198596097,
+            "E288_200": 0.10469421247885459,
+            "E288_300": 0.15865852599890334,
+            "E288_400": 0.22252937858113062,
+            "E605": 0.41316855673630026,
+            "E772": 0.4507740527780694,
+            "LHCb_7": 0.21261291896320386
+          }
+        }
+      ],
+      "range": [
+        0.3026842772960663,
+        0.30525726079940796
+      ]
+    },
+    "wy_all": {
+      "runs": [
+        {
+          "seed": 303,
+          "best_chi2_like_per_row": 0.7668853402137756,
+          "best_epoch": 3000,
+          "per_dataset": {
+            "CDF_RUN_1": 0.5544386432319989,
+            "CDF_RUN_2": 0.42463934597335407,
+            "D0_RUN_1": 0.4314082316517352,
+            "E288_200": 0.2117870359443045,
+            "E288_300": 0.5305780376372596,
+            "E288_400": 0.33548810509671767,
+            "E605": 0.3522057906135917,
+            "E772": 0.6886750550976279,
+            "LHCb_7": 18.113827314137744
+          }
+        },
+        {
+          "seed": 304,
+          "best_chi2_like_per_row": 0.7675465941429138,
+          "best_epoch": 2999,
+          "per_dataset": {
+            "CDF_RUN_1": 0.5556904488514579,
+            "CDF_RUN_2": 0.4253238579068398,
+            "D0_RUN_1": 0.4306668781002582,
+            "E288_200": 0.2122158525241626,
+            "E288_300": 0.5288017702149722,
+            "E288_400": 0.3382196677664659,
+            "E605": 0.3529827102718936,
+            "E772": 0.689269428132742,
+            "LHCb_7": 18.11035111851409
+          }
+        },
+        {
+          "seed": 305,
+          "best_chi2_like_per_row": 0.7680454254150391,
+          "best_epoch": 2999,
+          "per_dataset": {
+            "CDF_RUN_1": 0.5564161440302021,
+            "CDF_RUN_2": 0.4260012373122384,
+            "D0_RUN_1": 0.4303447177439604,
+            "E288_200": 0.21231729344124306,
+            "E288_300": 0.53038694073385,
+            "E288_400": 0.3383103729311637,
+            "E605": 0.35316119653333533,
+            "E772": 0.6896982441756854,
+            "LHCb_7": 18.112986232194537
+          }
+        }
+      ],
+      "range": [
+        0.7668853402137756,
+        0.7680454254150391
+      ]
+    },
+    "wy_no_lhcb": {
+      "runs": [
+        {
+          "seed": 303,
+          "best_chi2_like_per_row": 0.44864165782928467,
+          "best_epoch": 3000,
+          "per_dataset": {
+            "CDF_RUN_1": 0.49261240874369394,
+            "CDF_RUN_2": 0.661431212898443,
+            "D0_RUN_1": 0.49460340303305983,
+            "E288_200": 0.21527345355277996,
+            "E288_300": 0.5316676838150207,
+            "E288_400": 0.31659298360211907,
+            "E605": 0.37211458512322476,
+            "E772": 0.5981291532407356,
+            "LHCb_7": 0.21306569427654906
+          }
+        },
+        {
+          "seed": 304,
+          "best_chi2_like_per_row": 0.4485619366168976,
+          "best_epoch": 3000,
+          "per_dataset": {
+            "CDF_RUN_1": 0.49197697994111017,
+            "CDF_RUN_2": 0.6614348266374322,
+            "D0_RUN_1": 0.49573284609671736,
+            "E288_200": 0.2152606859727264,
+            "E288_300": 0.5314503929798671,
+            "E288_400": 0.31646220840794653,
+            "E605": 0.37214798976446395,
+            "E772": 0.5979920343412638,
+            "LHCb_7": 0.21306934638719918
+          }
+        },
+        {
+          "seed": 305,
+          "best_chi2_like_per_row": 0.44872426986694336,
+          "best_epoch": 2998,
+          "per_dataset": {
+            "CDF_RUN_1": 0.4924837403827765,
+            "CDF_RUN_2": 0.6616521713735897,
+            "D0_RUN_1": 0.4949014366857906,
+            "E288_200": 0.21530016411954647,
+            "E288_300": 0.5316826965764326,
+            "E288_400": 0.3167614680592406,
+            "E605": 0.37198115733698256,
+            "E772": 0.5983884383117255,
+            "LHCb_7": 0.2130755094642892
+          }
+        }
+      ],
+      "range": [
+        0.4485619366168976,
+        0.44872426986694336
+      ]
+    },
+    "wy_lhcb_only": {
+      "runs": [
+        {
+          "seed": 303,
+          "best_chi2_like_per_row": 0.6499795317649841,
+          "best_epoch": 3000,
+          "per_dataset": {
+            "CDF_RUN_1": 0.38826617252015627,
+            "CDF_RUN_2": 0.17603252548783238,
+            "D0_RUN_1": 0.4481438815950876,
+            "E288_200": 0.10602845578228148,
+            "E288_300": 0.15765121661615383,
+            "E288_400": 0.23567552564737193,
+            "E605": 0.41145990640020663,
+            "E772": 0.44343978257280814,
+            "LHCb_7": 19.803563214991296
+          }
+        },
+        {
+          "seed": 304,
+          "best_chi2_like_per_row": 0.6499024033546448,
+          "best_epoch": 3000,
+          "per_dataset": {
+            "CDF_RUN_1": 0.38868627912960724,
+            "CDF_RUN_2": 0.17623357392479214,
+            "D0_RUN_1": 0.44707189685514637,
+            "E288_200": 0.10612795882104666,
+            "E288_300": 0.15768158009945504,
+            "E288_400": 0.2356839879142844,
+            "E605": 0.41143523294648604,
+            "E772": 0.4427849635696178,
+            "LHCb_7": 19.80383192314996
+          }
+        },
+        {
+          "seed": 305,
+          "best_chi2_like_per_row": 0.6499165296554565,
+          "best_epoch": 3000,
+          "per_dataset": {
+            "CDF_RUN_1": 0.38842602928548814,
+            "CDF_RUN_2": 0.17616703923015603,
+            "D0_RUN_1": 0.44739386111624924,
+            "E288_200": 0.10600229299136175,
+            "E288_300": 0.15764130811394414,
+            "E288_400": 0.23570875537281746,
+            "E605": 0.41143927484714216,
+            "E772": 0.4430701543532564,
+            "LHCb_7": 19.803617380197224
+          }
+        }
+      ],
+      "range": [
+        0.6499024033546448,
+        0.6499795317649841
+      ]
+    },
+    "wy_long_seed303": {
+      "best_chi2_like_per_row": 0.6883847117424011,
+      "best_epoch": 10000
+    }
+  },
+  "lhcb_y_audit": {
+    "rows": 6,
+    "Y_over_data": [
+      -0.2812166803518576,
+      -0.3809237549594559,
+      -0.2506239286149219,
+      -0.3881562625051067,
+      0.3856838242640439,
+      0.15102287373812198
+    ],
+    "Y_relative_subtraction_uncertainty": [
+      2.3427296657340753,
+      1.7993702454071674,
+      0.5753448010817397,
+      0.20498890315678583,
+      0.6696930512785012,
+      0.7768691188034764
+    ],
+    "mean_abs_Y_over_data": 0.306271220738918,
+    "max_abs_Y_over_data": 0.3881562625051067,
+    "mean_relative_subtraction_uncertainty": 1.0614992975769575,
+    "max_relative_subtraction_uncertainty": 2.3427296657340753,
+    "positive_Y_rows": 2,
+    "negative_Y_rows": 4,
+    "source_status": "isolated_lhcb7_y_full_minus_res_complete_not_production"
+  },
+  "interface_failures_repaired": [
+    "scope data were remapped to dense trainer row IDs after W selection, so stale source row IDs paired some W curves with the wrong kinematics",
+    "the candidate controls initially used raw table errors rather than the Collins effective errors used by the frozen baseline",
+    "the external W cache already followed the frozen fiducial convention; multiplying LHCb rows by theory_fiducial_factor again suppressed W by about 0.45"
+  ],
+  "corrected_inputs": {
+    "data": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_fnp_inputs/data_with_old_effective_errors",
+    "w_grid": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_fnp_inputs/scope_353_bspace_w_kinematic_corrected_nofidfactor.csv",
+    "y_grid": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_fnp_inputs/scope_353_y.csv",
+    "backend": "/home/dustin/work/project/bT-TMD/v23/backends/bt_internal_css_backend_v22_tevatron.py"
+  },
+  "decision": "Do not interpret the old multi-hundred-percent W+Y band as FiLM non-uniqueness. For Tevatron/fixed-target rows the corrected W+Y fit is numerically near the baseline. LHCb Y remains a diagnostic-only input until its cancellation uncertainty and fiducial W/Y convention are independently reduced/validated; it must not be treated as an exact production constraint in the current global propagation.",
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

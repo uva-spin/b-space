@@ -1,0 +1,26 @@
+{
+  "status": "isolated_external_unprimed_n3ll_nnlo_candidate_accuracy_closure_passed_not_promoted",
+  "engine": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+  "g1_GeV2": 1.017,
+  "convention": {
+    "resummation": "unprimed N3LL, order=3, primed=false",
+    "fixed_order": "NNLO V+jet (order_vjet=2)",
+    "terms": "W=RES; ASY=-CT; FO=VJ; Y=FO-ASY=VJ+CT",
+    "full": "RES+CT+VJ"
+  },
+  "checks": {
+    "tevatron_primary_grid_122_rows": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/tevatron_full_wy_grid.csv",
+    "tevatron_boundary_24_rows": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p017/boundary_full_wy_status.json",
+    "term_level_candidate_center": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_term_decomposition_g1_1p017/term_decomposition_status.json",
+    "primary_all_finite": true,
+    "primary_all_positive": true
+  },
+  "scope_limits": [
+    "external-engine candidate only",
+    "fixed-target 329-row core still requires same-scheme closure",
+    "LHCb high-qT rows remain outside this Tevatron candidate",
+    "no production promotion or uncertainty replacement authorized"
+  ],
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

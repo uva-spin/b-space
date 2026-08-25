@@ -1,0 +1,51 @@
+{
+  "status": "metric_comparability_audit_complete",
+  "production_reference": {
+    "source": "/home/dustin/work/project/bT-TMD/systematics/high_qt_direct_production_benchmark/experimental_unitary_transition/outputs/fig6_lbfgs_stationary_s311/fit_status.json",
+    "objective_definition": "accepted_data_chi2_plus_dataset_normalization_penalty_only",
+    "rows": 329,
+    "total_chi2": 142.84860229492188,
+    "data_chi2": 140.07318115234375,
+    "normalization_penalty": 2.7754158973693848,
+    "objective_per_row": 0.4341902805316774,
+    "qT_scope": "production training is restricted to qT/Q <= 0.20 and includes only six low-qT LHCb rows",
+    "backend_scope": "W-only/internal CSS pilot with y_mode=zero; not a finite-Y high-qT fit"
+  },
+  "lhcb_nnlo_diagnostic": {
+    "rows": 4,
+    "qT_over_Q_scope": [
+      0.2416666666666666,
+      1.85
+    ],
+    "objective_definition": "published correlated pT covariance chi2 plus matching and NNLO-scale nuisance penalties",
+    "central_profile_data_chi2_per_row_q16_median_q84": [
+      3.5906611601411424,
+      3.7471858026427687,
+      3.842844246183904
+    ],
+    "central_profile_total_chi2_per_row_q16_median_q84": [
+      6.541140147483021,
+      6.690984209910956,
+      6.776585709261729
+    ],
+    "50_replica_total_chi2_per_row_q16_median_q84": [
+      5.566939677140005,
+      7.158727100737085,
+      9.227540982158224
+    ],
+    "unprofiled_median_central_profile_covariance_chi2_per_row": 21.122098818530137
+  },
+  "why_the_numbers_differ": [
+    "The denominators are 329 global rows versus four LHCb boundary rows.",
+    "The production objective is a low-qT W-only fit and does not include the four high-qT finite-Y boundary bins.",
+    "The LHCb diagnostic holds the lambda=1 W endpoints fixed and profiles only matching and NNLO-scale nuisances; it is not a global refit.",
+    "The LHCb diagnostic uses the published correlated covariance, while the historical production objective uses the production point-error/data-normalization objective."
+  ],
+  "illustrative_global_average_only": {
+    "formula": "(production total chi2 + 4 * LHCb median total chi2/row) / 333",
+    "value": 0.5149654975912018,
+    "warning": "This is not a refit and is shown only to demonstrate that a four-bin local tension need not equal a global chi2/row of 7.16."
+  },
+  "interpretation": "The 7.16 value is not evidence that the entire production fit has chi2/row=7.16. It is a local LHCb high-qT closure diagnostic. It is nevertheless a genuine local discrepancy because those four bins are several experimental standard deviations below the NNLO unitary prediction before nuisance profiling.",
+  "production_outputs_modified": false
+}

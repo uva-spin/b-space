@@ -1,0 +1,23 @@
+{
+  "status": "isolated_direct_profiled_gaussian_wy_grid_complete_not_production",
+  "grid": "full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p013_30m/tevatron_full_wy_grid.csv",
+  "reference_grid": "full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p0/tevatron_full_wy_grid.csv",
+  "g1_GeV2": 1.013,
+  "row_count": 122,
+  "checks": {
+    "all_finite": true,
+    "all_positive": true,
+    "median_prediction_to_data": 0.9973149458459225,
+    "stat_only_chi2": 155.8118606664097,
+    "stat_only_chi2_per_row": 1.2771463989049976,
+    "rms_stat_pull": 1.1301090208050715,
+    "mean_relative_mc_uncertainty": 0.021384543175358525,
+    "max_relative_mc_uncertainty": 0.24085973393435317,
+    "median_relative_shift_vs_g1_one": -0.0005458765332959636,
+    "max_absolute_relative_shift_vs_g1_one": 0.3356589459935414
+  },
+  "interpretation": "directly evaluated controlled variation around the g1=1 candidate; not a new production fit",
+  "promotion_authorized": false,
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

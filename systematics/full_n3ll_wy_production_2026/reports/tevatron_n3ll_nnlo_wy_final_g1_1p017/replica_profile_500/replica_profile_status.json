@@ -1,0 +1,38 @@
+{
+  "status": "isolated_tevatron_n3ll_nnlo_wy_replica_propagation_complete_not_production",
+  "replica_count": 500,
+  "rng_seed": 20260822,
+  "central_g1_GeV2": 1.017,
+  "source_models": {
+    "0.0": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid/tevatron_full_wy_grid.csv",
+    "1.0": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p0/tevatron_full_wy_grid.csv",
+    "1.017": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/tevatron_full_wy_grid.csv",
+    "1.0241911542738864": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p024191_30m/tevatron_full_wy_grid.csv"
+  },
+  "profile": "dense piecewise-linear interpolation across four direct Gaussian grids; normalization nuisance profiled per dataset",
+  "g1_distribution_GeV2": {
+    "median": 1.0130000000000001,
+    "q16": 1.0110000000000001,
+    "q84": 1.02
+  },
+  "chi2_distribution_per_row": {
+    "median": 1.7249782812136703,
+    "q16": 1.5206581440698494,
+    "q84": 1.9200210769542037
+  },
+  "band_csv": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/replica_profile_500/tevatron_wy_replica_band.csv",
+  "included": [
+    "diagonal point-to-point errors",
+    "one Gaussian normalization nuisance per Tevatron dataset"
+  ],
+  "missing": [
+    "PDF replicas",
+    "F_NP/start ensemble",
+    "model-form envelope",
+    "scale envelope"
+  ],
+  "formal_confidence_level_assigned": false,
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false,
+  "promotion_authorized": false
+}

@@ -1,0 +1,39 @@
+{
+  "status": "isolated_nnlo_bin_acceptance_sensitivity_complete_not_production",
+  "approximation": "multiply each row W contribution by NNLO/NLO bin-integrated fiducial acceptance ratio",
+  "nlo_acceptance_source": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb_bin_acceptance_check/lhcb_bin_acceptance.csv",
+  "nnlo_acceptance_source": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb_bin_acceptance_nnlo_all4_10m/lhcb_bin_acceptance.csv",
+  "row_acceptance_factors_nnlo_over_nlo": {
+    "LHCb_7:10": 1.0161384946336383,
+    "LHCb_7:11": 0.9745716611468325,
+    "LHCb_7:12": 1.0226890681685121,
+    "LHCb_7:13": 1.0031078058332945
+  },
+  "all_optimizer_success": true,
+  "all_predictions_positive": true,
+  "profiles": {
+    "central_0p20_0p30": {
+      "baseline_total_chi2_per_row_median": 6.690984209910956,
+      "adjusted_total_chi2_per_row_median": 7.322515526996751,
+      "delta_total_chi2_per_row_median": 0.6315313170857948,
+      "baseline_data_chi2_per_row_median": 3.747185802642769,
+      "adjusted_data_chi2_per_row_median": 4.573456722131475
+    },
+    "early_0p18_0p28": {
+      "baseline_total_chi2_per_row_median": 4.563785810069156,
+      "adjusted_total_chi2_per_row_median": 4.532022345623286,
+      "delta_total_chi2_per_row_median": -0.03176346444586997,
+      "baseline_data_chi2_per_row_median": 2.8240796925780938,
+      "adjusted_data_chi2_per_row_median": 2.8598466364788653
+    },
+    "late_0p22_0p32": {
+      "baseline_total_chi2_per_row_median": 7.90333040067001,
+      "adjusted_total_chi2_per_row_median": 9.181276087789694,
+      "delta_total_chi2_per_row_median": 1.2779456871196846,
+      "baseline_data_chi2_per_row_median": 4.072064695396288,
+      "adjusted_data_chi2_per_row_median": 5.361958811337924
+    }
+  },
+  "production_outputs_modified": false,
+  "interpretation": "The NNLO/NLO bin-acceptance shifts are only percent-level. Applying them to the W term changes the fitted residual modestly (and worsens the central/late profiles in this signed sensitivity test); it does not close the high-qT deficit. A full NNLO node-kernel replacement is not justified by this acceptance result."
+}

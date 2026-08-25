@@ -1,0 +1,19 @@
+{
+  "status": "isolated_lhcb_node_acceptance_grid_failed_numeric_gate",
+  "rows": [
+    "LHCb_7:10"
+  ],
+  "qT_node_order": 2,
+  "rapidity_node_order": 6,
+  "qcd_order": 2,
+  "vj_calls": 100000,
+  "node_count": 12,
+  "all_nonzero_nodes_finite_positive": true,
+  "all_node_integrals_nonnegative": false,
+  "zero_cross_section_node_count": 0,
+  "acceptance_min": 0.0,
+  "acceptance_max": 1.0174360531210868e-08,
+  "bin_weighted_acceptance": 0.48001123082689023,
+  "production_outputs_modified": false,
+  "interpretation": "Node ratios are a candidate fiducial weight grid. They must be compared with the existing bin-level acceptance factors and checked for quadrature/bin-width stability before entering a finite-Y kernel campaign."
+}

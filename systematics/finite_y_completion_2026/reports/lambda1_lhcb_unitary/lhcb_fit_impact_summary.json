@@ -1,0 +1,89 @@
+{
+  "status": "lambda1_lhcb_unitary_fit_impact_diagnostic_complete",
+  "endpoint_count": 96,
+  "row_count": 4,
+  "profiles": {
+    "early_0p18_0p28": {
+      "all_optimizer_success": true,
+      "all_diagnostic_gates": false,
+      "data_chi2_per_row_q16_median_q84": [
+        1.2916485384458016,
+        1.2916883117840419,
+        1.2917378830478219
+      ],
+      "total_chi2_per_row_q16_median_q84": [
+        5.958062564652658,
+        5.963126385724433,
+        5.972999118614776
+      ],
+      "matching_nuisance_q16_median_q84": [
+        -0.7164059765277455,
+        -0.6946458765843176,
+        -0.6831338426206433
+      ],
+      "nlo_scale_nuisance_q16_median_q84": [
+        4.265991119049622,
+        4.266530974155183,
+        4.267571910909427
+      ],
+      "max_absolute_pull_q84": 1.8097534037544394,
+      "max_absolute_pull": 1.814247702876237
+    },
+    "central_0p20_0p30": {
+      "all_optimizer_success": true,
+      "all_diagnostic_gates": false,
+      "data_chi2_per_row_q16_median_q84": [
+        1.3068671483730117,
+        1.306929080562944,
+        1.3070817949942215
+      ],
+      "total_chi2_per_row_q16_median_q84": [
+        6.031377438813217,
+        6.038842199438642,
+        6.053438098330486
+      ],
+      "matching_nuisance_q16_median_q84": [
+        -0.943376947742311,
+        -0.913865741229066,
+        -0.8983620166106894
+      ],
+      "nlo_scale_nuisance_q16_median_q84": [
+        4.253343212794878,
+        4.253525993797329,
+        4.253877085273121
+      ],
+      "max_absolute_pull_q84": 1.8533917343074084,
+      "max_absolute_pull": 1.854765041219846
+    },
+    "late_0p22_0p32": {
+      "all_optimizer_success": true,
+      "all_diagnostic_gates": false,
+      "data_chi2_per_row_q16_median_q84": [
+        1.3206631416397394,
+        1.321122011599976,
+        1.3220291860189384
+      ],
+      "total_chi2_per_row_q16_median_q84": [
+        6.053683673497417,
+        6.061587761603338,
+        6.07717692875644
+      ],
+      "matching_nuisance_q16_median_q84": [
+        -1.010915132736388,
+        -0.9793109179393364,
+        -0.9627308030213498
+      ],
+      "nlo_scale_nuisance_q16_median_q84": [
+        4.242483455277315,
+        4.242980787915823,
+        4.243277458898692
+      ],
+      "max_absolute_pull_q84": 1.8908605199491966,
+      "max_absolute_pull": 1.8928221596956778
+    }
+  },
+  "all_diagnostic_gates": false,
+  "normalization_treatment": "fixed; LHCb sysNorm_rel is zero in the diagnostic data manifest",
+  "interpretation": "This checks the corrected lambda=1 unitary finite-Y candidate on the four high-qT LHCb fiducial rows after explicit DYTurbo node acceptance. The independent MCFM/DYTurbo factor-of-two is now understood as MCFM's absolute-rapidity convention; the remaining approximately 4.25-sigma scale pull reflects the positive-arm candidate data versus true-NLO normalization. It is not yet a universal production approval because LHCb covariance/publication and observable-normalization closure remain separate requirements.",
+  "production_outputs_modified": false
+}

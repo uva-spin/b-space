@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "label": "scope_329_wy_control_lambda10",
+  "modes": [
+    "wonly",
+    "wy"
+  ],
+  "seeds": [
+    303,
+    304,
+    305
+  ],
+  "epochs": 5000,
+  "patience": 1000,
+  "lambda_tail": 10.0,
+  "fnp_tail_bmin": 6.0,
+  "fnp_tail_target": 0.05,
+  "qT_max_over_Q": 0.2,
+  "runs": [
+    {
+      "mode": "wonly",
+      "seed": 303,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_wy_control_lambda10_wonly_s303",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_wy_control_lambda10_wonly_s303.log"
+    },
+    {
+      "mode": "wonly",
+      "seed": 304,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_wy_control_lambda10_wonly_s304",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_wy_control_lambda10_wonly_s304.log"
+    },
+    {
+      "mode": "wonly",
+      "seed": 305,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_wy_control_lambda10_wonly_s305",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_wy_control_lambda10_wonly_s305.log"
+    },
+    {
+      "mode": "wy",
+      "seed": 303,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_wy_control_lambda10_wy_s303",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_wy_control_lambda10_wy_s303.log"
+    },
+    {
+      "mode": "wy",
+      "seed": 304,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_wy_control_lambda10_wy_s304",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_wy_control_lambda10_wy_s304.log"
+    },
+    {
+      "mode": "wy",
+      "seed": 305,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_wy_control_lambda10_wy_s305",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_wy_control_lambda10_wy_s305.log"
+    }
+  ],
+  "purpose": "same 353 rows, same external W, same optimizer; W-only versus fixed W+Y",
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "capability_probe_complete_not_production",
+  "scope": "E288_200:0",
+  "formula": "W_N3LL + (FO_NNLO - ASY_NNLO)",
+  "target_assumption": "proton_beam_on_proton_target; no nuclear correction",
+  "low_stat_calls": 1000000,
+  "high_stat_calls": 30000000,
+  "high_stat_result": "2.758998724849789 +- 6.244935017925624 fb",
+  "interpretation": "large fixed-target cancellation remains integration-limited; do not include in Tevatron production batch",
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false,
+  "promotion_authorized": false
+}

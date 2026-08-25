@@ -1,0 +1,25 @@
+{
+  "status": "isolated_scope_353_tail10_starts_long_complete",
+  "kind": "starts",
+  "label": "scope_353_tail10",
+  "seeds": [
+    310
+  ],
+  "lambda_tail": 10.0,
+  "fnp_tail_bmin": 6.0,
+  "fnp_tail_target": 0.05,
+  "epochs": 15000,
+  "patience": 2500,
+  "workers": 1,
+  "runs": [
+    {
+      "kind": "starts",
+      "seed": 310,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail10_coupled_fnp_fit_s310_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail10_coupled_fnp_fit_s310_csvnorm_long.log"
+    }
+  ],
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

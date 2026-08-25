@@ -1,0 +1,14 @@
+{
+  "status": "multiplicative_default_is_strong_inference_but_metadata_gap_remains",
+  "evidence": [
+    "Frozen v22_full backend is byte-identical to the audited source and declares V22_W_ORGANIZATION=multiplicative_nlo.",
+    "The backend entrypoint falls back to multiplicative when CSSConfig has no v22_w_organization attribute.",
+    "The frozen cache metadata records the v22 full backend path but no v22_w_organization override.",
+    "The historical export shell invokes the backend through the normal internal_css path and exposes no organization override.",
+    "The isolated strict branch differs from the historical multiplicative cache by up to 2.79% after the W transform on the diagnostic rows."
+  ],
+  "inference": "The historical cache was most likely generated with the multiplicative NLO organization by default.",
+  "limit": "The cache itself has no embedded organization label, so this remains an inference rather than a cryptographically explicit generator record.",
+  "required_resolution": "Regenerate a tagged cache with explicit organization metadata before using strict-NLO wording as a verified provenance claim.",
+  "production_outputs_modified": false
+}

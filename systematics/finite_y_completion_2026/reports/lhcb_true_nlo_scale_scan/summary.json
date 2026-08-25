@@ -1,0 +1,99 @@
+{
+  "status": "lhcb_true_nlo_scale_scan_complete_not_production",
+  "scale_points": [
+    {
+      "tag": "central",
+      "mu_r": 1.0,
+      "mu_f": 1.0
+    },
+    {
+      "tag": "mur0p5_muf0p5",
+      "mu_r": 0.5,
+      "mu_f": 0.5
+    },
+    {
+      "tag": "mur0p5_muf1",
+      "mu_r": 0.5,
+      "mu_f": 1.0
+    },
+    {
+      "tag": "mur1_muf0p5",
+      "mu_r": 1.0,
+      "mu_f": 0.5
+    },
+    {
+      "tag": "mur1_muf2",
+      "mu_r": 1.0,
+      "mu_f": 2.0
+    },
+    {
+      "tag": "mur2_muf1",
+      "mu_r": 2.0,
+      "mu_f": 1.0
+    },
+    {
+      "tag": "mur2_muf2",
+      "mu_r": 2.0,
+      "mu_f": 2.0
+    }
+  ],
+  "rows": [
+    {
+      "row_id": "LHCb_7:10",
+      "data_pb_per_GeV": 1.003090909,
+      "scale_ratio_min": 0.5091716463391122,
+      "scale_ratio_central": 0.562373172597709,
+      "scale_ratio_max": 0.6283491813591183,
+      "scale_ratio_max_scale": "mur0p5_muf1",
+      "theory_pb_per_GeV_min": 0.5107454495633266,
+      "theory_pb_per_GeV_central": 0.5641114168982498,
+      "theory_pb_per_GeV_max": 0.6302913514989238
+    },
+    {
+      "row_id": "LHCb_7:11",
+      "data_pb_per_GeV": 0.575263158,
+      "scale_ratio_min": 0.49503918404173847,
+      "scale_ratio_central": 0.546749232174061,
+      "scale_ratio_max": 0.6108665302104357,
+      "scale_ratio_max_scale": "mur0p5_muf1",
+      "theory_pb_per_GeV_min": 0.2847778043455937,
+      "theory_pb_per_GeV_central": 0.3145246899345256,
+      "theory_pb_per_GeV_max": 0.3514090092853577
+    },
+    {
+      "row_id": "LHCb_7:12",
+      "data_pb_per_GeV": 0.19962069,
+      "scale_ratio_min": 0.47144349068867414,
+      "scale_ratio_central": 0.5206665887040122,
+      "scale_ratio_max": 0.581697902558571,
+      "scale_ratio_max_scale": "mur0p5_muf1",
+      "theory_pb_per_GeV_min": 0.0941098749072817,
+      "theory_pb_per_GeV_central": 0.1039358236970411,
+      "theory_pb_per_GeV_max": 0.1161189366802947
+    },
+    {
+      "row_id": "LHCb_7:13",
+      "data_pb_per_GeV": 0.007323671,
+      "scale_ratio_min": 0.5126461555997259,
+      "scale_ratio_central": 0.5831971400790122,
+      "scale_ratio_max": 0.6661574432123999,
+      "scale_ratio_max_scale": "mur0p5_muf0p5",
+      "theory_pb_per_GeV_min": 0.0037544517830272,
+      "theory_pb_per_GeV_central": 0.0042711439820796,
+      "theory_pb_per_GeV_max": 0.0048787179482888
+    }
+  ],
+  "bin_integrated_ratio_by_scale": {
+    "central": 0.5462275435746216,
+    "mur0p5_muf0p5": 0.5979896980254006,
+    "mur0p5_muf1": 0.6102767411774817,
+    "mur1_muf0p5": 0.5352388204823267,
+    "mur1_muf2": 0.5504156963030248,
+    "mur2_muf1": 0.4945729078563042,
+    "mur2_muf2": 0.4983667398993428
+  },
+  "maximum_boundary_ratio_to_data": 0.6661574432123999,
+  "maximum_boundary_ratio_scale": "mur0p5_muf0p5",
+  "interpretation": "The standard seven-point muR/muF variation changes the true-NLO positive-arm prediction but does not reach the candidate LHCb data in any boundary bin. The largest pointwise theory/data ratio is still below 0.67, so the approximately 45% deficit is not covered by this perturbative scale envelope. This remains an input normalization/observable-provenance gate, not a reason to rescale FO or reject the unitary finite-Y construction.",
+  "production_outputs_modified": false
+}

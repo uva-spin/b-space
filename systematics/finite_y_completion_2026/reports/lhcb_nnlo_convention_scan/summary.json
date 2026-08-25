@@ -1,0 +1,42 @@
+{
+  "status": "lhcb_nnlo_convention_scan_complete_diagnostic_not_production",
+  "row": "LHCb_7:10",
+  "order": "DYTurbo fixedorder_only=true, order=2, positive-arm 0<yZ<6",
+  "calls_per_point": 2000000,
+  "cases": [
+    {
+      "case": "baseline_gamma_ew1",
+      "row_id": "LHCb_7:10",
+      "data_pb_per_GeV": 1.003090909,
+      "theory_pb_per_GeV": 0.8272693821276851,
+      "theory_unc_pb_per_GeV": 0.0191403677030986,
+      "theory_data_ratio": 0.824720246894078
+    },
+    {
+      "case": "no_gamma_ew1",
+      "row_id": "LHCb_7:10",
+      "data_pb_per_GeV": 1.003090909,
+      "theory_pb_per_GeV": 0.8048370311284277,
+      "theory_unc_pb_per_GeV": 0.029811912798797,
+      "theory_data_ratio": 0.8023570185984287
+    },
+    {
+      "case": "gamma_ew0",
+      "row_id": "LHCb_7:10",
+      "data_pb_per_GeV": 1.003090909,
+      "theory_pb_per_GeV": 0.832402315195574,
+      "theory_unc_pb_per_GeV": 0.0335305755883466,
+      "theory_data_ratio": 0.8298373634204415
+    },
+    {
+      "case": "gamma_ew2",
+      "row_id": "LHCb_7:10",
+      "data_pb_per_GeV": 1.003090909,
+      "theory_pb_per_GeV": 0.798312993372115,
+      "theory_unc_pb_per_GeV": 0.022887708116571,
+      "theory_data_ratio": 0.7958530839123725
+    }
+  ],
+  "interpretation": "Removing gamma* or changing the electroweak input scheme shifts the row-10 NNLO prediction by only a few percent; none closes the roughly 18% residual. The baseline gamma*/G_mu convention is retained and no convention-driven rescaling is authorized.",
+  "production_outputs_modified": false
+}

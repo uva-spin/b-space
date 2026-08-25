@@ -1,0 +1,19 @@
+{
+  "manifest_id": "tevatron_full_n3ll_nnlo_candidate_fig2_fig6_g1_1p02419",
+  "status": "isolated_candidate_figures_frozen_not_production",
+  "candidate": "tevatron_n3ll_nnlo_wy_gaussian_g1_1p0241911542738864",
+  "scope": "x=0.1, Q=10 GeV, u and d diagnostic TMD curves",
+  "band": "pointwise q16-q84 over 50 diagonal Gaussian-g1 pseudo-replica profiles",
+  "formal_confidence_level_assigned": false,
+  "artifacts": {
+    "fig2_png": {"path": "reports/tevatron_candidate_fig2_fig6_g1_1p024191/candidate_fig2space_bT_ud_g1_1p02419.png", "sha256": "ced3675b574e8a4c6d8a99514679cda7862913fc9b24fb1b9af3b9f85483d3a3"},
+    "fig2_pdf": {"path": "reports/tevatron_candidate_fig2_fig6_g1_1p024191/candidate_fig2space_bT_ud_g1_1p02419.pdf", "sha256": "5124adf2dc7ce7a8c86c7e74fad6700ca1cb56f3c23aeeaa9f512ff091175527"},
+    "fig6_png": {"path": "reports/tevatron_candidate_fig2_fig6_g1_1p024191/candidate_fig6_kT_ud_g1_1p02419.png", "sha256": "78ca0e5251a8747edf339a923c167a37eb36ca79ff61754d217b061479719007"},
+    "fig6_pdf": {"path": "reports/tevatron_candidate_fig2_fig6_g1_1p024191/candidate_fig6_kT_ud_g1_1p02419.pdf", "sha256": "b3ef3593bbf332b896dfd6784d3e2c54e3e50758a17b8117941390c64c2d817f"},
+    "bspace_csv": {"path": "reports/tevatron_candidate_fig2_fig6_g1_1p024191/candidate_fig2space_bT_ud.csv", "sha256": "6926a5ae4e93b6899254bad1e05acdccfb7f1844039b4e8ce3e439e948882d27"},
+    "kspace_csv": {"path": "reports/tevatron_candidate_fig2_fig6_g1_1p024191/candidate_fig6_kT_ud.csv", "sha256": "d77adfd9be1a7ac0931d227c06ea9174c7d2650e5351ced2f969dd3d40884d55"},
+    "summary": {"path": "reports/tevatron_candidate_fig2_fig6_g1_1p024191/summary.json", "sha256": "fe9317a569d8cbb63d5ae78644aeb050c2710054028b877d744d1231b471aac0"}
+  },
+  "production_outputs_modified": false,
+  "frozen_baseline_unchanged": true
+}

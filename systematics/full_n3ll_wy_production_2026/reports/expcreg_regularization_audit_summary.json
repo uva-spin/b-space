@@ -1,0 +1,50 @@
+{
+  "status": "isolated_regularization_audit_incomplete_not_production",
+  "date": "2026-08-19",
+  "order": 3,
+  "calls_per_component": 100000,
+  "tevatron_high_precision_control": {
+    "calls_per_component": 1000000,
+    "expcreg_reference": 1.0,
+    "expcreg_test": 0.5,
+    "warning_count_reference": 0,
+    "warning_count_test": 0,
+    "max_absolute_relative_shift": 0.0025216,
+    "rms_relative_shift": 0.00168,
+    "artifact": "expcreg_tevatron_stress_parallel/stress_status.json"
+  },
+  "e288_row_findings": {
+    "e288_200_expcreg_1p5_sample": {
+      "rows": ["E288_200:30", "E288_200:44", "E288_200:57", "E288_200:69", "E288_200:80"],
+      "all_finite_positive_zero_warning": true,
+      "predicted_A_to_data_range": [0.807, 2.109],
+      "note": "expcreg=0.5 fails on the Q=8.5 and Q=9.5 representatives"
+    },
+    "e288_300_expcreg_1p5_sample": {
+      "rows": ["E288_300:32", "E288_300:50", "E288_300:67", "E288_300:81", "E288_300:95", "E288_300:108"],
+      "finite_positive_rows": 4,
+      "timeout_rows": ["E288_300:67"],
+      "catastrophic_rows": [{"row": "E288_300:50", "raw_fb": 4.007769563822049e107, "predicted_A_to_data": 4.5100739810435105e106}],
+      "artifact": "expcreg_e288_row_stress/rows_status.json"
+    },
+    "e288_300_row50_scan": {
+      "expcreg_values": [0.5, 0.75, 1.0, 1.25, 1.75, 2.0],
+      "predicted_A_to_data": [1.5123975, 1.51259996, 1.51295854, 1.51366116, 1.51626499, 1.51800729],
+      "all_finite_positive_zero_warning": true,
+      "expcreg_1p5": "timeout_or_pole",
+      "artifact_cards": "expcreg_e288_row_stress/cards/E288_300_50_order3_expcreg*.in"
+    },
+    "e288_expcreg_2p0_representatives": {
+      "rows": ["E288_200:57", "E288_200:69", "E288_300:67", "E288_400:19", "E288_400:43", "E288_400:67", "E288_400:87", "E288_400:110", "E288_400:132", "E288_400:150", "E288_400:165"],
+      "all_finite_positive_zero_warning": true,
+      "predicted_A_to_data_range": [0.734, 4.728]
+    }
+  },
+  "mapped_fixed_xf_expcreg_2p0": {
+    "E605:0": {"q2_slices": 8, "predicted_A_to_data": 1.9159030928},
+    "E772:0": {"q2_slices": 8, "predicted_A_to_data": 0.8239681615},
+    "artifact_root": "fixed_xf_mapped_q2_probe/"
+  },
+  "decision": "No expcreg value is promoted. expcreg=1.5 is rejected as a universal setting because of a row-local pole. expcreg=2.0 is a candidate numerical stability control only and requires full-row, observable-conversion, target-composition, and perturbative-scheme validation.",
+  "frozen_production_modified": false
+}

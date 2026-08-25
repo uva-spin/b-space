@@ -1,0 +1,28 @@
+{
+  "status": "isolated_scope_353_final_propagation_complete",
+  "start_count": 24,
+  "replica_count": 50,
+  "long_start_replacements": [
+    310,
+    311,
+    317,
+    319,
+    322
+  ],
+  "long_replica_replacements": [
+    1008,
+    1033,
+    1040,
+    1010,
+    1038,
+    1026
+  ],
+  "crossed_member_count": 1200,
+  "cross_rule": "log(F_NP) start curves plus centered log(F_NP) replica residuals",
+  "figures": {
+    "fig2": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_final_fig2_fig6/fig2.png",
+    "fig6": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_final_fig2_fig6/fig6.png"
+  },
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

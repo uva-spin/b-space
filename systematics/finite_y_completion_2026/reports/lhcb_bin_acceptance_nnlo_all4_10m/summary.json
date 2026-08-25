@@ -1,0 +1,14 @@
+{
+  "status": "isolated_lhcb_bin_acceptance_check_complete",
+  "rows": [
+    "LHCb_7:10",
+    "LHCb_7:11",
+    "LHCb_7:12",
+    "LHCb_7:13"
+  ],
+  "qcd_order": 2,
+  "vj_calls": 10000000,
+  "all_fiducial_nonnegative": true,
+  "all_inclusive_positive": true,
+  "production_outputs_modified": false
+}

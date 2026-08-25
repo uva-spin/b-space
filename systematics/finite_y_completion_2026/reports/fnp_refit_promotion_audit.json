@@ -1,0 +1,41 @@
+{
+  "status": "provisional_wrong_baseline_fnp_refit_audit_not_lambda1",
+  "trials": {
+    "unanchored_lambda0_50k": {
+      "tag": "unitary_smootherstep_v1_differentiable_fnp_refit_completion_s303",
+      "epochs_run": 50000,
+      "best_epoch": 50000,
+      "convergence_gate_pass": false,
+      "stationarity_gate_pass": false,
+      "total_chi2_per_row": 0.48304069886464235,
+      "fnp_gradient_l2_per_row": 0.044059623032808304,
+      "fnp_parameter_relative_l2_shift": 0.07045444592452488,
+      "anchor_strength": 0.0
+    },
+    "anchor_lambda1000_50k": {
+      "tag": "unitary_smootherstep_v1_differentiable_fnp_refit_completion_anchor1000_s303",
+      "epochs_run": 50000,
+      "best_epoch": 49999,
+      "convergence_gate_pass": false,
+      "stationarity_gate_pass": false,
+      "total_chi2_per_row": 0.49606012014761863,
+      "fnp_gradient_l2_per_row": 0.03327310457825661,
+      "fnp_parameter_relative_l2_shift": 0.05385608757164072,
+      "anchor_strength": 1000.0
+    },
+    "anchor_lambda1e5_20k": {
+      "tag": "unitary_smootherstep_v1_differentiable_fnp_refit_completion_anchor1e5_s303",
+      "epochs_run": 20000,
+      "best_epoch": 20000,
+      "convergence_gate_pass": false,
+      "stationarity_gate_pass": false,
+      "total_chi2_per_row": 0.5327999125796742,
+      "fnp_gradient_l2_per_row": 0.08736634999513626,
+      "fnp_parameter_relative_l2_shift": 0.0144989187372423,
+      "anchor_strength": 100000.0
+    }
+  },
+  "conclusion": "These trials used the older lambda=0.5 source state and therefore cannot decide lambda=1 promotion. They also did not reach stationarity, but the lambda=1 finite-Y refit must be rerun from the registered lambda=1 endpoints before drawing a final fit-impact conclusion.",
+  "fallback": "retain the established FNP and validate unitary Y with frozen-FNP nuisance/replica studies",
+  "production_outputs_modified": false
+}

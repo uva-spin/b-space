@@ -1,0 +1,126 @@
+{
+  "status": "isolated_fixed_target_quadrature_method_summary_complete_not_production",
+  "row_tested": "E288_200:0",
+  "records": [
+    {
+      "name": "E288_200_0_quadrature_vj_d3",
+      "status": "fixed_target_quadrature_vj_probe_complete",
+      "intDimVJ": 3,
+      "VJquad": true,
+      "makecuts": false,
+      "return_code": 0,
+      "target": null,
+      "total_fb_per_bin": 6.36653,
+      "total_unc_fb_per_bin": 0.00025,
+      "status_file": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/fixed_target_quadrature_probes/E288_200_0_quadrature_vj_d3/probe_status.json"
+    },
+    {
+      "name": "E288_200_0_quadrature_vj_d3_nocuts_nuc_z4_a9",
+      "status": "fixed_target_quadrature_vj_probe_complete",
+      "intDimVJ": 3,
+      "VJquad": true,
+      "makecuts": false,
+      "return_code": 0,
+      "target": {
+        "mode": "nuclearpdf",
+        "Z": 4.0,
+        "A": 9.0,
+        "normalization_note": "DYTurbo nuclearpdf returns the whole-nucleus PDF sum; per-nucleon comparison requires division by A"
+      },
+      "total_fb_per_bin": 78.4242,
+      "total_unc_fb_per_bin": 0.0024,
+      "status_file": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/fixed_target_quadrature_probes/E288_200_0_quadrature_vj_d3_nocuts_nuc_z4_a9/probe_status.json"
+    },
+    {
+      "name": "E288_200_0_quadrature_vj_d3_nocuts_nuc_z4_a9p01218",
+      "status": "fixed_target_quadrature_vj_probe_complete",
+      "intDimVJ": 3,
+      "VJquad": true,
+      "makecuts": false,
+      "return_code": 0,
+      "target": {
+        "mode": "nuclearpdf",
+        "Z": 4.0,
+        "A": 9.0121831,
+        "normalization_note": "DYTurbo nuclearpdf returns the whole-nucleus PDF sum; per-nucleon comparison requires division by A"
+      },
+      "total_fb_per_bin": 78.5533,
+      "total_unc_fb_per_bin": 0.0024,
+      "status_file": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/fixed_target_quadrature_probes/E288_200_0_quadrature_vj_d3_nocuts_nuc_z4_a9p01218/probe_status.json"
+    },
+    {
+      "name": "E288_200_0_quadrature_vj_d5",
+      "status": "fixed_target_quadrature_vj_probe_failed",
+      "intDimVJ": 5,
+      "VJquad": true,
+      "makecuts": true,
+      "return_code": 255,
+      "target": null,
+      "total_fb_per_bin": null,
+      "total_unc_fb_per_bin": null,
+      "status_file": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/fixed_target_quadrature_probes/E288_200_0_quadrature_vj_d5/probe_status.json"
+    },
+    {
+      "name": "E288_200_0_quadrature_vj_d5_nocuts",
+      "status": "fixed_target_quadrature_vj_probe_complete",
+      "intDimVJ": 5,
+      "VJquad": true,
+      "makecuts": false,
+      "return_code": 0,
+      "target": null,
+      "total_fb_per_bin": 6.36653,
+      "total_unc_fb_per_bin": 0.00025,
+      "status_file": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/fixed_target_quadrature_probes/E288_200_0_quadrature_vj_d5_nocuts/probe_status.json"
+    },
+    {
+      "name": "E605_0_quadrature_vj_d3_nocuts",
+      "status": "fixed_target_quadrature_vj_probe_complete",
+      "intDimVJ": 3,
+      "VJquad": true,
+      "makecuts": false,
+      "return_code": 0,
+      "target": null,
+      "total_fb_per_bin": 0.68012,
+      "total_unc_fb_per_bin": 0.00049,
+      "status_file": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/fixed_target_quadrature_probes/E605_0_quadrature_vj_d3_nocuts/probe_status.json"
+    },
+    {
+      "name": "E605_0_quadrature_vj_d3_nocuts_nuc_z29_a63p546",
+      "status": "fixed_target_quadrature_vj_probe_complete",
+      "intDimVJ": 3,
+      "VJquad": true,
+      "makecuts": false,
+      "return_code": 0,
+      "target": {
+        "mode": "nuclearpdf",
+        "Z": 29.0,
+        "A": 63.546,
+        "normalization_note": "DYTurbo nuclearpdf returns the whole-nucleus PDF sum; per-nucleon comparison requires division by A"
+      },
+      "total_fb_per_bin": 42.384,
+      "total_unc_fb_per_bin": 0.031,
+      "status_file": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/fixed_target_quadrature_probes/E605_0_quadrature_vj_d3_nocuts_nuc_z29_a63p546/probe_status.json"
+    },
+    {
+      "name": "E605_0_quadrature_vj_d3_nocuts_nuc_z29_a64",
+      "status": "fixed_target_quadrature_vj_probe_complete",
+      "intDimVJ": 3,
+      "VJquad": true,
+      "makecuts": false,
+      "return_code": 0,
+      "target": {
+        "mode": "nuclearpdf",
+        "Z": 29.0,
+        "A": 64.0,
+        "normalization_note": "DYTurbo nuclearpdf returns the whole-nucleus PDF sum; per-nucleon comparison requires division by A"
+      },
+      "total_fb_per_bin": 42.682,
+      "total_unc_fb_per_bin": 0.032,
+      "status_file": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/fixed_target_quadrature_probes/E605_0_quadrature_vj_d3_nocuts_nuc_z29_a64/probe_status.json"
+    }
+  ],
+  "interpretation": "no-cut quadrature is a promising numerical route; cut-aware quadrature failed and no 329-row closure is claimed",
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false,
+  "promotion_authorized": false
+}

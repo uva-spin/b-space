@@ -1,0 +1,2 @@
+row_id,fiducial_pb,fiducial_unc_pb,inclusive_pb,inclusive_unc_pb,acceptance,fiducial_table,inclusive_table
+LHCb_7:10,4522.548332778963,193.9907018277252,11531.78156896783,1144.565505274266,0.39218123459337784,systematics/finite_y_completion_2026/reports/lhcb_bin_acceptance_nnlo_row10_1m/tables/LHCb_7_10_bin_fid_dyturbo.txt,systematics/finite_y_completion_2026/reports/lhcb_bin_acceptance_nnlo_row10_1m/tables/LHCb_7_10_bin_inc_dyturbo.txt

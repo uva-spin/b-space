@@ -1,0 +1,16 @@
+{
+  "status": "lhcb_finite_y_excluded_from_current_production_scope",
+  "scope": "LHCb_7 rows 0-5",
+  "decision": "do not fit or propagate the present finite-Y subtraction table",
+  "reason": "the available full-minus-RES finite-Y calculation is cancellation- and integration-limited, with large MC uncertainty relative to the released experimental errors",
+  "current_scope": "use the corrected non-LHCb finite-Y grid for candidate studies; retain LHCb rows outside finite-Y propagation",
+  "lhcb_treatment_if_rows_are_retained": "W-only diagnostic contribution with Y=0; not a finite-Y production constraint",
+  "future_reentry_requirements": [
+    "verified LHCb observable, bin, unit, acceptance, and covariance convention",
+    "variance-reduced or direct Y evaluation in the same perturbative scheme",
+    "independent-seed numerical stability and positivity",
+    "theory integration uncertainty small compared with experimental point-to-point uncertainty"
+  ],
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

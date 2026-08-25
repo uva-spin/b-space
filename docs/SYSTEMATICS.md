@@ -50,3 +50,28 @@ The active result is the package under
 are `PRODUCTION_MANIFEST.json` and `PRODUCTION_AUDIT.json`. The campaign source
 describes how the package was produced; the package itself records what was
 promoted and which limitations remain.
+
+## 2026 finite-Y and W+Y follow-up
+
+The follow-up campaign is source-released under
+`systematics/full_n3ll_wy_production_2026/`. It is an isolated study, not a
+replacement for the active fixed-target package. Its `HANDOFF.md` and
+`reports/WplusY_new_section_PRD_handoff.md` distinguish three scopes:
+
+1. a complete 122-row Tevatron external N³LL+NNLO W+Y grid;
+2. a 24-row Tevatron boundary validation of the unitary finite-Y transition;
+3. a 329-row diagnostic that uses finite Y for non-LHCb rows and retains six
+   LHCb rows as W-only diagnostics.
+
+The direct grid is finite, positive, and numerically checked. The 329-row
+candidate is not promoted because it broadens the lambda=1 uncertainty band
+and shifts the central nonperturbative shape. The current LHCb finite-Y
+subtraction remains outside the production scope pending observable,
+fixed-order, unit, acceptance, and covariance closure. The conventional
+additive `FO-ASY` construction is rejected only at the tested transition
+boundary; that rejection does not reject the isolated Tevatron W+Y grid.
+
+The associated `finite_y_completion_2026/` and
+`perturbative_provenance_completion/` directories contain the unitary-Y and
+strict/multiplicative provenance records, respectively. Large raw grids,
+checkpoints, logs, and crossed-member tables remain external archive inputs.

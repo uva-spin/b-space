@@ -1,0 +1,96 @@
+{
+  "status": "input_manifest_only_no_production_changes",
+  "created": "2026-08-15",
+  "workspace": "systematics/perturbative_provenance_completion",
+  "published_source_commit": "5fb979c4241eb483e2b6dcfa7352f27e3abd93b3",
+  "missing_inputs": [],
+  "files": [
+    {
+      "path": "v22/backends/bt_internal_css_backend_v22_full.py",
+      "size_bytes": 6654,
+      "sha256": "4a70c174f8374a71a4251949dd1894f1f55a9b2d88e33758c7dc17845bd239a1"
+    },
+    {
+      "path": "v22/backends/bt_internal_css_backend_v22_scheme_y.py",
+      "size_bytes": 11231,
+      "sha256": "cd027bc4cb721306bb56dda1b3e29698ed58a6fbd9155dfb906c95b3d7e85f92"
+    },
+    {
+      "path": "bt_internal_css_backend_v19_smoothprofile.py",
+      "size_bytes": 66708,
+      "sha256": "14bb311644a4681ba33178a208eca52f62683f68bacbf6d95b81e861262a925f"
+    },
+    {
+      "path": "v22/src/dy_w_nlo_reference.py",
+      "size_bytes": 6416,
+      "sha256": "beb4d057379b967a62c114770595cd53089c8b1d347aeb28b1d9c2ae62a907b8"
+    },
+    {
+      "path": "v22/src/dy_hard_nlo.py",
+      "size_bytes": 1515,
+      "sha256": "b89b56f177ddeb94a03d9c41f725fa6f0647e5900cfc6cf491f4a709ef9618d6"
+    },
+    {
+      "path": "v22/src/css2_ope_nlo.py",
+      "size_bytes": 4617,
+      "sha256": "6b695d14a05ee7c482423e4ebb52f0a5ccdeecd39b45e36022b4bcc287e62276"
+    },
+    {
+      "path": "v22/src/css2_ope_nlo_general.py",
+      "size_bytes": 6450,
+      "sha256": "62a6ba7b1c676dc737fc911e16ed4c8d5311bc15260282ca0a55e9be332f7700"
+    },
+    {
+      "path": "v22/src/small_b_profile.py",
+      "size_bytes": 2484,
+      "sha256": "ae196ae27505598642cbc641a0ae3b15118773da44b5633e26a626894deec2e4"
+    },
+    {
+      "path": "export_v22_backend_cache.sh",
+      "size_bytes": 2819,
+      "sha256": "bbe87ba5be72e35c110a19c4eed1e16e740c738c4aa8f44f54bad02bf3eef0dc"
+    },
+    {
+      "path": "production_frozen/v22_lambda3_50rep_DYonly_bspace/backend_cache/metadata_v22full_n3llp_nloQ96_b160_qToQ05.json",
+      "size_bytes": 7836,
+      "sha256": "e7cde7cfdfb6872352150eb8065e982391fa81ee77bb17565680012e3b91cf24"
+    },
+    {
+      "path": "production_frozen/v22_lambda3_50rep_DYonly_bspace/backend_cache/cache_paths.json",
+      "size_bytes": 3962,
+      "sha256": "e98c4dcdfc52e594706e01f5b69e410ae5241d5372453cd03288a24f3025ef7d"
+    },
+    {
+      "path": "production_frozen/v22_lambda3_50rep_DYonly_bspace/PRODUCTION_MANIFEST.json",
+      "size_bytes": 10459,
+      "sha256": "2ad7ef97b1a87fda41840a2a0350b6affc6854b5215b179c8a9959c05f8c079b"
+    },
+    {
+      "path": "systematics/dataset_identifiability_campaign_2026/production_lambda1_empirical_reference_full96x50/PRODUCTION_MANIFEST.json",
+      "size_bytes": 3983,
+      "sha256": "47769660f735696048a145ee373ed5387753785033489ec3e74ea4da4d826d0a"
+    },
+    {
+      "path": "systematics/dataset_identifiability_campaign_2026/production_lambda1_empirical_reference_full96x50/PRODUCTION_AUDIT.json",
+      "size_bytes": 2379,
+      "sha256": "95910744e4f34315d4ce033dffc23656b99d1513c56dd37efe2dcb99b17ae086"
+    },
+    {
+      "path": "b-space-public/production/lambda1_empirical_reference_full96x50/PRODUCTION_MANIFEST.json",
+      "size_bytes": 1679,
+      "sha256": "48cb0c2f3a000b6f035961f9770ca493b36b0e81cd1546b5388f9ea5e03463e0"
+    },
+    {
+      "path": "b-space-public/docs/MATCHING.md",
+      "size_bytes": 5467,
+      "sha256": "0fc8a5622cff49a62ce49f87c2f61840520582dcbfa45555d783b707d558ce20"
+    },
+    {
+      "path": "b-space-public/README.md",
+      "size_bytes": 18891,
+      "sha256": "6c9d92b77c3bb4a3c1fbcdc52b52171826e8dd4008fae263e6e4660b2c9a74ea"
+    }
+  ],
+  "frozen_inputs_read_only": true,
+  "production_outputs_modified": false
+}

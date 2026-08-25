@@ -1,0 +1,61 @@
+{
+  "status": "isolated_preproduction_review_inputs_frozen_not_promoted",
+  "freeze_date": "2026-08-19",
+  "purpose": "hash-lock the validated candidate inputs before the new genuine Tevatron W+Y production run",
+  "candidate": "unprimed N3LL+NNLO with conventional Y=FO_NNLO-ASY_NNLO",
+  "scope_at_freeze": "122 Tevatron qT rows plus 24 Tevatron boundary oracle rows; fixed-target and LHCb remain fail-closed",
+  "artifacts": [
+    {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/manifests/frozen_lambda1_baseline.json",
+      "sha256": "6f248e848ff402e1a6320b794c450400244e13419a7fc97c392e30a87f5cfff9"
+    },
+    {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/manifests/tevatron_n3ll_nnlo_wy_candidate_freeze.json",
+      "sha256": "a5ccc0d15c60f82f0693e785e88a3c1bbeb46c68c2f8cfeb1f87f4c664190a36"
+    },
+    {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/manifests/tevatron_n3ll_nnlo_wy_final_launch.json",
+      "sha256": "e11d6b6a0cb6c94e4547271ba75fca896a3e05588a675253bd309c378ef5f478"
+    },
+    {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/accuracy_closure_g1_1p017.json",
+      "sha256": "95783ec29bae98cbe187d66ccef031fd64756d0937f52a7327e628fee572731b"
+    },
+    {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/accuracy_closure_v2.json",
+      "sha256": "d31f0423ed49a41fe7324b674c96ad4128b2b13e99ebef3c313837d2f674c037"
+    },
+    {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_n3ll_source_map.json",
+      "sha256": "19781bb6ee34652d4f39acd3a73771aecb9ea960de87e6ed1df6b1e1dfee8048"
+    },
+    {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_term_decomposition_g1_1p017/term_decomposition_status.json",
+      "sha256": "43418d2a9bdf2812f85397f79dfd9d751d8f0fdcd225eb98b3eb3f0c63cac81a"
+    },
+    {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_stationarity_g1_1p017_seed_20260820/stationarity_status.json",
+      "sha256": "8b81253d7f55c43d386e058b9509c0034dfae756fb365e3fcb86c36ee7c6315f"
+    },
+    {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_external_seed_stability.json",
+      "sha256": "0ffbd81d6eaf1a1cadd953cafb70eb7cc39c4360ae055fc5949393c3e03d2ace"
+    },
+    {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_g1_direct_profile_decision.json",
+      "sha256": "eb3d3f70b02b8060fa190aa7466e795b84aac7066a2e6d879f66ce6535dd804e"
+    },
+    {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/fixed_target_quadrature_probes/fixed_target_normalization_audit.json",
+      "sha256": "7c4b0d5bc77e524ff143d3d49accaa122a9ced50af1f60d40a265d86cc0faa4a"
+    },
+    {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_353_scope_audit.json",
+      "sha256": "411fab61a185718794e4b1374e983270746fa3dfc75309f581dc7c391283deeb"
+    }
+  ],
+  "frozen_lambda1_baseline_unchanged": true,
+  "production_outputs_modified": false,
+  "promotion_authorized": false,
+  "active_run": "reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/"
+}

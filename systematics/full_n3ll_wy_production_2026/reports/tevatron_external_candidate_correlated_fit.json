@@ -1,0 +1,56 @@
+{
+  "status": "isolated_tevatron_external_n3ll_nnlo_correlated_candidate_fit_complete_not_production",
+  "engine": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+  "convention": "unprimed order=3; W=RES, ASY=-CT, FO=VJ, Y=FO-ASY=VJ+CT",
+  "scope": {
+    "datasets": [
+      "CDF_RUN_1",
+      "CDF_RUN_2",
+      "D0_RUN_1"
+    ],
+    "row_count": 122
+  },
+  "profiled_g1_GeV2": 1.0130000000000001,
+  "profiled_chi2": 90.26260772292613,
+  "profiled_chi2_per_row": 0.7398574403518535,
+  "profile_grid": [
+    0.0,
+    1.0,
+    1.017,
+    1.0241911542738864
+  ],
+  "profile_method": "piecewise-linear interpolation between directly evaluated external grids (including direct g1=1.017 refinement); one released normalization nuisance per dataset with Gaussian penalty",
+  "dataset_diagnostics": {
+    "CDF_RUN_1": {
+      "row_count": 41,
+      "normalization_nuisance": 0.03316420372380358,
+      "chi2": 26.721535573842438,
+      "chi2_per_row": 0.651744770093718,
+      "diagonal_point_to_point_chi2": 25.9984163045236
+    },
+    "CDF_RUN_2": {
+      "row_count": 61,
+      "normalization_nuisance": -0.008873245103846518,
+      "chi2": 51.414537932716236,
+      "chi2_per_row": 0.8428612775855121,
+      "diagonal_point_to_point_chi2": 51.39113291527482
+    },
+    "D0_RUN_1": {
+      "row_count": 20,
+      "normalization_nuisance": -0.034355340635860265,
+      "chi2": 12.12653421636746,
+      "chi2_per_row": 0.606326710818373,
+      "diagonal_point_to_point_chi2": 11.516880585062713
+    }
+  },
+  "input_grids": {
+    "g1_zero": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid/tevatron_full_wy_grid.csv",
+    "g1_one": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p0/tevatron_full_wy_grid.csv",
+    "g1_1p017_direct": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p017_30m/tevatron_full_wy_grid.csv",
+    "g1_profiled_direct": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p024191_30m/tevatron_full_wy_grid.csv"
+  },
+  "uncertainty_status": "not yet full experimental/PDF/model-form propagation; this fit only profiles released point-to-point errors plus dataset normalization nuisances",
+  "promotion_authorized": false,
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

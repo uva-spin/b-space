@@ -1,0 +1,15 @@
+{
+  "status": "isolated_direct_profile_decision_complete_not_production",
+  "scope_rows": 122,
+  "candidates": {
+    "g1_1p0": {"stat_only_chi2_per_row": 1.577146, "source": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p0/grid_status.json"},
+    "g1_1p013": {"stat_only_chi2_per_row": 1.2771463989049976, "source": "reports/tevatron_gaussian_np_candidate_profile_direct_g1_1p013_grid_status.json"},
+    "g1_1p017": {"stat_only_chi2_per_row": 0.965277789871526, "source": "reports/tevatron_gaussian_np_candidate_profile_direct_g1_1p017_grid_status.json"},
+    "g1_1p024191": {"stat_only_chi2_per_row": 1.0963156, "source": "reports/tevatron_gaussian_np_candidate_profile_direct_grid_status.json"}
+  },
+  "decision": "retain_direct_g1_1p017_as_controlled_candidate",
+  "rejected": "g1=1.013 interpolated profile minimum; direct evaluation is worse than g1=1.017",
+  "interpretation": "profile interpolation across cancellation-sensitive external grids is not sufficient to select the central point",
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

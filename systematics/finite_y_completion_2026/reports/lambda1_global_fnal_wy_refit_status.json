@@ -1,0 +1,62 @@
+{
+  "status": "experimental_lambda1_global_w_plus_y_refit_completed_but_stationarity_failed",
+  "scope": "329 accepted FNAL rows plus 24 finite-Y boundary rows",
+  "scope_correction": {
+    "accepted_329_qT_over_Q_max": 0.2,
+    "unitary_profile": "p=0 for qT/Q<=0.20; p transitions to 1 over 0.20--0.30",
+    "accepted_rows_corrected_Y": "zero by construction",
+    "boundary_rows_corrected_Y": 24,
+    "consequence": "the historical 329-row W-only objective is the low-qT limit of this unitary construction; a nontrivial global W+Y fit necessarily includes the 24 boundary rows (353 total)"
+  },
+  "initial_state": "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/lambda1_start_expansion96_s353_cont120000/model_state.pt",
+  "fnp_initialization": "verified lambda=1 endpoint s353",
+  "fnp_frozen_profiled_check": {
+    "tag": "lambda1_global_unitary_fit_frozen_s353_endpoint_norms",
+    "rows": 353,
+    "initial_norms_path": "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/lambda1_start_expansion96_s353_cont120000/dataset_norms.csv",
+    "total_chi2": 162.3327780294658,
+    "total_chi2_per_row": 0.4598662267123677,
+    "accepted_rows": 329,
+    "accepted_chi2_per_row": 0.39822446129309275,
+    "boundary_rows": 24,
+    "boundary_chi2_per_row": 1.0738834577503475,
+    "interpretation": "global W+Y fit-impact check with FNP held fixed; accepted core reproduces the lambda=1 endpoint before boundary profiling"
+  },
+  "unfreezed_run": {
+    "tag": "lambda1_global_unitary_refit_s353_consistent_long",
+    "max_epochs": 50000,
+    "min_epochs": 10000,
+    "plateau_patience": 4000,
+    "learning_rate_stages": "0:2e-5,10000:2e-6,30000:2e-7",
+    "status": "completed_stationarity_failed",
+    "epochs_run": 50000,
+    "initial_norms_path": "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/outputs/lambda1_start_expansion96_s353_cont120000/dataset_norms.csv",
+    "total_chi2": 160.72030639648438,
+    "total_chi2_per_row": 0.45529831840363844,
+    "accepted_chi2_per_row": 0.3962169519673727,
+    "boundary_chi2_per_row": 1.0378437042236328,
+    "fnp_gradient_l2_per_row_objective": 0.04390589892864227,
+    "nuisance_gradient_l2_per_row_objective": 0.004746679682284594,
+    "stationarity_threshold": 0.0001,
+    "fnp_parameter_relative_l2_shift": 0.019566436478175703,
+    "accepted_max_relative_prediction_shift": 0.0695732831954956,
+    "convergence_gate_pass": false
+  },
+  "lbfgs_polish": {
+    "tag": "lambda1_global_unitary_refit_s353_consistent_lbfgs",
+    "start_from": "lambda1_global_unitary_refit_s353_consistent_long",
+    "max_iter": 1000,
+    "total_chi2_per_row": 0.45529831840363844,
+    "fnp_gradient_l2_per_row_objective": 0.04390589892864227,
+    "nuisance_gradient_l2_per_row_objective": 0.004746679682284594,
+    "stationarity_threshold": 0.0001,
+    "stationarity_gate_pass": false,
+    "interpretation": "numerical polish makes no change and does not cure the FNP stationarity failure"
+  },
+  "historical_comparison": {
+    "w_only_production_objective_per_row": 0.4341903,
+    "warning": "not comparable to corrected W+Y until the unfreezed global run is complete"
+  },
+  "production_state_modified": false,
+  "promotion_decision": "withhold; single-start global W+Y optimization is not stationary"
+}

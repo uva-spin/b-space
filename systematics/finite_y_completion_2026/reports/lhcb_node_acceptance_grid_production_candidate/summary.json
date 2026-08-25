@@ -1,0 +1,61 @@
+{
+  "status": "lhcb_node_acceptance_grid_candidate_prepared",
+  "rows": [
+    {
+      "row_id": "LHCb_7:10",
+      "qT_node_order": 1,
+      "rapidity_node_order": 3,
+      "node_count": 12,
+      "node_weighted_acceptance": 0.41478379481504474,
+      "full_bin_dyturbo_acceptance": 0.4151100320252009,
+      "relative_grid_vs_bin": -0.0007859053864936989,
+      "min_node_acceptance": 0.0616826496970117,
+      "max_node_acceptance": 0.7119197476216269,
+      "zero_cross_section_nodes": 0
+    },
+    {
+      "row_id": "LHCb_7:11",
+      "qT_node_order": 1,
+      "rapidity_node_order": 3,
+      "node_count": 12,
+      "node_weighted_acceptance": 0.41121481060048914,
+      "full_bin_dyturbo_acceptance": 0.4125581901487676,
+      "relative_grid_vs_bin": -0.0032562183477536496,
+      "min_node_acceptance": 0.0647827609467762,
+      "max_node_acceptance": 0.7021878871159875,
+      "zero_cross_section_nodes": 0
+    },
+    {
+      "row_id": "LHCb_7:12",
+      "qT_node_order": 1,
+      "rapidity_node_order": 3,
+      "node_count": 12,
+      "node_weighted_acceptance": 0.40458491318394985,
+      "full_bin_dyturbo_acceptance": 0.4053756754032125,
+      "relative_grid_vs_bin": -0.0019506898594152731,
+      "min_node_acceptance": 0.0724456385924798,
+      "max_node_acceptance": 0.6882187216997964,
+      "zero_cross_section_nodes": 0
+    },
+    {
+      "row_id": "LHCb_7:13",
+      "qT_node_order": 2,
+      "rapidity_node_order": 3,
+      "node_count": 24,
+      "node_weighted_acceptance": 0.3711647149284301,
+      "full_bin_dyturbo_acceptance": 0.3683963317869557,
+      "relative_grid_vs_bin": 0.007514687043831343,
+      "min_node_acceptance": 0.0,
+      "max_node_acceptance": 0.7791663959026269,
+      "zero_cross_section_nodes": 6
+    }
+  ],
+  "max_abs_grid_vs_full_bin_relative": 0.007514687043831343,
+  "all_nonzero_nodes_finite": true,
+  "acceptance_range": [
+    0.0,
+    0.7791663959026269
+  ],
+  "interpretation": "DYTurbo NLO fixed-order fiducial/inclusive ratios are now available at the explicit finite-Y qT/y nodes. Rows 10--12 use 2 qT x 6 y nodes; the broad row 13 uses 4 qT x 6 y nodes. This remains an isolated acceptance input until the LHCb W kernels and unitary fit impact are audited.",
+  "production_outputs_modified": false
+}

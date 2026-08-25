@@ -1,0 +1,88 @@
+{
+  "status": "lambda1_unitary_fit_impact_audit_complete",
+  "endpoint_count": 96,
+  "row_count": 24,
+  "profiles": {
+    "early_0p18_0p28": {
+      "all_optimizer_success": true,
+      "all_operational_gates": true,
+      "total_chi2_per_row_q16_median_q84": [
+        1.0431667092812467,
+        1.0444013077368537,
+        1.0455825369060592
+      ],
+      "data_chi2_per_row_q16_median_q84": [
+        0.9143883896763946,
+        0.915439348529119,
+        0.9166769279675795
+      ],
+      "matching_nuisance_q16_median_q84": [
+        1.3563763443646795,
+        1.360056191039365,
+        1.3630062868255302
+      ],
+      "nlo_scale_nuisance_q16_median_q84": [
+        0.9591709463584125,
+        0.9606737958900435,
+        0.9621566471038852
+      ],
+      "max_absolute_pull_q84": 2.468265165972543,
+      "max_absolute_pull": 2.470787260018077
+    },
+    "central_0p20_0p30": {
+      "all_optimizer_success": true,
+      "all_operational_gates": true,
+      "total_chi2_per_row_q16_median_q84": [
+        1.0675283571462342,
+        1.0696006846573094,
+        1.0715235718004528
+      ],
+      "data_chi2_per_row_q16_median_q84": [
+        0.9388702758948718,
+        0.9404994687604673,
+        0.9417220589877383
+      ],
+      "matching_nuisance_q16_median_q84": [
+        1.3495755520123247,
+        1.3532840605672662,
+        1.3560676778040763
+      ],
+      "nlo_scale_nuisance_q16_median_q84": [
+        0.9237800181624705,
+        0.9268022845098929,
+        0.929830879875355
+      ],
+      "max_absolute_pull_q84": 2.437371968189319,
+      "max_absolute_pull": 2.4460922253639676
+    },
+    "late_0p22_0p32": {
+      "all_optimizer_success": true,
+      "all_operational_gates": true,
+      "total_chi2_per_row_q16_median_q84": [
+        1.0758548924271905,
+        1.0784558815945324,
+        1.080593986183481
+      ],
+      "data_chi2_per_row_q16_median_q84": [
+        0.9481701013455796,
+        0.9505685236123116,
+        0.952490993959129
+      ],
+      "matching_nuisance_q16_median_q84": [
+        1.345970369320294,
+        1.3495365764744032,
+        1.3517971791143926
+      ],
+      "nlo_scale_nuisance_q16_median_q84": [
+        0.8809983985270449,
+        0.8867873375003997,
+        0.8921975566801615
+      ],
+      "max_absolute_pull_q84": 2.3991683413857374,
+      "max_absolute_pull": 2.421576871933587
+    }
+  },
+  "central_all_operational_gates": true,
+  "interpretation": "The unitary finite-Y boundary fit has been evaluated using every registered lambda=1 endpoint. This is a Tevatron fit-impact audit; it is not yet the full experimental-replica propagation or LHCb production result.",
+  "production_promotion": false
+}

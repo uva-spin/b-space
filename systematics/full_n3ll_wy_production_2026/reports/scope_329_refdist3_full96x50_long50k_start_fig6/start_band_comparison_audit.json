@@ -1,0 +1,129 @@
+{
+  "status": "isolated_comparison_complete_not_production",
+  "question": "why the refdist3 candidate start band is narrower than promoted lambda1 production",
+  "member_counts": {
+    "production": 96,
+    "candidate": 96
+  },
+  "transform_and_quantile_protocol_equal": true,
+  "transform_protocol": {
+    "b_transform_max": 24.0,
+    "n_b_transform": 6001,
+    "k_max": 4.0,
+    "n_k": 401,
+    "tail_mode": "expb2",
+    "end_taper_start_fraction": 0.92,
+    "quantiles": [
+      0.16,
+      0.5,
+      0.84
+    ]
+  },
+  "candidate_config": {
+    "lambda_reference_distance": 3.0,
+    "reference_bmin": 0.1,
+    "reference_bmax": 8.0,
+    "lambda_tail": 1.0,
+    "tail_bmin": 6.0,
+    "shape_mode": "monotone",
+    "soft_evolution_y_mode_metadata": "zero",
+    "epochs_per_start": 50000
+  },
+  "finite_y_audit": {
+    "y_column": "Y_CS_used",
+    "rows": 329,
+    "nonzero_y_rows": 321,
+    "nonzero_non_lhcb_y_rows": 321,
+    "lhcb_rows": 6,
+    "lhcb_y_all_zero": true,
+    "y_min": -5.2397747,
+    "y_max": 2.9485378,
+    "interpretation": "external finite-Y values were loaded for the non-LHCb rows; LHCb_7 is zero-Y by construction in scope_353_y_no_lhcb.csv. The y_mode metadata is the soft-evolution setting and is not a switch disabling the external Y grid."
+  },
+  "production_y_status": "the promoted historical lambda=1 production ensemble was generated from the W-only production-control runner; it has no external Y_CS column in its training protocol. Therefore the prior comparison is also a W-only versus non-LHCb finite-Y objective comparison.",
+  "production_protocol": {
+    "lambda_reference_distance": 1.0,
+    "reference_bmin": 0.1,
+    "reference_bmax": 2.0,
+    "objective_description": "unchanged lambda=1 direct-FNP reference distance on 0.1<=bT<=2.0",
+    "training": {
+      "block_epochs": 40000,
+      "min_epochs": 10000,
+      "plateau_patience": 5000,
+      "lbfgs_max_iter": 20000,
+      "learning_rate": 2e-05,
+      "max_cumulative_epochs": 320000,
+      "max_launch_retries": 3,
+      "fnp_stationarity_gate": {
+        "relative_drift_threshold": 0.02,
+        "required_consecutive_quiet_blocks": 2,
+        "minimum_exposure_epochs": 80000
+      }
+    },
+    "stationarity_gate_passed": true
+  },
+  "candidate_convergence_audit": {
+    "all_runs_hit_50000_epoch_ceiling": true,
+    "starts_with_best_epoch_at_or_after_49990": 26,
+    "starts_with_best_epoch_before_10000": 65,
+    "note": "The candidate runner has no equivalent F_NP block-stationarity gate in this 50k batch; production starts were continued to that gate."
+  },
+  "overlap_10k_to_50k_fnp_stability": {
+    "matched_seed_count": 8,
+    "per_seed": [
+      {
+        "seed": 303,
+        "max_relative_FNP_change": 0.0,
+        "bT_at_max_change": 9.999999747378752e-05
+      },
+      {
+        "seed": 304,
+        "max_relative_FNP_change": 0.013330798719426275,
+        "bT_at_max_change": 8.0
+      },
+      {
+        "seed": 305,
+        "max_relative_FNP_change": 0.0,
+        "bT_at_max_change": 9.999999747378752e-05
+      },
+      {
+        "seed": 306,
+        "max_relative_FNP_change": 0.0,
+        "bT_at_max_change": 9.999999747378752e-05
+      },
+      {
+        "seed": 307,
+        "max_relative_FNP_change": 0.02440132508262769,
+        "bT_at_max_change": 8.0
+      },
+      {
+        "seed": 308,
+        "max_relative_FNP_change": 0.0,
+        "bT_at_max_change": 9.999999747378752e-05
+      },
+      {
+        "seed": 309,
+        "max_relative_FNP_change": 0.0,
+        "bT_at_max_change": 9.999999747378752e-05
+      },
+      {
+        "seed": 310,
+        "max_relative_FNP_change": 0.0,
+        "bT_at_max_change": 9.999999747378752e-05
+      }
+    ],
+    "max_relative_FNP_change": 0.02440132508262769,
+    "interpretation": "For the eight starts present in both the earlier 10k diagnostic and the 50k batch, endpoint F_NP changes are small (at most the reported maximum). This is evidence against a large training-horizon artifact in the overlapping subset, but does not replace a full 96-start stationarity continuation."
+  },
+  "probe_table": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_refdist3_full96x50_long50k_start_fig6/start_band_comparison_probes.csv",
+  "interpretation": {
+    "not_transform_or_quantile_bug": true,
+    "primary_cause": "candidate lambda_ref=3 constrains 0.1<=bT<=8, while production lambda=1 constrains only 0.1<=bT<=2; the candidate therefore suppresses the unconstrained bT~4 variation that controls low-kT transforms",
+    "additional_non_like_for_like_difference": "the candidate includes the external non-LHCb finite-Y term while the promoted historical production ensemble was W-only; the effect of this objective change is not isolated by the current 96-start comparison",
+    "secondary_caveat": "the candidate starts lack the production F_NP stationarity certificate, but the overlapping 8-start 10k-to-50k comparison shows at most a 2.44% F_NP endpoint change; the direction of any remaining 96-start correction is not known",
+    "finite_y_status": "the candidate did use the external finite-Y grid for the non-LHCb rows; the zero y_mode metadata was misleading but does not describe the loaded Y_CS term",
+    "normalization": "baseline-anchored candidate/baseline F_NP ratios preserve member spread; anchoring does not explain the shrinkage",
+    "decision": "the narrowing is real conditional on the stronger prior, but it is not yet evidence for a smaller data-determined non-uniqueness error"
+  },
+  "frozen_production_modified": false
+}

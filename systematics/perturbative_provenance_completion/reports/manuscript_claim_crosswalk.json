@@ -1,0 +1,18 @@
+{
+  "status": "open_provenance_decision",
+  "source_pdf": "/home/dustin/Downloads/b_space_PRD.pdf",
+  "observed_pdf_claims": {
+    "resummation": "N3LL evolution/profile backend",
+    "w_matching": "strict-NLO hard/OPE matching in W",
+    "finite_y": "finite-Y and high-qT terms treated separately as validation/systematic issues",
+    "small_b_profile": "smooth b_pert coordinate used for OPE and profile consistency"
+  },
+  "source_implementation_crosswalk": {
+    "resummation": "A1-A3 and B1-B2; n3llp dispatch is documented n3ll_pilot and identical to NNLL",
+    "w_matching": "strict and multiplicative implementations exist; v22 full entrypoint defaults to multiplicative_nlo",
+    "finite_y": "active low-qT production uses y_mode=zero; nlo_dev path is developmental",
+    "small_b_profile": "implemented and source-level profile checks pass"
+  },
+  "resolution_needed": "prove whether the historical production cache was generated with strict or multiplicative W; if not recoverable, label the cache explicitly as multiplicative-default ambiguous and resolve the manuscript wording before any production replacement",
+  "production_outputs_modified": false
+}

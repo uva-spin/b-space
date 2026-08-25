@@ -1,0 +1,5 @@
+row_id,status,path
+LHCb_7:10,resumed,/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb_fiducial_w_kernels_nb640/rows/lhcb_7_10.npz
+LHCb_7:11,resumed,/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb_fiducial_w_kernels_nb640/rows/lhcb_7_11.npz
+LHCb_7:12,resumed,/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb_fiducial_w_kernels_nb640/rows/lhcb_7_12.npz
+LHCb_7:13,resumed,/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb_fiducial_w_kernels_nb640/rows/lhcb_7_13.npz

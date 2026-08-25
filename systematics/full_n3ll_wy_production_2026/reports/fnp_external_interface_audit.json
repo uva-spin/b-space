@@ -1,0 +1,58 @@
+{
+  "status": "isolated_fnp_external_interface_audit_complete_not_production",
+  "scope_row_count": 353,
+  "scope_unique": true,
+  "scope_counts": {
+    "CDF_RUN_1": 36,
+    "CDF_RUN_2": 52,
+    "D0_RUN_1": 16,
+    "E288_200": 31,
+    "E288_300": 41,
+    "E288_400": 63,
+    "E605": 54,
+    "E772": 54,
+    "LHCb_7": 6
+  },
+  "core_row_count": 329,
+  "bspace_w": {
+    "source": "/home/dustin/work/project/bT-TMD/outputs/v23a_fixed_target_plus_tevatron_absolute_fit_ready_checkonly_cache/backend_cache/wpert_v23a_fixedtarget_plus_tevatron_absolute_fitready_v22tev_n3llp_nloQ96_b160.csv",
+    "combined_lhcb_source": "/home/dustin/work/project/bT-TMD/outputs/v23a_tevatron_plus_lhcb7_fidacc_merged_cache/backend_cache/wpert_v23a_tevatron_plus_lhcb7_fidacc_b160.csv",
+    "missing_scope_fragment": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/missing_scope_bspace_w_n3llp_nloQ96_b160/missing_scope_bspace_w.csv",
+    "unique_b_nodes": 160,
+    "b_min": 0.0001,
+    "b_max": 8.0,
+    "complete_scope_rows": 353,
+    "missing_scope_rows": [],
+    "dataset_complete_counts": {
+      "CDF_RUN_1": 36,
+      "CDF_RUN_2": 52,
+      "D0_RUN_1": 16,
+      "E288_200": 31,
+      "E288_300": 41,
+      "E288_400": 63,
+      "E605": 54,
+      "E772": 54,
+      "LHCb_7": 6
+    }
+  },
+  "conventional_y": {
+    "source_tevatron": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/conventional_y/tevatron_y_grid.csv",
+    "source_fixed_target": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/fixed_target_y_fullminusres_expcreg2p0_100k/fixed_target_y_full_minus_res.csv",
+    "source_lhcb": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/lhcb7_y_fullminusres_expcreg2p0_1m/lhcb7_y_full_minus_res.csv",
+    "row_count": 371,
+    "scope_rows_with_y": 353,
+    "missing_scope_rows": [],
+    "all_finite": true
+  },
+  "coupled_fit_readiness": {
+    "bspace_W_required": "row_id,bT,Wpert_CS for every fitted row",
+    "observable_Y_required": "row_id,Y_CS for every fitted row",
+    "scope_complete_bspace_W": true,
+    "scope_complete_Y": true,
+    "ready_for_true_353_coupled_FNP_fit": true,
+    "reason_if_not_ready": "All row IDs now have numerical W and Y inputs, but fixed-target conversion assumptions and LHCb cancellation-driven uncertainties still prevent production promotion."
+  },
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false,
+  "promotion_authorized": false
+}

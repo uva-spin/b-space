@@ -1,0 +1,53 @@
+{
+  "campaign": "full_n3ll_wy_production_2026",
+  "candidate_id": "tevatron_n3ll_nnlo_wy_v1",
+  "status": "isolated_target_not_production",
+  "accuracy": {
+    "resummation": "N3LL_unprimed",
+    "matching": "NNLO",
+    "formula": "W_N3LL + (FO_NNLO - ASY_NNLO)",
+    "primed_extension": false,
+    "standard_requirements": {
+      "cusp": "through alpha_s^4",
+      "non_cusp": "through alpha_s^3",
+      "hard_and_collinear_boundary": "through alpha_s^2",
+      "fixed_order_Y": "NNLO alpha_s^2"
+    }
+  },
+  "scope": {
+    "primary_rows": 353,
+    "low_qT_core_rows": 329,
+    "tevatron_boundary_rows": 24,
+    "datasets": ["CDF_RUN_1", "CDF_RUN_2", "D0_RUN_1"],
+    "excluded_pending_closure": ["LHCb_7:10", "LHCb_7:11", "LHCb_7:12", "LHCb_7:13"]
+  },
+  "fixed_order": {
+    "required": "independent_genuine_NNLO",
+    "engine": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+    "fiducial_bin_integration": true,
+    "scale_variations": true,
+    "row_probe": "reports/dyturbo_nnlo_probe/probe_status.json"
+  },
+  "matching": {
+    "primary_y_definition": "FO_NNLO_minus_ASY_NNLO",
+    "unitary_transition_is_primary": false,
+    "unitary_transition_crosscheck": true,
+    "profile_scope": "diagnostic_only_until_same_scheme_ASY_closure"
+  },
+  "candidate_route": {
+    "engine": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+    "implementation": "external unprimed order=3 DYTurbo W+CT+VJ decomposition",
+    "nonperturbative_form": "npff=0 Gaussian exp[-g1 bT^2]",
+    "direct_candidate_g1_GeV2": 1.0,
+    "profiled_initialization_g1_GeV2": 1.0241911542738864,
+    "profiled_direct_candidate_g1_GeV2": 1.0241911542738864,
+    "profiled_direct_grid": "reports/tevatron_gaussian_np_candidate_profile_direct_grid_status.json",
+    "profiled_direct_boundary": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p024191/boundary_full_wy_status.json",
+    "status": "profiled_direct_candidate_grid_and_boundary_validated_not_production"
+  },
+  "immutability": {
+    "frozen_baseline_manifest": "../manifests/frozen_lambda1_baseline.json",
+    "frozen_inputs_read_only": true,
+    "production_outputs_modified": false
+  }
+}

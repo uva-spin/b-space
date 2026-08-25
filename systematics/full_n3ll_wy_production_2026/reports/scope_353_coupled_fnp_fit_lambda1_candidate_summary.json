@@ -1,0 +1,95 @@
+{
+  "status": "isolated_scope_353_coupled_fnp_fit_complete_not_production",
+  "scope_rows": 353,
+  "architecture": "v19 local-bcurv trainer, monotone positive F_NP, no learned CS kernel",
+  "w_y_inputs": "candidate full-scope external W plus conventional full-minus-RES Y",
+  "seed": 303,
+  "epochs_run": 5000,
+  "best_epoch": 4931,
+  "best_chi2_like": 33.124813079833984,
+  "best_objective_per_row": 0.0938379973932974,
+  "last_chi2_like": 33.443817138671875,
+  "plateau_indicator": {
+    "best_in_final_10_percent": true,
+    "last_minus_best": 0.3190040588378906,
+    "interpretation": "optimization reached a late best epoch, but start stability has not yet been tested"
+  },
+  "fnp_monotonicity": {
+    "all_probe_curves_pass": true,
+    "max_increase": 0.0,
+    "min_fnp": 4.24835413113866e-18
+  },
+  "per_dataset": {
+    "CDF_RUN_1": {
+      "chi2_like": 1.575380658406884,
+      "dataset": "CDF_RUN_1",
+      "median_abs_pull": 1.0345537662506104,
+      "median_pred_over_target": 0.9204274762048109,
+      "n": 36
+    },
+    "CDF_RUN_2": {
+      "chi2_like": 3.0695275993338407,
+      "dataset": "CDF_RUN_2",
+      "median_abs_pull": 1.3999484181404114,
+      "median_pred_over_target": 0.95669570506306,
+      "n": 52
+    },
+    "D0_RUN_1": {
+      "chi2_like": 0.49998791259888326,
+      "dataset": "D0_RUN_1",
+      "median_abs_pull": 0.5561427175998688,
+      "median_pred_over_target": 1.0037293905156859,
+      "n": 16
+    },
+    "E288_200": {
+      "chi2_like": 10.764186534619498,
+      "dataset": "E288_200",
+      "median_abs_pull": 1.6864250898361206,
+      "median_pred_over_target": 0.861511199664712,
+      "n": 31
+    },
+    "E288_300": {
+      "chi2_like": 23.11944144320659,
+      "dataset": "E288_300",
+      "median_abs_pull": 3.300375461578369,
+      "median_pred_over_target": 0.7359460251265347,
+      "n": 41
+    },
+    "E288_400": {
+      "chi2_like": 128.763672163757,
+      "dataset": "E288_400",
+      "median_abs_pull": 2.479553461074829,
+      "median_pred_over_target": 0.6495340722865718,
+      "n": 63
+    },
+    "E605": {
+      "chi2_like": 0.7280860395360681,
+      "dataset": "E605",
+      "median_abs_pull": 0.5692682266235352,
+      "median_pred_over_target": 0.9848535032902871,
+      "n": 54
+    },
+    "E772": {
+      "chi2_like": 8.14774510731376,
+      "dataset": "E772",
+      "median_abs_pull": 1.720691442489624,
+      "median_pred_over_target": 0.8943367265833474,
+      "n": 54
+    },
+    "LHCb_7": {
+      "chi2_like": 265.95612116606725,
+      "dataset": "LHCb_7",
+      "median_abs_pull": 13.823903560638428,
+      "median_pred_over_target": 0.4532354582442888,
+      "n": 6
+    }
+  },
+  "known_warnings": [
+    "This is a coupled candidate fit, not the frozen lambda=1 production objective.",
+    "The W fragment is internal n3llp/nloQ96 while Tevatron Y is DYTurbo-derived; source-level consistency remains open.",
+    "LHCb full-minus-RES Y has cancellation-driven relative MC uncertainty above 100% and remains diagnostic.",
+    "The candidate trainer reports a pathological large normalization pull for CDF_RUN_2 because its imported norm metadata has zero norm_rel; this must be repaired before any production comparison."
+  ],
+  "promotion_authorized": false,
+  "frozen_production_modified": false
+}

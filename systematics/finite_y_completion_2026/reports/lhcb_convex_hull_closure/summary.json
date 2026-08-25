@@ -1,0 +1,62 @@
+{
+  "status": "isolated_lhcb_convex_hull_closure_complete_not_production",
+  "construction": "matched=(1-p)W+p*FO with p in [0,1]",
+  "endpoint_count": 96,
+  "rows": [
+    {
+      "row_id": "LHCb_7:10",
+      "data_pb_per_GeV": 1.003090909,
+      "FO_NNLO_central_pb_per_GeV": 0.8272693821276851,
+      "FO_NNLO_scale_high_pb_per_GeV": 0.8520413243866883,
+      "W_endpoint_min_pb_per_GeV": 0.7740185856819153,
+      "W_endpoint_max_pb_per_GeV": 0.7885406017303467,
+      "profiled_lambda1_max_pb_per_GeV": 0.8143163250062423,
+      "optimistic_convex_hull_upper_bound_pb_per_GeV": 0.8520413243866883,
+      "upper_bound_over_data": 0.8494158572687138,
+      "remaining_fraction_below_data": 0.15058414273128617,
+      "all_W_and_FO_below_data": true
+    },
+    {
+      "row_id": "LHCb_7:11",
+      "data_pb_per_GeV": 0.575263158,
+      "FO_NNLO_central_pb_per_GeV": 0.4711770335688618,
+      "FO_NNLO_scale_high_pb_per_GeV": 0.5127315357805123,
+      "W_endpoint_min_pb_per_GeV": 0.4441624879837036,
+      "W_endpoint_max_pb_per_GeV": 0.4495570659637451,
+      "profiled_lambda1_max_pb_per_GeV": 0.4711753292382331,
+      "optimistic_convex_hull_upper_bound_pb_per_GeV": 0.5127315357805123,
+      "upper_bound_over_data": 0.8912991013766821,
+      "remaining_fraction_below_data": 0.10870089862331789,
+      "all_W_and_FO_below_data": true
+    },
+    {
+      "row_id": "LHCb_7:12",
+      "data_pb_per_GeV": 0.19962069,
+      "FO_NNLO_central_pb_per_GeV": 0.1543864557409395,
+      "FO_NNLO_scale_high_pb_per_GeV": 0.1697409153582317,
+      "W_endpoint_min_pb_per_GeV": 0.1599459648132324,
+      "W_endpoint_max_pb_per_GeV": 0.1609585285186767,
+      "profiled_lambda1_max_pb_per_GeV": 0.1543864557409395,
+      "optimistic_convex_hull_upper_bound_pb_per_GeV": 0.1697409153582317,
+      "upper_bound_over_data": 0.8503172459639915,
+      "remaining_fraction_below_data": 0.1496827540360085,
+      "all_W_and_FO_below_data": true
+    },
+    {
+      "row_id": "LHCb_7:13",
+      "data_pb_per_GeV": 0.007323671,
+      "FO_NNLO_central_pb_per_GeV": 0.0065046602082933,
+      "FO_NNLO_scale_high_pb_per_GeV": 0.0070856938657602,
+      "W_endpoint_min_pb_per_GeV": -2.4033124446868896,
+      "W_endpoint_max_pb_per_GeV": -2.354839324951172,
+      "profiled_lambda1_max_pb_per_GeV": 0.0065046602082933,
+      "optimistic_convex_hull_upper_bound_pb_per_GeV": 0.0070856938657602,
+      "upper_bound_over_data": 0.9675057584864476,
+      "remaining_fraction_below_data": 0.0324942415135524,
+      "all_W_and_FO_below_data": true
+    }
+  ],
+  "all_rows_have_W_and_FO_below_data": true,
+  "production_outputs_modified": false,
+  "interpretation": "For every high-qT row, even an optimistic arbitrary-profile convex combination of the endpoint W range and the NNLO scale-high FO term does not reach the data. Therefore F_NP endpoint selection or a different unitary profile cannot solve the residual; the missing closure must be in the fixed-order prediction, observable input, or an explicitly documented experimental issue."
+}

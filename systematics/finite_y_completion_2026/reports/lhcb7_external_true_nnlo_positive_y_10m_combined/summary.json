@@ -1,0 +1,19 @@
+{
+  "status": "isolated_lhcb_positive_arm_nnlo_source_combined",
+  "order": "DYTurbo order=2 with doVJREAL/doVJVIRT=true",
+  "rapidity_scope": "positive boson rapidity arm 0<y_Z<6; LHCb fiducial lepton cuts retained",
+  "row_ids": [
+    "LHCb_7:10",
+    "LHCb_7:11",
+    "LHCb_7:12",
+    "LHCb_7:13"
+  ],
+  "source_files": {
+    "LHCb_7:10": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb7_external_true_nnlo_positive_y_10m_10/dyturbo_true_nlo_summary.csv",
+    "LHCb_7:11": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb7_external_true_nnlo_positive_y_10m_11/dyturbo_true_nlo_summary.csv",
+    "LHCb_7:12": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb7_external_true_nnlo_positive_y_10m_12/dyturbo_true_nlo_summary.csv",
+    "LHCb_7:13": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb7_external_true_nnlo_positive_y_10m_13/dyturbo_true_nlo_summary.csv"
+  },
+  "output": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb7_external_true_nnlo_positive_y_10m_combined/dyturbo_true_nnlo_summary.csv",
+  "production_outputs_modified": false
+}

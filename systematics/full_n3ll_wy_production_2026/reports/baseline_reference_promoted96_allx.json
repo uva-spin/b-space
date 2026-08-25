@@ -1,0 +1,20 @@
+{
+  "status": "isolated_promoted96_reference_input_not_production",
+  "source_historical_all_x": "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/summaries/exact_baseline_fnp_median/fnp_median.csv",
+  "source_promoted_96_start_x0p1": "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/summaries/lambda1_start_expansion96_bspace/bspace_tmd_ensemble_long.csv",
+  "replacement": "historical x=0.1 slice replaced by promoted 96-start median; other x knots retained",
+  "x_values": [
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.2,
+    0.4,
+    0.7
+  ],
+  "rows": 2568,
+  "output": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/baseline_reference_promoted96_allx.csv",
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

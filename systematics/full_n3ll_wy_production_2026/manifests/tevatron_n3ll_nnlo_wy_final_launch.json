@@ -1,0 +1,39 @@
+{
+  "status": "running_seed_rotated_recovery_waiting_for_scale_gate",
+  "launch_date": "2026-08-19",
+  "candidate_id": "tevatron_n3ll_nnlo_wy_final_g1_1p017_seed20260821",
+  "formula": "W_N3LL + (FO_NNLO - ASY_NNLO)",
+  "scope": {
+    "datasets": ["CDF_RUN_1", "CDF_RUN_2", "D0_RUN_1"],
+    "rows": 122,
+    "row_breakdown": {"CDF_RUN_1": 41, "CDF_RUN_2": 61, "D0_RUN_1": 20},
+    "fixed_target": "excluded_pending_same_scheme_target_normalization_closure",
+    "LHCb_high_qT": "excluded_pending_observable_covariance_closure"
+  },
+  "runtime": {
+    "engine": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+    "order": 3,
+    "primed": false,
+    "g1_GeV2": 1.017,
+    "calls_per_vegas_component": 100000000,
+    "seed": 20260821,
+    "recovery_seeds": [20260823, 20260824, 20260825],
+    "current_seed": 20260823,
+    "matching_identity": "W=RES, ASY=-CT, FO=VJ, Y=FO-ASY=VJ+CT"
+  },
+  "prerequisite": {
+    "candidate_freeze": "manifests/tevatron_n3ll_nnlo_wy_candidate_freeze.json",
+    "scale_scan": "reports/tevatron_scale_variations_g1_1p017/scale_variation_status.json",
+    "scale_refinement": "reports/tevatron_scale_variations_g1_1p017/scale_variation_refinement_status.json",
+    "frozen_baseline_verifier": "scripts/verify_frozen_baseline.py",
+    "persistent_scale_guard": "scripts/ensure_tevatron_scale_persistent.sh",
+    "parallel_grid_supervisor": "scripts/supervise_tevatron_final_grid_now.sh",
+    "nonfinite_recovery": "scripts/recover_tevatron_final_grid_nonfinite.sh",
+    "conventional_y_extraction": "scripts/extract_tevatron_y_from_dyturbo_logs.py",
+    "automatic_handoff": "scripts/record_final_tevatron_handoff.py"
+  },
+  "output": "reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/",
+  "promotion_authorized": false,
+  "frozen_lambda1_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

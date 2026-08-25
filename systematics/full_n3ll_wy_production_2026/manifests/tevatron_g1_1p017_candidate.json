@@ -1,0 +1,38 @@
+{
+  "manifest_id": "tevatron_n3ll_nnlo_wy_gaussian_g1_1p017",
+  "status": "isolated_candidate_manifest_not_production",
+  "engine": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+  "convention": "order=3, primed=false; W=RES, ASY=-CT, FO=VJ, Y=FO-ASY=VJ+CT",
+  "npff": "Gaussian exp[-g1 bT^2]",
+  "g1_GeV2": 1.017,
+  "scope": {"datasets": ["CDF_RUN_1", "CDF_RUN_2", "D0_RUN_1"], "tevatron_grid_rows": 122, "boundary_rows_validated_within_grid": 24, "excluded": ["fixed-target 329-row core", "LHCb high-qT rows"]},
+  "direct_diagnostics": {
+    "stat_only_chi2_per_row": 0.965277789871526,
+    "rms_stat_pull": 0.982485516367303,
+    "median_prediction_to_data": 0.997509941012736,
+    "mean_relative_mc_uncertainty": 0.01770176328216254,
+    "max_relative_mc_uncertainty": 0.05287750103978481,
+    "correlated_norm_profile_chi2_per_row": 0.8163591029468363
+  },
+  "interpolated_profile_diagnostic": {
+    "g1_GeV2": 1.0130000000000001,
+    "correlated_norm_profile_chi2_per_row": 0.7398574403518535,
+    "interpretation": "initialization/profile only; no direct g1=1.013 run"
+  },
+  "artifacts": {
+    "grid_csv": {"path": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p017_30m/tevatron_full_wy_grid.csv", "sha256": "c818dbf9a7bf1563685f195d3e95ee3a71d301367d939e83fc89ee2fca97e34f"},
+    "grid_status": {"path": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p017_30m/grid_status.json", "sha256": "8288a3473d66282feaf229367b70e259246b742b82befa422f660796a8eec537"},
+    "direct_summary": {"path": "reports/tevatron_gaussian_np_candidate_profile_direct_g1_1p017_grid_status.json", "sha256": "ceeca50e8bda26df27b2d5886a9fda55c546a008530eb36e4ff57aaecdb3ce5f"},
+    "direct_profile_rejected_g1_1p013": {"path": "reports/tevatron_gaussian_np_candidate_profile_direct_g1_1p013_grid_status.json", "sha256": "d0a263cb102f1ed9c7de23bace64df66cd3c8529325e466487c7376394705b1a"},
+    "profile_decision": {"path": "reports/tevatron_g1_direct_profile_decision.json", "sha256": "eb3d3f70b02b8060fa190aa7466e795b84aac7066a2e6d879f66ce6535dd804e"},
+    "boundary_g1_1p017_csv": {"path": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p017/full_wy_boundary_summary.csv", "sha256": "b8daeec3928c947b4a6fd5a30d54c0b6b7b48f00ae629ef1084bb73ff1b9ebee"},
+    "boundary_g1_1p017_status": {"path": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p017/boundary_full_wy_status.json", "sha256": "f7bf3cb4c5e928ba7191e7e278936df39ed7f5a54072e065f61fae1b85e03c27"},
+    "correlated_fit": {"path": "reports/tevatron_external_candidate_correlated_fit.json", "sha256": "8c372a68c0f5560fadc1fb7259501309ba16ce8e39c0a1d1db5cdca2c88d676b"},
+    "replica_status": {"path": "reports/tevatron_gaussian_np_replica_profile_150_g1_1p017/replica_profile_status.json", "sha256": "3fbb1c0047ffbc72311a1abee4553dbc990660495be44e179f20e02f8f3052c4"},
+    "replica_members": {"path": "reports/tevatron_gaussian_np_replica_profile_150_g1_1p017/replica_members.json", "sha256": "9ea77219fb6c719fa42bc0d44814cb0bfbcd9bfc87b5d8c08a61785e5942802f"},
+    "figures_manifest": {"path": "manifests/tevatron_candidate_figures_g1_1p017_centered.json", "sha256": "142cf92ea73b7e944ab31c6d69f18d025cf5d8feff987d72d710820c249a8be2"}
+  },
+  "promotion_authorized": false,
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

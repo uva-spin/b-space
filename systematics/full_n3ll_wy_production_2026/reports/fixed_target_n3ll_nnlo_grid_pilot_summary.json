@@ -1,0 +1,63 @@
+{
+  "status": "isolated_fixed_target_wy_pilot_convention_not_closed_not_production",
+  "formula": "W_N3LL + (FO_NNLO - ASY_NNLO)",
+  "runtime": "unprimed order=3; W=RES; ASY=-CT; FO=VJ; Y=VJ+CT",
+  "observable_comparison": "DYTurbo raw fb/bin per nucleus divided by target A versus fit-ready CS=A/PreFactor",
+  "pilots": {
+    "E288_200": {
+      "row_id": "E288_200:0",
+      "calls": 30000000,
+      "per_nucleon_value_fb_per_bin": 18.78295249744916,
+      "per_nucleon_uncertainty_fb_per_bin": 0.0008642117620526,
+      "data_CS_A_over_PreFactor": 3.953714286,
+      "ratio_to_data": 4.75071063277362,
+      "target_Z": 4.0,
+      "target_A": 9.0121831
+    },
+    "E288_300": {
+      "row_id": "E288_300:0",
+      "calls": 30000000,
+      "per_nucleon_value_fb_per_bin": 14.438845485319147,
+      "per_nucleon_uncertainty_fb_per_bin": 0.0003345556733921,
+      "data_CS_A_over_PreFactor": 5.757714286,
+      "ratio_to_data": 2.507739142323803,
+      "target_Z": 4.0,
+      "target_A": 9.0121831
+    },
+    "E288_400": {
+      "row_id": "E288_400:0",
+      "calls": 30000000,
+      "per_nucleon_value_fb_per_bin": 0.7541992142797327,
+      "per_nucleon_uncertainty_fb_per_bin": 5.781048232983412e-06,
+      "data_CS_A_over_PreFactor": 1.810285714,
+      "ratio_to_data": 0.4166188842164904,
+      "target_Z": 4.0,
+      "target_A": 9.0121831
+    },
+    "E605": {
+      "row_id": "E605:0",
+      "calls": 30000000,
+      "per_nucleon_value_fb_per_bin": 1.3955388493531666,
+      "per_nucleon_uncertainty_fb_per_bin": 0.0009851300395574,
+      "data_CS_A_over_PreFactor": 1.235666246,
+      "ratio_to_data": 1.12938170308584,
+      "target_Z": 29.0,
+      "target_A": 63.546
+    },
+    "E772": {
+      "row_id": "E772:0",
+      "calls": 30000000,
+      "per_nucleon_value_fb_per_bin": 32.88839975112898,
+      "per_nucleon_uncertainty_fb_per_bin": 0.0013243049535536,
+      "data_CS_A_over_PreFactor": 29.00881096,
+      "ratio_to_data": 1.1337382906344733,
+      "target_Z": 0.5,
+      "target_A": 1.0
+    }
+  },
+  "finding": "E605 and the diagnostic E772 point are near 10-13% high, while the three Be E288 points span 0.42-4.75 times data; a single target normalization factor is therefore not established",
+  "decision": "do not run or promote the 243-row fixed-target grid until the E288 observable/bin/target convention is resolved",
+  "production_authorized": false,
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

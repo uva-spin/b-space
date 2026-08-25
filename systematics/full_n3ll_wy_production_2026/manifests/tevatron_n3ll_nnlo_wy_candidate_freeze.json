@@ -1,0 +1,70 @@
+{
+  "status": "isolated_tevatron_n3ll_nnlo_wy_candidate_frozen_not_promoted",
+  "candidate_id": "tevatron_n3ll_nnlo_wy_g1_1p017_highstat",
+  "formula": "W_N3LL + (FO_NNLO - ASY_NNLO)",
+  "scope": {
+    "tevatron_rows": 122,
+    "boundary_oracle_rows": 24
+  },
+  "files": {
+    "primary_grid": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/tevatron_full_wy_grid.csv",
+      "sha256": "0c7d4a86470280c8ad6cbac2ee428ce8b080206b8268b5a967577f2459662a5c"
+    },
+    "primary_status": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/grid_status.json",
+      "sha256": "cf4eb9abb22ebb0ccf43ee70a55d9562278aee487dd1bb19c8152d3db4a07bf8"
+    },
+    "primary_finalizer": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/final_production_status.json",
+      "sha256": "04fa70078f8a432d04bca3974c49642f5f7f9395ee35660cba9bb9ff383e5463"
+    },
+    "stationarity_grid": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_stationarity_g1_1p017_seed_20260820/tevatron_full_wy_grid.csv",
+      "sha256": "a0db5764272e67093478f8a0980eec1c38a0c79ab994b360988cade15fb2570c"
+    },
+    "stationarity_status": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_stationarity_g1_1p017_seed_20260820/grid_status.json",
+      "sha256": "d45dc5952af4f21601088db9b076e7aac1f5c2b7ef09bac2749b56e1e031182a"
+    },
+    "stationarity_compare": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_stationarity_g1_1p017_seed_20260820/stationarity_status.json",
+      "sha256": "8b81253d7f55c43d386e058b9509c0034dfae756fb365e3fcb86c36ee7c6315f"
+    },
+    "accuracy_closure": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/accuracy_closure_g1_1p017.json",
+      "sha256": "95783ec29bae98cbe187d66ccef031fd64756d0937f52a7327e628fee572731b"
+    },
+    "term_decomposition": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_term_decomposition_g1_1p017/term_decomposition_status.json",
+      "sha256": "43418d2a9bdf2812f85397f79dfd9d751d8f0fdcd225eb98b3eb3f0c63cac81a"
+    },
+    "boundary_oracle": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p017/boundary_full_wy_status.json",
+      "sha256": "f7bf3cb4c5e928ba7191e7e278936df39ed7f5a54072e065f61fae1b85e03c27"
+    },
+    "campaign_summary": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_campaign_summary.json",
+      "sha256": "235ae95e3b7154a97ab574771daee8da5377d9f20b68715126833080004d656d"
+    },
+    "primary_precision_refinement": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/primary_refinement_status.json",
+      "sha256": "206dd95ad43e3a20e4afd80cce1676c305776267cea5c8387492a469efca27f3"
+    },
+    "grid_figure_png": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/figures/tevatron_n3ll_nnlo_wy_grid_comparison.png",
+      "sha256": "09bbafe7b200f1012432cd438317f7c8c5574d3bc0c3b4486434b635636fece8"
+    },
+    "grid_figure_pdf": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/figures/tevatron_n3ll_nnlo_wy_grid_comparison.pdf",
+      "sha256": "2867ff4c1a6450caba2cc3c7dcf758dad1ce931b24a5f56a4e12bba63627fc9e"
+    },
+    "replica_diagnostic": {
+      "path": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_replica_profile_500_g1_1p017/replica_profile_status.json",
+      "sha256": "c2581d4d4e3ac4817d946867fc46e0e0a6a5499ba4966ece9aa49a10b395558a"
+    }
+  },
+  "frozen_lambda1_baseline_unchanged": true,
+  "production_outputs_modified": false,
+  "promotion_authorized": false
+}

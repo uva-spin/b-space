@@ -1,0 +1,67 @@
+{
+  "status": "isolated_full_n3ll_nnlo_wy_campaign_initialized",
+  "created": "2026-08-18",
+  "baseline": "lambda1_empirical_reference_full96x50",
+  "baseline_frozen": true,
+  "candidate": "tevatron_n3ll_nnlo_wy_v1",
+  "primary_scope_rows": 353,
+  "primary_scope_decomposition": {
+    "low_qT_core": 329,
+    "tevatron_boundary": 24
+  },
+  "excluded_pending_closure": ["LHCb_7:10", "LHCb_7:11", "LHCb_7:12", "LHCb_7:13"],
+  "target_formula": "W_N3LL + (FO_NNLO - ASY_NNLO)",
+  "current_gate": "isolated_highstat_tevatron_g1_1p017_production_and_seed_stationarity_running",
+  "accuracy_inventory": "reports/accuracy_inventory_v1.json",
+  "accuracy_inventory_status": "current source is not yet genuine full N3LL+NNLO: n3llp is an NNLL-coefficient pilot alias; hard/OPE are one-loop; conventional FO_NNLO-ASY_NNLO is not implemented",
+  "known_nonproduction_inputs": [
+    "current backend n3llp alias is documented as a pilot",
+    "current production cache records y_mode=zero",
+    "24-row unitary finite-Y construction is diagnostic, not conventional FO-ASY matching",
+    "LHCb high-qT fixed-order/covariance closure remains unresolved"
+  ],
+  "production_outputs_modified": false,
+  "external_boundary_oracle": {
+    "fixed_order": "reports/dyturbo_nnlo_boundary/boundary_status.json",
+    "full_w_plus_y": "reports/dyturbo_full_n3ll_nnlo_boundary/boundary_full_wy_status.json",
+    "status": "passed_24_row_tevatron_boundary",
+    "promotion_authorized": false
+  },
+  "external_tevatron_grid": {
+    "g1_zero": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid/grid_status.json",
+    "gaussian_np_pilot": "reports/dyturbo_npff_pilot/npff_pilot.csv",
+    "g1_one_grid": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p0/grid_status.json",
+    "g1_one_boundary": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p0/boundary_full_wy_status.json",
+    "term_decomposition": "reports/dyturbo_term_decomposition/term_decomposition_status.json",
+    "candidate_fit": "reports/tevatron_n3ll_nnlo_candidate_fit_status.json",
+    "replica_profile": "reports/tevatron_gaussian_np_replica_profile/replica_profile_status.json",
+    "seed_stability": "reports/tevatron_external_seed_stability.json",
+    "profiled_g1_grid": "reports/tevatron_gaussian_np_candidate_profile_direct_grid_status.json",
+    "profiled_g1_boundary": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p024191/boundary_full_wy_status.json",
+    "correlated_candidate_fit": "reports/tevatron_external_candidate_correlated_fit.json",
+    "scale_variations": "reports/tevatron_scale_variations_g1_1p024191/scale_variation_status.json",
+    "scale_variation_refinement": "reports/tevatron_scale_variations_g1_1p024191/scale_variation_refinement_status.json",
+    "scale_variation_central_refinement": "reports/tevatron_scale_variations_g1_1p024191/scale_variation_central_refinement_status.json",
+    "profiled_g1_candidate_manifest": "manifests/tevatron_g1_1p02419_candidate.json",
+    "profiled_g1_candidate_figures": "manifests/tevatron_candidate_figures_g1_1p02419.json",
+    "g1_1p017_grid": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p017_30m/grid_status.json",
+    "g1_1p017_direct_summary": "reports/tevatron_gaussian_np_candidate_profile_direct_g1_1p017_grid_status.json",
+    "g1_1p017_correlated_candidate_fit": "reports/tevatron_external_candidate_correlated_fit.json",
+    "g1_1p017_replica_profile_150": "reports/tevatron_gaussian_np_replica_profile_150_g1_1p017/replica_profile_status.json",
+    "g1_1p017_candidate_figures": "manifests/tevatron_candidate_figures_g1_1p017_centered.json",
+    "g1_1p013_direct_grid": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p013_30m/",
+    "g1_direct_profile_decision": "reports/tevatron_g1_direct_profile_decision.json",
+    "g1_1p017_boundary": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p017/",
+    "g1_1p017_highstat_production_batch": "reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/",
+    "g1_1p017_stationarity_batch": "reports/tevatron_n3ll_nnlo_wy_stationarity_g1_1p017_seed_20260820/",
+    "fixed_target_capability_probe": "reports/fixed_target_n3ll_nnlo_capability_probe/probe_status.json",
+    "status": "g1_1p017_highstat_tevatron_batch_and_independent_seed_running_fixed_target_probe_rejected_for_precision",
+    "promotion_authorized": false
+  },
+  "next_actions": [
+    "complete the 100M-call g1=1.017 Tevatron W+Y batch and independent-seed stationarity grid",
+    "refine only cancellation-dominated rows until the integration precision floor is documented",
+    "construct the external Tevatron F_NP/start/replica propagation for the rows whose full W+Y engine is closed",
+    "compare candidate Fig. 2 and Fig. 6 with the frozen lambda=1 baseline and update the handoff"
+  ]
+}

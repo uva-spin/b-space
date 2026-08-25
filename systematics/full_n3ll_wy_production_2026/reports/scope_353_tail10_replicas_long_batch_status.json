@@ -1,0 +1,49 @@
+{
+  "status": "isolated_scope_353_tail10_replicas_long_complete",
+  "kind": "replicas",
+  "label": "scope_353_tail10",
+  "seeds": [
+    1016,
+    1021,
+    1033,
+    1040
+  ],
+  "lambda_tail": 10.0,
+  "fnp_tail_bmin": 6.0,
+  "fnp_tail_target": 0.05,
+  "epochs": 15000,
+  "patience": 2500,
+  "workers": 4,
+  "runs": [
+    {
+      "kind": "replicas",
+      "seed": 1016,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail10_coupled_fnp_fit_r1016_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail10_coupled_fnp_fit_r1016_csvnorm_long.log"
+    },
+    {
+      "kind": "replicas",
+      "seed": 1021,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail10_coupled_fnp_fit_r1021_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail10_coupled_fnp_fit_r1021_csvnorm_long.log"
+    },
+    {
+      "kind": "replicas",
+      "seed": 1033,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail10_coupled_fnp_fit_r1033_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail10_coupled_fnp_fit_r1033_csvnorm_long.log"
+    },
+    {
+      "kind": "replicas",
+      "seed": 1040,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail10_coupled_fnp_fit_r1040_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail10_coupled_fnp_fit_r1040_csvnorm_long.log"
+    }
+  ],
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

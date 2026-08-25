@@ -1,0 +1,72 @@
+{
+  "status": "lhcb_correlated_covariance_audit_complete_diagnostic_not_production",
+  "row_ids": [
+    "LHCb_7:10",
+    "LHCb_7:11",
+    "LHCb_7:12",
+    "LHCb_7:13"
+  ],
+  "covariance_source": "LHCb 1505.07024 Table 10 pT correlations, with released beam/luminosity components added as fully correlated",
+  "covariance_positive_eigenvalues": [
+    6.886295570390519e-08,
+    1.8740554968276714e-05,
+    0.00016602510306171076,
+    0.0009394635219650735
+  ],
+  "nnlo_input": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb7_external_true_nnlo_positive_y_10m_",
+  "profile_summary": {
+    "early_0p18_0p28": {
+      "data_chi2_per_row_q16_median_q84": [
+        10.201115957843133,
+        10.650677607934426,
+        10.893834440549623
+      ],
+      "total_chi2_per_row_q16_median_q84": [
+        13.040779079122228,
+        13.268217639449789,
+        13.386753206839927
+      ],
+      "nnlo_scale_nuisance_q16_median_q84": [
+        1.323897500374328,
+        1.3421438122897011,
+        1.3766077416919367
+      ]
+    },
+    "central_0p20_0p30": {
+      "data_chi2_per_row_q16_median_q84": [
+        6.1196011109583015,
+        6.582849882829229,
+        6.8579450392010735
+      ],
+      "total_chi2_per_row_q16_median_q84": [
+        10.361326784799022,
+        10.740826805966854,
+        10.954053756656997
+      ],
+      "nnlo_scale_nuisance_q16_median_q84": [
+        1.6733752189893538,
+        1.702150340225805,
+        1.7528844806344046
+      ]
+    },
+    "late_0p22_0p32": {
+      "data_chi2_per_row_q16_median_q84": [
+        4.511396456453761,
+        4.829125442815029,
+        5.0266945135578425
+      ],
+      "total_chi2_per_row_q16_median_q84": [
+        8.776576310916543,
+        9.140751762683266,
+        9.352998339448511
+      ],
+      "nnlo_scale_nuisance_q16_median_q84": [
+        1.8935058363964123,
+        1.9206107061759412,
+        1.9669654431787957
+      ]
+    }
+  },
+  "interpretation": "The published pT correlations and beam/luminosity components are now explicitly represented. This is an input-covariance audit only; it does not authorize production because the source manifest and covariance provenance still require formal promotion.",
+  "production_outputs_modified": false
+}

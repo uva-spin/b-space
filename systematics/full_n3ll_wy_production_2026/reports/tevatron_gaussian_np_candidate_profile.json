@@ -1,0 +1,45 @@
+{
+  "status": "isolated_gaussian_np_candidate_profile_complete_not_production",
+  "endpoint_models": {
+    "g1_zero": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid/tevatron_full_wy_grid.csv",
+    "g1_one": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p0/tevatron_full_wy_grid.csv"
+  },
+  "row_count": 122,
+  "profile_interpolation": "linear in the directly evaluated endpoint predictions; use for initialization only",
+  "g1_profile_hat_GeV2": 1.0241911542738864,
+  "g1_profile_domain_GeV2": [
+    0.0,
+    1.0
+  ],
+  "g1_profile_requires_extrapolation_beyond_direct_endpoint": true,
+  "g1_one_direct_candidate": {
+    "stat_only_chi2": 192.41020263135397,
+    "stat_only_chi2_per_row": 1.577132808453721
+  },
+  "g1_profile_hat_stat_only_chi2": 191.6467970115143,
+  "g1_profile_hat_stat_only_chi2_per_row": 1.5708753853402813,
+  "g1_zero_stat_only_chi2_per_row": 12.787040166162416,
+  "dataset_normalization_diagnostic": {
+    "CDF_RUN_1": {
+      "row_count": 41,
+      "best_norm_unpenalized": 1.0386900382462572,
+      "stat_only_chi2": 45.757403655010144,
+      "stat_only_chi2_per_row": 1.1160342354880524
+    },
+    "CDF_RUN_2": {
+      "row_count": 61,
+      "best_norm_unpenalized": 0.9923203120052931,
+      "stat_only_chi2": 110.6211339393639,
+      "stat_only_chi2_per_row": 1.8134612121207196
+    },
+    "D0_RUN_1": {
+      "row_count": 20,
+      "best_norm_unpenalized": 0.9634775751541372,
+      "stat_only_chi2": 17.78765370309579,
+      "stat_only_chi2_per_row": 0.8893826851547895
+    }
+  },
+  "interpretation": "g1=1 is the directly evaluated candidate grid; the profiled g1 is not promoted until directly re-evaluated",
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

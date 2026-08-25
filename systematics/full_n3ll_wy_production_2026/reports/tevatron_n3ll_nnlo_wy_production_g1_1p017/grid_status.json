@@ -1,0 +1,290 @@
+{
+  "status": "isolated_tevatron_full_n3ll_nnlo_wy_grid_merged_not_promoted",
+  "engine": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+  "order": 3,
+  "primed": false,
+  "enabled_terms": [
+    "resummation_W_N3LL",
+    "counterterm_ASY_NNLO",
+    "VJ_NNLO"
+  ],
+  "datasets": [
+    "CDF_RUN_1",
+    "CDF_RUN_2",
+    "D0_RUN_1"
+  ],
+  "row_count": 122,
+  "g1_GeV2": 1.017,
+  "checks": {
+    "all_finite": true,
+    "all_positive": true,
+    "mean_relative_mc_uncertainty": 0.0137013027850839,
+    "max_relative_mc_uncertainty": 0.10055323823072147,
+    "full_wy_to_data_ratio_median": 1.0029161463124239,
+    "full_wy_to_data_ratio_min": 0.7786706745502051,
+    "full_wy_to_data_ratio_max": 1.1916334238870205
+  },
+  "meaning": "merged external full W+Y perturbative grid; no production authorization",
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false,
+  "promotion_authorized": false,
+  "precision_refinement": {
+    "status": "primary_precision_refinement_complete_not_promoted",
+    "grid": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/tevatron_full_wy_grid.csv",
+    "selected_count": 24,
+    "threshold_data_error_fraction": 0.5,
+    "calls_per_refined_component": 300000000,
+    "max_relative_mc_before": 0.10055323823072147,
+    "max_relative_mc_after": 0.16544556067529234,
+    "refined": [
+      {
+        "dataset": "CDF_RUN_1",
+        "row_id": "CDF_RUN_1:1",
+        "raw_full_wy_fb_per_bin": 5235.627145620238,
+        "raw_full_wy_unc_fb_per_bin": 208.0555773202024,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_1_1_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_1_1_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_1",
+        "row_id": "CDF_RUN_1:2",
+        "raw_full_wy_fb_per_bin": 7464.084838702925,
+        "raw_full_wy_unc_fb_per_bin": 108.5951314928666,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_1_2_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_1_2_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:1",
+        "raw_full_wy_fb_per_bin": 4546.416460508175,
+        "raw_full_wy_unc_fb_per_bin": 752.1844203721531,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_1_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_1_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5,
+        "cached": true
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:10",
+        "raw_full_wy_fb_per_bin": 9367.923734655416,
+        "raw_full_wy_unc_fb_per_bin": 49.14064137154568,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_10_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_10_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:11",
+        "raw_full_wy_fb_per_bin": 8860.56158805601,
+        "raw_full_wy_unc_fb_per_bin": 104.2493346663313,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_11_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_11_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5,
+        "cached": true
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:2",
+        "raw_full_wy_fb_per_bin": 7836.377888484363,
+        "raw_full_wy_unc_fb_per_bin": 222.1285269460324,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_2_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_2_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5,
+        "cached": true
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:20",
+        "raw_full_wy_fb_per_bin": 4701.458347435128,
+        "raw_full_wy_unc_fb_per_bin": 33.53210962138079,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_20_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_20_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:21",
+        "raw_full_wy_fb_per_bin": 4445.954497935008,
+        "raw_full_wy_unc_fb_per_bin": 45.58968951629395,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_21_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_21_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:24",
+        "raw_full_wy_fb_per_bin": 3764.518632415231,
+        "raw_full_wy_unc_fb_per_bin": 55.95576059911767,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_24_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_24_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:25",
+        "raw_full_wy_fb_per_bin": 3510.3573008104,
+        "raw_full_wy_unc_fb_per_bin": 51.46724980636605,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_25_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_25_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:26",
+        "raw_full_wy_fb_per_bin": 3235.835013833107,
+        "raw_full_wy_unc_fb_per_bin": 38.64096325382427,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_26_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_26_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:29",
+        "raw_full_wy_fb_per_bin": 2731.967532566031,
+        "raw_full_wy_unc_fb_per_bin": 35.56641662335289,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_29_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_29_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:3",
+        "raw_full_wy_fb_per_bin": 9879.779468739252,
+        "raw_full_wy_unc_fb_per_bin": 160.3025969927793,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_3_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_3_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5,
+        "cached": true
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:31",
+        "raw_full_wy_fb_per_bin": 2494.658996538853,
+        "raw_full_wy_unc_fb_per_bin": 21.53817630049913,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_31_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_31_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:32",
+        "raw_full_wy_fb_per_bin": 2351.419443359764,
+        "raw_full_wy_unc_fb_per_bin": 32.56031138623278,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_32_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_32_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:33",
+        "raw_full_wy_fb_per_bin": 2198.733683604458,
+        "raw_full_wy_unc_fb_per_bin": 23.92819555697085,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_33_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_33_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:38",
+        "raw_full_wy_fb_per_bin": 1686.78301692836,
+        "raw_full_wy_unc_fb_per_bin": 38.59899077799925,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_38_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_38_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:39",
+        "raw_full_wy_fb_per_bin": 1630.540991688259,
+        "raw_full_wy_unc_fb_per_bin": 21.60297770753819,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_39_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_39_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:4",
+        "raw_full_wy_fb_per_bin": 11029.23504144813,
+        "raw_full_wy_unc_fb_per_bin": 106.5792566761942,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_4_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_4_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:40",
+        "raw_full_wy_fb_per_bin": 1563.903787227078,
+        "raw_full_wy_unc_fb_per_bin": 16.59325400688227,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_40_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_40_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:47",
+        "raw_full_wy_fb_per_bin": 1147.265071132405,
+        "raw_full_wy_unc_fb_per_bin": 11.66557735051069,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_47_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_47_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:5",
+        "raw_full_wy_fb_per_bin": 11479.24009954027,
+        "raw_full_wy_unc_fb_per_bin": 81.30431116544615,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_5_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_5_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "CDF_RUN_2",
+        "row_id": "CDF_RUN_2:8",
+        "raw_full_wy_fb_per_bin": 10557.6637074656,
+        "raw_full_wy_unc_fb_per_bin": 93.61388741837935,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/CDF_RUN_2_8_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/CDF_RUN_2_8_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 0.5
+      },
+      {
+        "dataset": "D0_RUN_1",
+        "row_id": "D0_RUN_1:0",
+        "raw_full_wy_fb_per_bin": 6217.022184991045,
+        "raw_full_wy_unc_fb_per_bin": 138.9751610014904,
+        "card": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/cards/D0_RUN_1_0_g1_1p017_refined_300m.in",
+        "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_production_g1_1p017/precision_refinement/logs/D0_RUN_1_0_g1_1p017_refined_300m.log",
+        "calls": 300000000,
+        "width": 1.0
+      }
+    ],
+    "recovered_after_postprocessor_column_bug": true,
+    "recovery_note": "All 24 DYTurbo integrations were complete; only aggregate status writing failed. Cached tables were reused and no integration was rerun.",
+    "frozen_baseline_unchanged": true,
+    "production_outputs_modified": false
+  }
+}

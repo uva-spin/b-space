@@ -1,0 +1,25 @@
+{
+  "status": "isolated_mcfm_true_nlo_retry_inconclusive_not_production",
+  "scope": ["LHCb_7:10"],
+  "attempt": "MCFM process 41, part=nlo, absolute-rapidity user cut",
+  "settings": {
+    "warmup_card": "MCFM Bin/input_Zjet.ini-style",
+    "initial_real_calls": 5000000,
+    "warmup_chisq_goal": 12.5,
+    "warmup_precision_goal": 0.25,
+    "writeintermediate": true,
+    "ndmx": 40,
+    "iterbatchwarmup": 10,
+    "callboost": 10.0
+  },
+  "observed": {
+    "completed_warmup_call_blocks": [5000000, 7000000],
+    "next_requested_call_block": 9800000,
+    "completed_block_cpu_seconds": [960.40431, 2285.8678],
+    "last_completed_block_relative_goal": "25% not reached"
+  },
+  "outcome": "The NLO-real warmup remained too noisy after the controlled 5M and 7M call blocks and requested a 9.8M block; the retry was stopped before a final integral to avoid an unbounded optional CPU escalation.",
+  "interpretation": "This is an MCFM integration-cost/convergence limitation, not a physics result and not evidence against the converged DYTurbo NLO/NNLO closure.",
+  "decision": "Do not use MCFM NLO numerically for finite-Y promotion; retain the independent MCFM LO rapidity-sign closure and completed DYTurbo true-NLO/NNLO evidence.",
+  "production_outputs_modified": false
+}

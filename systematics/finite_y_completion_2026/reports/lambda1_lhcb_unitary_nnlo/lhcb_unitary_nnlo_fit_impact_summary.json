@@ -1,0 +1,86 @@
+{
+  "status": "lambda1_lhcb_unitary_nnlo_fit_impact_complete_diagnostic_not_production",
+  "endpoint_count": 96,
+  "row_count": 4,
+  "profiles": {
+    "early_0p18_0p28": {
+      "data_chi2_per_row_q16_median_q84": [
+        2.811169388786372,
+        2.8240796925780938,
+        2.8306912594739915
+      ],
+      "total_chi2_per_row_q16_median_q84": [
+        4.560523373371722,
+        4.563785810069156,
+        4.568633028080183
+      ],
+      "matching_nuisance_sigma_q16_median_q84": [
+        0.799316191241643,
+        0.8251192637713998,
+        0.8698661747746397
+      ],
+      "nnlo_scale_nuisance_sigma_q16_median_q84": [
+        2.504633176724508,
+        2.505593863643064,
+        2.50607702711373
+      ],
+      "max_whitened_pull_q84": 3.0077579370121676,
+      "max_whitened_pull": 3.014640248057092
+    },
+    "central_0p20_0p30": {
+      "data_chi2_per_row_q16_median_q84": [
+        3.5906611601411424,
+        3.7471858026427687,
+        3.842844246183904
+      ],
+      "total_chi2_per_row_q16_median_q84": [
+        6.541140147483021,
+        6.690984209910956,
+        6.776585709261729
+      ],
+      "matching_nuisance_sigma_q16_median_q84": [
+        2.553794496984068,
+        2.5604247036118783,
+        2.5613857450435127
+      ],
+      "nnlo_scale_nuisance_sigma_q16_median_q84": [
+        2.275601324159032,
+        2.2834715510905146,
+        2.29707152404545
+      ],
+      "max_whitened_pull_q84": 3.212615988888844,
+      "max_whitened_pull": 3.2671595104468603
+    },
+    "late_0p22_0p32": {
+      "data_chi2_per_row_q16_median_q84": [
+        3.8524338967773946,
+        4.072064695396288,
+        4.2101912322245765
+      ],
+      "total_chi2_per_row_q16_median_q84": [
+        7.625343955696059,
+        7.90333040067001,
+        8.066646438435555
+      ],
+      "matching_nuisance_sigma_q16_median_q84": [
+        3.240409172644843,
+        3.2970477403863425,
+        3.3243534430757777
+      ],
+      "nnlo_scale_nuisance_sigma_q16_median_q84": [
+        2.091529342871287,
+        2.110513748570017,
+        2.1427525565743033
+      ],
+      "max_whitened_pull_q84": 3.2091638180812994,
+      "max_whitened_pull": 3.2712933559859287
+    }
+  },
+  "covariance": "published pT Table 10 correlations plus fully correlated beam/luminosity components",
+  "fixed_order": "DYTurbo order=2 (NNLO), doVJREAL/doVJVIRT=true, positive y_Z arm",
+  "scale_treatment": "symmetric largest absolute six-point NNLO scale excursion per row",
+  "all_optimizer_success": true,
+  "all_predictions_positive": true,
+  "production_outputs_modified": false,
+  "interpretation": "The NNLO unitary endpoint ensemble is numerically stable and positive, but the published LHCb covariance fit remains a diagnostic rather than a production gate. The result tests the finite-Y construction with the best available fixed-order input; it does not silently rescale the LHCb data or authorize universal promotion."
+}

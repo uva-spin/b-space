@@ -1,0 +1,29 @@
+{
+  "manifest_id": "tevatron_n3ll_nnlo_wy_gaussian_g1_1p0",
+  "status": "isolated_candidate_manifest_not_production",
+  "engine": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+  "convention": "order=3, primed=false; W=RES, ASY=-CT, FO=VJ, Y=FO-ASY=VJ+CT",
+  "npff": "Gaussian exp[-g1 bT^2]",
+  "g1_GeV2": 1.0,
+  "scope": {
+    "datasets": ["CDF_RUN_1", "CDF_RUN_2", "D0_RUN_1"],
+    "tevatron_grid_rows": 122,
+    "boundary_rows": 24,
+    "excluded": ["fixed-target 329-row core", "LHCb high-qT rows"]
+  },
+  "artifacts": {
+    "grid_csv": {"path": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p0/tevatron_full_wy_grid.csv", "sha256": "87a7d2dd74622071d7001e60f920e71ec743812cf2216f38c349a99df14a5761"},
+    "grid_status": {"path": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p0/grid_status.json", "sha256": "09ef56596d42a3da474982e74062c6f057bdc6630b96f2c8507801e8bb0e1747"},
+    "boundary_csv": {"path": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p0/full_wy_boundary_summary.csv", "sha256": "b88388602a6dba224c7b27e5c61d97f2745bd1639f661fd40c439cc708afbaa3"},
+    "boundary_status": {"path": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p0/boundary_full_wy_status.json", "sha256": "82258756a12e396542605f63759f6564ef71a0449b675baf4b5e3dd633b8d138"},
+    "term_decomposition": {"path": "reports/dyturbo_term_decomposition/term_decomposition_status.json", "sha256": "4d8f65f0b065fc4736a7ee079a1cb2a7d516ab3e5a815e61cb689603349a30a8"},
+    "candidate_fit": {"path": "reports/tevatron_n3ll_nnlo_candidate_fit_status.json", "sha256": "4c6691069961343762107c0fcfe0d9e6fe8e11d74154f143137c9cc4c3ed3965"},
+    "profile": {"path": "reports/tevatron_gaussian_np_candidate_profile.json", "sha256": "d2fe328e499e21332e429e4b265295cc1ebb3ef5143ba86f7058a6759cf30aa8"},
+    "seed_stability": {"path": "reports/tevatron_external_seed_stability.json", "sha256": "0ffbd81d6eaf1a1cadd953cafb70eb7cc39c4360ae055fc5949393c3e03d2ace"},
+    "replica_profile_status": {"path": "reports/tevatron_gaussian_np_replica_profile/replica_profile_status.json", "sha256": "69b80a4122bb5c00c29053b9678bf4b863b88218a8b637d82c8fedd377af21eb"},
+    "replica_profile_band": {"path": "reports/tevatron_gaussian_np_replica_profile/tevatron_gaussian_np_replica_band.csv", "sha256": "a226f29f0b27d8cded96599e5cc326834c2c95e055fdf409f2b97525bdea4eca"}
+  },
+  "promotion_authorized": false,
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

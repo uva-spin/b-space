@@ -1,0 +1,53 @@
+{
+  "status": "lhcb_true_nlo_shape_diagnostic_complete_not_production",
+  "input": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb7_external_true_nlo_all14/dyturbo_true_nlo_summary.csv",
+  "row_count": 14,
+  "true_nlo_vj_all_rows": true,
+  "regions": [
+    {
+      "region": "resummation-dominated-qT-over-Q<0p10",
+      "row_count": 6,
+      "qT_over_Q_min": 0.0122222222222222,
+      "qT_over_Q_max": 0.0883333333333333,
+      "pointwise_ratio_min": 0.8202795916063275,
+      "pointwise_ratio_max": 8.301172831207989,
+      "pointwise_ratio_median": 1.3960190818035598,
+      "bin_integrated_ratio": 2.6765414793418554
+    },
+    {
+      "region": "transition-approach-qT-over-Q-0p10-to-0p20",
+      "row_count": 4,
+      "qT_over_Q_min": 0.1066666666666666,
+      "qT_over_Q_max": 0.1911111111111111,
+      "pointwise_ratio_min": 0.6160167912199354,
+      "pointwise_ratio_max": 0.7312781600728976,
+      "pointwise_ratio_median": 0.6639867566623996,
+      "bin_integrated_ratio": 0.671129649077913
+    },
+    {
+      "region": "fixed-order/high-qT-qT-over-Q>=0p20",
+      "row_count": 4,
+      "qT_over_Q_min": 0.2416666666666666,
+      "qT_over_Q_max": 1.85,
+      "pointwise_ratio_min": 0.5206665887040122,
+      "pointwise_ratio_max": 0.5831971400790122,
+      "pointwise_ratio_median": 0.554561202385885,
+      "bin_integrated_ratio": 0.5462275435746216
+    }
+  ],
+  "high_qT_transition": {
+    "definition": "qT/Q >= 0.20",
+    "row_ids": [
+      "LHCb_7:10",
+      "LHCb_7:11",
+      "LHCb_7:12",
+      "LHCb_7:13"
+    ],
+    "bin_integrated_true_nlo_over_data": 0.5462275435746216,
+    "pointwise_ratio_min": 0.5206665887040122,
+    "pointwise_ratio_max": 0.5831971400790122,
+    "pointwise_ratio_median": 0.554561202385885
+  },
+  "interpretation": "True-NLO DYTurbo is intentionally not used as a low-qT replacement for W: the qT/Q<0.10 bins show the expected fixed-order singular behavior. In the high-qT transition rows the positive-arm true-NLO prediction is consistently below the candidate data by about 45% in the bin-integrated comparison. This is a data/observable normalization input issue to resolve, not a reason to reject the unitary finite-Y construction or stop the study.",
+  "production_outputs_modified": false
+}

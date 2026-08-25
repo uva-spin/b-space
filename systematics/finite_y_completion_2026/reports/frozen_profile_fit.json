@@ -1,0 +1,54 @@
+{
+  "status": "frozen_fnp_profile_fit_audit_complete",
+  "row_count": 24,
+  "profiles": {
+    "early_0p18_0p28": {
+      "optimizer_success": true,
+      "data_chi2_per_row": 0.9116889856607001,
+      "data_chi2": 21.880535655856804,
+      "total_chi2": 24.950522887244915,
+      "matching_nuisance_sigma": 1.3536281902410878,
+      "nlo_scale_nuisance_sigma": 0.9719250657118775,
+      "max_absolute_pull": 2.474568446576313,
+      "dataset_norms": {
+        "CDF_RUN_1": 1.0042146283379174,
+        "CDF_RUN_2": 1.0307652033134396,
+        "D0_RUN_1": 1.000022350024066
+      },
+      "pass_operational_gate": true
+    },
+    "central_0p20_0p30": {
+      "optimizer_success": true,
+      "data_chi2_per_row": 0.9354942114253776,
+      "data_chi2": 22.45186107420907,
+      "total_chi2": 25.535358317736062,
+      "matching_nuisance_sigma": 1.3505140689771364,
+      "nlo_scale_nuisance_sigma": 0.94363068567653,
+      "max_absolute_pull": 2.430524412179982,
+      "dataset_norms": {
+        "CDF_RUN_1": 1.0044602770958546,
+        "CDF_RUN_2": 1.0346070080199585,
+        "D0_RUN_1": 1.0003743558860652
+      },
+      "pass_operational_gate": true
+    },
+    "late_0p22_0p32": {
+      "optimizer_success": true,
+      "data_chi2_per_row": 0.945345075083727,
+      "data_chi2": 22.688281802009445,
+      "total_chi2": 25.74518857330989,
+      "matching_nuisance_sigma": 1.3488714033046405,
+      "nlo_scale_nuisance_sigma": 0.9061539149434013,
+      "max_absolute_pull": 2.362367338366336,
+      "dataset_norms": {
+        "CDF_RUN_1": 1.0041820001112822,
+        "CDF_RUN_2": 1.0369025861270775,
+        "D0_RUN_1": 1.0002128458685429
+      },
+      "pass_operational_gate": true
+    }
+  },
+  "central_operational_gate_pass": true,
+  "interpretation": "The unitary construction can be fit with endpoint-separated correlated matching/scale nuisances while holding FNP fixed; this is an impact audit, not an FNP or replica production fit.",
+  "production_promotion": false
+}

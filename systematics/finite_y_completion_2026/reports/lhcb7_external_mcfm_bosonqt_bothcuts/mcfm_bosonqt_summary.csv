@@ -1,0 +1,2 @@
+row_id,qT_low,qT_high,data_pb_per_GeV,mcfm_raw_fb_bin,mcfm_raw_fb_bin_unc,mcfm_pb_bin,mcfm_pb_per_GeV,mcfm_pb_per_GeV_unc,card,log,table,explicit_pt34_cut
+LHCb_7:10,19.0,24.5,1.003090909,6065.6807,8.9852302,6.0656807,1.1028510363636364,0.0016336782181818183,reports/lhcb7_external_mcfm_bosonqt_bothcuts/cards/lhcbqt10.ini,reports/lhcb7_external_mcfm_bosonqt_bothcuts/logs/lhcbqt10.log,reports/lhcb7_external_mcfm_bosonqt_bothcuts/tables/Z_1jet_lo_NNPDF40_nnlo_as_01180_90___90___lhcbqt10_total_cross.txt,True

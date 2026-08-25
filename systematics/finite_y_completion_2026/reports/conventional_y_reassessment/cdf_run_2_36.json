@@ -1,0 +1,45 @@
+{
+  "status": "conventional_additive_fo_minus_asy_rejected_after_rapidity_correction",
+  "row_id": "CDF_RUN_2:36",
+  "qT_over_Q": 0.20054945054945056,
+  "central_node": {
+    "qT": 18.25,
+    "y": 0.0
+  },
+  "rapidity_correction": "W evaluator removes backend inclusive Tevatron rapidity factor before explicit-y comparison",
+  "records": [
+    {
+      "n_b": 160,
+      "w_corrected_pb_per_GeV": 1.9163307265783354,
+      "asy_pb_per_GeV": -42.75430809383873,
+      "fo_pb_per_GeV": 2.057001068507791,
+      "y_fo_minus_asy_pb_per_GeV": 44.81130916234652,
+      "matched_pb_per_GeV": 46.727639888924855,
+      "matched_minus_fo_pb_per_GeV": 44.67063882041707,
+      "matched_over_fo": 22.716390673935067
+    },
+    {
+      "n_b": 320,
+      "w_corrected_pb_per_GeV": 2.1930231769614386,
+      "asy_pb_per_GeV": -45.22628356708116,
+      "fo_pb_per_GeV": 2.057001068507791,
+      "y_fo_minus_asy_pb_per_GeV": 47.283284635588956,
+      "matched_pb_per_GeV": 49.476307812550395,
+      "matched_minus_fo_pb_per_GeV": 47.4193067440426,
+      "matched_over_fo": 24.052640793444976
+    },
+    {
+      "n_b": 640,
+      "w_corrected_pb_per_GeV": 2.2552659458811872,
+      "asy_pb_per_GeV": -45.84526529927376,
+      "fo_pb_per_GeV": 2.057001068507791,
+      "y_fo_minus_asy_pb_per_GeV": 47.90226636778155,
+      "matched_pb_per_GeV": 50.157532313662735,
+      "matched_minus_fo_pb_per_GeV": 48.10053124515494,
+      "matched_over_fo": 24.383814418749175
+    }
+  ],
+  "decision": "The corrected W remains far from strict ASY at qT/Q\u22480.20; additive FO-ASY gives a matched result tens of pb/GeV above FO. This is a domain-of-validity failure of conventional additive matching at the transition node, not a reason to stop finite-Y work.",
+  "next_candidate": "retain the separately validated unitary transition Y=p(qT/Q)(FO-W) and continue its production-scope audits",
+  "production_outputs_modified": false
+}

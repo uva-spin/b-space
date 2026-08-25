@@ -1,0 +1,97 @@
+{
+  "status": "complete",
+  "label": "scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k",
+  "modes": [
+    "wy"
+  ],
+  "seeds": [
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310
+  ],
+  "epochs": 10000,
+  "patience": 0,
+  "lambda_tail": 1.0,
+  "fnp_tail_bmin": 6.0,
+  "fnp_tail_target": 0.05,
+  "qT_max_over_Q": 0.2,
+  "data_dir": "reports/scope_353_fnp_inputs/data_with_old_effective_errors",
+  "w_grid": "reports/scope_353_fnp_inputs/scope_353_bspace_w_kinematic_corrected_nofidfactor.csv",
+  "lr": 2e-05,
+  "batch_size": 10000,
+  "min_delta": 1e-07,
+  "runs": [
+    {
+      "mode": "wy",
+      "seed": 303,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s303",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s303.log"
+    },
+    {
+      "mode": "wy",
+      "seed": 304,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s304",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s304.log"
+    },
+    {
+      "mode": "wy",
+      "seed": 305,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s305",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s305.log"
+    },
+    {
+      "mode": "wy",
+      "seed": 306,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s306",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s306.log"
+    },
+    {
+      "mode": "wy",
+      "seed": 307,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s307",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s307.log"
+    },
+    {
+      "mode": "wy",
+      "seed": 308,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s308",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s308.log"
+    },
+    {
+      "mode": "wy",
+      "seed": 309,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s309",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s309.log"
+    },
+    {
+      "mode": "wy",
+      "seed": 310,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s310",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_329_perturbed1pct_non_lhcb_y_tail1_refdist3_b8_long10k_wy_s310.log"
+    }
+  ],
+  "init_model_state": null,
+  "init_state_dir": "reports/wy_start_sensitivity_states_1pct",
+  "lambda_reference_distance": 3.0,
+  "reference_distance_csv": "/home/dustin/work/project/bT-TMD/systematics/dataset_identifiability_campaign_2026/summaries/exact_baseline_fnp_median/fnp_median.csv",
+  "reference_distance_bmin": 0.1,
+  "reference_distance_bmax": 8.0,
+  "backend_script": "/home/dustin/work/project/bT-TMD/v23/backends/bt_internal_css_backend_v22_tevatron.py",
+  "y_grid": "reports/scope_353_fnp_inputs/scope_353_y_no_lhcb.csv",
+  "purpose": "same 353 rows, same external W, same optimizer; W-only versus fixed W+Y",
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

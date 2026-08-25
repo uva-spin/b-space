@@ -1,0 +1,86 @@
+{
+  "status": "lambda1_unitary_boundary_replica_propagation_complete",
+  "endpoint_count": 96,
+  "replicas": 50,
+  "row_count": 24,
+  "seed": 20260817,
+  "profiles": {
+    "early_0p18_0p28": {
+      "all_optimizer_success": true,
+      "total_chi2_per_row_q16_median_q84": [
+        1.4489504564386089,
+        1.877830025722436,
+        2.360938840740899
+      ],
+      "data_chi2_per_row_q16_median_q84": [
+        1.304477923030455,
+        1.7320628212355276,
+        2.2162254563186186
+      ],
+      "matching_nuisance_q16_median_q84": [
+        1.2888041545492568,
+        1.3606364136594196,
+        1.4317711058312637
+      ],
+      "nlo_scale_nuisance_q16_median_q84": [
+        0.8184646072857343,
+        0.9630736659152258,
+        1.1124607918033573
+      ],
+      "max_absolute_pull_q95": 4.134067682909715,
+      "max_absolute_pull": 6.155610965586561
+    },
+    "central_0p20_0p30": {
+      "all_optimizer_success": true,
+      "total_chi2_per_row_q16_median_q84": [
+        1.4553000607983575,
+        1.8930492463945723,
+        2.409859522343711
+      ],
+      "data_chi2_per_row_q16_median_q84": [
+        1.310192971749393,
+        1.7427411462264766,
+        2.2655770791567797
+      ],
+      "matching_nuisance_q16_median_q84": [
+        1.2978687310864294,
+        1.353844712176791,
+        1.4131560051690188
+      ],
+      "nlo_scale_nuisance_q16_median_q84": [
+        0.754695738295279,
+        0.925533862373126,
+        1.097780933555434
+      ],
+      "max_absolute_pull_q95": 4.144020381655264,
+      "max_absolute_pull": 6.225077844819331
+    },
+    "late_0p22_0p32": {
+      "all_optimizer_success": true,
+      "total_chi2_per_row_q16_median_q84": [
+        1.4763081259317288,
+        1.8951558186023534,
+        2.4048556056219534
+      ],
+      "data_chi2_per_row_q16_median_q84": [
+        1.3309835015640583,
+        1.7474543833692668,
+        2.2513805424754634
+      ],
+      "matching_nuisance_q16_median_q84": [
+        1.2965460360810932,
+        1.3474788172178225,
+        1.4010877674187472
+      ],
+      "nlo_scale_nuisance_q16_median_q84": [
+        0.6672043971634738,
+        0.8942800046672448,
+        1.1115669588757293
+      ],
+      "max_absolute_pull_q95": 4.088478231859691,
+      "max_absolute_pull": 6.126880804800179
+    }
+  },
+  "interpretation": "This propagates Gaussian experimental errors on the 24 Tevatron boundary rows through all 96 registered lambda=1 endpoints and correlated matching/scale nuisance fits. It is not an LHCb result and does not by itself authorize production promotion.",
+  "production_promotion": false
+}

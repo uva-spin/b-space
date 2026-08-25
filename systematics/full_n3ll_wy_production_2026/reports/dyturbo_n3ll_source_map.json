@@ -1,0 +1,195 @@
+{
+  "status": "external_dyturbo_n3ll_nnlo_source_map_complete",
+  "target": "unprimed N3LL+NNLO W+Y",
+  "standard_counting": {
+    "cusp": "alpha_s^4",
+    "non_cusp": "alpha_s^3",
+    "hard_and_collinear_boundary": "alpha_s^2",
+    "Y_matching": "FO_NNLO_minus_ASY_NNLO"
+  },
+  "sources": [
+    {
+      "path": "/home/dustin/src/dyturbo-1.4.2/resum/resconst.C",
+      "sha256": "a85aac90242af611eef30646b5932bd90d3b30a67ee08116c9973d34e373a285",
+      "line_ranges": [
+        [
+          70,
+          105
+        ],
+        [
+          133,
+          163
+        ],
+        [
+          175,
+          190
+        ],
+        [
+          217,
+          228
+        ],
+        [
+          260,
+          322
+        ]
+      ],
+      "symbols": [
+        "beta3",
+        "beta4",
+        "A1q",
+        "A2q",
+        "A3q",
+        "A4q",
+        "B1q",
+        "B2q",
+        "B3q",
+        "H2q",
+        "C2qqn"
+      ],
+      "role": "quark Sudakov, hard, and delta matching constants",
+      "excerpts": [
+        {
+          "start": 70,
+          "end": 105,
+          "text": "  //Resummation coefficients\n  beta0=(33.-2.*NF)/12.;\n  beta1=(153.-19.*NF)/24.;\n  beta2=2857./128.-5033.*NF/1152.+325.*nf2/3456.;\n  beta3=(149753./6. + 3564.*Z3 + NF*(-1078361./162.-6508./27.*Z3)+nf2*(50065./162.+6472./81.*Z3)+1093./729.*nf3)/256.; //from https://arxiv.org/pdf/1701.01404.pdf Eq.(3.6), with a 4^4=256 normalisation factor\n  beta4=(8157455./16. + 621885./2.*Z3 - 88209./2.*Z4 - 288090.*Z5\n\t +NF* (-336460813./1944. - 4811164./81.*Z3 + 33935./6.*Z4 + 1358995./27.*Z5)\n\t +NF*NF*(25960913./1944. + 698531./81.*Z3 - 10526./9.*Z4 - 381760./81.*Z5)\n\t +NF*NF*NF*(-630559./5832. - 48722./243.*Z3 + 1618./27.*Z4 + 460./9.*Z5)\n\t +NF*NF*NF*NF*(1205./2916. - 152./81.*Z3))/1024.;  //from https://arxiv.org/pdf/1701.01404.pdf Eq.(3.7), with a 4^5=1024 normalisation factor\n  beta5 = 0.;\n  \n  //cout << beta0/M_PI << \"  \" << beta1/pow(M_PI,2) << \"  \" << beta2/pow(M_PI,3) << \"  \" << beta3/pow(M_PI,4) << \"  \" << beta4/pow(M_PI,5) << endl;\n\n  Kappa=67./6.-pi2/2.-5./9.*NF;\n\n  //gluon coefficients\n  A1g=CA;\n  A2g=CA/2.*(67./6.-pi2/2.-5./9.*NF); //CA/2.*Kappa;\n  A3g=CA*(13.81-2.15*NF-nf2/108.);\n  B1g=-(11.*CA-2.*NF)/6.;\n  B2g=CA*CA*(23./24.+(11.*pi2)/18.-3.*Z3/2.)+CF*NF/2.-CA*NF*(1./12.+pi2/9.)-11./8.*CF*CA;\n  C1ggn=(pi2/2.+11./2.+pi2)/2.;\n\n  //quark coefficients\n  A1q=CF; //4./3;\n  A2q=CF/2.*Kappa; //(67./6.-pi2/2.-5./9.*NF);\n  //A3q=CF*(13.81-2.15*NF-nf2/108.)+CF*(CA*(29.9259-28.*Z3)-8.2963*NF/2.)*2.*(beta0*4.)/64.; //A3 from Becher & Neubert\n  //cout << \"A3q orig \" << A3q << endl;\n  //Better approximation for A3q:\n  //A3q=CF*(13.768339123-2.15*NF-nf2/108.)+CF*(CA*(29.9259-28.*Z3)-8.2963*NF/2.)*2.*(beta0*4.)/64.;\n  A3q=CF*( (2*CA*CA*(245./24.-67./9.*Z2+11./6.*Z3+11./5.*Z2*Z2)/8.)\n\t  +(2*(CF*(-55./24.+2*Z3)+CA*(-209./108.+10./9.*Z2-7./3.*Z3))/8.)*NF-nf2/108.)\n    +CF*(CA*((808./27.)-28.*Z3)-(224./54.*2.)*NF/2.)*2.*(beta0*4.)/64.; //A3 from Becher & Neubert (https://arxiv.org/pdf/1007.4005.pdf Eq.(74))\n  //cout << \"A3q fix \" << A3q << endl;\n"
+        },
+        {
+          "start": 133,
+          "end": 163,
+          "text": "  double A4q_th;\n  //A4q_th = 1553./256. //Pade approximant from https://arxiv.org/pdf/hep-ph/0506288.pdf\n  //A4q_th = 0.42441*0.0133*pow(M_PI,4); //from Eq. (4.3) of https://arxiv.org/pdf/1805.09638.pdf\n\n  //Exact result for A4q_th from Eq.(3.6) of https://arxiv.org/pdf/1912.12920.pdf (also in https://arxiv.org/pdf/2002.04617.pdf Eq.(6))\n  double DfRAnc = 5./2.;\n  double DfRRnc = 5./36.;\n  A4q_th =  (CF*CA*CA*CA*(84278./81. - 88400./81.*zeta2 + 20944./27.*zeta3 + 1804.*zeta4 - 352./3.*zeta2*zeta3 - 3608./9.*zeta5 - 16.*pow(zeta3,2) - 2504./3.*zeta6)\n\t     + DfRAnc*(- 128.*zeta2 + 128./3.*zeta3 + 3520./3.*zeta5 - 384.*pow(zeta3,2) - 992.*zeta6)\n\t     + CF*CF*CF*NF*(572./9. + 592./3.*zeta3 - 320.*zeta5)\n\t     + CF*CF*CA*NF*(- 34066./81. + 440./3.*zeta2 + 3712./9.*zeta3 - 176.*zeta4 - 128.*zeta2*zeta3 + 160.*zeta5)\n\t     + CF*CA*CA*NF*(- 24137./81. + 20320./81.*zeta2 - 23104./27.*zeta3 - 176./3.*zeta4 + 448./3.*zeta2*zeta3 + 2096./9.*zeta5)\n\t     + NF*DfRRnc*(256.*zeta2 - 256./3.*zeta3 - 1280./3.*zeta5)\n\t     + CF*CF*NF*NF*(2392./81. - 640./9.*zeta3 + 32.*zeta4)\n\t     + CF*CA*NF*NF*(923./81. - 608./81.*zeta2 + 2240./27.*zeta3 - 112./3.*zeta4)\n\t     - CF*NF*NF*NF*(32./81. - 64./27.*zeta3))/pow(4.,4);\n  \n  A4q = A4q_th\n    + (3*beta0*4*D3q + 2*beta1*16*D2q)/256.; //formula from Eq. (71) of https://arxiv.org/pdf/1007.4005.pdf with 4^4 normalisation.\n\n  //A5q = 0.;\n  A5q =  (- 7.44153E-1 + opts.A5*0.4*0.42441) * pow(M_PI,5);\n\n  A6q = 0.;\n  \n  B1q=-(3.*CF)/2.;                                                                                //-2;\n  B2q=CF*CF*(pi2/4.-3./16.-3.*Z3)+CA*CF*(11.*pi2/36.-193./48.+3.*Z3/2.)+CF*NF*(17./24.-pi2/18.);  //B2q=4./9.*(pi2-3./4.-12.*Z3)+(11./9.*pi2-193./12.+6.*Z3)+NF/6.*(17./3.-4./9.*pi2);\n  //B2q=CF*CF*(3./2.*Z2-3./16.-3.*Z3)+CA*CF*(11.*Z2/6.-193./48.+3.*Z3/2.)+CF*NF*(17./24.-Z2/3.);\n  //B2q = (13.3447 + 3.4138*NF)/16.; from https://arxiv.org/pdf/1604.01404.pdf, Eq.(13)\n  //B3q=-116.685/8. // from https://arxiv.org/pdf/1705.09127.pdf, but does not look OK\n  B3q=(7358.86 -721.516*NF + 20.5951* nf2)/64.; // from https://arxiv.org/pdf/1604.01404.pdf, Eq.(13)"
+        },
+        {
+          "start": 175,
+          "end": 190,
+          "text": "  // Only delta(1-z) part, i.e. N independent part\n//  C2qqn = 1./2.* (CA*CF*(59.*Z3/18. - 1535./192. + 215.*pi2/216. - pi4/240.)\n//\t\t  + CF*NF*(192.*Z3 + 1143. - 152.*pi2)/864.\n//\t\t  + CF*CF*(-15.*Z3 + 511./16. - 67.*pi2/12. + 17.*pi4/45.)/4. - CF*CF* pow(pi2-8.,2)/16.);\n\n  C2qqn = 1./2.* (CA*CF*(59.*Z3/18. - 1535./192. + 215*pi2/216. - pi4/240.)\n\t\t  + CF*NF*(192.*Z3 + 1143. - 152.*pi2)/864.\n\t\t  + CF*CF*(-15.*Z3 + 511./16. - 67.*pi2/12. + 17.*pi4/45.)/4. - CF*CF*pow(pi2-8.,2)/16.);\n  \n  // Delta term in c1qq coefficient\n  C1qqdelta=(pi2-8.)/3.;\n\n\n\n  // Beta functions QED\n  beta0p = -4.*NFq2/12.; // in DYqt it was defined as beta0QED"
+        },
+        {
+          "start": 217,
+          "end": 228,
+          "text": "  // H2qq contribution: coefficient of delta(1-z)\n  H2qqdelta=-2561./144.+127.*NF/72.+3.*pi2/2.-19.*NF*pi2/81.+49.*pi4/324.+58.*Z3/9.+8.*NF*Z3/27.;\n\n  // H2qq contribution: coefficient of D0(z)\n  H2qqD0=-404./27.+(56.*NF)/81.+14.*Z3;\n  //(23) of https://arxiv.org/pdf/1209.0158.pdf (1/1-z)+)\n\n  //DY scheme (opts.resscheme == 0)\n  H1q = 0.;\n  H1qp = 0.;   // QED\n  H2q = 0.;\n  H3q = 0.;"
+        },
+        {
+          "start": 260,
+          "end": 322,
+          "text": "  k3_nfv = ( (-4 + pow(NC,2)) *(1./8. + (5*pi2)/96. - pi4/2880. + (7*zeta3)/48. - (5*zeta5)/6.) ) /NC; \n  k4 = 321482899./26873856.+41601./(32768.*pow(NC,4))+21812995./(2654208.*pow(NC,2))+(583291805.*pow(NC,2))/71663616.-(6361535363.*pow(NC,4))/214990848.-(5528861.*NF)/(3981312.*pow(NC,3))-(677109931.*NF)/(214990848.*NC)-(3301359761.*NC*NF)/214990848.+(237612677.*pow(NC,3)*NF)/11943936.+(818632639.*pow(NF,2))/214990848.-(8087615.*pow(NF,2))/(26873856.*pow(NC,2))-(9307799.*pow(NC,2)*pow(NF,2))/2654208.-(1865531.*pow(NF,3))/(13436928.*NC)+(1865531.*NC*pow(NF,3))/13436928.+(73.*0.)/(72.*pow(NC,3))+(617.*0.)/(288.*NC)-(2309.*NC*0.)/576.+(491.*pow(NC,3)*0.)/576.+(245.*NF*0.)/288.-(49.*NF*0.)/(72.*pow(NC,2))-49./288.*pow(NC,2)*NF*0.-(282994049.*pi2)/80621568.+(1411.*pi2)/(49152.*pow(NC,4))-(190811.*pi2)/(497664.*pow(NC,2))-(151186117.*pow(NC,2)*pi2)/161243136.+(1548736387.*pow(NC,4)*pi2)/322486272.+(2613235.*NF*pi2)/(5971968.*pow(NC,3))+(255090349.*NF*pi2)/(322486272.*NC)+(373605629.*NC*NF*pi2)/161243136.-(1143416297.*pow(NC,3)*NF*pi2)/322486272.-(112557385.*pow(NF,2)*pi2)/161243136.-(1064527.*pow(NF,2)*pi2)/(40310784.*pow(NC,2))+(116815493.*pow(NC,2)*pow(NF,2)*pi2)/161243136.+(19847.*pow(NF,3)*pi2)/(559872.*NC)-(19847.*NC*pow(NF,3)*pi2)/559872.+(25.*0.*pi2)/(96.*pow(NC,3))+(2893.*0.*pi2)/(3456.*NC)-(9595.*NC*0.*pi2)/6912.+(2009.*pow(NC,3)*0.*pi2)/6912.+(695.*NF*0.*pi2)/3456.-(139.*NF*0.*pi2)/(864.*pow(NC,2))-(139.*pow(NC,2)*NF*0.*pi2)/3456.-(5021281.*pi4)/107495424.+(77933.*pi4)/(4423680.*pow(NC,4))+(656111.*pi4)/(4976640.*pow(NC,2))-(15813319.*pow(NC,2)*pi4)/26873856.+(104417575.*pow(NC,4)*pi4)/214990848.-(457717.*NF*pi4)/(9953280.*pow(NC,3))-(14829269.*NF*pi4)/(268738560.*NC)+(91615573.*NC*NF*pi4)/268738560.-(12885589.*pow(NC,3)*NF*pi4)/53747712.-(29591.*pow(NF,2)*pi4)/746496.+(4783.*pow(NF,2)*pi4)/(466560.*pow(NC,2))+(109691.*pow(NC,2)*pow(NF,2)*pi4)/3732480.+(949.*pow(NF,3)*pi4)/(933120.*NC)-(949.*NC*pow(NF,3)*pi4)/933120.-(41.*0.*pi4)/(1920.*pow(NC,3))-(2.*0.*pi4)/(405.*NC)+(28367.*NC*0.*pi4)/829440.-(6559.*pow(NC,3)*0.*pi4)/829440.-(95.*NF*0.*pi4)/20736.+(19.*NF*0.*pi4)/(5184.*pow(NC,2))+(19.*pow(NC,2)*NF*0.*pi4)/20736.+(1099393.*pi6)/29859840.-(22679.*pi6)/(8709120.*pow(NC,4))-(722717.*pi6)/(59719680.*pow(NC,2))-(11045201.*pow(NC,2)*pi6)/418037760.+(25733.*pow(NC,4)*pi6)/5971968.+(90193.*NF*pi6)/(52254720.*pow(NC,3))-(75449.*NF*pi6)/(11612160.*NC)+(253727.*NC*NF*pi6)/52254720.-(419.*pow(NC,3)*NF*pi6)/4976640.-(1751.*pow(NF,2)*pi6)/26127360.+(1217.*pow(NF,2)*pi6)/(8709120.*pow(NC,2))-(95.*pow(NC,2)*pow(NF,2)*pi6)/1306368.+(943.*0.*pi6)/(725760.*pow(NC,3))-(41449.*0.*pi6)/(5225472.*NC)+(428999.*NC*0.*pi6)/52254720.-(16481.*pow(NC,3)*0.*pi6)/10450944.-(11.*NF*0.*pi6)/11664.+(11.*NF*0.*pi6)/(14580.*pow(NC,2))+(11.*pow(NC,2)*NF*0.*pi6)/58320.+(6530779.*pi8)/6270566400.+(5926681.*pi8)/(20901888000.*pow(NC,4))-(743663.*pi8)/(870912000.*pow(NC,2))-(19452931.*pow(NC,2)*pi8)/31352832000.+(267479.*pow(NC,4)*pi8)/1791590400.+23./256.*zeta53-(69.*zeta53)/(320.*pow(NC,4))+(1277.*zeta53)/(1280.*pow(NC,2))-61./80.*pow(NC,2)*zeta53-7./64.*pow(NC,4)*zeta53-(211844861.*zeta3)/2985984.-(23965.*zeta3)/(6144.*pow(NC,4))+(65653.*zeta3)/(6144.*pow(NC,2))+(11207041.*pow(NC,2)*zeta3)/373248.+(33976055.*pow(NC,4)*zeta3)/995328.-(820819.*NF*zeta3)/(331776.*pow(NC,3))+(3797689.*NF*zeta3)/(186624.*NC)-(17374699.*NC*NF*zeta3)/2985984.-(2000053.*pow(NC,3)*NF*zeta3)/165888.+(35681.*pow(NF,2)*zeta3)/46656.-(1005107.*pow(NF,2)*zeta3)/(746496.*pow(NC,2))+(144737.*pow(NC,2)*pow(NF,2)*zeta3)/248832.-(13.*pow(NF,3)*zeta3)/(7776.*NC)+(13.*NC*pow(NF,3)*zeta3)/7776.+(19.*0.*zeta3)/(16.*pow(NC,3))+(529.*0.*zeta3)/(96.*NC)-6487./768.*NC*0.*zeta3+1343./768.*pow(NC,3)*0.*zeta3+35./64.*NF*0.*zeta3-(7.*NF*0.*zeta3)/(16.*pow(NC,2))-7./64.*pow(NC,2)*NF*0.*zeta3+(1177831.*pi2*zeta3)/746496.-(3895.*pi2*zeta3)/(6144.*pow(NC,4))+(1058855.*pi2*zeta3)/(331776.*pow(NC,2))-(1343051.*pow(NC,2)*pi2*zeta3)/2985984.-(5502499.*pow(NC,4)*pi2*zeta3)/1492992.-(132493.*NF*pi2*zeta3)/(497664.*pow(NC,3))-(567893.*NF*pi2*zeta3)/(497664.*NC)-(51719.*NC*NF*pi2*zeta3)/497664.+(752105.*pow(NC,3)*NF*pi2*zeta3)/497664.+(19.*pow(NF,2)*pi2*zeta3)/1458.+(21509.*pow(NF,2)*pi2*zeta3)/(186624.*pow(NC,2))-(23941.*pow(NC,2)*pow(NF,2)*pi2*zeta3)/186624.-(pow(NF,3)*pi2*zeta3)/(3456.*NC)+(NC*pow(NF,3)*pi2*zeta3)/3456.+(19.*0.*pi2*zeta3)/(288.*pow(NC,3))+(91.*0.*pi2*zeta3)/(144.*NC)-(4039.*NC*0.*pi2*zeta3)/4608.+(823.*pow(NC,3)*0.*pi2*zeta3)/4608.+35./576.*NF*0.*pi2*zeta3-(7.*NF*0.*pi2*zeta3)/(144.*pow(NC,2))-7./576.*pow(NC,2)*NF*0.*pi2*zeta3+(82177.*pi4*zeta3)/829440.+(863.*pi4*zeta3)/(46080.*pow(NC,4))-(61981.*pi4*zeta3)/(414720.*pow(NC,2))+71./576.*pow(NC,2)*pi4*zeta3-(75989.*pow(NC,4)*pi4*zeta3)/829440.+(6083.*NF*pi4*zeta3)/(207360.*pow(NC,3))-(12167.*NF*pi4*zeta3)/(414720.*NC)-(1403.*NC*NF*pi4*zeta3)/138240.+(421.*pow(NC,3)*NF*pi4*zeta3)/41472.-(11.*0.*pi4*zeta3)/(1440.*pow(NC,3))+(5.*0.*pi4*zeta3)/(576.*NC)-(19.*NC*0.*pi4*zeta3)/23040.-(pow(NC,3)*0.*pi4*zeta3)/4608.+(746603.*pow(zeta3,2))/82944.+(2697.*pow(zeta3,2))/(1024.*pow(NC,4))-(677.*pow(zeta3,2))/(1536.*pow(NC,2))-(70517.*pow(NC,2)*pow(zeta3,2))/41472.-(196867.*pow(NC,4)*pow(zeta3,2))/20736.+(113.*NF*pow(zeta3,2))/(128.*pow(NC,3))-(26489.*NF*pow(zeta3,2))/(10368.*NC)+(9517.*NC*NF*pow(zeta3,2))/41472.+(59827.*pow(NC,3)*NF*pow(zeta3,2))/41472.-(673.*pow(NF,2)*pow(zeta3,2))/5184.+(2279.*pow(NF,2)*pow(zeta3,2))/(20736.*pow(NC,2))+(413.*pow(NC,2)*pow(NF,2)*pow(zeta3,2))/20736.+(21.*0.*pow(zeta3,2))/(32.*pow(NC,3))-(2755.*0.*pow(zeta3,2))/(384.*NC)+3113./384.*NC*0.*pow(zeta3,2)-305./192.*pow(NC,3)*0.*pow(zeta3,2)-55./48.*NF*0.*pow(zeta3,2)+(11.*NF*0.*pow(zeta3,2))/(12.*pow(NC,2))+11./48.*pow(NC,2)*NF*0.*pow(zeta3,2)+(1289.*pi2*pow(zeta3,2))/6912.+(131.*pi2*pow(zeta3,2))/(1536.*pow(NC,4))-(25.*pi2*pow(zeta3,2))/(288.*pow(NC,2))+(1387.*pow(NC,2)*pi2*pow(zeta3,2))/13824.-(493.*pow(NC,4)*pi2*pow(zeta3,2))/1728.+(1092277.*zeta5)/18432.+(29041.*zeta5)/(6144.*pow(NC,4))-(1110893.*zeta5)/(36864.*pow(NC,2))-(15801697.*pow(NC,2)*zeta5)/552960.-(729227.*pow(NC,4)*zeta5)/138240.+(3461.*NF*zeta5)/(18432.*pow(NC,3))-(235601.*NF*zeta5)/(55296.*NC)+(2457541.*NC*NF*zeta5)/276480.-(49313.*pow(NC,3)*NF*zeta5)/10240.-(20927.*pow(NF,2)*zeta5)/17280.+(949.*pow(NF,2)*zeta5)/(3456.*pow(NC,2))+899./960.*pow(NC,2)*pow(NF,2)*zeta5+(53.*pow(NF,3)*zeta5)/(17280.*NC)-(53.*NC*pow(NF,3)*zeta5)/17280.-(955.*0.*zeta5)/(192.*pow(NC,3))+(19915.*0.*zeta5)/(2304.*NC)-(19705.*NC*0.*zeta5)/4608.+(2795.*pow(NC,3)*0.*zeta5)/4608.-275./288.*NF*0.*zeta5+(55.*NF*0.*zeta5)/(72.*pow(NC,2))+55./288.*pow(NC,2)*NF*0.*zeta5+35./432.*pi2*zeta5+(371.*pi2*zeta5)/(768.*pow(NC,4))-(37715.*pi2*zeta5)/(55296.*pow(NC,2))-(4821.*pow(NC,2)*pi2*zeta5)/2048.+(68345.*pow(NC,4)*pi2*zeta5)/27648.+(517.*NF*pi2*zeta5)/(13824.*pow(NC,3))-(NF*pi2*zeta5)/(9.*NC)+(857.*NC*NF*pi2*zeta5)/1728.-(5837.*pow(NC,3)*NF*pi2*zeta5)/13824.+(55.*0.*pi2*zeta5)/(144.*pow(NC,3))-(35.*0.*pi2*zeta5)/(24.*NC)+1015./768.*NC*0.*pi2*zeta5-(565.*pow(NC,3)*0.*pi2*zeta5)/2304.+149./256.*zeta3*zeta5-(7.*zeta3*zeta5)/(8.*pow(NC,4))-(7.*zeta3*zeta5)/(64.*pow(NC,2))-1429./256.*pow(NC,2)*zeta3*zeta5+383./64.*pow(NC,4)*zeta3*zeta5-(40251.*zeta7)/2048.-(29919.*zeta7)/(4096.*pow(NC,4))+(243851.*zeta7)/(24576.*pow(NC,2))+(1329235.*pow(NC,2)*zeta7)/73728.-(36605.*pow(NC,4)*zeta7)/36864.+(1707.*NF*zeta7)/(2048.*pow(NC,3))-(35.*NF*zeta7)/(512.*NC)-(19265.*NC*NF*zeta7)/9216.+(24427.*pow(NC,3)*NF*zeta7)/18432.-(721.*0.*zeta7)/(192.*pow(NC,3))-(497.*0.*zeta7)/(768.*NC)+(8813.*NC*0.*zeta7)/1536.-(2051.*pow(NC,3)*0.*zeta7)/1536.;\n  k4_nfv = (73.*1.)/(72.*pow(NC,3))+(617.*1.)/(288.*NC)-(2309.*NC*1.)/576.+(491.*pow(NC,3)*1.)/576.+(245.*NF*1.)/288.-(49.*NF*1.)/(72.*pow(NC,2))-49./288.*pow(NC,2)*NF*1.+(25.*1.*pi2)/(96.*pow(NC,3))+(2893.*1.*pi2)/(3456.*NC)-(9595.*NC*1.*pi2)/6912.+(2009.*pow(NC,3)*1.*pi2)/6912.+(695.*NF*1.*pi2)/3456.-(139.*NF*1.*pi2)/(864.*pow(NC,2))-(139.*pow(NC,2)*NF*1.*pi2)/3456.-(41.*1.*pi4)/(1920.*pow(NC,3))-(2.*1.*pi4)/(405.*NC)+(28367.*NC*1.*pi4)/829440.-(6559.*pow(NC,3)*1.*pi4)/829440.-(95.*NF*1.*pi4)/20736.+(19.*NF*1.*pi4)/(5184.*pow(NC,2))+(19.*pow(NC,2)*NF*1.*pi4)/20736.+(943.*1.*pi6)/(725760.*pow(NC,3))-(41449.*1.*pi6)/(5225472.*NC)+(428999.*NC*1.*pi6)/52254720.-(16481.*pow(NC,3)*1.*pi6)/10450944.-(11.*NF*1.*pi6)/11664.+(11.*NF*1.*pi6)/(14580.*pow(NC,2))+(11.*pow(NC,2)*NF*1.*pi6)/58320.+(19.*1.*zeta3)/(16.*pow(NC,3))+(529.*1.*zeta3)/(96.*NC)-6487./768.*NC*1.*zeta3+1343./768.*pow(NC,3)*1.*zeta3+35./64.*NF*1.*zeta3-(7.*NF*1.*zeta3)/(16.*pow(NC,2))-7./64.*pow(NC,2)*NF*1.*zeta3+(19.*1.*pi2*zeta3)/(288.*pow(NC,3))+(91.*1.*pi2*zeta3)/(144.*NC)-(4039.*NC*1.*pi2*zeta3)/4608.+(823.*pow(NC,3)*1.*pi2*zeta3)/4608.+35./576.*NF*1.*pi2*zeta3-(7.*NF*1.*pi2*zeta3)/(144.*pow(NC,2))-7./576.*pow(NC,2)*NF*1.*pi2*zeta3-(11.*1.*pi4*zeta3)/(1440.*pow(NC,3))+(5.*1.*pi4*zeta3)/(576.*NC)-(19.*NC*1.*pi4*zeta3)/23040.-(pow(NC,3)*1.*pi4*zeta3)/4608.+(21.*1.*pow(zeta3,2))/(32.*pow(NC,3))-(2755.*1.*pow(zeta3,2))/(384.*NC)+3113./384.*NC*1.*pow(zeta3,2)-305./192.*pow(NC,3)*1.*pow(zeta3,2)-55./48.*NF*1.*pow(zeta3,2)+(11.*NF*1.*pow(zeta3,2))/(12.*pow(NC,2))+11./48.*pow(NC,2)*NF*1.*pow(zeta3,2)-(955.*1.*zeta5)/(192.*pow(NC,3))+(19915.*1.*zeta5)/(2304.*NC)-(19705.*NC*1.*zeta5)/4608.+(2795.*pow(NC,3)*1.*zeta5)/4608.-275./288.*NF*1.*zeta5+(55.*NF*1.*zeta5)/(72.*pow(NC,2))+55./288.*pow(NC,2)*NF*1.*zeta5+(55.*1.*pi2*zeta5)/(144.*pow(NC,3))-(35.*1.*pi2*zeta5)/(24.*NC)+1015./768.*NC*1.*pi2*zeta5-(565.*pow(NC,3)*1.*pi2*zeta5)/2304.-(721.*1.*zeta7)/(192.*pow(NC,3))-(497.*1.*zeta7)/(768.*NC)+(8813.*NC*1.*zeta7)/1536.-(2051.*pow(NC,3)*1.*zeta7)/1536.;\n  \n  //Hard scheme\n  if (opts.resscheme == 1)\n    {\n      H1q = k1+s1;             //H1qdelta  = 2*C1qq_delta = 2.*(pi2-8.)/3.\n      H1qp = H1q*(3./4.);       // H1qp(QED) = H1q/CF\n      H2q = k2+s2+k1*s1;       //H2qqdelta = 2*C2qq_delta + C1qq_delta^2 = -2561./144.+ 127.*NF/72. + 3.*pi2/2. -19.*NF*pi2/81.+ 49.*pi4/324. + 58.*zeta3/9. + 8.*NF*zeta3/27.\n      H3q = k3+s3+k2*s1+k1*s2; //H3qqdelta = 2*C3qq_delta + 2*C1qq_delta*C2qq_delta;\n      H4q = k4+s4+k2*s2+k1*s3+k3*s1;\n    }\n\n  //Semi Hard scheme\n  if (opts.resscheme == 2)\n    {\n      H1q = (k1+s1)/2;              //C1qq_delta\n      H1qp = H1q*(3./4.);           // H1qp(QED) = H1q/CF \n      H2q = (K2+s2+k1*s1)/2.;       //C2qq_delta + C1qq_delta^2/2\n      H3q = (k3+s3+k2*s1+k1*s2)/2.; //C3qq_delta + C1qq_delta*C2qq_delta;\n      H4q = (k4+s4+k2*s2+k1*s3+k3*s1)/2.;\n    }\n  //CSS scheme (see https://inspirehep.net/files/b825e7a2984b74530665e61ec61c588d 3.69 3.70)\n  if (opts.resscheme == 3)\n    {\n      H1q = CF*(pi2/2.-4.); //Is there a typo in Eq. 3.69 of https://inspirehep.net/files/b825e7a2984b74530665e61ec61c588d? pi -> pi^2\n      H1qp = H1q*(3./4.);   //H1qp(QED) = H1q/CF \n      H2q = CF*CA*(59./18.*zeta3-1535./192.+215./216.*pi2-pi4/240.)\n\t+1./4.*CF*CF*(-15.*zeta3+511./16.-67./12.*pi2+17./45.*pi4)\n\t+1./864.*CF*NF*(192.*zeta3+1143.-152.*pi2);\n      H3q = 0.;\n    }\n  //NS scheme\n  if (opts.resscheme == 4)\n    {\n      H1q = CF*(pi2/2.-7./2.); // Eq. (35) of https://arxiv.org/pdf/hep-ph/0008184.pdf\n      H1qp = (pi2/2.-7./2.); // H1qp(QED) = H1q/CF\n      H2q = 0.;\n      H3q = 0.;\n    }\n\n  //TMD scheme\n  if (opts.resscheme == 5)\n    {\n      double c1qd = (-CF*pi2/6.)/4.; // From Eq. (7.2) of https://arxiv.org/pdf/1604.07869.pdf\n      H1q = 2*(C1qqn-c1qd); //CF*(pi2*7./12.-4.);\n      H1qp = H1q*(3./4.);   //H1qp(QED) = H1q/CF \n      //H1q = CF*(pi2*7./12.-4.);\n      double c2qd = (CF*CF*pi4/72. + CF*CA*(1214./81.-67.*pi2/36.-77./9.*zeta3+pi4/18.)+CF*TF*NF*(-328/81.+pi2*5./9.+28./9.*zeta3))/16.;\n      //c2qd = C2qqdelta - H1q/2.*(-CF*pi2/24) - (H2q/2.-pow(H1q,2)/8.);\n      H2q  = 2.*(C2qqn - c2qd - H1q/2.*c1qd +pow(H1q,2)/8.);\n      H3q = 0.;\n    }\n  //cout << H1q << endl;\n  //cout << H2q << endl;\n  //cout << H3q << endl;\n\n  //see 3.75 3.76 of https://inspirehep.net/files/b825e7a2984b74530665e61ec61c588d (https://inspirehep.net/literature/1839718)\n  B2q = B2q - beta0*H1q;\n  B3q = B3q - beta1*H1q - beta0*(2.*H2q - pow(H1q,2));\n  B4q = B4q - beta2*H1q - beta1*(2.*H2q - pow(H1q,2)) - beta0*(3.*H3q - 3.*H2q*H1q + pow(H1q,3));\n"
+        }
+      ]
+    },
+    {
+      "path": "/home/dustin/src/dyturbo-1.4.2/resum/resconst.h",
+      "sha256": "c015512a4acc2fdcf3f404d1de9274c2e7563cba6db92958793a1431ae4be480",
+      "line_ranges": [
+        [
+          35,
+          52
+        ]
+      ],
+      "symbols": [
+        "A1q-A6q",
+        "B1q-B5q",
+        "H1q-H4q"
+      ],
+      "role": "coefficient declarations and perturbative-order interface",
+      "excerpts": [
+        {
+          "start": 35,
+          "end": 52,
+          "text": "  extern const double b0;\n  \n  //Resummation coefficients\n  extern double beta0, beta1, beta2, beta3, beta4, beta5, Kappa;\n  extern double beta0p, beta1p, beta01_QCD, beta01_QED;\n  extern double A1g, A2g, A3g, B1g, B2g, C1ggn;\n  extern double A1q, A2q, A3q, A4q, A5q, A6q;\n  extern double A1qp, A2qp;\n  extern double B1q, B2q, B3q, B4q, B5q;\n  extern double B1qp, B2qp, D1w_QED;\n  extern double B1qHSCHM, B2qHSCHM, B3qHSCHM;\n  extern double H1q, H2q, H3q, H4q;\n  extern double H1qp;\n  extern double K1, K2, K3, K4;\n  extern double C1qqn, C2qqn;\n  extern double C1qqnp;\n  extern double s1, s2, s3, s4;\n  extern double k1, k2, k3, k4, k3_nfv, k4_nfv;"
+        }
+      ]
+    },
+    {
+      "path": "/home/dustin/src/dyturbo-1.4.2/resum/ccoeff.h",
+      "sha256": "ab2d5143c3279c3d94c593333323c155a57c1be7368a1e9f89d205d65f4e67b1",
+      "line_ranges": [
+        [
+          1,
+          45
+        ]
+      ],
+      "symbols": [
+        "C1qq_delta",
+        "C2qq_delta",
+        "C3qq_delta"
+      ],
+      "role": "TMD matching coefficient declarations",
+      "excerpts": [
+        {
+          "start": 1,
+          "end": 45,
+          "text": "#ifndef ccoeff_h\n#define ccoeff_h\n\n#include <complex>\n#include \"fcomplex.h\"\n\nusing namespace std;\n\nextern \"C\"\n{\n  void psi0_(fcomplex &zz, fcomplex &res);\n}\n\nnamespace ccoeff\n{\n  extern double C1qq_delta;\n  extern double C2qq_delta;\n  extern double C3qq_delta;\n  extern double C3qq_delta_NFV;\n  extern double C4qq_delta;\n  extern double C4qq_delta_NFV;\n\n  extern double C1gg_delta;\n  \n  extern complex <double> *C1qg;\n  extern complex <double> *C1qq;\n  extern complex <double> *C1qgamma;\n  extern complex <double> *C1qqqed;\n  extern complex <double> *C1qqb;\n  extern complex <double> *C1qqp;\n  extern complex <double> *C1qqbp;\n  extern complex <double> *C1gq;\n\n  extern complex <double> *C2qg;\n  extern complex <double> *C2qq;\n  extern complex <double> *C2qqb;\n  extern complex <double> *C2qqp;\n  extern complex <double> *C2qqbp;\n  extern complex <double> *C2gq;\n\n  extern complex <double> *C3qg;\n  extern complex <double> *C3qq;\n  extern complex <double> *C3qqb;\n  extern complex <double> *C3qqp;\n  extern complex <double> *C3qqbp;"
+        }
+      ]
+    },
+    {
+      "path": "/home/dustin/src/dyturbo-1.4.2/resum/hcoeff.h",
+      "sha256": "98f3bce3959aa81b06eb00428e7cf1cf108b5e28be3e4ac6075f76966704fca3",
+      "line_ranges": [
+        [
+          1,
+          55
+        ]
+      ],
+      "symbols": [
+        "hard coefficient arrays"
+      ],
+      "role": "hard-function coefficient declarations",
+      "excerpts": [
+        {
+          "start": 1,
+          "end": 55,
+          "text": "#ifndef hcoeff_h\n#define hcoeff_h\n\n#include \"mellinint.h\"\n\n\n#include <complex>\n\nusing namespace std;\n\nnamespace hcoeff\n{\n//  extern complex <double> *Hqqb;\n//  extern complex <double> *Hqg;\n//  extern complex <double> *Hqq;\n//  extern complex <double> *Hqqp;\n//  extern complex <double> *Hqqbp;\n//  extern complex <double> *Hgg;\n//  extern complex <double> *Hqbg;\n//  extern complex <double> *Hqpg;\n//  extern complex <double> *Hqbpg;\n//#pragma omp threadprivate(Hqqb,Hqg,Hqq,Hqqp,Hqqbp,Hgg,Hqbg,Hqpg,Hqbpg)\n\n  extern complex <double> *Hqqb;\n  extern complex <double> *Hqqb_qed;\n  extern complex <double> *Hqg;\n  extern complex <double> *Hqg_1;\n  extern complex <double> *Hqg_2;\n  extern complex <double> *Hqgamma;\n  extern complex <double> *Hqgamma_1;\n  extern complex <double> *Hqgamma_2;\n  extern complex <double> *Hqq;\n  extern complex <double> *Hqq_1;\n  extern complex <double> *Hqq_2;\n  extern complex <double> *Hqqp;\n  extern complex <double> *Hqqp_1;\n  extern complex <double> *Hqqp_2;\n  extern complex <double> *Hqqbp;\n  extern complex <double> *Hqqbp_1;\n  extern complex <double> *Hqqbp_2;\n  extern complex <double> *Hgg;\n  extern complex <double> *Hqbg;\n  extern complex <double> *Hqbg_1;\n  extern complex <double> *Hqbg_2;\n  extern complex <double> *Hqpg;\n  extern complex <double> *Hqpg_1;\n  extern complex <double> *Hqpg_2;\n  extern complex <double> *Hqbpg;\n  extern complex <double> *Hqbpg_1;\n  extern complex <double> *Hqbpg_2;\n  extern complex <double> Hqqb_nfz;\n  extern complex <double> *Hqbq;\n  extern complex <double> *Hqbqp;\n  extern complex <double> *Hqbqp_1;\n  extern complex <double> *Hqbqp_2;"
+        }
+      ]
+    },
+    {
+      "path": "/home/dustin/src/dyturbo-1.4.2/src/settings.C",
+      "sha256": "48299129429380c593184622d4c37176880ad20c7b896a07d0e98a42a36cc412",
+      "line_ranges": [
+        [
+          650,
+          700
+        ],
+        [
+          920,
+          935
+        ]
+      ],
+      "symbols": [
+        "order_vjet",
+        "primed",
+        "doVJREAL",
+        "doVJVIRT",
+        "intDimVJ"
+      ],
+      "role": "DYTurbo perturbative-order and NNLO V+jet runtime convention",
+      "excerpts": [
+        {
+          "start": 650,
+          "end": 700,
+          "text": "    if (order_ct < 0)\n      {\n\tif (primed)\n\t  order_ct = order;\n\telse\n\t  order_ct = max(0,order-1);\n\torder_ct = min(2,order_ct);\n      }\n\n    if (order_vjet < 0)\n      {\n\tif (primed)\n\t  order_vjet = order;\n\telse\n\t  order_vjet = max(0,order-1);\n\torder_vjet = min(2,order_vjet);\n      }\n\n    if (opts.externalpdf)\n      if (opts.orderlha)\n\t//order_evol = max(order_evol,pdf::order+1);\n\torder_evol = pdf::order+1;\n    \n    //order = max(order,order_sudak);\n    //order = max(order,order_hcoef);\n    //order = max(order,order_evol);\n    //order = max(order,order_expc);\n    \n    if (fixedorder == false || !opts.makecuts || order == 0)\n      doFPC = false;\n\n    //    if (fixedorder == false || order == 0)\n    //      doQPC = false;\n    \n    if (order_ct == 0)\n      doCT = false;\n    \n    if (order_vjet == 0)\n\tdoVJ = false;\n\n    if (order_vjet < 2)\n      {\n\tdoVJREAL = false;\n\tdoVJVIRT = false;\n      }\n\n    if (asrun != 0 && asrun != 1 && asrun != 2 && asrun != 3 && asrun != 4 && asrun != 5)\n      {\n\tcout << \"Invalid option for asrun, should be between 0 and 5\" << endl;\n\texit (-1);\n      }\t"
+        },
+        {
+          "start": 920,
+          "end": 935,
+          "text": "\tintDimFPC = 8;\n    \n    //cannot update mellin support points at every phase-space point when rapidity integrals are calculated numerically\n    if (makecuts && (intDimRes <= 2 || intDimBorn == 1))\n      if (melup == 2)\n\tmelup = 1;\n          \n    if (makecuts && doVJ && intDimVJ < 7 && order_vjet >= 2)\n      {\n\n\tcout << \"cannot perform quadrature integration for V+jet at NNLO with cuts on the leptons\" << endl;\n\texit (-1);\n      }\n  \n    // resummation term integration dimension\n    if (intDimRes<4 && intDimRes>=0){"
+        }
+      ]
+    }
+  ],
+  "runtime_convention": {
+    "unprimed_order": 3,
+    "primed": false,
+    "why": "DYTurbo sets order_vjet=max(0, order-1) for primed=false, capped at 2; order=3 is therefore NNLO V+jet and enables real/virtual NNLO pieces",
+    "cut_integration": "NNLO V+jet with cuts requires non-quadrature integration and intDimVJ >= 7; candidate probe uses intDimVJ=-1"
+  },
+  "translation_state": {
+    "external_coefficients_available": true,
+    "imported_into_fitted_v22_w": false,
+    "same_scheme_asy_nnlo_implemented": true,
+    "same_scheme_asy_nnlo_scope": "external DYTurbo order=3 unprimed counterterm CT; ASY=-CT in the candidate convention",
+    "same_scheme_asy_nnlo_imported_into_fitted_v22": false,
+    "promotion_authorized": false
+  },
+  "production_outputs_modified": false
+}

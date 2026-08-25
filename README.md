@@ -33,7 +33,7 @@ The complete source stack is included in this checkout. Start with:
 | PDF uncertainty | **Overlay included** | Final TMD bands include a PDF-member overlay in the perturbative/OPE TMD reconstruction. |
 | PDF-through-refit uncertainty | **Not yet included** | PDF members are not yet propagated through a full retraining of \(F_{\rm NP}\). |
 | \(k_T\)-space representation | **Regularized companion** | \(k_T\)-space curves are obtained by a regularized finite-\(b_T\) Hankel transform. |
-| Accelerator/collider DY data | **Next project** | Tevatron, RHIC, and LHC datasets require separate unit, covariance, EW/Z, and bin-integration review. |
+| Accelerator/collider DY data | **Isolated W+Y study** | A 122-row Tevatron N³LL+NNLO W+Y grid and a 329-row diagnostic are archived separately; neither replaces the fixed-target production result. |
 
 ## Current lambda=1 production update
 
@@ -69,6 +69,34 @@ regularized kT companion:
   regularization-mode max relative difference: 0.04304417062181683
   regularization stability pass: True
 ```
+
+## 2026 finite-Y and perturbative-accuracy update
+
+The new isolated studies are collected under
+[`systematics/full_n3ll_wy_production_2026`](systematics/full_n3ll_wy_production_2026/).
+They include the complete source for the external Tevatron N³LL+NNLO grid,
+conventional and unitary matching checks, LHCb closure diagnostics, the
+96-start × 50-replica 329-row candidate, and the paper-facing handoff for the
+additional W+Y section. The direct Tevatron grid is finite, positive, and
+numerically checked, but the candidate remains explicitly isolated and **not
+promoted**. The six LHCb rows are retained only as W-only diagnostics in the
+larger test because the available finite-Y subtraction and covariance closure
+are not production-ready.
+
+The companion provenance and scope records are:
+
+- [`systematics/finite_y_completion_2026`](systematics/finite_y_completion_2026),
+  which validates the unitary finite-Y transition for the 24-row Tevatron
+  boundary scope and records the remaining LHCb limitation;
+- [`systematics/perturbative_provenance_completion`](systematics/perturbative_provenance_completion),
+  which records the implemented W organization, coefficient inventory, and
+  strict/multiplicative closure boundary;
+- [`systematics/prd_empirical_reference_lambda1_dossier`](systematics/prd_empirical_reference_lambda1_dossier),
+  which contains the paper-ready lambda=1 Fig. 2/6/7/8 reconstruction and
+  methods handoff.
+
+These additions do not alter the frozen lambda=1 production package or claim
+that a universal collider/global finite-Y prediction has been validated.
 
 ---
 

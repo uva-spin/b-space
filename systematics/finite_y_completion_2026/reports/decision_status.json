@@ -1,0 +1,665 @@
+{
+  "status": "valid_isolated_unitary_finite_y_tevatron_scope_not_production",
+  "campaign_state": "active_followup_after_conventional_candidate_rejection",
+  "conventional_rejection_scope": "Only the additive FO-ASY ansatz is rejected; finite-Y construction, NNLO follow-up, and LHCb closure work remain active.",
+  "candidate": "Y_unitary=p*(FO_NLO-W); matched=(1-p)W+p*FO_NLO",
+  "validity_conclusion": "The unitary finite-Y construction is numerically and algebraically valid for the 24-row Tevatron scope covered by genuine-NLO inputs.",
+  "why_ordinary_additive_y_is_not_selected": "The prior FO-ASY construction fails because W is not close to ASY in the transition region; this is a domain-of-validity failure, not an algebraic sign failure.",
+  "conventional_y_reassessment": {
+    "status": "conventional_additive_fo_minus_asy_rejected_after_rapidity_correction",
+    "row_id": "CDF_RUN_2:36",
+    "qT_over_Q": 0.20054945054945056,
+    "central_node": {
+      "qT": 18.25,
+      "y": 0.0
+    },
+    "rapidity_correction": "W evaluator removes backend inclusive Tevatron rapidity factor before explicit-y comparison",
+    "records": [
+      {
+        "n_b": 160,
+        "w_corrected_pb_per_GeV": 1.9163307265783354,
+        "asy_pb_per_GeV": -42.75430809383873,
+        "fo_pb_per_GeV": 2.057001068507791,
+        "y_fo_minus_asy_pb_per_GeV": 44.81130916234652,
+        "matched_pb_per_GeV": 46.727639888924855,
+        "matched_minus_fo_pb_per_GeV": 44.67063882041707,
+        "matched_over_fo": 22.716390673935067
+      },
+      {
+        "n_b": 320,
+        "w_corrected_pb_per_GeV": 2.1930231769614386,
+        "asy_pb_per_GeV": -45.22628356708116,
+        "fo_pb_per_GeV": 2.057001068507791,
+        "y_fo_minus_asy_pb_per_GeV": 47.283284635588956,
+        "matched_pb_per_GeV": 49.476307812550395,
+        "matched_minus_fo_pb_per_GeV": 47.4193067440426,
+        "matched_over_fo": 24.052640793444976
+      },
+      {
+        "n_b": 640,
+        "w_corrected_pb_per_GeV": 2.2552659458811872,
+        "asy_pb_per_GeV": -45.84526529927376,
+        "fo_pb_per_GeV": 2.057001068507791,
+        "y_fo_minus_asy_pb_per_GeV": 47.90226636778155,
+        "matched_pb_per_GeV": 50.157532313662735,
+        "matched_minus_fo_pb_per_GeV": 48.10053124515494,
+        "matched_over_fo": 24.383814418749175
+      }
+    ],
+    "decision": "The corrected W remains far from strict ASY at qT/Q\u22480.20; additive FO-ASY gives a matched result tens of pb/GeV above FO. This is a domain-of-validity failure of conventional additive matching at the transition node, not a reason to stop finite-Y work.",
+    "next_candidate": "retain the separately validated unitary transition Y=p(qT/Q)(FO-W) and continue its production-scope audits",
+    "production_outputs_modified": false
+  },
+  "lhcb_nnlo_followup": {
+    "status": "lhcb_true_nnlo_scale_scan_complete_diagnostic_not_production",
+    "order": "DYTurbo fixedorder_only=true, order=2 (NNLO), doVJREAL/doVJVIRT=true",
+    "central_calls": 10000000,
+    "noncentral_calls": 5000000,
+    "rows": [
+      {
+        "row_id": "LHCb_7:12",
+        "data_pb_per_GeV": 0.19962069,
+        "ratio_min": 0.7280924893816298,
+        "ratio_central": 0.7734005981137427,
+        "ratio_max": 0.8503172459639915,
+        "max_scale": "mur0p5_muf1",
+        "theory_min_pb_per_GeV": 0.1453423251141786,
+        "theory_central_pb_per_GeV": 0.154386761041878,
+        "theory_max_pb_per_GeV": 0.1697409153582317,
+        "max_relative_mc_uncertainty": 0.02529122998970164
+      },
+      {
+        "row_id": "LHCb_7:13",
+        "data_pb_per_GeV": 0.007323671,
+        "ratio_min": 0.8364250941389366,
+        "ratio_central": 0.8881693626985838,
+        "ratio_max": 0.9675057584864476,
+        "max_scale": "mur0p5_muf0p5",
+        "theory_min_pb_per_GeV": 0.0061257022056176,
+        "theory_central_pb_per_GeV": 0.0065046602046841,
+        "theory_max_pb_per_GeV": 0.0070856938657602,
+        "max_relative_mc_uncertainty": 0.016415252113438732
+      },
+      {
+        "row_id": "LHCb_7:10",
+        "data_pb_per_GeV": 1.003090909,
+        "ratio_min": 0.7560254226959209,
+        "ratio_central": 0.8494158572687138,
+        "ratio_max": 0.8494158572687138,
+        "max_scale": "central",
+        "theory_min_pb_per_GeV": 0.7583622284791605,
+        "theory_central_pb_per_GeV": 0.8520413243866883,
+        "theory_max_pb_per_GeV": 0.8520413243866883,
+        "max_relative_mc_uncertainty": 0.035470671326469645
+      },
+      {
+        "row_id": "LHCb_7:11",
+        "data_pb_per_GeV": 0.575263158,
+        "ratio_min": 0.7586680762637934,
+        "ratio_central": 0.8190645585551987,
+        "ratio_max": 0.8912991013766821,
+        "max_scale": "mur0p5_muf1",
+        "theory_min_pb_per_GeV": 0.4364337934252947,
+        "theory_central_pb_per_GeV": 0.47117766456033955,
+        "theory_max_pb_per_GeV": 0.5127315357805123,
+        "max_relative_mc_uncertainty": 0.0416296195630591
+      }
+    ],
+    "bin_integrated_ratio_by_scale": {
+      "central": 0.8194944991435081,
+      "mur0p5_muf0p5": 0.8609810589753932,
+      "mur0p5_muf1": 0.8669374734031874,
+      "mur1_muf0p5": 0.7956597295786426,
+      "mur1_muf2": 0.8400036941014593,
+      "mur2_muf1": 0.7576670657667286,
+      "mur2_muf2": 0.7630736922825458
+    },
+    "maximum_ratio_to_data": 0.9675057584864476,
+    "maximum_ratio_row": "LHCb_7:13",
+    "maximum_ratio_scale": "mur0p5_muf0p5",
+    "interpretation": "NNLO raises the boundary prediction substantially relative to NLO: central theory/data ratios are approximately 0.85, 0.82, 0.77, and 0.89 for rows 10--13. The standard scale envelope reaches at most about 0.97 pointwise (row 13) but remains below data in the first three boundary bins. Thus the NLO deficit was partly a missing-order effect, while a residual LHCb observable/covariance or higher-order closure remains before universal promotion.",
+    "production_outputs_modified": false
+  },
+  "lhcb_published_pt_covariance_audit": {
+    "status": "lhcb_correlated_covariance_audit_complete_diagnostic_not_production",
+    "row_ids": [
+      "LHCb_7:10",
+      "LHCb_7:11",
+      "LHCb_7:12",
+      "LHCb_7:13"
+    ],
+    "covariance_source": "LHCb 1505.07024 Table 10 pT correlations, with released beam/luminosity components added as fully correlated",
+    "covariance_positive_eigenvalues": [
+      6.886295570390519e-08,
+      1.8740554968276714e-05,
+      0.00016602510306171076,
+      0.0009394635219650735
+    ],
+    "nnlo_input": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb7_external_true_nnlo_positive_y_10m_",
+    "profile_summary": {
+      "early_0p18_0p28": {
+        "data_chi2_per_row_q16_median_q84": [
+          10.201115957843133,
+          10.650677607934426,
+          10.893834440549623
+        ],
+        "total_chi2_per_row_q16_median_q84": [
+          13.040779079122228,
+          13.268217639449789,
+          13.386753206839927
+        ],
+        "nnlo_scale_nuisance_q16_median_q84": [
+          1.323897500374328,
+          1.3421438122897011,
+          1.3766077416919367
+        ]
+      },
+      "central_0p20_0p30": {
+        "data_chi2_per_row_q16_median_q84": [
+          6.1196011109583015,
+          6.582849882829229,
+          6.8579450392010735
+        ],
+        "total_chi2_per_row_q16_median_q84": [
+          10.361326784799022,
+          10.740826805966854,
+          10.954053756656997
+        ],
+        "nnlo_scale_nuisance_q16_median_q84": [
+          1.6733752189893538,
+          1.702150340225805,
+          1.7528844806344046
+        ]
+      },
+      "late_0p22_0p32": {
+        "data_chi2_per_row_q16_median_q84": [
+          4.511396456453761,
+          4.829125442815029,
+          5.0266945135578425
+        ],
+        "total_chi2_per_row_q16_median_q84": [
+          8.776576310916543,
+          9.140751762683266,
+          9.352998339448511
+        ],
+        "nnlo_scale_nuisance_q16_median_q84": [
+          1.8935058363964123,
+          1.9206107061759412,
+          1.9669654431787957
+        ]
+      }
+    },
+    "interpretation": "The published pT correlations and beam/luminosity components are now explicitly represented. This is an input-covariance audit only; it does not authorize production because the source manifest and covariance provenance still require formal promotion.",
+    "production_outputs_modified": false
+  },
+  "lhcb_nnlo_convention_scan": {
+    "status": "lhcb_nnlo_convention_scan_complete_diagnostic_not_production",
+    "row": "LHCb_7:10",
+    "order": "DYTurbo fixedorder_only=true, order=2, positive-arm 0<yZ<6",
+    "calls_per_point": 2000000,
+    "cases": [
+      {
+        "case": "baseline_gamma_ew1",
+        "row_id": "LHCb_7:10",
+        "data_pb_per_GeV": 1.003090909,
+        "theory_pb_per_GeV": 0.8272693821276851,
+        "theory_unc_pb_per_GeV": 0.0191403677030986,
+        "theory_data_ratio": 0.824720246894078
+      },
+      {
+        "case": "no_gamma_ew1",
+        "row_id": "LHCb_7:10",
+        "data_pb_per_GeV": 1.003090909,
+        "theory_pb_per_GeV": 0.8048370311284277,
+        "theory_unc_pb_per_GeV": 0.029811912798797,
+        "theory_data_ratio": 0.8023570185984287
+      },
+      {
+        "case": "gamma_ew0",
+        "row_id": "LHCb_7:10",
+        "data_pb_per_GeV": 1.003090909,
+        "theory_pb_per_GeV": 0.832402315195574,
+        "theory_unc_pb_per_GeV": 0.0335305755883466,
+        "theory_data_ratio": 0.8298373634204415
+      },
+      {
+        "case": "gamma_ew2",
+        "row_id": "LHCb_7:10",
+        "data_pb_per_GeV": 1.003090909,
+        "theory_pb_per_GeV": 0.798312993372115,
+        "theory_unc_pb_per_GeV": 0.022887708116571,
+        "theory_data_ratio": 0.7958530839123725
+      }
+    ],
+    "interpretation": "Removing gamma* or changing the electroweak input scheme shifts the row-10 NNLO prediction by only a few percent; none closes the roughly 18% residual. The baseline gamma*/G_mu convention is retained and no convention-driven rescaling is authorized.",
+    "production_outputs_modified": false
+  },
+  "lhcb_nnlo_unitary_endpoint_fit": {
+    "status": "lambda1_lhcb_unitary_nnlo_fit_impact_complete_diagnostic_not_production",
+    "endpoint_count": 96,
+    "row_count": 4,
+    "profiles": {
+      "early_0p18_0p28": {
+        "data_chi2_per_row_q16_median_q84": [
+          2.811169388786372,
+          2.8240796925780938,
+          2.8306912594739915
+        ],
+        "total_chi2_per_row_q16_median_q84": [
+          4.560523373371722,
+          4.563785810069156,
+          4.568633028080183
+        ],
+        "matching_nuisance_sigma_q16_median_q84": [
+          0.799316191241643,
+          0.8251192637713998,
+          0.8698661747746397
+        ],
+        "nnlo_scale_nuisance_sigma_q16_median_q84": [
+          2.504633176724508,
+          2.505593863643064,
+          2.50607702711373
+        ],
+        "max_whitened_pull_q84": 3.0077579370121676,
+        "max_whitened_pull": 3.014640248057092
+      },
+      "central_0p20_0p30": {
+        "data_chi2_per_row_q16_median_q84": [
+          3.5906611601411424,
+          3.7471858026427687,
+          3.842844246183904
+        ],
+        "total_chi2_per_row_q16_median_q84": [
+          6.541140147483021,
+          6.690984209910956,
+          6.776585709261729
+        ],
+        "matching_nuisance_sigma_q16_median_q84": [
+          2.553794496984068,
+          2.5604247036118783,
+          2.5613857450435127
+        ],
+        "nnlo_scale_nuisance_sigma_q16_median_q84": [
+          2.275601324159032,
+          2.2834715510905146,
+          2.29707152404545
+        ],
+        "max_whitened_pull_q84": 3.212615988888844,
+        "max_whitened_pull": 3.2671595104468603
+      },
+      "late_0p22_0p32": {
+        "data_chi2_per_row_q16_median_q84": [
+          3.8524338967773946,
+          4.072064695396288,
+          4.2101912322245765
+        ],
+        "total_chi2_per_row_q16_median_q84": [
+          7.625343955696059,
+          7.90333040067001,
+          8.066646438435555
+        ],
+        "matching_nuisance_sigma_q16_median_q84": [
+          3.240409172644843,
+          3.2970477403863425,
+          3.3243534430757777
+        ],
+        "nnlo_scale_nuisance_sigma_q16_median_q84": [
+          2.091529342871287,
+          2.110513748570017,
+          2.1427525565743033
+        ],
+        "max_whitened_pull_q84": 3.2091638180812994,
+        "max_whitened_pull": 3.2712933559859287
+      }
+    },
+    "covariance": "published pT Table 10 correlations plus fully correlated beam/luminosity components",
+    "fixed_order": "DYTurbo order=2 (NNLO), doVJREAL/doVJVIRT=true, positive y_Z arm",
+    "scale_treatment": "symmetric largest absolute six-point NNLO scale excursion per row",
+    "all_optimizer_success": true,
+    "all_predictions_positive": true,
+    "production_outputs_modified": false,
+    "interpretation": "The NNLO unitary endpoint ensemble is numerically stable and positive, but the published LHCb covariance fit remains a diagnostic rather than a production gate. The result tests the finite-Y construction with the best available fixed-order input; it does not silently rescale the LHCb data or authorize universal promotion."
+  },
+  "lhcb_nnlo_unitary_replica_propagation": {
+    "status": "lambda1_lhcb_unitary_nnlo_replica_propagation_complete_diagnostic_not_production",
+    "replicas": 50,
+    "seed": 20260817,
+    "endpoint_count": 96,
+    "profiles": [
+      "early_0p18_0p28",
+      "central_0p20_0p30",
+      "late_0p22_0p32"
+    ],
+    "rows": [
+      "LHCb_7:10",
+      "LHCb_7:11",
+      "LHCb_7:12",
+      "LHCb_7:13"
+    ],
+    "covariance": "published pT correlations plus fully correlated beam/luminosity components",
+    "fixed_order": "DYTurbo order=2 (NNLO), positive y_Z arm",
+    "scale_treatment": "symmetric largest-absolute six-point NNLO excursion per row",
+    "all_optimizer_success": true,
+    "all_predictions_positive": true,
+    "profile_summary": {
+      "early_0p18_0p28": {
+        "data_chi2_per_row_q16_median_q84": [
+          1.9469303893895735,
+          3.2256899222600475,
+          4.788222912421818
+        ],
+        "total_chi2_per_row_q16_median_q84": [
+          3.642322743587399,
+          5.065763088171801,
+          6.723497670565424
+        ],
+        "matching_nuisance_sigma_q16_median_q84": [
+          0.49500376133359936,
+          0.9468715259299074,
+          1.2981767319016386
+        ],
+        "nnlo_scale_nuisance_sigma_q16_median_q84": [
+          2.2528437468811955,
+          2.531331363213819,
+          2.74763207202342
+        ],
+        "max_whitened_pull_q16_median_q84": [
+          2.2126796214092725,
+          3.069253470396755,
+          3.9929778408644787
+        ]
+      },
+      "central_0p20_0p30": {
+        "data_chi2_per_row_q16_median_q84": [
+          2.7100518541985372,
+          4.159636020147201,
+          5.728229535969465
+        ],
+        "total_chi2_per_row_q16_median_q84": [
+          5.566939677140005,
+          7.158727100737085,
+          9.227540982158224
+        ],
+        "matching_nuisance_sigma_q16_median_q84": [
+          2.2042968210471887,
+          2.6738441017380596,
+          3.006351107505535
+        ],
+        "nnlo_scale_nuisance_sigma_q16_median_q84": [
+          2.026328472461849,
+          2.27002659910042,
+          2.5497341026698987
+        ],
+        "max_whitened_pull_q16_median_q84": [
+          2.4063132026865848,
+          3.2796590732177155,
+          4.218102414057779
+        ]
+      },
+      "late_0p22_0p32": {
+        "data_chi2_per_row_q16_median_q84": [
+          3.0282214871946804,
+          4.469779005540868,
+          6.092567838973188
+        ],
+        "total_chi2_per_row_q16_median_q84": [
+          6.722353180003121,
+          8.340783791815607,
+          10.364377715358025
+        ],
+        "matching_nuisance_sigma_q16_median_q84": [
+          2.979750646902583,
+          3.359916085897124,
+          3.7159223472696077
+        ],
+        "nnlo_scale_nuisance_sigma_q16_median_q84": [
+          1.8458799356864144,
+          2.1038806922144992,
+          2.3755988944506354
+        ],
+        "max_whitened_pull_q16_median_q84": [
+          2.4440844479885135,
+          3.2515011239853777,
+          4.212844463593834
+        ]
+      }
+    },
+    "production_outputs_modified": false,
+    "interpretation": "Experimental replica sampling is propagated through the complete endpoint ensemble. The resulting spread quantifies the LHCb statistical/systematic input contribution; the much larger fixed central residual remains an observable-level closure issue."
+  },
+  "lhcb_mcfm_nlo_retry": {
+    "status": "isolated_mcfm_true_nlo_retry_inconclusive_not_production",
+    "scope": [
+      "LHCb_7:10"
+    ],
+    "attempt": "MCFM process 41, part=nlo, absolute-rapidity user cut",
+    "settings": {
+      "warmup_card": "MCFM Bin/input_Zjet.ini-style",
+      "initial_real_calls": 5000000,
+      "warmup_chisq_goal": 12.5,
+      "warmup_precision_goal": 0.25,
+      "writeintermediate": true,
+      "ndmx": 40,
+      "iterbatchwarmup": 10,
+      "callboost": 10.0
+    },
+    "observed": {
+      "completed_warmup_call_blocks": [
+        5000000,
+        7000000
+      ],
+      "next_requested_call_block": 9800000,
+      "completed_block_cpu_seconds": [
+        960.40431,
+        2285.8678
+      ],
+      "last_completed_block_relative_goal": "25% not reached"
+    },
+    "outcome": "The NLO-real warmup remained too noisy after the controlled 5M and 7M call blocks and requested a 9.8M block; the retry was stopped before a final integral to avoid an unbounded optional CPU escalation.",
+    "interpretation": "This is an MCFM integration-cost/convergence limitation, not a physics result and not evidence against the converged DYTurbo NLO/NNLO closure.",
+    "decision": "Do not use MCFM NLO numerically for finite-Y promotion; retain the independent MCFM LO rapidity-sign closure and completed DYTurbo true-NLO/NNLO evidence.",
+    "production_outputs_modified": false
+  },
+  "passed_gates": {
+    "algebraic_endpoint_and_c2": true,
+    "exact_bin_reconstruction": true,
+    "node_convergence": true,
+    "genuine_nlo_input": true,
+    "positive_predictions": true
+  },
+  "profile_variation": {
+    "max_early_late_envelope_fraction": 0.25962626010737,
+    "interpretation": "model-form matching uncertainty; retained explicitly"
+  },
+  "fit_impact": {
+    "frozen_FNP_unitary_fit_pass": false,
+    "operational_two_nuisance_boundary_gate_pass": true,
+    "production_promotion": false
+  },
+  "lambda1_fnp_profile_fit_audit": {
+    "central_gate_pass": true,
+    "profiles": {
+      "early_0p18_0p28": {
+        "all_optimizer_success": true,
+        "all_operational_gates": true,
+        "total_chi2_per_row_q16_median_q84": [
+          1.0431667092812467,
+          1.0444013077368537,
+          1.0455825369060592
+        ],
+        "data_chi2_per_row_q16_median_q84": [
+          0.9143883896763946,
+          0.915439348529119,
+          0.9166769279675795
+        ],
+        "matching_nuisance_q16_median_q84": [
+          1.3563763443646795,
+          1.360056191039365,
+          1.3630062868255302
+        ],
+        "nlo_scale_nuisance_q16_median_q84": [
+          0.9591709463584125,
+          0.9606737958900435,
+          0.9621566471038852
+        ],
+        "max_absolute_pull_q84": 2.468265165972543,
+        "max_absolute_pull": 2.470787260018077
+      },
+      "central_0p20_0p30": {
+        "all_optimizer_success": true,
+        "all_operational_gates": true,
+        "total_chi2_per_row_q16_median_q84": [
+          1.0675283571462342,
+          1.0696006846573094,
+          1.0715235718004528
+        ],
+        "data_chi2_per_row_q16_median_q84": [
+          0.9388702758948718,
+          0.9404994687604673,
+          0.9417220589877383
+        ],
+        "matching_nuisance_q16_median_q84": [
+          1.3495755520123247,
+          1.3532840605672662,
+          1.3560676778040763
+        ],
+        "nlo_scale_nuisance_q16_median_q84": [
+          0.9237800181624705,
+          0.9268022845098929,
+          0.929830879875355
+        ],
+        "max_absolute_pull_q84": 2.437371968189319,
+        "max_absolute_pull": 2.4460922253639676
+      },
+      "late_0p22_0p32": {
+        "all_optimizer_success": true,
+        "all_operational_gates": true,
+        "total_chi2_per_row_q16_median_q84": [
+          1.0758548924271905,
+          1.0784558815945324,
+          1.080593986183481
+        ],
+        "data_chi2_per_row_q16_median_q84": [
+          0.9481701013455796,
+          0.9505685236123116,
+          0.952490993959129
+        ],
+        "matching_nuisance_q16_median_q84": [
+          1.345970369320294,
+          1.3495365764744032,
+          1.3517971791143926
+        ],
+        "nlo_scale_nuisance_q16_median_q84": [
+          0.8809983985270449,
+          0.8867873375003997,
+          0.8921975566801615
+        ],
+        "max_absolute_pull_q84": 2.3991683413857374,
+        "max_absolute_pull": 2.421576871933587
+      }
+    },
+    "interpretation": "The unitary finite-Y boundary fit has been evaluated using every registered lambda=1 endpoint. This is a Tevatron fit-impact audit; it is not yet the full experimental-replica propagation or LHCb production result."
+  },
+  "lambda1_unitary_replica_audit": {
+    "status": "lambda1_unitary_boundary_replica_propagation_complete",
+    "endpoint_count": 96,
+    "replicas": 50,
+    "row_count": 24,
+    "seed": 20260817,
+    "profiles": {
+      "early_0p18_0p28": {
+        "all_optimizer_success": true,
+        "total_chi2_per_row_q16_median_q84": [
+          1.4489504564386089,
+          1.877830025722436,
+          2.360938840740899
+        ],
+        "data_chi2_per_row_q16_median_q84": [
+          1.304477923030455,
+          1.7320628212355276,
+          2.2162254563186186
+        ],
+        "matching_nuisance_q16_median_q84": [
+          1.2888041545492568,
+          1.3606364136594196,
+          1.4317711058312637
+        ],
+        "nlo_scale_nuisance_q16_median_q84": [
+          0.8184646072857343,
+          0.9630736659152258,
+          1.1124607918033573
+        ],
+        "max_absolute_pull_q95": 4.134067682909715,
+        "max_absolute_pull": 6.155610965586561
+      },
+      "central_0p20_0p30": {
+        "all_optimizer_success": true,
+        "total_chi2_per_row_q16_median_q84": [
+          1.4553000607983575,
+          1.8930492463945723,
+          2.409859522343711
+        ],
+        "data_chi2_per_row_q16_median_q84": [
+          1.310192971749393,
+          1.7427411462264766,
+          2.2655770791567797
+        ],
+        "matching_nuisance_q16_median_q84": [
+          1.2978687310864294,
+          1.353844712176791,
+          1.4131560051690188
+        ],
+        "nlo_scale_nuisance_q16_median_q84": [
+          0.754695738295279,
+          0.925533862373126,
+          1.097780933555434
+        ],
+        "max_absolute_pull_q95": 4.144020381655264,
+        "max_absolute_pull": 6.225077844819331
+      },
+      "late_0p22_0p32": {
+        "all_optimizer_success": true,
+        "total_chi2_per_row_q16_median_q84": [
+          1.4763081259317288,
+          1.8951558186023534,
+          2.4048556056219534
+        ],
+        "data_chi2_per_row_q16_median_q84": [
+          1.3309835015640583,
+          1.7474543833692668,
+          2.2513805424754634
+        ],
+        "matching_nuisance_q16_median_q84": [
+          1.2965460360810932,
+          1.3474788172178225,
+          1.4010877674187472
+        ],
+        "nlo_scale_nuisance_q16_median_q84": [
+          0.6672043971634738,
+          0.8942800046672448,
+          1.1115669588757293
+        ],
+        "max_absolute_pull_q95": 4.088478231859691,
+        "max_absolute_pull": 6.126880804800179
+      }
+    },
+    "interpretation": "This propagates Gaussian experimental errors on the 24 Tevatron boundary rows through all 96 registered lambda=1 endpoints and correlated matching/scale nuisance fits. It is not an LHCb result and does not by itself authorize production promotion.",
+    "production_promotion": false
+  },
+  "remaining_blockers_before_production": [
+    "LHCb data normalization/covariance closure remains after the MCFM |y| versus positive-arm convention was resolved.",
+    "The NNLO fixed-order LHCb candidate substantially improves the NLO deficit but remains below the first three boundary bins across the standard scale envelope; this observable-level residual must be closed before universal promotion.",
+    "The published pT covariance has been reconstructed as an isolated audit; with NNLO unitary inputs the central profile still has median data chi2/row about 6.6, so correlations do not close the residual.",
+    "The NNLO gamma*/electroweak convention scan shifts the row-10 ratio only to 0.802--0.830, so convention choices do not close the residual.",
+    "The complete NNLO lambda=1 endpoint/profile fit is positive and convergent, but its central-profile median total chi2/row remains about 6.69 with matching and scale pulls about 2.56 and 2.28 sigma; this confirms that the remaining problem is LHCb observable closure rather than endpoint instability.",
+    "The 50-replica NNLO endpoint propagation also converges for all 14,400 fits; its central-profile median total chi2/row is about 7.16, so experimental replica sampling does not remove the fixed theory/data residual.",
+    "The unitary term must be described explicitly as a transition correction, not conventional FO-ASY Y matching."
+  ],
+  "artifacts": {
+    "validation": "reports/tevatron_unitary_validation.json",
+    "candidate_backend": "backend/unitary_finite_y.py",
+    "tests": "tests/test_unitary_finite_y.py",
+    "conventional_y_reassessment": "reports/conventional_y_reassessment/cdf_run_2_36.json"
+  },
+  "production_outputs_modified": false
+}

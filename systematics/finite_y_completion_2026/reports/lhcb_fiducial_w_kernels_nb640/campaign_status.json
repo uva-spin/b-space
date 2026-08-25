@@ -1,0 +1,15 @@
+{
+  "status": "isolated_lhcb_fiducial_w_kernel_campaign_complete",
+  "rows": [
+    "LHCb_7:10",
+    "LHCb_7:11",
+    "LHCb_7:12",
+    "LHCb_7:13"
+  ],
+  "n_b": 640,
+  "all_rows_complete": true,
+  "fiducial_acceptance_source": "/home/dustin/work/project/bT-TMD/systematics/finite_y_completion_2026/reports/lhcb_node_acceptance_grid_production_candidate/lhcb_node_acceptance.csv",
+  "backend_source": "/home/dustin/work/project/bT-TMD/v23/backends/bt_internal_css_backend_v22_tevatron.py",
+  "production_outputs_modified": false,
+  "next_step": "Recompute lambda=1 endpoint W and unitary matched predictions using these fiducial kernels and DYTurbo NLO bin endpoints."
+}

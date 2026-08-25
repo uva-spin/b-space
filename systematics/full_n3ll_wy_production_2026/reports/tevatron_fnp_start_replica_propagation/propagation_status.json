@@ -1,0 +1,69 @@
+{
+  "status": "isolated_tevatron_full_fnp_start_replica_propagation_complete_not_production",
+  "external_wy_gate": {
+    "present": true,
+    "grid": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/tevatron_full_wy_grid.csv",
+    "grid_status": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/grid_status.json",
+    "y_status": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/conventional_y/y_grid_status.json",
+    "row_count": 122,
+    "grid_status_value": "isolated_tevatron_full_n3ll_nnlo_wy_grid_passed",
+    "y_status_value": "isolated_tevatron_conventional_y_grid_extracted_not_promoted",
+    "all_finite": true,
+    "all_positive": true
+  },
+  "start_count": 96,
+  "experimental_replica_count": 50,
+  "crossed_member_count_per_flavor": 4800,
+  "construction": "centered experimental-replica residuals crossed with correlated optimizer-start curves",
+  "central_curve": "empirical q50 of the crossed ensemble",
+  "band": "pointwise empirical q16-q84; non-uniqueness is not assigned a Gaussian confidence meaning",
+  "bspace_metrics": {
+    "u": {
+      "max_relative_full_width_active": 0.23983384365121282,
+      "median_relative_full_width_active": 0.031125126994755666
+    },
+    "d": {
+      "max_relative_full_width_active": 0.23983384365121263,
+      "median_relative_full_width_active": 0.031125126994755687
+    },
+    "s": {
+      "max_relative_full_width_active": 0.23983384365121216,
+      "median_relative_full_width_active": 0.03112512699475564
+    },
+    "ubar": {
+      "max_relative_full_width_active": 0.23983384365121302,
+      "median_relative_full_width_active": 0.03112512699475549
+    },
+    "dbar": {
+      "max_relative_full_width_active": 0.23983384365121263,
+      "median_relative_full_width_active": 0.031125126994755645
+    },
+    "sbar": {
+      "max_relative_full_width_active": 0.2398338436512121,
+      "median_relative_full_width_active": 0.031125126994755333
+    }
+  },
+  "kspace_metrics": {
+    "u": {
+      "max_relative_full_width_active": 0.21256740756384393,
+      "median_relative_full_width_active": 0.11096193681675107,
+      "active_kT_max_GeV": 1.73
+    },
+    "d": {
+      "max_relative_full_width_active": 0.22480180890575754,
+      "median_relative_full_width_active": 0.11544192740491313,
+      "active_kT_max_GeV": 1.69
+    }
+  },
+  "artifacts": {
+    "fig2": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_fnp_start_replica_propagation/fig2_bspace_fnp_start_replica.png",
+    "fig6": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_fnp_start_replica_propagation/fig6_kspace_ud_fnp_start_replica.png",
+    "bspace_csv": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_fnp_start_replica_propagation/fig2_bspace_bands.csv",
+    "kspace_csv": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_fnp_start_replica_propagation/fig6_kspace_bands.csv"
+  },
+  "formal_confidence_level_assigned": false,
+  "contains_individual_start_curves": false,
+  "contains_legacy_conditional_result": false,
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

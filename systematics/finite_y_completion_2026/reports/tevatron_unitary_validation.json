@@ -1,0 +1,81 @@
+{
+  "status": "isolated_unitary_finite_y_valid_for_tevatron_scope",
+  "candidate": "Y_unitary=p*(FO_NLO-W); matched=(1-p)W+p*FO_NLO",
+  "scope": "24 Tevatron rows with existing node-level genuine-NLO input",
+  "row_count": 24,
+  "nlo_rows": 24,
+  "profiles": {
+    "early_0p18_0p28": {
+      "r_start": 0.18,
+      "r_end": 0.28,
+      "stored_reconstruction_max_abs": 4.440892098500626e-16,
+      "core_y_max_abs": null,
+      "high_region_matched_minus_fo_max_abs": 4.6664769472792855e-05,
+      "high_region_rows": 3,
+      "min_matched": 0.8141381563739137,
+      "max_matched": 1.8331578193769245,
+      "max_relative_y_over_w": 1.0915757361106229,
+      "max_profile": 1.0,
+      "min_profile": 0.0629515791727313
+    },
+    "central_0p20_0p30": {
+      "r_start": 0.2,
+      "r_end": 0.3,
+      "stored_reconstruction_max_abs": 4.440892098500626e-16,
+      "core_y_max_abs": null,
+      "high_region_matched_minus_fo_max_abs": null,
+      "high_region_rows": 0,
+      "min_matched": 0.812453834228386,
+      "max_matched": 1.8181322068726535,
+      "max_relative_y_over_w": 1.0872485991206675,
+      "max_profile": 0.9960358801988642,
+      "min_profile": 5.164127530589625e-05
+    },
+    "late_0p22_0p32": {
+      "r_start": 0.22,
+      "r_end": 0.32,
+      "stored_reconstruction_max_abs": 4.440892098500626e-16,
+      "core_y_max_abs": 1.044888722892972e-06,
+      "high_region_matched_minus_fo_max_abs": null,
+      "high_region_rows": 0,
+      "min_matched": 0.7726417361899933,
+      "max_matched": 1.8181198707429544,
+      "max_relative_y_over_w": 0.9849686388843909,
+      "max_profile": 0.9023365088655396,
+      "min_profile": 0.0
+    }
+  },
+  "algebraic_reconstruction_max_abs": 4.440892098500626e-16,
+  "node_convergence": {
+    "all_profiles_pass_5pct": true,
+    "max_profile_shift": 0.035842585018223,
+    "all_predictions_positive": true
+  },
+  "fixed_order_input": {
+    "genuine_nlo_campaign_complete": true,
+    "nlo_over_lo_range": [
+      1.4316268962002503,
+      1.6452006282071432
+    ],
+    "max_relative_nlo_mc_uncertainty": 0.04614086544256499
+  },
+  "profile_variation": {
+    "max_early_late_envelope_fraction": 0.25962626010737,
+    "interpretation": "model-form matching uncertainty; retained explicitly"
+  },
+  "ordinary_additive_route": {
+    "status": "failed",
+    "reason": "resummed W is not close to ASY at the transition node; prior CDF_RUN_2:36 pilot gave W+FO-ASY far from FO"
+  },
+  "fit_impact": {
+    "frozen_FNP_unitary_fit_pass": false,
+    "operational_two_nuisance_boundary_gate_pass": true,
+    "production_promotion": false
+  },
+  "limitations": [
+    "This is a unitary finite-Y transition, not conventional FO-ASY matching.",
+    "LHCb high-qT node-level fiducial acceptance and the published pT covariance audit now exist, but the LHCb NNLO observable residual remains unresolved.",
+    "The verified lambda=1 endpoint/replica audit is complete for the Tevatron scope; integration into a universal production fit remains pending the LHCb input gate."
+  ],
+  "production_outputs_modified": false
+}

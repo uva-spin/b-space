@@ -1,0 +1,19 @@
+{
+  "status": "representative_external_benchmark_exists_but_universal_production_gate_open",
+  "finite_y_tail_benchmark": {
+    "representative_pairs": 15,
+    "external_code_pass": 13,
+    "threshold": 0.05,
+    "source": "systematics/finite_y_tail_benchmark/summaries/tail_benchmark_summary.csv"
+  },
+  "tier1_boundary": {
+    "complete_pairs": 25,
+    "precision_pass": 25,
+    "external_agreement_pass": 24,
+    "central_pair_gate_pass": 24,
+    "direct_production_approved": 0,
+    "source": "systematics/high_qt_direct_production_benchmark/summaries/tier1_boundary/central_external_status.json"
+  },
+  "production_scope_conclusion": "retain Y=0 for the active low-qT fixed-target extraction; do not promote a universal finite-Y/high-qT matching claim from these representative benchmarks alone",
+  "production_outputs_modified": false
+}

@@ -40,6 +40,12 @@ v21_tail_release_amp0p019_candidate/
                                 publishable trainer sources used by v22/v23 scripts
 Data/                            fixed-target tables and row-99 variants
 production/                      frozen active production outputs and integrity files
+systematics/full_n3ll_wy_production_2026/
+                                isolated N³LL+NNLO W+Y source and handoff
+systematics/finite_y_completion_2026/
+                                unitary finite-Y completion records
+systematics/perturbative_provenance_completion/
+                                perturbative organization and accuracy audits
 ```
 
 The top-level `run_*`, `audit_*`, `construct_*`, and `bootstrap_*` files are
@@ -238,7 +244,18 @@ Read these files in this order:
 The CSV files contain the active result; they are not a substitute for the
 source code or for the audit records.
 
-## 11. What is intentionally not committed
+## 11. Isolated W+Y artifacts
+
+The external Tevatron W+Y candidate and its paper-facing figures are under
+`systematics/full_n3ll_wy_production_2026/`. Read `README.md` and `HANDOFF.md`
+before using them. The 122-row grid is an isolated perturbative candidate; the
+larger 329-row crossed ensemble is a diagnostic and is not production-
+authorized. Reproduction requires the archived DYTurbo installation, PDF
+inputs, backend/cache paths, and fit states named in the manifests. The public
+checkout intentionally contains the scripts, compact decision records, and
+figures but not those machine-specific or very large artifacts.
+
+## 12. What is intentionally not committed
 
 The following remain external or generated:
 

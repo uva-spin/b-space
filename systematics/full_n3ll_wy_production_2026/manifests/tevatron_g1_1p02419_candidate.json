@@ -1,0 +1,22 @@
+{
+  "manifest_id": "tevatron_n3ll_nnlo_wy_gaussian_g1_1p02419",
+  "status": "isolated_candidate_manifest_not_production",
+  "engine": "/home/dustin/src/dyturbo-1.4.2/bin/dyturbo",
+  "convention": "order=3, primed=false; W=RES, ASY=-CT, FO=VJ, Y=FO-ASY=VJ+CT",
+  "npff": "Gaussian exp[-g1 bT^2]",
+  "g1_GeV2": 1.0241911542738864,
+  "scope": {"datasets": ["CDF_RUN_1", "CDF_RUN_2", "D0_RUN_1"], "tevatron_grid_rows": 122, "boundary_rows": 24, "excluded": ["fixed-target 329-row core", "LHCb high-qT rows"]},
+  "fit_diagnostics": {"stat_only_chi2_per_row": 1.0963155862785823, "median_prediction_to_data": 0.994368605915798, "mean_relative_mc_uncertainty": 0.019197003862176126, "max_relative_mc_uncertainty": 0.10894892497475274, "reference_g1_one_stat_only_chi2_per_row": 1.577132808453721},
+  "boundary_diagnostics": {"stat_only_chi2_per_row": 0.932116780168804, "median_prediction_to_data": 0.9959686383628872, "mean_relative_mc_uncertainty": 0.039606910458356376, "max_relative_mc_uncertainty": 0.071589923815946},
+  "artifacts": {
+    "grid_csv": {"path": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p024191_30m/tevatron_full_wy_grid.csv", "sha256": "ca39706ccfcc5c514aa71e7a93e419d4f359aa90704b988e91b335f1b5a40780"},
+    "grid_status": {"path": "reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p024191_30m/grid_status.json", "sha256": "0824960e4948ab3d9681003d6b69c16fb32a0ec6528a080b22d75b0d116d4df6"},
+    "direct_grid_status": {"path": "reports/tevatron_gaussian_np_candidate_profile_direct_grid_status.json", "sha256": "27e5bbb9497427a8c3cf1f275ce721f3608fdeb7cac9abcab3fa1e3adafc083f"},
+    "boundary_csv": {"path": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p024191/full_wy_boundary_summary.csv", "sha256": "30b4a7436852eb8907215f28fd90ce80a857546eadae71be9477d9556c9ef255"},
+    "boundary_status": {"path": "reports/dyturbo_full_n3ll_nnlo_boundary_g1_1p024191/boundary_full_wy_status.json", "sha256": "11096b24d1d5008152310beffe482e6229c1392cf5b1a75595eaf28f66feb1fe"},
+    "figures_manifest": {"path": "manifests/tevatron_candidate_figures_g1_1p02419.json", "sha256": "de34e4322a02b5f7cbe551ef0a133ea5de428cf34ae37fb9008b99f5987055c7"}
+  },
+  "promotion_authorized": false,
+  "frozen_baseline_unchanged": true,
+  "production_outputs_modified": false
+}

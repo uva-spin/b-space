@@ -1,0 +1,35 @@
+{
+  "status": "inventory_and_internal_closure_complete_external_scope_and_w_claim_resolution_pending",
+  "created": "2026-08-15",
+  "workspace": "systematics/perturbative_provenance_completion",
+  "production_modification_authorized": false,
+  "paper_modification_authorized": false,
+  "baseline": {
+    "identifiability_package": "production_lambda1_empirical_reference_full96x50",
+    "frozen_cache": "production_frozen/v22_lambda3_50rep_DYonly_bspace/backend_cache",
+    "published_source_commit": "b-space-public@5fb979c"
+  },
+  "gates": [
+    "immutable_input_manifest",
+    "strict_multiplicative_cache_comparison",
+    "coefficient_accuracy_inventory",
+    "strict_expansion_and_bridge_closure",
+    "external_observable_closure_if_scope_expands",
+    "isolated_candidate_regeneration"
+  ],
+  "known_status": {
+    "fixed_target_w_stack": "implemented_and_audited_at_current_order",
+    "strict_w_reference": "implemented_for_reference_and_audit",
+    "multiplicative_w_reference": "implemented_and_default_in_v22_full_backend",
+    "production_cache_w_organization_metadata": "missing_explicit_field",
+    "n3llp_dispatch": "legacy_n3ll_pilot_branch",
+    "finite_y_production": "not_active_y_mode_zero",
+    "representative_cache_diagnostic": "complete_8_rows_160_b_points",
+    "strict_vs_multiplicative_max_relative_b_space": 0.037309090886460956,
+    "strict_vs_multiplicative_max_relative_integrated": 0.027873654550619537,
+    "full_reference_multiplicative_recomputed": false,
+    "source_level_expansion_closure": "passed_all_six_checks",
+    "external_fixed_order_closure": "representative_benchmark_existing_universal_production_gate_open",
+    "manuscript_w_claim_crosswalk": "open_strict_vs_multiplicative_provenance_decision"
+  }
+}

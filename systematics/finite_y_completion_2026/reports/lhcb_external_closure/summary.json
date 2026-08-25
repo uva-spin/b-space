@@ -1,0 +1,102 @@
+{
+  "status": "lhcb_external_code_closure_validated_data_input_remaining",
+  "rows": [
+    {
+      "row_id": "LHCb_7:10",
+      "CS": 1.003090909,
+      "error": 0.028490973,
+      "production_ready": false,
+      "review_status": "diagnostic_fiducial_acceptance_candidate",
+      "covariance_status": "released_errors_as_diagonal_for_diagnostic; correlated_components_not_yet_profiled",
+      "dyturbo_pb_per_GeV": 0.5641114168982498,
+      "dyturbo_pb_per_GeV_unc": 0.0001644137353501,
+      "true_nlo_vj": true,
+      "mcfm_pb_per_GeV": 1.1028510363636364,
+      "mcfm_pb_per_GeV_unc": 0.0016336782181818,
+      "explicit_pt34_cut": true,
+      "dyturbo_over_data": 0.562373172597709,
+      "mcfm_over_data": 1.0994527280314892,
+      "mcfm_single_positive_arm_pb_per_GeV": 0.5514255181818182,
+      "dyturbo_over_mcfm_single_arm": 1.023005643188694,
+      "dyturbo_over_mcfm": 0.511502821594347
+    },
+    {
+      "row_id": "LHCb_7:11",
+      "CS": 0.575263158,
+      "error": 0.016701386,
+      "production_ready": false,
+      "review_status": "diagnostic_fiducial_acceptance_candidate",
+      "covariance_status": "released_errors_as_diagonal_for_diagnostic; correlated_components_not_yet_profiled",
+      "dyturbo_pb_per_GeV": 0.3145246899345256,
+      "dyturbo_pb_per_GeV_unc": 9.455460550585812e-05,
+      "true_nlo_vj": true,
+      "mcfm_pb_per_GeV": 0.6273606105263158,
+      "mcfm_pb_per_GeV_unc": 0.0009907259578947,
+      "explicit_pt34_cut": true,
+      "dyturbo_over_data": 0.546749232174061,
+      "mcfm_over_data": 1.0905628177327422,
+      "mcfm_single_positive_arm_pb_per_GeV": 0.3136803052631579,
+      "dyturbo_over_mcfm_single_arm": 1.0026918638409872,
+      "dyturbo_over_mcfm": 0.5013459319204936
+    },
+    {
+      "row_id": "LHCb_7:12",
+      "CS": 0.19962069,
+      "error": 0.0057891,
+      "production_ready": false,
+      "review_status": "diagnostic_fiducial_acceptance_candidate",
+      "covariance_status": "released_errors_as_diagonal_for_diagnostic; correlated_components_not_yet_profiled",
+      "dyturbo_pb_per_GeV": 0.1039358236970411,
+      "dyturbo_pb_per_GeV_unc": 3.4514320564878585e-05,
+      "true_nlo_vj": true,
+      "mcfm_pb_per_GeV": 0.2051819793103448,
+      "mcfm_pb_per_GeV_unc": 0.0003351811344827,
+      "explicit_pt34_cut": true,
+      "dyturbo_over_data": 0.5206665887040122,
+      "mcfm_over_data": 1.02785928307504,
+      "mcfm_single_positive_arm_pb_per_GeV": 0.1025909896551724,
+      "dyturbo_over_mcfm_single_arm": 1.0131086954750017,
+      "dyturbo_over_mcfm": 0.5065543477375009
+    },
+    {
+      "row_id": "LHCb_7:13",
+      "CS": 0.007323671,
+      "error": 0.000335462,
+      "production_ready": false,
+      "review_status": "diagnostic_fiducial_acceptance_candidate",
+      "covariance_status": "released_errors_as_diagonal_for_diagnostic; correlated_components_not_yet_profiled",
+      "dyturbo_pb_per_GeV": 0.0042711439820796,
+      "dyturbo_pb_per_GeV_unc": 1.7331699999868784e-06,
+      "true_nlo_vj": true,
+      "mcfm_pb_per_GeV": 0.0085184478260869,
+      "mcfm_pb_per_GeV_unc": 1.6929008695652173e-05,
+      "explicit_pt34_cut": true,
+      "dyturbo_over_data": 0.5831971400790122,
+      "mcfm_over_data": 1.1631390631947967,
+      "mcfm_single_positive_arm_pb_per_GeV": 0.00425922391304345,
+      "dyturbo_over_mcfm_single_arm": 1.0027986481292157,
+      "dyturbo_over_mcfm": 0.5013993240646079
+    }
+  ],
+  "dyturbo_true_nlo_all_rows": true,
+  "max_dyturbo_data_relative_difference": 0.47933341129598783,
+  "mcfm_comparison_scope": "isolated MCFM LO cards with explicit masscuts pt34min/pt34max; raw cards use |y_Z| and therefore include both pp arms",
+  "mcfm_single_arm_correction": "divide the MCFM absolute-rapidity result by two before comparing with the positive-arm LHCb/DYTurbo observable",
+  "code_closure": {
+    "scope": "one isolated no-lepton-cuts row currently available",
+    "rows": [
+      {
+        "row_id": "LHCb_7:10",
+        "positive_y": 1.35920899877922,
+        "negative_y": 1.3592298911194434,
+        "mcfm_abs_y": 2.6896792727272727,
+        "dyturbo_signed_y": 2.718438889898663,
+        "signed_over_mcfm_abs_y": 1.0106925823695807
+      }
+    ],
+    "max_relative_signed_y_vs_mcfm_abs_y": 0.010692582369580705,
+    "interpretation": "The positive and mirrored negative DYTurbo bins sum to the MCFM absolute-rapidity result, confirming that the old factor-of-two difference is a rapidity-sign convention, not a Y normalization failure."
+  },
+  "interpretation": "The external-code closure is now understood: the factor-of-two discrepancy was MCFM's absolute-rapidity convention. The positive-arm DYTurbo result remains below the candidate data by roughly 40--48%, so the LHCb data normalization/observable provenance and covariance still require closure. This is an LHCb input gate, not a rejection of the Tevatron unitary W/Y construction.",
+  "production_outputs_modified": false
+}

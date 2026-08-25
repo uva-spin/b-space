@@ -1,0 +1,21 @@
+{
+  "status": "isolated_tevatron_full_n3ll_nnlo_candidate_figures_not_production",
+  "candidate_g1_GeV2": 1.017,
+  "replica_count": 150,
+  "replica_source": "full_n3ll_wy_production_2026/reports/tevatron_gaussian_np_replica_profile_150/replica_members.json",
+  "central_source": "/home/dustin/work/project/bT-TMD/systematics/collins_factorization_validity/plots/rowidfix_stageFT_all_qmax0p20_lam0p50_central_exactx/v22_scheme_tmd_bspace_long.csv",
+  "band": "pointwise q16-q84 over diagonal Gaussian-g1 pseudo-replica profiles",
+  "formal_confidence_level_assigned": false,
+  "transform": {
+    "n_input_groups_times_quantities": 300,
+    "b_transform_max": 24.0,
+    "n_b_transform": 6001,
+    "k_max": 4.0,
+    "n_k": 401,
+    "tail_mode": "expb2",
+    "tail_fit_bmin": null,
+    "end_taper_start_fraction": 0.92,
+    "transform_convention": "f(k)=1/(2*pi) int db b J0(kb) ftilde(b)"
+  },
+  "production_outputs_modified": false
+}

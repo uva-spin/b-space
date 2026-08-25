@@ -1,0 +1,45 @@
+{
+  "status": "isolated_scope_353_tail1_replicas_long_complete",
+  "kind": "replicas",
+  "seeds": [
+    1001,
+    1033,
+    1040,
+    1042
+  ],
+  "epochs": 15000,
+  "patience": 2500,
+  "workers": 4,
+  "runs": [
+    {
+      "kind": "replicas",
+      "seed": 1001,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail1_coupled_fnp_fit_r1001_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail1_coupled_fnp_fit_r1001_csvnorm_long.log"
+    },
+    {
+      "kind": "replicas",
+      "seed": 1033,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail1_coupled_fnp_fit_r1033_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail1_coupled_fnp_fit_r1033_csvnorm_long.log"
+    },
+    {
+      "kind": "replicas",
+      "seed": 1040,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail1_coupled_fnp_fit_r1040_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail1_coupled_fnp_fit_r1040_csvnorm_long.log"
+    },
+    {
+      "kind": "replicas",
+      "seed": 1042,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail1_coupled_fnp_fit_r1042_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_tail1_coupled_fnp_fit_r1042_csvnorm_long.log"
+    }
+  ],
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}

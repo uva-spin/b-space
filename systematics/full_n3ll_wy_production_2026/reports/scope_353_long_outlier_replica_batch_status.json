@@ -1,0 +1,53 @@
+{
+  "status": "isolated_scope_353_long_outlier_replica_batch_complete",
+  "seeds": [
+    1008,
+    1033,
+    1040,
+    1010,
+    1038,
+    1026
+  ],
+  "epochs": 15000,
+  "patience": 2500,
+  "runs": [
+    {
+      "replica_seed": 1008,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_r1008_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_r1008_csvnorm_long.log"
+    },
+    {
+      "replica_seed": 1010,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_r1010_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_r1010_csvnorm_long.log"
+    },
+    {
+      "replica_seed": 1026,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_r1026_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_r1026_csvnorm_long.log"
+    },
+    {
+      "replica_seed": 1033,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_r1033_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_r1033_csvnorm_long.log"
+    },
+    {
+      "replica_seed": 1038,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_r1038_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_r1038_csvnorm_long.log"
+    },
+    {
+      "replica_seed": 1040,
+      "returncode": 0,
+      "out": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_r1040_csvnorm_long",
+      "log": "/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/scope_353_coupled_fnp_fit_lambda1_candidate_r1040_csvnorm_long.log"
+    }
+  ],
+  "frozen_production_modified": false,
+  "promotion_authorized": false
+}
