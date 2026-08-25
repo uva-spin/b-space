@@ -1,9 +1,9 @@
 # b-space: N³LL fixed-target DY TMD extraction  
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/) [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![TMD space](https://img.shields.io/badge/space-b__T%20primary-blueviolet)](#physics-scope) [![kT companion](https://img.shields.io/badge/k__T-regularized%20companion-lightgrey)](#regularized-kt-space-companion)
 
-This repository contains the fixed-target Drell--Yan extraction of unpolarized TMDPDFs in **impact-parameter space**.  The extraction uses an **N³LL-resummed b-space \(W\)-term backend** with NLO hard/OPE matching in the \(W\) term and a constrained neural-network model for the nonperturbative factor \(F_{\rm NP}(x,b_T)\).
+This repository contains the fixed-target Drell--Yan extraction of unpolarized TMDPDFs in **impact-parameter space**.  The extraction uses an **N³LL-resummed b-space $W$-term backend** with NLO hard/OPE matching in the $W$ term and a constrained neural-network model for the nonperturbative factor $F_{\rm NP}(x,b_T)$.
 
-The repository is intended to accompany the fixed-target DY TMD note/paper and to provide reproducible scripts, frozen audit outputs, and plotting utilities for the \(b_T\)-space result and its regularized \(k_T\)-space companion.
+The repository is intended to accompany the fixed-target DY TMD note/paper and to provide reproducible scripts, frozen audit outputs, and plotting utilities for the $b_T$-space result and its regularized $k_T$-space companion.
 
 The main result is a fixed-target DY TMD extraction using
 
@@ -16,6 +16,7 @@ with the corrected `E288_300:99` row, explicit normalization priors, a controlle
 The complete source stack is included in this checkout. Start with:
 
 - [Matching and perturbative backend](docs/MATCHING.md)
+- [MCFM/DYTurbo external-engine and W+Y guide](docs/EXTERNAL_FIXED_ORDER.md)
 - [Reproducibility and execution guide](docs/REPRODUCIBILITY.md)
 - [Source map and publication boundary](docs/SOURCE_MAP.md)
 - [Systematics and identifiability campaign](docs/SYSTEMATICS.md)
@@ -27,13 +28,13 @@ The complete source stack is included in this checkout. Start with:
 
 | Layer | Status | Meaning |
 |---|---:|---|
-| Fixed-target DY b-space extraction | **Complete** | The production object is the \(b_T\)-space TMD ensemble for E288, E605, and E772. |
-| Perturbative accuracy label | **N³LL W-term** | The cached \(W\)-term backend uses the N³LL resummed b-space evolution setup used in the extraction. |
-| Hard/OPE matching in \(W\) | **Included** | NLO hard and OPE insertions are included in the \(W\)-term construction used for the v23a result. |
+| Fixed-target DY b-space extraction | **Complete** | The production object is the $b_T$-space TMD ensemble for E288, E605, and E772. |
+| Perturbative accuracy label | **N³LL W-term** | The cached $W$-term backend uses the N³LL resummed b-space evolution setup used in the extraction. |
+| Hard/OPE matching in $W$ | **Included** | NLO hard and OPE insertions are included in the $W$-term construction used for the v23a result. |
 | Experimental pseudo-data replicas | **Included** | Replica fits use `target_used`, generated from row-level and dataset-level uncertainties. |
 | PDF uncertainty | **Overlay included** | Final TMD bands include a PDF-member overlay in the perturbative/OPE TMD reconstruction. |
-| PDF-through-refit uncertainty | **Not yet included** | PDF members are not yet propagated through a full retraining of \(F_{\rm NP}\). |
-| \(k_T\)-space representation | **Regularized companion** | \(k_T\)-space curves are obtained by a regularized finite-\(b_T\) Hankel transform. |
+| PDF-through-refit uncertainty | **Not yet included** | PDF members are not yet propagated through a full retraining of $F_{\rm NP}$. |
+| $k_T$-space representation | **Regularized companion** | $k_T$-space curves are obtained by a regularized finite-$b_T$ Hankel transform. |
 | Accelerator/collider DY data | **Isolated W+Y study** | A 122-row Tevatron N³LL+NNLO W+Y grid and a 329-row diagnostic are archived separately; neither replaces the fixed-target production result. |
 
 ## Current lambda=1 production update
@@ -103,7 +104,7 @@ that a universal collider/global finite-Y prediction has been validated.
 
 ## Physics scope
 
-This repository focuses on the **fixed-target low-\(Q\) Drell--Yan region**.  The included production extraction uses:
+This repository focuses on the **fixed-target low-$Q$ Drell--Yan region**. The included production extraction uses:
 
 - E288 proton--nucleus Drell--Yan data at 200, 300, and 400 GeV beam energies;
 - E605 fixed-target Drell--Yan data;
@@ -116,17 +117,17 @@ This repository focuses on the **fixed-target low-\(Q\) Drell--Yan region**.  Th
 
 The primary physical object is the **b-space TMDPDF**
 
-\[
+$$
 \widetilde f_{1,q/h}(x,b_T;Q,Q^2).
-\]
+$$
 
-The regularized \(k_T\)-space curves are companion representations derived from the fitted \(b_T\)-space ensemble.
+The regularized $k_T$-space curves are companion representations derived from the fitted $b_T$-space ensemble.
 
 ---
 
 ## What is meant by N³LL here?
 
-The label **N³LL** refers to the resummed b-space \(W\)-term perturbative backend used in the fixed-target extraction.  The nonperturbative DNN does not itself carry a logarithmic accuracy label.  The accuracy label belongs to the perturbative CSS/TMD operator and its evolution/matching ingredients.
+The label **N³LL** refers to the resummed b-space $W$-term perturbative backend used in the fixed-target extraction. The nonperturbative DNN does not itself carry a logarithmic accuracy label. The accuracy label belongs to the perturbative CSS/TMD operator and its evolution/matching ingredients.
 
 In this repository, the phrase
 
@@ -136,12 +137,12 @@ N³LL fixed-target DY TMD extraction
 
 means:
 
-1. the perturbative \(W\)-term kernel is generated using the N³LL resummation setup used in the extraction;
-2. NLO hard/OPE pieces are inserted in the \(W\)-term construction;
-3. the DNN only parametrizes the smooth nonperturbative damping factor \(F_{\rm NP}\);
+1. the perturbative $W$-term kernel is generated using the N³LL resummation setup used in the extraction;
+2. NLO hard/OPE pieces are inserted in the $W$-term construction;
+3. the DNN only parametrizes the smooth nonperturbative damping factor $F_{\rm NP}$;
 4. the extraction is validated through internal bridge, central-fit, replica, b-space, and regularized-k-space audits.
 
-It does **not** claim that a fully matched collider/global-DY observable, including all high-\(q_T\) \(Y\)-term and fixed-order tail ingredients, has been externally validated at N³LL accuracy.  That collider/global extension is a separate project.
+It does **not** claim that a fully matched collider/global-DY observable, including all high-$q_T$ $Y$-term and fixed-order tail ingredients, has been externally validated at N³LL accuracy. That collider/global extension is a separate project.
 
 ---
 
@@ -151,32 +152,32 @@ The learned object is not the full cross section.  The perturbative b-space kern
 
 The model uses a FiLM-conditioned neural network for a positive damping rate:
 
-\[
+$$
 A_\theta(x,b_T)\ge 0.
-\]
+$$
 
 The physical nonperturbative factor is then built by a monotone integral scaffold,
 
-\[
+$$
 I_\theta(x,b_T)
 =
 \int_0^{b_T} db'\,2b'\,A_\theta(x,b'),
-\]
+$$
 
-\[
+$$
 F_{\rm NP}(x,b_T)
 =
 \exp[-I_\theta(x,b_T)].
-\]
+$$
 
 This guarantees
 
-\[
+$$
 F_{\rm NP}(x,0)=1,\qquad
 \frac{dF_{\rm NP}}{db_T}\le 0
-\]
+$$
 
-on the ordered \(b_T\) grid.
+on the ordered $b_T$ grid.
 
 The architecture used in the v23a fits is:
 
@@ -199,7 +200,7 @@ head:
 The DNN philosophy is deliberately conservative:
 
 - learn only the smooth nonperturbative damping;
-- keep the perturbative \(N^3LL\) \(W\)-term outside the DNN;
+- keep the perturbative $N^3LL$ $W$-term outside the DNN;
 - enforce physical endpoint and monotonicity constraints by construction;
 - use data replicas for experimental uncertainty propagation;
 - use PDF-member overlays for the final TMD uncertainty band;
@@ -306,7 +307,7 @@ python v22/tests/run_dy_hard_nlo_smoke.py
 python v22/tests/run_dy_w_nlo_reference_smoke.py
 ```
 
-Generate the standard \(b_T\)-space paper figure:
+Generate the standard $b_T$-space paper figure:
 
 ```bash
 PYTHONPATH=. python v23/tools/plot_v23a_paper_bspace_d_tmd.py \
@@ -322,7 +323,7 @@ PYTHONPATH=. python v23/tools/plot_v23a_paper_bspace_d_tmd.py \
   --out figures/bspace-result.pdf
 ```
 
-Generate the standard regularized \(k_T\)-space companion figure:
+Generate the standard regularized $k_T$-space companion figure:
 
 ```bash
 PYTHONPATH=. python v23/tools/plot_v23a_traditional_kspace_tmd.py \
@@ -367,7 +368,7 @@ replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/
     └── b_x_ftilde_dataPDF_bands.pdf
 ```
 
-The default regularized \(k_T\)-space companion is stored in:
+The default regularized $k_T$-space companion is stored in:
 
 ```text
 replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/
@@ -381,7 +382,7 @@ replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/
     └── x_ftilde_kspace_regularized_bands.pdf
 ```
 
-The large-\(b_T\) regularization comparison is stored in:
+The large-$b_T$ regularization comparison is stored in:
 
 ```text
 replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/
@@ -406,7 +407,7 @@ The result is supported by a stack of checks rather than a single number.
 | normalization-pull distribution | Pass | Confirms fitted dataset normalizations remain within prior expectations. |
 | random-split stability | Pass | Confirms 50 replicas are enough for stable b-space bands. |
 | exp+PDF overlay reconstruction | Pass | Adds PDF-member variation to the final TMD reconstruction. |
-| regularized \(k_T\)-space comparison | Pass | Confirms expb2, expb, and taper prescriptions agree over \(k_T\le4\) GeV. |
+| regularized $k_T$-space comparison | Pass | Confirms expb2, expb, and taper prescriptions agree over $k_T\le4$ GeV. |
 
 Key audit values:
 
@@ -421,20 +422,20 @@ regularized kT p90 regularization difference: 0.030912545977260095
 regularized kT max regularization difference: 0.04304417062181683
 ```
 
-The \(k_T\)-space negative-tail diagnostics are not strict positivity constraints.  The worst median dip in the audited curves is approximately \(-1.8\%\) of the peak, and the negative lobes are retained as finite-transform diagnostics rather than clipped.
+The $k_T$-space negative-tail diagnostics are not strict positivity constraints. The worst median dip in the audited curves is approximately $-1.8\%$ of the peak, and the negative lobes are retained as finite-transform diagnostics rather than clipped.
 
 ---
 
-## Regularized \(k_T\)-space companion
+## Regularized $k_T$-space companion
 
-The primary extraction is in \(b_T\) space.  The \(k_T\)-space representation is obtained afterward by a regularized finite-\(b_T\) Hankel transform,
+The primary extraction is in $b_T$ space. The $k_T$-space representation is obtained afterward by a regularized finite-$b_T$ Hankel transform,
 
-\[
+$$
 f(k_T)
 =
 \frac{1}{2\pi}
 \int_0^\infty db_T\,b_T\,J_0(k_T b_T)\,\widetilde f(b_T).
-\]
+$$
 
 The default frozen prescription uses
 
@@ -446,9 +447,9 @@ end taper start: 0.92 * b_transform_max
 kT range: 0 <= kT <= 4 GeV
 ```
 
-Alternative large-\(b_T\) prescriptions, `expb` and `taper`, are compared against the default `expb2` prescription.  The final \(k_T\) range is accepted because these prescriptions agree within about 3.1% at p90 over the active region.
+Alternative large-$b_T$ prescriptions, `expb` and `taper`, are compared against the default `expb2` prescription. The final $k_T$ range is accepted because these prescriptions agree within about 3.1% at p90 over the active region.
 
-The \(k_T\)-space object should be cited as a **regularized finite-\(b_T\) companion representation**, not as an unconstrained high-\(k_T\) perturbative-tail prediction.
+The $k_T$-space object should be cited as a **regularized finite-$b_T$ companion representation**, not as an unconstrained high-$k_T$ perturbative-tail prediction.
 
 ---
 
@@ -472,7 +473,7 @@ scale/profile/nuclear/model-form uncertainty envelopes,
 or production-quality accelerator-data covariance treatment.
 ```
 
-The fixed-target result is therefore a production-quality fixed-target \(b_T\)-space TMD extraction with a regularized \(k_T\)-space companion, while the accelerator/global-DY extension remains future work.
+The fixed-target result is therefore a production-quality fixed-target $b_T$-space TMD extraction with a regularized $k_T$-space companion, while the accelerator/global-DY extension remains future work.
 
 ---
 
@@ -480,17 +481,17 @@ The fixed-target result is therefore a production-quality fixed-target \(b_T\)-s
 
 - The fixed-target result depends on the staged data tables and frozen audit outputs.
 - The b-space TMD bands can be regenerated from the saved replica runs and PDF overlay plan.
-- The \(k_T\)-space curves can be regenerated from the b-space long table without retraining.
-- Exp+PDF overlay bands include experimental data-replica variation in \(F_{\rm NP}\) and PDF-member variation in the TMD reconstruction.
-- Exp+PDF overlay bands do not include PDF-through-refit shifts of \(F_{\rm NP}\).
+- The $k_T$-space curves can be regenerated from the b-space long table without retraining.
+- Exp+PDF overlay bands include experimental data-replica variation in $F_{\rm NP}$ and PDF-member variation in the TMD reconstruction.
+- Exp+PDF overlay bands do not include PDF-through-refit shifts of $F_{\rm NP}$.
 - Dataset-normalization uncertainties are handled through the pseudo-data and profiled-nuisance protocol used in the v23a fixed-target extraction.
-- The regularized \(k_T\)-space curves should be regenerated together with the regularization comparison if the b-space ensemble changes.
+- The regularized $k_T$-space curves should be regenerated together with the regularization comparison if the b-space ensemble changes.
 
 ---
 
 ## Relationship to `uva-spin/k-space`
 
-The companion `uva-spin/k-space` repository is a formalism/validation suite for a pure-\(k_T\) CSS2-equivalent prescription.  This `b-space` repository is different: it contains the numerical fixed-target DY extraction in \(b_T\) space and a regularized \(k_T\)-space companion obtained from the fitted \(b_T\)-space ensemble.
+The companion `uva-spin/k-space` repository is a formalism/validation suite for a pure-$k_T$ CSS2-equivalent prescription. This `b-space` repository is different: it contains the numerical fixed-target DY extraction in $b_T$ space and a regularized $k_T$-space companion obtained from the fitted $b_T$-space ensemble.
 
 In short:
 

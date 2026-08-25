@@ -8,6 +8,12 @@ it is not approval of a universal collider W+Y prediction. The source-level
 accuracy inventory in `systematics/perturbative_provenance_completion/` records
 the same limitation.
 
+For the executable-level MCFM and DYTurbo setup, generated cards, beam and
+fiducial switches, integration controls, unit conversions, and reproduction
+commands, see [EXTERNAL_FIXED_ORDER.md](EXTERNAL_FIXED_ORDER.md). This
+formula document and that operator guide should be read together; neither
+external executable is vendored here.
+
 ## 1. Observable and conventions
 
 The fitted object is a quark TMDPDF in impact-parameter space,

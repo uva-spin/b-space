@@ -245,7 +245,17 @@ Read these files in this order:
 The CSV files contain the active result; they are not a substitute for the
 source code or for the audit records.
 
-## 11. Isolated W+Y artifacts
+## 11. MCFM and DYTurbo external engines
+
+The complete external-engine setup, generated-card settings, unit
+conversions, Tevatron/LHCb commands, row-isolated campaigns, and conventional
+N3LL+NNLO W+Y term decomposition are documented in
+[EXTERNAL_FIXED_ORDER.md](EXTERNAL_FIXED_ORDER.md). Read that guide before
+running either external executable. It is important that the wrappers generate
+the card from the input row and preserve the card, log, raw table, parsed
+table, seed, integration settings, and executable provenance together.
+
+## 12. Isolated W+Y artifacts
 
 The external Tevatron W+Y candidate and its paper-facing figures are under
 `systematics/full_n3ll_wy_production_2026/`. Read `README.md` and `HANDOFF.md`
@@ -256,7 +266,7 @@ inputs, backend/cache paths, and fit states named in the manifests. The public
 checkout intentionally contains the scripts, compact decision records, and
 figures but not those machine-specific or very large artifacts.
 
-## 12. What is intentionally not committed
+## 13. What is intentionally not committed
 
 The following remain external or generated:
 
