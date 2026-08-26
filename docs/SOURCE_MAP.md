@@ -1,7 +1,7 @@
 # Source map and publication boundary
 
-The public repository is a cleaned source release from the working tree
-`/home/dustin/work/project/bT-TMD`. This table records the important mappings.
+The public repository is a cleaned source release from the original working
+repository. This table records the important mappings.
 
 | Working-tree source | Public path | Included content |
 | --- | --- | --- |

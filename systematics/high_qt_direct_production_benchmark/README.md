@@ -19,7 +19,7 @@ promotion gates below are complete and explicitly reviewed.
 Run the read-only baseline audit with:
 
 ```bash
-/home/dustin/miniforge3/envs/pdf-fit/bin/python \
+python \
   systematics/high_qt_direct_production_benchmark/scripts/build_candidate_inventory.py
 ```
 

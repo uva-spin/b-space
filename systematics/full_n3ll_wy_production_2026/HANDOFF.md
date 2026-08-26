@@ -7,10 +7,11 @@ Last updated: 2026-08-22
 This is a new isolated research workspace for a genuine conventional
 matched prediction,
 
-\[
-  \mathrm{d}\sigma = W_{\mathrm{N^3LL}} + Y_{\mathrm{NNLO}},
-  \qquad Y_{\mathrm{NNLO}} = \mathrm{FO}_{\mathrm{NNLO}}-\mathrm{ASY}_{\mathrm{NNLO}}.
-\]
+$$
+\begin{aligned}
+\mathrm{d}\sigma = W_{\mathrm{N^3LL}} + Y_{\mathrm{NNLO}}, \qquad Y_{\mathrm{NNLO}} = \mathrm{FO}_{\mathrm{NNLO}}-\mathrm{ASY}_{\mathrm{NNLO}}.
+\end{aligned}
+$$
 
 The first executable scope is the 122 published Tevatron qT bins (CDF Run I,
 CDF Run II, and D0 Run I) plus the 24 Tevatron boundary rows for which
@@ -23,6 +24,12 @@ All work in this directory is isolated.  No file below the active lambda=1
 package, `production_frozen/`, the published source checkout, or the paper
 may be overwritten by this campaign.
 
+Many historical `outputs/` and `production_frozen/` paths below refer to the
+working archive and are not present in the compact public checkout.  The
+committed `reports/`, manifests, scripts, and `production/` package are the
+portable record; excluded raw grids and checkpoints must be restored from the
+archive before rerunning a numerical campaign.
+
 ## Frozen comparison baseline
 
 The current identifiability result is frozen as the comparison reference, not
@@ -33,8 +40,8 @@ as evidence that it is already a full matched N3LL+Y prediction:
 - 4,800 crossed members per flavor;
 - current Fig. 2 and Fig. 6 artifacts are recorded in
   `manifests/frozen_lambda1_baseline.json`;
-- the baseline uses the accepted low-\(q_T\) W-dominated result and has no
-  promoted conventional finite-\(Y\) term.
+- the baseline uses the accepted low-$q_T$ W-dominated result and has no
+  promoted conventional finite-$Y$ term.
 
 The freeze is hash-verified and must be checked with
 `scripts/verify_frozen_baseline.py` before any candidate comparison.
@@ -43,28 +50,28 @@ The freeze is hash-verified and must be checked with
 
 The initial target is **unprimed N3LL+NNLO**, with an explicit convention table
 for the cusp/noncusp evolution, hard function, OPE coefficients, PDF and
-\(\alpha_s\) orders, scale profiles, and bin integration.  A later N3LL' + NNLO
+$\alpha_s$ orders, scale profiles, and bin integration.  A later N3LL' + NNLO
 extension is not assumed by this campaign.
 
 For the accuracy nomenclature, the Tevatron N3LL study used as the external
 standard states that N3LL+NNLO contains the cusp anomalous dimension through
-\(\mathcal O(\alpha_s^4)\), non-cusp evolution through
-\(\mathcal O(\alpha_s^3)\), hard/collinear boundary terms through
-\(\mathcal O(\alpha_s^2)\), and NNLO fixed-order matching (see
+$\mathcal O(\alpha_s^4)$, non-cusp evolution through
+$\mathcal O(\alpha_s^3)$, hard/collinear boundary terms through
+$\mathcal O(\alpha_s^2)$, and NNLO fixed-order matching (see
 `Fermilab-PUB-22-374-T`, Table I).  This is why the campaign target was raised
 from the earlier NLO-side pilot to a genuine NNLO-side construction.
 
 The primary matching formula must be the conventional additive remainder
 `FO_NNLO - ASY_NNLO`.  The previously validated unitary transition
 `p*(FO_NNLO-W)` is retained only as a diagnostic cross-check; it is not a
-substitute for the conventional \(Y\) term in the primary candidate.
+substitute for the conventional $Y$ term in the primary candidate.
 
 ## Promotion gates
 
 1. The frozen baseline manifest verifies without hash drift.
 2. The N3LL coefficient and convention inventory is complete; no config label
    is accepted as proof of perturbative accuracy.
-3. The small-\(b_T\) expansion of the exact W implementation reproduces the
+3. The small-$b_T$ expansion of the exact W implementation reproduces the
    ASY subtraction at the declared order in the same scheme and normalization.
 4. Independent NNLO fixed-order predictions reproduce the 24 Tevatron boundary
    observables after cuts, bin integration, and nuisance conventions.
@@ -158,7 +165,7 @@ zero-NP test, not a perturbative failure.  A candidate-local Gaussian NP pilot
 CDF Run II bin to ratio 1.01 while leaving the qT≈9 GeV bin at ratio 0.96.
 The independent g1=1 full grid is complete and has its own numerical checks. It
 uses the same unprimed order-3 DYTurbo engine, with a candidate Gaussian
-nonperturbative factor \(\exp[-g_1 b_T^2]\), \(g_1=1\,\mathrm{GeV}^2\). After
+nonperturbative factor $\exp[-g_1 b_T^2]$, $g_1=1\ \mathrm{GeV}^2$. After
 30-million-call refinements of the cancellation-dominated bins and a final
 100-million-call check of the three worst rows, the 122-row grid has median
 full-W+Y/data ratio 1.001, mean relative integration uncertainty 4.19%, and
@@ -173,20 +180,21 @@ The conventional additive decomposition was also validated independently for
 `CDF_RUN_2:17` at 30 million calls per Vegas component. DYTurbo returns
 `RES=5689.608`, `CT=-5204.185`, and `VJ=5221.492` fb/bin, so
 
-\[
- W=\mathrm{RES},\qquad ASY=-\mathrm{CT},\qquad
- FO=\mathrm{VJ},\qquad Y=FO-ASY=\mathrm{VJ}+\mathrm{CT},
-\]
+$$
+\begin{aligned}
+W=\mathrm{RES},\qquad ASY=-\mathrm{CT},\qquad FO=\mathrm{VJ},\qquad Y=FO-ASY=\mathrm{VJ}+\mathrm{CT},
+\end{aligned}
+$$
 
 and the reconstructed `RES+CT+VJ=5706.915` fb/bin agrees exactly with the
 all-terms run at the same integration settings. This establishes the
-candidate-side conventional (Y=FO_{\rm NNLO}-ASY_{\rm NNLO}) implementation
+candidate-side conventional $Y=FO_{\rm NNLO}-ASY_{\rm NNLO}$ implementation
 for the external engine; it does not yet constitute a fitted 353-row
 production extraction.
 The compact perturbative-closure record is
 `reports/accuracy_closure_v2.json`.
 
-The same \(g_1=1\) candidate was rerun on all 24 Tevatron boundary rows. After
+The same $g_1=1$ candidate was rerun on all 24 Tevatron boundary rows. After
 15-million-call refinements of the three cancellation-dominated rows, all
 values remain finite and positive; the median ratio to data is 0.996, mean
 relative integration uncertainty 3.96%, and maximum 7.16%. The result is in
@@ -194,7 +202,7 @@ relative integration uncertainty 3.96%, and maximum 7.16%. The result is in
 
 The first direct candidate summary is
 `reports/tevatron_n3ll_nnlo_candidate_fit_status.json`. On the 122-row
-Tevatron grid, the \(g_1=1\) candidate has stat-only chi2/row 1.577, RMS pull
+Tevatron grid, the $g_1=1$ candidate has stat-only chi2/row 1.577, RMS pull
 1.26, and median prediction/data ratio 1.001. This is a candidate central
 observable fit only: it has no DNN starts and no experimental-replica band,
 and therefore remains explicitly non-production.
@@ -207,15 +215,15 @@ by stationarity, start variation, and replica propagation. No candidate is
 authorized to replace the frozen lambda=1 DNN result until those gates pass.
 
 An endpoint profile over the two directly evaluated grids gives a provisional
-best \(g_1=1.024\,\mathrm{GeV}^2\) in the endpoint-linear profile, with
+best $g_1=1.024\ \mathrm{GeV}^2$ in the endpoint-linear profile, with
 stat-only chi2/row 1.571 versus 1.577
-at the directly evaluated \(g_1=1\) grid. The small difference means \(g_1=1\)
+at the directly evaluated $g_1=1$ grid. The small difference means $g_1=1$
 is a suitable direct candidate while the fit runner is built; the profile is
 not being mistaken for a direct evaluation. The profile and its per-dataset
 normalization diagnostics are in
 `reports/tevatron_gaussian_np_candidate_profile.json`.
 
-An independent-random-seed \(g_1=1\) 122-row grid was run under
+An independent-random-seed $g_1=1$ 122-row grid was run under
 `reports/dyturbo_full_n3ll_nnlo_tevatron_grid_g1_1p0_seed1357911/`. Its cards
 use unique DYTurbo table names; the earlier cache-collision attempt was not
 accepted. This was a numerical-integration stability check, not an additional
@@ -232,7 +240,7 @@ not uniqueness or experimental uncertainty. Results are summarized in
 
 A first 50-member point-to-point pseudo-replica propagation is complete in
 `reports/tevatron_gaussian_np_replica_profile/`. Profiling the common Gaussian
-parameter gives (g_1=1.031^{+0.019}_{-0.032}\,\mathrm{GeV}^2) (16--84%
+parameter gives $g_1=1.031^{+0.019}_{-0.032}\ \mathrm{GeV}^2$ (16--84%
 quantiles). This is only the diagonal experimental-error layer; correlated
 normalization covariances, PDF replicas, and model-form variations remain
 open, and no final 1-sigma production band is claimed.
@@ -299,24 +307,26 @@ The endpoint profile point was evaluated directly rather than accepted from
 the profile interpolation. The controlled candidate uses the same external
 DYTurbo unprimed order-3 cards and conventional decomposition, with
 
-\[
- g_1=1.0241911542738864\;\mathrm{GeV}^2 .
-\]
+$$
+\begin{aligned}
+g_1=1.0241911542738864\ \mathrm{GeV}^2 .
+\end{aligned}
+$$
 
 The clean 122-row Tevatron grid was run at 30 million calls per row, with the
 largest cancellation-dominated rows refined to 100 million calls. All
 predictions are finite and positive. The direct candidate gives a stat-only
-\(\chi^2/N=1.0963\), RMS statistical pull 1.047, median prediction/data
+$\chi^2/N=1.0963$, RMS statistical pull 1.047, median prediction/data
 ratio 0.9944, mean relative integration uncertainty 1.92%, and maximum
-10.9%. The directly evaluated \(g_1=1\) reference has
-\(\chi^2/N=1.5771\); this improvement is an observable-level candidate
+10.9%. The directly evaluated $g_1=1$ reference has
+$\chi^2/N=1.5771$; this improvement is an observable-level candidate
 comparison, not a replacement of the frozen F_NP extraction.
 
 The 24-row Tevatron boundary oracle was independently rerun at the profiled
 point with 3 million calls and 15-million-call refinement of the three worst
-cancellation rows. It gives \(\chi^2/N=0.9321\), median ratio 0.9960,
+cancellation rows. It gives $\chi^2/N=0.9321$, median ratio 0.9960,
 mean integration uncertainty 3.96%, and maximum 7.16%. The corresponding
-\(g_1=1\) boundary value is \(\chi^2/N=0.9317\), so the profile changes the
+$g_1=1$ boundary value is $\chi^2/N=0.9317$, so the profile changes the
 boundary quality negligibly.
 
 These checks establish a stronger external observable-level candidate, but
@@ -336,11 +346,11 @@ The first covariance-aware observable-level fit is now recorded in
 common Gaussian (g_1) together with the released one-per-dataset
 normalization nuisances, using the diagonal point-to-point errors and the
 published normalization fractions. The interpolated minimum is
-\(g_1=1.017\,\mathrm{GeV}^2\) with \(\chi^2/N=0.7853\) over the 122 rows.
+$g_1=1.017\ \mathrm{GeV}^2$ with $\chi^2/N=0.7853$ over the 122 rows.
 This is a fit-quality diagnostic only: it uses direct DYTurbo grids at
-\(g_1=0,1,1.024191\) and piecewise-linear interpolation between them, so the
+$g_1=0,1,1.024191$ and piecewise-linear interpolation between them, so the
 fitted point must be checked by a direct external run before any promotion.
-That direct run and a seven-point \((\mu_R,\mu_F)\) envelope are active in
+That direct run and a seven-point $(\mu_R,\mu_F)$ envelope are active in
 the isolated campaign.
 
 ## Direct controlled profile point and 150-member diagnostic (2026-08-18)
@@ -506,10 +516,11 @@ The new production candidate is an isolated, directly evaluated unprimed
 N3LL+NNLO Tevatron calculation at the retained direct Gaussian center
 `g1=1.017 GeV^2`, using
 
-\[
- d\sigma = W_{\rm N^3LL} + Y_{\rm NNLO},\qquad
- Y_{\rm NNLO}=FO_{\rm NNLO}-ASY_{\rm NNLO},
-\]
+$$
+\begin{aligned}
+d\sigma = W_{\rm N^3LL} + Y_{\rm NNLO},\qquad Y_{\rm NNLO}=FO_{\rm NNLO}-ASY_{\rm NNLO},
+\end{aligned}
+$$
 
 with DYTurbo's term identity `W=RES`, `ASY=-CT`, `FO=VJ`, so the evaluated
 observable is `RES+CT+VJ`. The high-statistics batch covers the 122
@@ -538,10 +549,11 @@ comparison reference and is not an input that this campaign may modify.
 The new isolated production target is the directly evaluated, unprimed
 N3LL+NNLO observable
 
-\[
-  d\sigma = W_{\rm N3LL} + Y_{\rm NNLO},\qquad
-  Y_{\rm NNLO}=FO_{\rm NNLO}-ASY_{\rm NNLO},
-\]
+$$
+\begin{aligned}
+d\sigma = W_{\rm N3LL} + Y_{\rm NNLO},\qquad Y_{\rm NNLO}=FO_{\rm NNLO}-ASY_{\rm NNLO},
+\end{aligned}
+$$
 
 with the DYTurbo decomposition `W=RES`, `ASY=-CT`, `FO=VJ`, and hence
 `W+Y=RES+CT+VJ`. It is being run at the retained direct Gaussian
@@ -699,7 +711,7 @@ precision; it is not a physics prior or an uncertainty combination rule.
 
 An additional persistent watcher,
 `scripts/supervise_tevatron_scale_campaign.sh`, waits for the candidate freeze
-and then launches a fresh seven-point ((\mu_R,\mu_F)) scan at (g_1=1.017)
+and then launches a fresh seven-point $(\mu_R,\mu_F)$ scan at $g_1=1.017$
 (3M calls/component), followed by the existing 30M-call refinement of rows
 whose scale-run MC fraction exceeds 50%.  This is intentionally downstream of
 the central batch and remains a diagnostic until the precision floor is
@@ -1265,7 +1277,7 @@ The unattended genuine external run has passed its isolated Tevatron row and per
 - Seven-point scale envelope (3M-call pass): median half-width 14.2900%, max 95.7953%; 30M-call refinement selected 17 rows.
 - Explicit conventional-Y grid: 122 rows; median term-reconstruction residual 2.947e-04 pb/GeV, maximum 9.070e-03 pb/GeV.
 - These are perturbative/integration diagnostics.  The final TMD publication band still requires correlated experimental/PDF and F_NP/start/model-form propagation.
-- Final manifest: `/home/dustin/work/project/bT-TMD/systematics/full_n3ll_wy_production_2026/reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/FINAL_PRODUCTION_MANIFEST.json`.
+- Final manifest: `reports/tevatron_n3ll_nnlo_wy_final_g1_1p017/FINAL_PRODUCTION_MANIFEST.json`.
 
 ## Current status correction and 353-row continuation (2026-08-19)
 
@@ -1280,7 +1292,7 @@ post-refinement values are:
   refinement: 16.5446%.  The maximum increased because the refined estimate
   resolved a previously underestimated integration error; this is not a claim
   of improved precision.
-- Conventional (Y=\mathrm{FO}_{\mathrm{NNLO}}-\mathrm{ASY}_{\mathrm{NNLO}}):
+- Conventional ($Y=\mathrm{FO}_{\mathrm{NNLO}}-\mathrm{ASY}_{\mathrm{NNLO}}$):
   complete for all 122 rows, with 19 precision-term overrides.  The maximum
   reconstructed-term residual is 0.00907 pb/GeV and the median is
   0.000295 pb/GeV.
@@ -1301,7 +1313,7 @@ separate 122-row Tevatron candidate plus its boundary oracle.
 Seven fixed-target nuclear/proton high-statistic probe groups also completed
 (three seeds, 100M calls per Vegas component), all finite and seed-stable in
 the numerical probe.  They are not promoted because the fit-ready
-fixed-target (CS=A/\mathrm{PreFactor}) convention, target normalization, and
+fixed-target ($CS=A/\mathrm{PreFactor}$) convention, target normalization, and
 the E772 isoscalar treatment still require an explicit same-scheme closure.
 The six LHCb core rows likewise remain outside the authorized production
 scope pending their fiducial/high-(q_T) closure.  Frozen lambda=1 files and
@@ -1684,8 +1696,8 @@ The interface audit also found 46 fixed-target scope rows absent from the
 historical 160-node b-space W cache.  They were absent because that cache was
 created with an earlier row selection, not because the rows were physically
 invalid.  The missing rows were recomputed with the same isolated internal
-``n3llp``/``nloQ96`` W configuration (160 nodes, ``b_T=10^{-4}``--8
-GeV$^{-1}$, nuclear-isospin target mode) and written as a candidate fragment:
+``n3llp``/``nloQ96`` W configuration (160 nodes, $b_T=10^{-4}$--$8\ \mathrm{GeV}^{-1}$, nuclear-isospin target mode) and written as a candidate
+fragment:
 
 ``reports/missing_scope_bspace_w_n3llp_nloQ96_b160/missing_scope_bspace_w.csv``
 
@@ -1736,13 +1748,14 @@ is ``reports/scope_353_coupled_fnp_fit_lambda1_candidate_s303_csvnorm_summary.js
 
 The first coupled 353-row propagation was not physically usable for Fig. 6:
 its v19 monotone F_NP was unconstrained at large b and remained close to one
-through b_T=8 GeV$^{-1}$.  The resulting Bessel transform produced artificial
+through $b_T=8\ \mathrm{GeV}^{-1}$.  The resulting Bessel transform produced artificial
 multi-hundred-percent spikes.  Those no-tail outputs are retained only as a
 diagnostic and are not accepted as final figures.
 
 Three isolated central pilots tested the available large-b penalty with
-``lambda_fnp_tail`` applied for b_T>=6 GeV$^{-1}$ and target F_NP=0.05.  The
-lambda=1 pilot reaches objective/row=0.04532 and F_NP(0.1,8)=0.00566, close to
+``lambda_fnp_tail`` applied for $b_T\ge6\ \mathrm{GeV}^{-1}$ and target
+$F_{\rm NP}=0.05$.  The lambda=1 pilot reaches objective/row=0.04532 and
+$F_{\rm NP}(0.1,8)=0.00566$, close to
 the frozen reference damping.  Lambda=10 gives a slightly worse objective
 (0.04687) and stronger damping; lambda=100 over-damps already near b_T=2.
 The selected corrected configuration is therefore lambda_tail=1.  This is a
@@ -2044,7 +2057,7 @@ is optional and defaults to zero, so existing runs are unchanged.  The
 reference loader requires a finite positive ``x,bT,F_NP`` CSV and interpolates
 only onto the current 160-node external-W b grid.  The launcher records the
 reference path and interval in every campaign status file.  The implementation
-is in ``/home/dustin/work/project/bT-TMD/train_bt_dnn_v19_localbcurv.py`` and
+is in the repository-root trainer ``train_bt_dnn_v19_localbcurv.py`` and
 ``scripts/run_scope_353_wy_controls.py``; it is diagnostic-only and has not
 modified any frozen production output.
 
@@ -2254,7 +2267,7 @@ not replacing a formal continuation gate for all 96 starts.
 The finite-Y term was in fact loaded in the refdist3 candidate.  Its
 ``predictions.csv`` has nonzero ``Y_CS_used`` for 321 of 329 fitted rows, and
 ``pred_match_CS_raw_before_dataset_norm - pred_W_CS_raw_before_dataset_norm``
-closes to that value within (2.8\times10^{-6}).  The six LHCb rows are zero-Y
+closes to that value within $2.8\times10^{-6}$.  The six LHCb rows are zero-Y
 by construction because the input is
 ``scope_353_y_no_lhcb.csv``.  The ``y_mode=zero`` field is legacy soft-evolution
 metadata, not a switch disabling the external Y grid; reading it as such was
@@ -2386,6 +2399,6 @@ The draft-specific section text, figure-placement guidance, neutral figure
 labels, ready-to-paste subsection, numerical comparison table, and do-not-claim
 checklist are recorded in
 ``reports/WplusY_new_section_PRD_handoff.md``.  It was prepared against
-``/home/dustin/Downloads/b_space_PRD.pdf``.  The proposed new surface figures
+the author-supplied `b_space_PRD.pdf` draft.  The proposed new surface figures
 are additional candidate diagnostics; they do not replace the nominal Figs.
 7 and 8, and no frozen production output was modified.

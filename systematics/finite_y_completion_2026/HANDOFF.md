@@ -2,6 +2,12 @@
 
 Status: lambda=1 Tevatron finite-Y candidate validated; LHCb fiducial W/Y remains a diagnostic candidate pending input normalization/covariance closure; frozen production unchanged.
 
+Paths under `outputs/`, `production_frozen/`, and the original identifiability
+campaign are working-archive references.  They are intentionally omitted from
+the compact public checkout; the frozen public package is under
+`../../production/lambda1_empirical_reference_full96x50/`, and the manifests
+record how to reconnect excluded artifacts.
+
 ## Lambda-one 353-row test-fit launch (2026-08-19)
 
 The differentiable test-fit runner was corrected after an input-provenance
@@ -207,14 +213,14 @@ That reassessment is stored in
 `reports/conventional_y_reassessment/cdf_run_2_36.json`. With the rapidity
 factor removed, the central-node values are approximately:
 
-| (n_b) | (W_{\rm corrected}) | ASY | (W+FO-ASY) | FO |
+| $n_b$ | $W_{\rm corrected}$ | ASY | $W+FO-ASY$ | FO |
 |---:|---:|---:|---:|---:|
 | 160 | 1.916 | −42.754 | 46.728 | 2.057 |
 | 320 | 2.193 | −45.226 | 49.476 | 2.057 |
 | 640 | 2.255 | −45.845 | 50.158 | 2.057 |
 
 Thus the rapidity normalization issue was not the cause of the conventional
-failure. At (q_T/Q\simeq0.20), the fully resummed W is not close to its
+failure. At $q_T/Q\simeq0.20$, the fully resummed W is not close to its
 strict fixed-order asymptotic expansion, so adding (FO-ASY) produces a large
 overshoot. This is a domain-of-validity failure of that candidate, not a
 conclusion that finite-Y work is complete. The production path remains the
@@ -287,7 +293,7 @@ final integral rather than escalating this optional CPU-only check without
 bound. The log and exact status are in
 `reports/lhcb7_external_mcfm_true_nlo_retry/`.
 
-This does not weaken or overturn the finite-​Y conclusion: it is an
+This does not weaken or overturn the finite-Y conclusion: it is an
 independent integration-cost limitation. No MCFM NLO number is used for
 promotion; the converged DYTurbo true-NLO/NNLO results remain the fixed-order
 evidence, and the converged MCFM LO result remains the rapidity-sign closure.
@@ -588,7 +594,7 @@ promotion remains withheld.
 ## Way forward for high-qT LHCb rows 10--13 (2026-08-18)
 
 There is a technically valid path forward, but it is an LHCb observable/theory
-closure path rather than another \(F_{\rm NP}\) tuning path. The four rows
+closure path rather than another $F_{\rm NP}$ tuning path. The four rows
 `LHCb_7:10`--`13` have now been evaluated with the isolated fiducial W-kernel
 campaign (`reports/lhcb_fiducial_w_kernels_nb640/`) using the validated DYTurbo
 node acceptance grid. The grid reproduces the full-bin fiducial acceptance to
@@ -626,7 +632,7 @@ The allowed next sequence is:
    and keep the validated Tevatron production scope unchanged.
 
 Thus there is a way forward, but there is no justified method-level fix that
-can make these four rows agree by altering \(F_{\rm NP}\) or the unitary
+can make these four rows agree by altering $F_{\rm NP}$ or the unitary
 matching profile.
 
 ## NNLO acceptance consistency check (2026-08-18)
@@ -667,8 +673,8 @@ LHCb 7 TeV measurement (arXiv:1505.07024, JHEP 08 (2015) 039). The released
 bin-integrated values divided by the bin widths, and the bin-integrated sum is
 `75.976 pb`, consistent with the published `76.0 pb` total. The candidate
 manifest reproduces the released per-GeV values exactly. The fiducial cuts
-recorded in the manifest are \(p_T^\mu>20\) GeV, \(2<\eta^\mu<4.5\), and
-\(60<M_{\mu\mu}<120\) GeV at 7 TeV, consistent with the publication.
+recorded in the manifest are $p_T^\mu>20$ GeV, $2<\eta^\mu<4.5$, and
+$60<M_{\mu\mu}<120$ GeV at 7 TeV, consistent with the publication.
 
 The reconstructed 14-by-14 pT correlation matrix is symmetric with unit
 diagonal, and its high-qT sub-covariance is positive definite after adding
@@ -698,7 +704,7 @@ row 13: 0.007086 / 0.007324 = 0.9675 of data
 ```
 
 Every W endpoint and every NNLO scale-high FO value is below the measured
-value. Therefore no (F_{\rm NP}) endpoint, local start, or unitary profile
+value. Therefore no $F_{\rm NP}$ endpoint, local start, or unitary profile
 can close these rows. The machine-readable result is
 `reports/lhcb_convex_hull_closure/summary.json`.
 

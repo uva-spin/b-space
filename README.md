@@ -492,8 +492,9 @@ or production-quality accelerator-data covariance treatment.
 
 Thus the fixed-target result is a production-quality fixed-target $b_T$-space
 TMD extraction with a regularized $k_T$-space companion, while the collider
-work is an active, separately labelled extension rather than an absent data
-set or an unqualified global-production claim.
+work is a separately labelled extension with archived candidates and open
+closure gates rather than an absent data set or an unqualified global-
+production claim.
 
 ---
 

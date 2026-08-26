@@ -12,13 +12,14 @@ paper.  All trials use new tags below this directory.
 ## Current baseline
 
 - Active identifiability package:
-  `../dataset_identifiability_campaign_2026/production_lambda1_empirical_reference_full96x50/`
-- Published mirror:
-  `../../b-space-public/production/lambda1_empirical_reference_full96x50/`
-- Frozen v22 production cache:
-  `../../production_frozen/v22_lambda3_50rep_DYonly_bspace/backend_cache/`
-- Current cache manifest:
-  `../../production_frozen/v22_lambda3_50rep_DYonly_bspace/backend_cache/metadata_v22full_n3llp_nloQ96_b160_qToQ05.json`
+  `../../production/lambda1_empirical_reference_full96x50/`
+- Published source-release package: the same `production/` path in this
+  checkout; its `PRODUCTION_MANIFEST.json` and `PRODUCTION_AUDIT.json` are the
+  authoritative public records.
+- Frozen v22 production cache and its metadata manifest: retained in the
+  working archive and intentionally excluded from this source release.  Use
+  the paths recorded by `production/.../paths.txt` and the input manifest when
+  reconnecting the archive.
 
 ## Confirmed implementation
 
@@ -33,8 +34,9 @@ The repository contains the complete implemented fixed-target W stack:
 - strict and multiplicative W reference forms;
 - source-level and numerical bridge/audit programs.
 
-The published source release is `b-space-public` commit `5fb979c`, whose
-matching documentation is at `../../b-space-public/docs/MATCHING.md`.
+The published source release contains the matching documentation at
+`../../docs/MATCHING.md`.  Commit identifiers in older entries are historical
+provenance only; use the current repository revision when reproducing a run.
 
 ## Open provenance questions
 

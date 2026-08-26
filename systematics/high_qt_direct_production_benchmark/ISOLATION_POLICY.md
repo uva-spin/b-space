@@ -2,6 +2,12 @@
 
 The accepted q020 production scheme is immutable during this study.
 
+Some protected paths below are working-tree locations from the original
+campaign and are intentionally absent from the compact public checkout.  In a
+clean checkout, use `production/lambda1_empirical_reference_full96x50/` for
+the committed frozen package and consult the campaign manifests for excluded
+working-archive inputs.
+
 Protected references include:
 
 - `systematics/production_candidate_v23a_collins_q020_tailbench/`

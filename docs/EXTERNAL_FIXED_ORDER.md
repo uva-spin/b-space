@@ -54,10 +54,10 @@ DYROOT/bin/dyturbo       executable
 DYROOT/lib/               runtime libraries, if the build uses them
 ~~~
 
-The default paths in the archived scripts are /home/dustin/src/dyturbo-1.4.2
-and /home/dustin/src/dyturbo-1.4.2/bin/dyturbo. For another installation,
-pass both --dyturbo and --dyturbo-root; do not change a card by hand and
-forget to record the change. The executable must be runnable from its root,
+The archived runs used a local DYTurbo 1.4.2 installation. For another
+installation, the row-level DYTurbo wrappers accept both `--dyturbo` and
+`--dyturbo-root`; do not change a card by hand and forget to record the change.
+The executable must be runnable from its root,
 and the runtime library path should include both the active Python/conda
 library directory and DYROOT/lib:
 
@@ -83,8 +83,9 @@ MCFM_BIN/mcfm             executable
 MCFM_BIN/PDFs/            MCFM grid/PDF support files
 ~~~
 
-The historical default was /home/dustin/work/MCFM-10.3/Bin. The wrapper also
-needs LHAPDF_DATA_PATH when the selected MCFM build uses LHAPDF grids:
+The historical runs used an MCFM 10.3 `Bin/` directory. Set `MCFM_BIN` to the
+corresponding path. The wrapper also needs `LHAPDF_DATA_PATH` when the selected
+MCFM build uses LHAPDF grids:
 
 ~~~bash
 export MCFM_BIN=/path/to/MCFM-10.3/Bin
@@ -342,6 +343,12 @@ per-row cards/, logs/, and tables/ directories because they are part of the
 provenance, not disposable cache. The orchestrator expects the archived
 candidate data at the working-tree path named above; for a different archive,
 stage or adapt that input path and record the change.
+
+The orchestrator's child-process interpreter is recorded by the historical
+campaign configuration. On a new machine, verify that interpreter path before
+launching a multi-row campaign, or run the row-level wrappers directly with
+the active environment; never treat a changed interpreter as an interchangeable
+physics configuration.
 
 ## 6. Conventional N3LL+NNLO W+Y candidate
 

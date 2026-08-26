@@ -1,8 +1,13 @@
 # b-space GitHub import checklist
 
-This staging bundle contains the public README, plotting/reconstruction tools, freeze manifests, and note/figure assets for `https://github.com/uva-spin/b-space`.
+This file records the original public-release import checklist for
+`https://github.com/uva-spin/b-space`.  The repository is now assembled on the
+`main` branch; this is a historical staging record, not a command sequence to
+run on an existing checkout.  For current documentation and reproduction
+instructions, start with `README.md`, `docs/REPRODUCIBILITY.md`, and
+`docs/SOURCE_MAP.md`.
 
-## Copy into the repo
+## Historical copy step
 
 From the unpacked bundle root:
 
@@ -56,7 +61,7 @@ Recommended release tarballs:
 - `replica_v23a_expPDF_overlay_lambda3_normpriors15_p2p5_50rep/kspace_regularized_comparison/`
 - `plots/v23a_fixed_target_lowQ_normpriors15_p2p5_E772_E288400_central_exactx/`
 
-## Suggested commit sequence
+## Historical commit sequence
 
 ```bash
 git add README.md LICENSE CITATION.cff requirements.txt

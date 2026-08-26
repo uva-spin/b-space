@@ -16,7 +16,7 @@ output directory for every run.
 ## Progression
 
 1. `v22/bootstrap/` establishes the convention lock, convolution reference,
-   CSS2 canonical and general-scale OPE, hard factor, small-​`b_T` profile, and
+   CSS2 canonical and general-scale OPE, hard factor, small-`b_T` profile, and
    standalone W-kernel smoke tests.
 2. `v22/audits/` checks the backend against those source-level definitions;
    `v22/construction/` builds row-aligned b-space grids and replica bands.

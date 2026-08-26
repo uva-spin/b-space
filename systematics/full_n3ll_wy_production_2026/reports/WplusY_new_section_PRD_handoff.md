@@ -1,7 +1,7 @@
 # Handoff for an additional W+Y section in the PRD draft
 
 Date: 2026-08-25
-Draft reviewed: `/home/dustin/Downloads/b_space_PRD.pdf` (21 pages,
+Draft reviewed: author-supplied `b_space_PRD.pdf` (21 pages,
 dated 2026-08-19 in the PDF)
 Purpose: provide section-ready text, figure guidance, and an accuracy/provenance
 record for adding the recent W+Y work without replacing the nominal production
@@ -40,7 +40,7 @@ explicit:
 
 Suggested subsection title:
 
-> **Exploratory finite-\( Y \) W+Y candidate and identifiability stress test**
+> **Exploratory finite-$Y$ W+Y candidate and identifiability stress test**
 
 If the journal style does not permit an extra subsection in Sec. VIII, the
 same text can be placed as a short new section immediately before the
@@ -55,9 +55,9 @@ momentum-space surfaces.  Those statements should remain true.  In
 particular, do not replace the following nominal quantities with candidate
 values:
 
-* the lambda=1 reference-distance term acting over (0.1\le b_T\le2.0
-  \,\mathrm{GeV}^{-1});
-* the nominal (\chi^2_{\rm data}/N_{\rm acc}\simeq0.418) statement;
+* the lambda=1 reference-distance term acting over
+  $0.1\le b_T\le2.0\ \mathrm{GeV}^{-1}$;
+* the nominal $\chi^2_{\rm data}/N_{\rm acc}\simeq0.418$ statement;
 * the nominal 96-start by 50-residual-field uncertainty construction;
 * the existing production Figures 2, 6, 7, and 8;
 * the statement that the paper's nominal sample is W-only.
@@ -82,19 +82,19 @@ unprimed N3LL+NNLO W+Y grid for 122 Tevatron bins:
 
 The convention is
 
-\[
- W=\mathrm{RES},\qquad
- Y=\mathrm{FO}_{\rm NNLO}-\mathrm{ASY}_{\rm NNLO},\qquad
- W+Y=\mathrm{RES}+\mathrm{CT}+\mathrm{VJ},
-\]
+$$
+\begin{aligned}
+W=\mathrm{RES},\qquad Y=\mathrm{FO}_{\rm NNLO}-\mathrm{ASY}_{\rm NNLO},\qquad W+Y=\mathrm{RES}+\mathrm{CT}+\mathrm{VJ},
+\end{aligned}
+$$
 
-with the direct nonperturbative center (g_1=1.017\,\mathrm{GeV}^2).  The
+with the direct nonperturbative center $g_1=1.017\ \mathrm{GeV}^2$.  The
 final isolated table is finite and positive in every row.  Its W+Y/data ratio
 has median 1.002973 and range 0.775403--1.168256.  The mean estimated grid
 integration uncertainty is 1.1773%, with a maximum of 16.5446% in
 cancellation-dominated rows.  The explicit conventional-Y reconstruction has
-median residual (2.947\times10^{-4}\,\mathrm{pb/GeV}) and maximum residual
-(9.070\times10^{-3}\,\mathrm{pb/GeV}).  These integration estimates are
+median residual $2.947\times10^{-4}\ \mathrm{pb/GeV}$ and maximum residual
+$9.070\times10^{-3}\ \mathrm{pb/GeV}$.  These integration estimates are
 diagnostics, not extra statistical error bars on the TMD.
 
 This 122-row table is the strongest recent perturbative W+Y validation and is
@@ -134,37 +134,39 @@ decision is
 The candidate retains the same physics-informed monotone FiLM architecture as
 the nominal extraction.  The network learns a positive damping rate and hence
 
-\[
- F_{\rm NP}(x,b_T)=\exp\!\left[-\int_0^{b_T}d\beta\,2\beta
- A_\theta(x,\beta)\right],
-\]
+$$
+\begin{aligned}
+F_{\rm NP}(x,b_T)=\exp\left[-\int_0^{b_T} d\beta\cdot 2\beta\cdot A_\theta(x,\beta)\right],
+\end{aligned}
+$$
 
-so (F_{\rm NP}(x,0)=1) and the factor is nonincreasing.  The perturbative
+so $F_{\rm NP}(x,0)=1$ and the factor is nonincreasing.  The perturbative
 PDFs, evolution, matching factors, and transform remain outside the trainable
 network.
 
 Relative to the nominal production objective, the candidate adds the same
-direct-(F_{\rm NP}) reference-distance construction but changes its declared
+direct-$F_{\rm NP}$ reference-distance construction but changes its declared
 scope and strength:
 
-\[
- \Phi=\chi^2_{\rm data}+\chi^2_{\rm norm}
-      +3\,\chi^2_{\rm ref}+1\,\chi^2_{\rm tail}.
-\]
+$$
+\begin{aligned}
+\Phi=\chi^2_{\rm data}+\chi^2_{\rm norm} +3 \chi^2_{\rm ref}+1 \chi^2_{\rm tail}.
+\end{aligned}
+$$
 
-Here the reference distance acts over (0.1\le b_T\le8.0\,
-\mathrm{GeV}^{-1}), rather than only to (2.0\,\mathrm{GeV}^{-1}), and the
-separate tail control begins at (b_T=6.0\,\mathrm{GeV}^{-1}) with target
-factor 0.05.  The reference term is a direct pointwise distance in (F_{\rm
-NP}), with the same denominator floor used by the nominal implementation;
-it is not a boundary condition at (b_T=8\) and does not mathematically make
+Here the reference distance acts over $0.1\le b_T\le8.0\ \mathrm{GeV}^{-1}$,
+rather than only to $2.0\ \mathrm{GeV}^{-1}$, and the separate tail control
+begins at $b_T=6.0\ \mathrm{GeV}^{-1}$ with target
+factor 0.05.  The reference term is a direct pointwise distance in
+$F_{\rm NP}$, with the same denominator floor used by the nominal implementation;
+it is not a boundary condition at $b_T=8$ and does not mathematically make
 the inverse problem unique.
 
 The candidate protocol used 96 independent 1%-perturbed starts (seeds
 303--398), 50 pseudo-data residual fits (seeds 1001--1050), a 50,000-epoch
 ceiling, the monotone FiLM model, and the repaired external W/Y inputs.  The
 4,800-member ensemble was constructed by adding centered replica residuals in
-\log (F_{\rm NP}) to each start curve.  It therefore contains 96 fitted
+$\log(F_{\rm NP})$ to each start curve.  It therefore contains 96 fitted
 networks and 50 residual fields; it does **not** contain 4,800 independent
 neural-network fits.
 
@@ -195,13 +197,13 @@ Using the pointwise empirical q16--q84 **full width** in the active region:
 | k-space d maximum | 22.5% | 27.7% |
 | k-space d median | 11.5% | 14.3% |
 
-Selected candidate full-width probes are 8.3% at (b_T\simeq1), 27.6% at
-(b_T\simeq2), and 10.5% at (b_T\simeq4).  The stronger full-range prior
-does suppress the (b_T\simeq3\)--4 spread that controls the very-low-
-(k_T) Hankel endpoint.  It simultaneously broadens the data-sensitive
-(b_T<2) core and intermediate-(k_T) region.  The candidate central
-(F_{\rm NP}) shape is also lower by roughly 6--8% at (b_T=1\)--2 and higher
-by roughly 8% near (b_T=4).  The result is therefore a genuine shape change,
+Selected candidate full-width probes are 8.3% at $b_T\simeq1$, 27.6% at
+$b_T\simeq2$, and 10.5% at $b_T\simeq4$. The stronger full-range prior
+does suppress the $b_T\simeq3$--4 spread that controls the very-low-$k_T$
+Hankel endpoint. It simultaneously broadens the data-sensitive
+$b_T<2$ core and intermediate-$k_T$ region. The candidate central
+$F_{\rm NP}$ shape is also lower by roughly 6--8% at $b_T=1$--2 and higher
+by roughly 8% near $b_T=4$. The result is therefore a genuine shape change,
 not merely a change in the plotted band.
 
 The correct conclusion is that the stronger reference prior **relocates**
@@ -225,7 +227,7 @@ fit.
 
 > **Exploratory finite-$Y$ candidate.**  The nominal extraction described
 > above is intentionally W-only.  As a separate diagnostic, we connected the
-> repaired b-space W grid to an assembled finite-\( Y \) correction on the
+> repaired b-space W grid to an assembled finite-$Y$ correction on the
 > 329-row core and refit only the nonperturbative factor.  The correction is
 > nonzero on 321 of the 329 fitted rows.  The six LHCb rows were retained only
 > as W-only diagnostics, with $Y=0$, because the available full-minus-RES
@@ -236,9 +238,9 @@ fit.
 >
 > The candidate uses the same positive-rate FiLM architecture as the nominal
 > extraction, but applies the direct $F_{\rm NP}$ reference-distance term
-> with coefficient $\lambda_{\rm ref}=3$ over $0.1\le b_T\le8.0\,
-> \mathrm{GeV}^{-1}$, together with the separate large-$b_T$ tail
-> control beginning at $b_T=6.0\,\mathrm{GeV}^{-1}$.  We performed 96
+> with coefficient $\lambda_{\rm ref}=3$ over $0.1\le b_T\le8.0\ \mathrm{GeV}^{-1}$,
+> together with the separate large-$b_T$ tail
+> control beginning at $b_T=6.0\ \mathrm{GeV}^{-1}$.  We performed 96
 > independent 1%-perturbed starts and 50 pseudo-data residual fits to a
 > 50,000-epoch ceiling.  The final ensemble contains 4,800 crossed members
 > formed from 96 fitted networks and 50 residual fields; it is not a set of
@@ -259,7 +261,7 @@ fit.
 ## New surface figures
 
 The two additional surfaces are generated from the complete 4,800-member
-candidate cross at $Q=7.5\,\mathrm{GeV}$.  They show $x f_1^q(x,k_T;Q)$ for
+candidate cross at $Q=7.5\ \mathrm{GeV}$.  They show $x f_1^q(x,k_T;Q)$ for
 $k_T\in[0,3]$ GeV.  The numerical candidate grids are directly available at
 $x=0.1,0.2,0.3,0.5$; the plotted surface uses a display-only 41-row
 interpolation in $x$ to avoid a visually blocky four-row mesh.  The
@@ -290,7 +292,7 @@ Suggested caption for the u panel:
 
 > **Candidate W+Y surface for the $u$ flavor.**  The surface height is the
 > empirical median of the 96-start by 50-residual-field crossed ensemble for
-> the corrected non-LHCb finite-$Y$ candidate at $Q=7.5\,\mathrm{GeV}$.
+> the corrected non-LHCb finite-$Y$ candidate at $Q=7.5\ \mathrm{GeV}$.
 > The color gives the relative q16--q84 half-width, shown with the standard
 > “Combined relative 68% half-width” label; it is an empirical procedural
 > envelope rather than a calibrated Gaussian 68% confidence band.  The direct
@@ -347,7 +349,7 @@ Do not write any of the following in the new section:
 * “the 4,800 members are independent fits”;
 * “the combined candidate envelope is a calibrated 68% confidence band”;
 * “the new surfaces replace Figs. 7 and 8”;
-* “the finite-b Hankel transform is a fixed-order high-\( k_T \) prediction.”
+* “the finite-b Hankel transform is a fixed-order high-$k_T$ prediction.”
 
 The defensible summary is narrower: the recent work demonstrates a usable
 direct Tevatron W+Y perturbative grid and provides an isolated corrected
