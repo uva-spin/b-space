@@ -7,8 +7,9 @@ documented SIDIS TMD-fragmentation sector. It relies on the frozen DY result
 and perturbative conventions as read-only inputs; it does not modify or replace
 them.
 
-**Status:** initialized discovery/provenance phase. No SIDIS dataset, fit,
-replica ensemble, or global-production claim is approved.
+**Status:** first public-source harvest complete; discovery/provenance phase.
+No SIDIS row selection, fit, replica ensemble, or global-production claim is
+approved.
 
 ## Dependency boundary
 
@@ -46,10 +47,39 @@ treatment, hadron/target-mass conventions, or SIDIS experimental covariance.
 7. Promote only after input, observable, closure, stationarity, robustness, and
    uncertainty-semantic gates pass.
 
+## First public-source harvest
+
+The source registry in `config/public_sources.json` and the compact download
+manifest in `data/hepdata_download_manifest.json` identify five version-1
+HEPData CSV submissions from HERMES and COMPASS. They contain 235 tables and
+31,178 rows in total; 178 tables expose a transverse-momentum axis. The
+candidate records are HERMES `ins1208547` and COMPASS `ins1624692` for
+identified/charged-hadron transverse-momentum multiplicities, with COMPASS
+`ins1444985`, `ins1483098`, and `ins2840545` retained as collinear complements.
+The inventory is recorded in `reports/public_source_inventory.md`.
+
+These are provenance candidates, not fit-ready rows. The raw archives are kept
+outside this public source checkout; reproduce them with the fetch/profiling
+drivers and verify the SHA256 values in the manifest. Statistical and
+systematic columns are preserved but are not silently combined into a
+covariance matrix.
+
+## Software boundary
+
+`sidis_data.py` provides a metadata-preserving HEPData CSV reader and schema
+profiler. `sidis_observables.py` provides a convention-explicit radial
+PDF-times-TMDFF Bessel convolution using `qT=P_hT/z` and `b db/(2 pi)`, plus a
+guarded multiplicity ratio. It returns the SIDIS structure-function piece
+only; experiment-specific prefactors, DIS denominators, target composition,
+radiative factors, and finite-Y terms remain explicit until the formalism is
+locked. Five scalar unit tests pass. The source-only drivers are
+`scripts/fetch_hepdata_records.py`, `scripts/profile_hepdata_tables.py`, and
+`scripts/build_source_inventory.py`.
+
 ## Immediate next action
 
-Complete `HANDOFF.md`'s data/provenance inventory before choosing a SIDIS
-dataset or architecture. Resolve whether the first scope is multiplicities or
-absolute cross sections, which experiments/hadrons have full covariance, and
-which collinear FF/TMDFF conventions can be reproduced. Until then this is a
-scaffold only.
+Use the harvested inventory to complete `HANDOFF.md`'s row-level
+data/provenance audit before choosing a SIDIS dataset or architecture. Resolve
+whether the first scope is multiplicities or absolute cross sections, which
+experiments/hadrons have full covariance, and which collinear FF/TMDFF
+conventions can be reproduced. Until then this is a discovery scaffold only.

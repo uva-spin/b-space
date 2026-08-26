@@ -1,7 +1,7 @@
 # SIDIS global-analysis campaign handoff
 
 **Initialized:** 2026-08-26  
-**Status:** discovery/provenance phase; no production fit authorized  
+**Status:** first public-source harvest complete; discovery/provenance phase; no production fit authorized
 **Scope:** shared unpolarized TMD-PDF plus SIDIS TMD-fragmentation global analysis
 
 This campaign is separate from the completed DY identifiability and production
@@ -21,6 +21,45 @@ the interface and data conventions are frozen.
   a universal global-DY or SIDIS prescription.
 
 None of these supplies a SIDIS fragmentation model or authorizes a joint refit.
+
+## 2026-08-26 public-source harvest
+
+The first read-only public harvest uses version-1 HEPData CSV submission
+archives. The source registry is `config/public_sources.json`; archive URLs,
+SHA256 values, and table lists are in `data/hepdata_download_manifest.json`.
+The compact table inventory is in `reports/public_source_inventory.md`.
+
+| Source | Scope | Tables | Rows | Tables with transverse momentum | Current use |
+| --- | --- | ---: | ---: | ---: | --- |
+| HERMES `ins1208547` | identified pi+/K+, H/D, x_B/Q2/z/P_hperp | 64 | 1,196 | 16 | primary TMD candidate; row/covariance audit pending |
+| COMPASS `ins1624692` | charged h+/h-, 6LiD, x/Q2/z/P_hT2 | 162 | 14,316 | 162 | primary TMD candidate; row/covariance audit pending |
+| COMPASS `ins1444985` | pi+/- and h+/-, 6LiD, x/y/z | 4 | 6,236 | 0 | collinear complement; convention audit pending |
+| COMPASS `ins1483098` | K+/-, 6LiD, x/y/z | 2 | 3,098 | 0 | collinear complement; convention audit pending |
+| COMPASS `ins2840545` | pi+/K+/h+/-, H, x/y/z | 3 | 6,332 | 0 | collinear complement; full audit pending |
+
+Total: 235 tables and 31,178 rows; 178 tables expose a transverse-momentum
+axis. No rows, errors, or covariance matrices are approved for a fit. The
+public checkout carries manifests, scripts, hashes, and inventory only; raw
+archives remain local inputs.
+
+Reproduce the source-only harvest with:
+
+```text
+python scripts/fetch_hepdata_records.py
+python scripts/profile_hepdata_tables.py
+python scripts/build_source_inventory.py
+```
+
+## Software boundary (2026-08-26)
+
+`sidis_data.py` is a metadata-preserving CSV reader/profiler that handles
+duplicate labels and HEPData description continuations. `sidis_observables.py`
+implements a scalar-tested radial PDF-times-TMDFF Bessel convolution with
+explicit `qT=P_hT/z` and `b db/(2 pi)` conventions and a guarded multiplicity
+ratio. It returns the structure-function piece only; experiment-specific
+prefactors, DIS denominators, target/beam composition, radiative factors, and
+Y terms remain explicit until their conventions are locked. Five unit tests
+pass.
 
 ## Questions before fitting
 
@@ -51,7 +90,8 @@ None of these supplies a SIDIS fragmentation model or authorizes a joint refit.
 
 ## First deliverables
 
-1. A candidate-source and provenance inventory.
+1. A candidate-source and provenance inventory (the first five HEPData records
+   are harvested; row-level approval remains open).
 2. A row-level data table with observable, target, hadron, units, cuts,
    covariance, normalization, and bin-integration fields.
 3. An exact SIDIS formalism note and scalar reference implementation.
@@ -64,3 +104,5 @@ None of these supplies a SIDIS fragmentation model or authorizes a joint refit.
 | Date | Decision | Evidence | Status |
 | --- | --- | --- | --- |
 | 2026-08-26 | Create separate SIDIS/global-analysis campaign | Existing DY production and systematics are frozen; SIDIS requires a TMDFF and new observable/covariance closure | Initialized |
+| 2026-08-26 | Harvest five version-1 public HEPData records | 235 tables and 31,178 rows profiled; 178 tables expose transverse momentum; no rows or covariance selected | Discovery only |
+| 2026-08-26 | Add convention-explicit SIDIS software boundary | Metadata-preserving reader/profiler, radial PDF×TMDFF convolution, guarded ratio, and five scalar tests pass | Discovery only |

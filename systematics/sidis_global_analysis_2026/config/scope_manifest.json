@@ -1,10 +1,15 @@
 {
   "campaign": "sidis_global_analysis_2026",
-  "status": "initialized_discovery_only",
+  "status": "public_source_harvest_complete_discovery_only",
   "initialized": "2026-08-26",
   "target": "complete shared-DY-plus-SIDIS unpolarized TMD global analysis",
+  "candidate_records": ["ins1208547", "ins1624692", "ins1444985", "ins1483098", "ins2840545"],
   "sidis_datasets": [],
   "sidis_observables": [],
+  "harvested_record_count": 5,
+  "harvested_table_count": 235,
+  "harvested_row_count": 31178,
+  "harvested_transverse_momentum_table_count": 178,
   "approved_rows": 0,
   "production_authorized": false,
   "frozen_dependencies": {

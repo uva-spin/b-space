@@ -1,0 +1,14 @@
+{
+  "campaign": "sidis_global_analysis_2026",
+  "status": "public_hepdata_records_downloaded",
+  "source": "HEPData version-1 CSV submission archives",
+  "records": [
+    {"record": "ins1208547", "record_url": "https://www.hepdata.net/record/ins1208547", "download_url": "https://www.hepdata.net/download/submission/ins1208547/1/csv", "archive": "data/raw/hepdata/ins1208547/submission_csv.tar.gz", "archive_sha256": "b2d722e99e6fb137b1a221f3385fa711ffe0857e73de411aa71b822775d51dba", "csv_table_count": 64},
+    {"record": "ins1624692", "record_url": "https://www.hepdata.net/record/ins1624692", "download_url": "https://www.hepdata.net/download/submission/ins1624692/1/csv", "archive": "data/raw/hepdata/ins1624692/submission_csv.tar.gz", "archive_sha256": "17374232c29267b1b2dce0a2edee0f8393a2468b6e78324d62b4a91f0307ead8", "csv_table_count": 162},
+    {"record": "ins1444985", "record_url": "https://www.hepdata.net/record/ins1444985", "download_url": "https://www.hepdata.net/download/submission/ins1444985/1/csv", "archive": "data/raw/hepdata/ins1444985/submission_csv.tar.gz", "archive_sha256": "63d01523634c56ade84ccebe26385c60f013866c5217136c1ffc96bbb5178a99", "csv_table_count": 4},
+    {"record": "ins1483098", "record_url": "https://www.hepdata.net/record/ins1483098", "download_url": "https://www.hepdata.net/download/submission/ins1483098/1/csv", "archive": "data/raw/hepdata/ins1483098/submission_csv.tar.gz", "archive_sha256": "6a24a88514803b144bc4e3df14244ea935343ab173eaf52c68b705e1de953860", "csv_table_count": 2},
+    {"record": "ins2840545", "record_url": "https://www.hepdata.net/record/ins2840545", "download_url": "https://www.hepdata.net/download/submission/ins2840545/1/csv", "archive": "data/raw/hepdata/ins2840545/submission_csv.tar.gz", "archive_sha256": "823f7af5600878368d8532aa0fcd2525a414a18e16e9c58b698666f4b77872db8", "csv_table_count": 3}
+  ],
+  "production_authorized": false,
+  "production_files_modified": false
+}

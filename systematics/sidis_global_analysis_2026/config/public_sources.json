@@ -1,0 +1,61 @@
+{
+  "campaign": "sidis_global_analysis_2026",
+  "source_policy": "public versioned HEPData records; download metadata and CSV archive before any row selection",
+  "records": [
+    {
+      "record": "ins1208547",
+      "collaboration": "HERMES",
+      "title": "Multiplicities of charged pions and kaons from semi-inclusive deep-inelastic scattering by the proton and the deuteron",
+      "doi": "10.17182/hepdata.62097",
+      "publication": "Phys. Rev. D 87 (2013) 074029",
+      "observable": "identified charged-pion and charged-kaon multiplicities versus x_B, Q^2, z, and P_hperp",
+      "target": "hydrogen and deuterium",
+      "status": "primary_candidate_pending_row_and_covariance_audit",
+      "source_url": "https://www.hepdata.net/record/ins1208547"
+    },
+    {
+      "record": "ins1624692",
+      "collaboration": "COMPASS",
+      "title": "Transverse-momentum-dependent Multiplicities of Charged Hadrons in Muon-Deuteron Deep Inelastic Scattering",
+      "doi": "10.17182/hepdata.83542",
+      "publication": "Phys. Rev. D 97 (2018) 032006",
+      "observable": "charged-hadron multiplicities versus x, Q^2, z, and P_hT^2",
+      "target": "6LiD isoscalar deuteron target",
+      "status": "primary_candidate_pending_row_and_covariance_audit",
+      "source_url": "https://www.hepdata.net/record/ins1624692"
+    },
+    {
+      "record": "ins1444985",
+      "collaboration": "COMPASS",
+      "title": "Multiplicities of charged pions and unidentified charged hadrons from deep-inelastic scattering of muons off an isoscalar target",
+      "doi": "10.17182/hepdata.76800",
+      "publication": "Phys. Lett. B 764 (2017) 1-10",
+      "observable": "charged-pion and unidentified-hadron multiplicities in x, y, z",
+      "target": "6LiD isoscalar target",
+      "status": "collinear_complement_pending_convention_audit",
+      "source_url": "https://www.hepdata.net/record/ins1444985"
+    },
+    {
+      "record": "ins1483098",
+      "collaboration": "COMPASS",
+      "title": "Multiplicities of charged kaons from deep-inelastic muon scattering off an isoscalar target",
+      "doi": "10.17182/hepdata.77892",
+      "publication": "Phys. Lett. B 767 (2017) 133-141",
+      "observable": "charged-kaon multiplicities in x, y, z",
+      "target": "6LiD isoscalar target",
+      "status": "collinear_complement_pending_convention_audit",
+      "source_url": "https://www.hepdata.net/record/ins1483098"
+    },
+    {
+      "record": "ins2840545",
+      "collaboration": "COMPASS",
+      "title": "Multiplicities of positive and negative pions, kaons and unidentified hadrons from deep-inelastic scattering of muons off a liquid hydrogen target",
+      "doi": "10.17182/hepdata.159544",
+      "publication": "Phys. Rev. D 112 (2025) 012002",
+      "observable": "identified and unidentified charged-hadron multiplicities in x, y, z",
+      "target": "liquid hydrogen",
+      "status": "recent_collinear_complement_pending_full_data_audit",
+      "source_url": "https://www.hepdata.net/record/ins2840545"
+    }
+  ]
+}
