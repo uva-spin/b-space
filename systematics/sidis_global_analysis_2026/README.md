@@ -163,6 +163,13 @@ external literature benchmark and its reported 1,547 post-cut SIDIS points are
 recorded in `config/external_fit_benchmarks.json`; the number is a staged
 reproduction target, not a requirement to count incompatible observables.
 
+The complete progressive fitting protocol is locked in
+`config/staged_fit_plan.json`, with a rendered review table in
+`reports/staged_fit_plan.md`. It assigns every registry identity to an inventory,
+benchmark, extension, JLab, historical, diagnostic, or deferred stage. The rule
+is to harvest the full candidate universe but fit one provenance-closed family at
+a time; there is no all-at-once likelihood in this campaign.
+
 ## Immediate next action
 
 The first benchmark audit is now reproducible with

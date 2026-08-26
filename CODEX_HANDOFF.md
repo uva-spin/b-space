@@ -141,6 +141,15 @@ required Q/x axes and covariance sidecars; deterministic COMPASS bin choices
 give 1,078--1,285 rows around the reported 1,203. A row-level selection
 manifest is therefore still required before fitting.
 
+The machine-readable progressive fitting policy is
+`systematics/sidis_global_analysis_2026/config/staged_fit_plan.json`, rendered
+in `reports/staged_fit_plan.md`. All 22 registry identities are assigned to an
+inventory, literature benchmark, clean extension, JLab, historical,
+diagnostic, or deferred stage. The campaign deliberately fits one
+provenance-closed experiment/hadron/target family at a time, with held-out and
+leave-one-family-out checks, rather than optimizing all candidate rows at
+once. No rows are approved and no production fit is authorized.
+
 ## Status table
 
 | Workstream | Status | Interpretation |

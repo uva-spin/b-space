@@ -1,0 +1,152 @@
+{
+  "campaign": "sidis_global_analysis_2026",
+  "version": 1,
+  "status": "staged_fit_plan_locked_discovery_only",
+  "principle": "Harvest the complete candidate universe, but fit one provenance-closed family at a time; no all-at-once global optimization is authorized.",
+  "external_benchmark": {
+    "papers": [
+      "arXiv:2206.07598",
+      "arXiv:2405.13833"
+    ],
+    "reported_clean_sidis_points": 1547,
+    "breakdown": {
+      "HERMES": 344,
+      "COMPASS": 1203
+    },
+    "selection": {
+      "Q_min_GeV": 1.4,
+      "z_range": [0.2, 0.7],
+      "pht_cut": "|P_hT| < min[min(0.2 Q, 0.5 z Q)+0.3 GeV, z Q]",
+      "hermes": "vector-meson-subtracted zxpt-3D supplemental multiplicities",
+      "compass": "vector-boson-subtracted release"
+    },
+    "status": "audit_not_reproduced",
+    "blocking_evidence": [
+      "The available HERMES HEPData projection has 288 rows and lacks the Q/x axes required for the published post-cut selection.",
+      "The HERMES supplemental value and covariance archive has not yet been mirrored.",
+      "COMPASS HEPData contains 4664 primary rows; representative bin choices produce 1078--1285 candidates rather than certifying 1203."
+    ]
+  },
+  "stages": [
+    {
+      "id": "S0_inventory",
+      "name": "all-public-candidates",
+      "source_ids": "all records in config/global_sources.json",
+      "purpose": "Build a complete public-source registry, preserve hashes and raw provenance, and classify each observable before fitting.",
+      "entry_gate": "none",
+      "exit_gate": "registry, source hashes, table inventory, and explicit stage/diagnostic/deferred classification",
+      "status": "complete"
+    },
+    {
+      "id": "S1_literature_benchmark",
+      "name": "HERMES-COMPASS-1547-benchmark",
+      "source_ids": ["hepdata:ins1208547", "hepdata:ins1624692"],
+      "target_points": 1547,
+      "purpose": "Reproduce the external clean HERMES/COMPASS checkpoint before adding any new experiment.",
+      "entry_gate": "HERMES zxpt-3D value/covariance files and COMPASS row-level selection convention are available.",
+      "required_closure": [
+        "row identity and duplicate/projection policy",
+        "Q, x, z, W2, y, P_hT or P_hT2 bin integration",
+        "vector-meson/vector-boson subtraction status",
+        "statistical, systematic, and normalization covariance",
+        "independent scalar multiplicity prediction"
+      ],
+      "fit_protocol": "fit HERMES and COMPASS separately, then combined; retain leave-one-family-out and held-out-bin predictions",
+      "status": "blocked_provenance"
+    },
+    {
+      "id": "S1_core_extensions",
+      "name": "clean-HERMES-COMPASS-extensions",
+      "source_ids": ["hepdata:46860", "hepdata:ins1236358", "hepdata:ins1444985"],
+      "purpose": "Test additional public HERMES/COMPASS multiplicity projections after overlap and convention closure.",
+      "entry_gate": "S1 promoted and each extension has a row-selection and covariance manifest.",
+      "fit_protocol": "one source/hadron/target block per trial; warm start from S1 only after an independent-start check",
+      "status": "pending"
+    },
+    {
+      "id": "S2_jlab_clas",
+      "name": "CLAS-absolute-cross-section",
+      "source_ids": ["arxiv:0809.1153"],
+      "purpose": "Test a proton absolute-cross-section family and its radiative/acceptance conventions without silently converting it to a multiplicity.",
+      "entry_gate": "S1 interface reproduces DY and SIDIS scalar references; CLAS five-fold cross-section, radiative factor, bin integration, and covariance are closed.",
+      "fit_protocol": "pi+ first; Q2/x/z slices held out by construction; compare absolute normalization and shape separately",
+      "status": "inventory_complete_closure_pending"
+    },
+    {
+      "id": "S2_jlab_hall_c",
+      "name": "Hall-C-low-energy",
+      "source_ids": ["arxiv:1103.1649"],
+      "purpose": "Assess low-energy H/D pi cross sections only after W/Mx, rho subtraction, hadron-mass, and low-Q factorization checks.",
+      "entry_gate": "CLAS or an equivalent absolute-cross-section closure passes and low-energy validity is documented.",
+      "fit_protocol": "H and D, then charge blocks; leave-one-kinematic-bin-out and normalization-nuisance tests",
+      "status": "inventory_complete_closure_pending"
+    },
+    {
+      "id": "S2_recent_and_historical",
+      "name": "recent-and-historical-complements",
+      "source_ids": [
+        "hepdata:ins1483098",
+        "hepdata:ins2840545",
+        "hepdata:29288",
+        "hepdata:37889",
+        "hepdata:1432"
+      ],
+      "purpose": "Add kaon, recent hydrogen, EMC, and E665 families one at a time after observable and current-fragmentation closure.",
+      "entry_gate": "The source is shown to share the declared SIDIS observable and its target/energy corrections are explicit.",
+      "fit_protocol": "source-by-source; report incremental chi-square, central shift, start spread, and held-out performance",
+      "status": "harvested_closure_pending"
+    },
+    {
+      "id": "S3_diagnostics",
+      "name": "nuclear-current-region-diagnostics",
+      "source_ids": [
+        "arxiv:1610.02350",
+        "hepdata:42505",
+        "hepdata:42540",
+        "hepdata:30476",
+        "hepdata:44930",
+        "hepdata:45525",
+        "hepdata:ins1217865",
+        "arxiv:hep-ex/9511010"
+      ],
+      "purpose": "Use nuclear, jet/remnant, Breit-frame, and current-region data as falsification/diagnostic tests unless their dedicated formalism closes.",
+      "entry_gate": "Dedicated nuclear/current-region/jet observable and covariance implementations pass independent closure.",
+      "fit_protocol": "never merge diagnostically by default; report prediction-only residuals and failure modes",
+      "status": "diagnostic_only"
+    },
+    {
+      "id": "S4_deferred",
+      "name": "future-or-access-restricted",
+      "source_ids": ["jlab:E12-09-017", "jlab:clas_physics_database"],
+      "purpose": "Keep public pointers visible without treating proposals or access-restricted databases as harvested fit data.",
+      "entry_gate": "A final, versioned, publicly reproducible table and uncertainty definition becomes available.",
+      "fit_protocol": "re-enter through S0 inventory and source-specific closure; never infer rows from a pointer",
+      "status": "deferred"
+    }
+  ],
+  "per_trial_record": {
+    "required": [
+      "input_manifest_and_hashes",
+      "row_selection_and_covariance_manifest",
+      "observable_and_bin_integration_convention",
+      "fit_objective_decomposition",
+      "independent_start_and_plateau_evidence",
+      "experimental_replica_protocol",
+      "held_out_and_leave_one_family_out_metrics",
+      "central_prediction_shift_relative_to_previous_stage",
+      "model_form_and_prior_sensitivity",
+      "promotion_or_rejection_decision"
+    ],
+    "uncertainty_labels": [
+      "experimental_replica",
+      "start_nonuniqueness",
+      "TMDFF_parameterization",
+      "dataset_selection",
+      "perturbative_or_theory_variation",
+      "combined_envelope_not_automatically_one_sigma"
+    ]
+  },
+  "approved_rows": 0,
+  "production_authorized": false,
+  "production_files_modified": false
+}

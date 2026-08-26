@@ -299,3 +299,30 @@ add CLAS proton and Hall-C H/D families one at a time, and (4) test EMC/E665
 and H1/ZEUS only after their observable and factorization boundaries close.
 No rows have been approved, no SIDIS fit has been run, and no frozen DY file
 has been modified.
+
+## Progressive all-global-data policy (2026-08-26)
+
+The campaign now explicitly separates **global candidate coverage** from a
+single simultaneous fit. `config/staged_fit_plan.json` assigns all 22 registry
+identities to a reproducible sequence: source inventory; the literature
+HERMES/COMPASS 1,547-point checkpoint; clean HERMES/COMPASS extensions; JLab
+CLAS and Hall-C absolute-cross-section families; recent/historical EMC, E665,
+and COMPASS complements; nuclear/current-region diagnostics; and deferred or
+access-restricted pointers. `reports/staged_fit_plan.md` is the human-readable
+rendering and the plan validator is `scripts/build_staged_fit_plan.py`.
+
+The fitting rule is one provenance-closed experiment/hadron/target family per
+trial. A stage inherits the previous accepted model only after an independent
+start check, and reports its incremental objective decomposition, central
+prediction shift, held-out bins, leave-one-family-out behavior, covariance and
+normalization nuisances, and start/model-form spread. Experimental replicas,
+start non-uniqueness, TMDFF parameterization, dataset selection, and theory
+variations remain separate uncertainty components. A narrow combined band is
+never a promotion criterion by itself.
+
+The supplied MAPTMD references anchor the first checkpoint. arXiv:2206.07598
+reports the 344 HERMES + 1,203 COMPASS post-cut multiplicity scope, while
+arXiv:2405.13833 states that it uses the same dataset and makes the SIDIS
+normalization-factor construction explicit. These references do not authorize
+silently adding JLab, EMC/E665, H1/ZEUS, or nuclear/current-region tables to
+the 1,547-point fit; each additional family must pass the stage-specific gates.

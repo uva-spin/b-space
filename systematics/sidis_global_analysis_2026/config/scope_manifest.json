@@ -9,6 +9,7 @@
   "global_registry_harvested_record_count": 19,
   "global_registry_hepdata_table_count": 582,
   "global_registry_hepdata_row_count": 57358,
+  "staged_fit_plan": "config/staged_fit_plan.json",
   "external_fit_benchmarks": "config/external_fit_benchmarks.json",
   "staged_fit_order": [
     "reproduce the literature HERMES/COMPASS 1547-point post-cut benchmark",
@@ -17,6 +18,7 @@
     "add EMC/E665 historical tables after current-fragmentation and normalization closure",
     "retain H1/ZEUS current-region and nuclear/jet/remnant observables as diagnostics unless a dedicated formalism passes closure"
   ],
+  "staged_fit_policy": "Harvest all registry candidates, but never fit all sources simultaneously. Every stage requires source-specific row, observable, covariance, closure, stationarity, and held-out checks before promotion.",
   "sidis_datasets": [],
   "sidis_observables": [],
   "harvested_record_count": 7,

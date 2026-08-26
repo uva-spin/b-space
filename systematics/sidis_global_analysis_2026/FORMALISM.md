@@ -77,6 +77,28 @@ The following remain explicit blockers before a joint DY+SIDIS fit:
 - point-to-point versus correlated systematic covariance and normalization
   nuisance parameters.
 
+## External MAPTMD benchmark boundary
+
+The supplied MAPTMD papers provide a useful external checkpoint, but they do
+not replace source-level closure. arXiv:2206.07598 uses 344 HERMES and 1,203
+COMPASS multiplicity points after its stated TMD-validity cuts, for 1,547 SIDIS
+points. arXiv:2405.13833 states that it uses the same experimental dataset and
+also makes the SIDIS normalization construction explicit. In that construction
+the prediction is multiplied by a kinematics-dependent factor built from a
+collinear SIDIS numerator (including the quoted higher-order terms) divided by
+the integrated W-term denominator. This is a theory correction to the
+observable, not a rescaling of the measured rows.
+
+For this campaign the benchmark is therefore a staged closure target. Before
+using it in a likelihood we must reproduce the HERMES vector-meson-subtracted
+`zxpt-3D` selection, the COMPASS vector-boson-subtracted selection, the
+published Q/x/z/W/y and transverse-momentum bin rules, and their covariance and
+normalization treatment. The available HEPData projection does not yet expose
+all of that information, so `reports/sidis_1547_benchmark_audit.md` correctly
+remains `not_reproduced`. A future implementation must compare both the plain
+W-term and the explicitly implemented normalization factor; it must not hide
+the factor in fitted nuisance parameters.
+
 Until these are closed, the data inventory must retain raw statistical and
 systematic columns separately and no combined error should be interpreted as a
 likelihood covariance.
