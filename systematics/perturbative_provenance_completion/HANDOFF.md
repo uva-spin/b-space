@@ -9,8 +9,8 @@ documented and the strict/multiplicative closure diagnostic is complete. The
 promotion gate remains open: the historical cache lacks an explicit W
 organization field, and no separate conventional full N3LL-prime implementation
 has been established. Finite-Y/W+Y studies remain isolated under their own
-directories. Read the repository `CODEX_HANDOFF.md` before changing scope or
-labels.
+directories. Read the repository [`CODEX_HANDOFF.md`](../../CODEX_HANDOFF.md)
+before changing scope or labels.
 
 ## Scope
 

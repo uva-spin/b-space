@@ -11,8 +11,8 @@ promoted. The corrected 329/353-row start and replica campaigns are diagnostic
 comparisons to the immutable lambda=1 `full96x50` package. Six LHCb rows remain
 W-only diagnostics because finite-Y observable, acceptance, subtraction, and
 covariance closure is not production-ready. Read the repository
-`CODEX_HANDOFF.md` for the cross-workstream status; do not treat older running
-snapshots in this chronology as live jobs.
+[`CODEX_HANDOFF.md`](../../CODEX_HANDOFF.md) for the cross-workstream status;
+do not treat older running snapshots in this chronology as live jobs.
 
 ## Purpose
 

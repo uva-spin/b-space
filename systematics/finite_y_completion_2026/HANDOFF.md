@@ -9,8 +9,8 @@ This directory is an isolated validation archive, not a production source. The
 scope. The conventional additive `FO-ASY` construction is not globally
 validated, the six LHCb rows remain outside finite-Y fitting/propagation, and
 the active lambda=1 `full96x50` production package is unchanged. Read the
-repository `CODEX_HANDOFF.md` for the reconciled project state; old dated job
-snapshots below are historical.
+repository [`CODEX_HANDOFF.md`](../../CODEX_HANDOFF.md) for the reconciled
+project state; old dated job snapshots below are historical.
 
 Paths under `outputs/`, `production_frozen/`, and the original identifiability
 campaign are working-archive references.  They are intentionally omitted from
