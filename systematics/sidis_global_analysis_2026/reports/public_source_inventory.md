@@ -14,3 +14,10 @@ Total: 235 tables and 31,178 rows; 178 tables expose a transverse-momentum
 axis. Archive SHA256 values are in `data/hepdata_download_manifest.json`.
 The profiler does not select rows or combine uncertainties into a fit
 covariance. Raw archives are intentionally not bundled in this source release.
+
+The HERMES collaboration also publishes a separate [multiplicity
+database](https://hermesmults.appspot.com/) with the full multidimensional
+files and statistical covariance matrices. Its pointer and download URL are
+recorded in `config/public_sources.json`; that supplemental archive has not yet
+been mirrored locally, so the HERMES CSV tables above remain a no-covariance
+provenance candidate.

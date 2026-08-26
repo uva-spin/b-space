@@ -42,6 +42,13 @@ axis. No rows, errors, or covariance matrices are approved for a fit. The
 public checkout carries manifests, scripts, hashes, and inventory only; raw
 archives remain local inputs.
 
+The HERMES collaboration separately publishes a [multiplicity
+database](https://hermesmults.appspot.com/) with multidimensional files and
+statistical covariance matrices. The pointer and archive URL are recorded in
+`config/public_sources.json`; the supplemental archive has not yet been
+mirrored, so the HEPData CSV remains a value-table candidate rather than a
+covariance-complete HERMES input.
+
 Reproduce the source-only harvest with:
 
 ```text
@@ -52,7 +59,9 @@ python scripts/build_source_inventory.py
 
 ## Software boundary (2026-08-26)
 
-`sidis_data.py` is a metadata-preserving CSV reader/profiler that handles
+`FORMALISM.md` records the candidate leading-power W boundary and the
+unresolved multiplicity/covariance interfaces. `sidis_data.py` is a
+metadata-preserving CSV reader/profiler that handles
 duplicate labels and HEPData description continuations. `sidis_observables.py`
 implements a scalar-tested radial PDF-times-TMDFF Bessel convolution with
 explicit `qT=P_hT/z` and `b db/(2 pi)` conventions and a guarded multiplicity
@@ -94,7 +103,9 @@ pass.
    are harvested; row-level approval remains open).
 2. A row-level data table with observable, target, hadron, units, cuts,
    covariance, normalization, and bin-integration fields.
-3. An exact SIDIS formalism note and scalar reference implementation.
+3. `FORMALISM.md` and a scalar reference implementation; the candidate W
+   convolution is documented, while the final observable convention remains
+   open.
 4. A DY interface regression reproducing the frozen lambda=1 central before any
    joint optimization.
 5. A decision report selecting, rejecting, or deferring the first SIDIS scope.

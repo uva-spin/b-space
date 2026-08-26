@@ -76,6 +76,9 @@ locked. Five scalar unit tests pass. The source-only drivers are
 `scripts/fetch_hepdata_records.py`, `scripts/profile_hepdata_tables.py`, and
 `scripts/build_source_inventory.py`.
 
+The candidate factorization boundary, bin-integration warning, and unresolved
+physics interfaces are recorded in [`FORMALISM.md`](FORMALISM.md).
+
 ## Immediate next action
 
 Use the harvested inventory to complete `HANDOFF.md`'s row-level

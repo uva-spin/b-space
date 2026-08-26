@@ -11,7 +11,16 @@
       "observable": "identified charged-pion and charged-kaon multiplicities versus x_B, Q^2, z, and P_hperp",
       "target": "hydrogen and deuterium",
       "status": "primary_candidate_pending_row_and_covariance_audit",
-      "source_url": "https://www.hepdata.net/record/ins1208547"
+      "source_url": "https://www.hepdata.net/record/ins1208547",
+      "supplemental_public_sources": [
+        {
+          "label": "HERMES multiplicity database",
+          "url": "https://hermesmults.appspot.com/",
+          "download_all_url": "http://www-hermes.desy.de/multiplicities/database/data/HERMES-multiplicities.tar.gz",
+          "provides": ["full multidimensional multiplicities", "statistical covariance matrices", "format and binning information"],
+          "status": "public_pointer_recorded_archive_not_mirrored"
+        }
+      ]
     },
     {
       "record": "ins1624692",
