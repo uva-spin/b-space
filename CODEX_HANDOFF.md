@@ -120,11 +120,13 @@ archived evidence, not alternate production.
 
 ### New SIDIS/global-analysis campaign
 
-`systematics/sidis_global_analysis_2026/` is an initialized, separate discovery
-workspace for a complete shared-DY-plus-SIDIS unpolarized TMD analysis. It may
-read the frozen lambda=1 DY result and perturbative source stack, but it has no
-approved SIDIS rows, observable convention, TMDFF model, fit, replica ensemble,
-or production claim. SIDIS requires its own data provenance,
+`systematics/sidis_global_analysis_2026/` is a separate discovery workspace for
+a complete shared-DY-plus-SIDIS unpolarized TMD analysis. Its first
+public-source harvest covers five version-1 HEPData records (235 tables,
+31,178 rows, 178 transverse-momentum tables), with source hashes, inventories,
+and a metadata-preserving reader/profiler. These remain provenance candidates:
+no SIDIS rows, observable convention, TMDFF model, fit, replica ensemble, or
+production claim is approved. SIDIS requires its own data provenance,
 fragmentation-function interface, bin/covariance treatment, scalar closure,
 and model/start identifiability gates before any joint refit.
 
@@ -140,7 +142,7 @@ and model/start identifiability gates before any joint refit.
 | 24-row Tevatron unitary finite-Y | **Validated isolated scope** | Boundary diagnostic only |
 | 122-row Tevatron N3LL+NNLO W+Y | **Complete observable candidate, not TMD production** | No global/collider-wide claim |
 | LHCb finite-Y | **Fail-closed/out of scope** | Do not fit current subtraction table |
-| SIDIS/global analysis | **Initialized discovery phase** | No SIDIS or joint-global production claim yet |
+| SIDIS/global analysis | **Public-source harvest/discovery phase** | Five HEPData records profiled; no SIDIS or joint-global production claim yet |
 | Paper methods/figures | **Lambda=1 dossier available** | Manuscript scope must remain explicit |
 
 ## Reproduction entry points
