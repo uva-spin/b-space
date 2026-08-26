@@ -104,7 +104,13 @@ that a universal collider/global finite-Y prediction has been validated.
 
 ## Physics scope
 
-This repository focuses on the **fixed-target low-$Q$ Drell--Yan region**. The included production extraction uses:
+This repository contains two related scopes:
+
+1. the promoted **fixed-target low-$Q$ Drell--Yan extraction**; and
+2. isolated **collider/accelerator studies** used to test external fixed-order
+   engines, finite-$Y$ matching, and the possible extension of the TMD fit.
+
+The promoted fixed-target extraction uses:
 
 - E288 proton--nucleus Drell--Yan data at 200, 300, and 400 GeV beam energies;
 - E605 fixed-target Drell--Yan data;
@@ -122,6 +128,13 @@ $$
 $$
 
 The regularized $k_T$-space curves are companion representations derived from the fitted $b_T$-space ensemble.
+
+The isolated collider studies use Tevatron CDF Run I/II and D0 Run I rows,
+plus a seven-point LHCb fiducial sample. They include DYTurbo and MCFM
+fixed-order benchmarks, a conventional Tevatron N3LL+NNLO W+Y grid, and
+finite-$Y$ closure diagnostics. These data and calculations are real inputs
+to the repository, but their candidate TMD fits remain explicitly separate
+from the promoted fixed-target package.
 
 ---
 
@@ -452,7 +465,7 @@ The $k_T$-space object should be cited as a **regularized finite-$b_T$ companion
 
 ## Claim discipline
 
-The repository makes the following claim:
+The repository makes the following production claim:
 
 ```text
 A fixed-target DY b-space TMD extraction has been performed with an N³LL-resummed
@@ -460,17 +473,27 @@ W-term backend, NLO hard/OPE matching in W, constrained DNN nonperturbative
 factor, experimental pseudo-data replicas, and PDF-member overlay uncertainty.
 ```
 
-The repository does **not** claim:
+The repository also records isolated collider results: Tevatron CDF/D0 and
+LHCb data have been used in fixed-order and W+Y diagnostics, including a
+finite, positive DYTurbo N3LL+NNLO Tevatron grid. These studies are archived
+for continuation and are not silently promoted to the fixed-target production
+package or to a universal global-DY fit.
+
+The repository does **not** claim that the isolated collider work is already:
 
 ```text
-a completed collider/global-DY extraction,
-a full high-qT matched observable validation,
+a promoted global-DY TMD extraction with closed covariance and acceptance
+conventions for every accelerator data set,
+production-quality finite-Y treatment of the six retained LHCb diagnostic rows,
 PDF-through-refit uncertainty,
 scale/profile/nuclear/model-form uncertainty envelopes,
 or production-quality accelerator-data covariance treatment.
 ```
 
-The fixed-target result is therefore a production-quality fixed-target $b_T$-space TMD extraction with a regularized $k_T$-space companion, while the accelerator/global-DY extension remains future work.
+Thus the fixed-target result is a production-quality fixed-target $b_T$-space
+TMD extraction with a regularized $k_T$-space companion, while the collider
+work is an active, separately labelled extension rather than an absent data
+set or an unqualified global-production claim.
 
 ---
 
