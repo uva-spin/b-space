@@ -29,6 +29,7 @@ between this source release and the numerical archive.
 | `systematics/finite_y_completion_2026/` | same public path | Lambda=1 Tevatron unitary finite-Y completion and LHCb closure handoff. |
 | `systematics/perturbative_provenance_completion/` | same public path | W organization, coefficient inventory, strict/multiplicative closure, and accuracy provenance. |
 | `systematics/full_n3ll_wy_production_2026/` | same public path | Isolated Tevatron N³LL+NNLO W+Y source, diagnostics, candidate figures, and paper handoff. |
+| `systematics/sidis_global_analysis_2026/` | same public path | Initialized SIDIS/global-analysis scope, dependency boundary, and provenance gates. |
 | `systematics/prd_empirical_reference_lambda1_dossier/` | same public path | Paper-ready lambda=1 reconstruction figures and methods dossier. |
 | `production/lambda1_empirical_reference_full96x50/` | same public path | Frozen active production outputs and integrity metadata. |
 

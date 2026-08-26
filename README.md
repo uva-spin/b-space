@@ -23,6 +23,7 @@ The complete source stack is included in this checkout. Start with:
 - [Reproducibility and execution guide](docs/REPRODUCIBILITY.md)
 - [Source map and publication boundary](docs/SOURCE_MAP.md)
 - [Systematics and identifiability campaign](docs/SYSTEMATICS.md)
+- [SIDIS/global-analysis campaign](systematics/sidis_global_analysis_2026/)
 - [Workflow-driver index](workflows/README.md)
 
 ---
