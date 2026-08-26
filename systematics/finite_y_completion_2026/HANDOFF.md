@@ -2,6 +2,16 @@
 
 Status: lambda=1 Tevatron finite-Y candidate validated; LHCb fiducial W/Y remains a diagnostic candidate pending input normalization/covariance closure; frozen production unchanged.
 
+## Current status pointer (2026-08-26)
+
+This directory is an isolated validation archive, not a production source. The
+24-row Tevatron unitary transition is validated for its declared boundary
+scope. The conventional additive `FO-ASY` construction is not globally
+validated, the six LHCb rows remain outside finite-Y fitting/propagation, and
+the active lambda=1 `full96x50` production package is unchanged. Read the
+repository `CODEX_HANDOFF.md` for the reconciled project state; old dated job
+snapshots below are historical.
+
 Paths under `outputs/`, `production_frozen/`, and the original identifiability
 campaign are working-archive references.  They are intentionally omitted from
 the compact public checkout; the frozen public package is under
