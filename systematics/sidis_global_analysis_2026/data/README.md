@@ -28,3 +28,10 @@ seven-record baseline remains reproducible byte-for-byte. Use
 `../scripts/fetch_global_sources.py` to refresh it and
 `../scripts/build_global_source_inventory.py` to profile it. No raw source,
 table, or ancillary data file is itself an approved fit input.
+
+For the CLAS ancillary package, `../scripts/inventory_arxiv_tables.py` checks
+headers, numeric-row counts, finite values, and ranges without rewriting the
+source. `../scripts/convert_clas_ancillary.py` can produce a lossless,
+metadata-preserving CSV conversion under `derived/global/`; that directory is
+ignored because it is generated output. The conversion manifest records the
+source hash context and explicitly keeps `approved_rows` at zero.

@@ -255,7 +255,12 @@ arXiv sources and recorded in `config/external_fit_benchmarks.json`:
   normalized by factors associated with higher-order corrections.
 - arXiv:2405.13833 reports a flavor-dependent unpolarized DY+SIDIS extraction
   at N3LL with chi2/Ndat = 1.08 and is used here as a formalism, dataset, and
-  TMDFF benchmark, not as a raw-data source.
+  TMDFF benchmark, not as a raw-data source.  It states that its experimental
+  dataset is identical to the 2022 analysis and applies a kinematics-dependent
+  SIDIS normalization factor: a collinear SIDIS numerator through
+  O(alpha_s^2) divided by the integrated W-term denominator.  This factor is
+  a theory component to implement and validate explicitly; it is not a hidden
+  rescaling of the data.
 
 `scripts/reproduce_sidis_benchmark_count.py` applies the recorded cuts only
 where source metadata supports them.  Its report is
@@ -282,6 +287,10 @@ A is a 3He nuclear measurement.  None is fit-ready or approved.  The required
 next conversion gates are, respectively, absolute-cross-section and
 radiative/acceptance/covariance closure; Hall-C W/Mx and rho-subtraction
 closure; and a validated 3He nuclear impulse-approximation/dilution model.
+`scripts/convert_clas_ancillary.py` materializes the four CLAS files as
+metadata-preserving CSVs in the ignored `data/derived/global` tree and writes
+`conversion_manifest.json`; this is a reproducible conversion, not row
+selection.
 
 The staged global plan is therefore unchanged but now executable: (1) mirror
 the HERMES `zxpt-3D` values and covariance, (2) freeze the COMPASS row-level

@@ -26,6 +26,16 @@
       "journal": "JHEP 08 (2024) 232",
       "reported_sidis_scope": "updated HERMES/COMPASS unpolarized SIDIS within a global N3LL fit",
       "reported_fit_quality": "chi2/Ndat = 1.08 for the combined DY+SIDIS analysis",
+      "dataset_relation_to_2206_07598": "The paper states that its experimental dataset is identical to the MAPTMD22 analysis, including the 1,547-point HERMES/COMPASS SIDIS scope.",
+      "sidis_selection": {
+        "Q_min_GeV": 1.4,
+        "z_range": [0.2, 0.7],
+        "pht_cut": "|P_hT| < min[min(0.2 Q, 0.5 z Q)+0.3 GeV, z Q]",
+        "hermes": "vector-meson-subtracted zxpt-3D supplemental multiplicities",
+        "compass": "vector-boson-subtracted release",
+        "reported_points": {"HERMES": 344, "COMPASS": 1203, "SIDIS": 1547}
+      },
+      "sidis_normalization_note": "The N3LL analysis applies a kinematics-dependent normalization factor to the SIDIS prediction, constructed from a collinear SIDIS numerator through O(alpha_s^2) divided by the integrated W-term denominator; this is a theory/formalism component that must be implemented and validated explicitly.",
       "use": "formalism, dataset-selection, and flavor-dependent TMDFF benchmark",
       "caveat": "This is a literature comparison, not a source of raw rows. Its exact point count, cuts, normalization factors, and covariance conventions must be recorded from the paper before reproducing any result. The 2022 analysis reports SIDIS-specific normalization factors for higher-order corrections; these are a formalism benchmark, not an instruction to rescale our data silently."
     }

@@ -181,6 +181,9 @@ The arXiv/JLab source parser is now in
 ancillary cross-section rows, 25 Hall-C pT-squared rows (200 expanded
 target/charge/rho-state entries), and 160 Hall-A TeX rows (320 expanded
 pi+/pi- entries), all still outside the fit boundary.
+`scripts/convert_clas_ancillary.py` can materialize the four CLAS files as
+metadata-preserving CSVs under the ignored `data/derived/global` tree; its
+manifest records 668,799 converted rows without selecting any for fitting.
 
 The next gate is to mirror the HERMES `zxpt-3D` value/covariance files and
 freeze the COMPASS point-level bin convention and row-selection manifest.

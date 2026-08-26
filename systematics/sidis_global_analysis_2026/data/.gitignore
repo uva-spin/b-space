@@ -1,0 +1,5 @@
+# Public source releases carry manifests and hashes, not the local raw cache.
+raw/
+# Generated source-specific conversions remain reproducible from scripts and
+# are not part of the public source release.
+derived/
