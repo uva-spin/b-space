@@ -50,12 +50,13 @@ treatment, hadron/target-mass conventions, or SIDIS experimental covariance.
 ## First public-source harvest
 
 The source registry in `config/public_sources.json` and the compact download
-manifest in `data/hepdata_download_manifest.json` identify five version-1
-HEPData CSV submissions from HERMES and COMPASS. They contain 235 tables and
-31,178 rows in total; 178 tables expose a transverse-momentum axis. The
-candidate records are HERMES `ins1208547` and COMPASS `ins1624692` for
-identified/charged-hadron transverse-momentum multiplicities, with COMPASS
-`ins1444985`, `ins1483098`, and `ins2840545` retained as collinear complements.
+manifest in `data/hepdata_download_manifest.json` identify seven version-1
+HEPData CSV submissions from HERMES and COMPASS. They contain 287 tables and
+50,722 rows in total; 224 tables expose a transverse-momentum axis. The
+candidate records are HERMES `ins1208547` and COMPASS `ins1236358`,
+`ins1624692` for identified/charged-hadron transverse-momentum multiplicities,
+with HERMES `46860` and COMPASS `ins1444985`, `ins1483098`, and `ins2840545`
+retained as collinear complements.
 The inventory is recorded in `reports/public_source_inventory.md`.
 
 These are provenance candidates, not fit-ready rows. The raw archives are kept
@@ -73,13 +74,17 @@ PDF-times-TMDFF Bessel convolution using `qT=P_hT/z` and `b db/(2 pi)`, plus a
 guarded multiplicity ratio. It returns the SIDIS structure-function piece
 only; experiment-specific prefactors, DIS denominators, target composition,
 radiative factors, and finite-Y terms remain explicit until the formalism is
-locked. Five scalar unit tests pass. The source-only drivers are
+locked. Ten scalar unit tests pass, including covariance, repeated-header, and
+explicit canonicalization regressions. The source-only drivers are
 `scripts/fetch_hepdata_records.py`, `scripts/profile_hepdata_tables.py`, and
 `scripts/build_source_inventory.py`.
 `fetch_hermes_database_metadata.py` records the supplemental HERMES database
 page hash and covariance/download links; its large DESY archive is not bundled.
 `audit_table_provenance.py` produces the conservative table/row audit without
 selecting rows.
+`sidis_dataset.py` is the explicit row-to-observation adapter: it requires
+caller-supplied column/block mappings, supports pT² and asymmetric errors, and
+preserves provenance while rejecting ambiguous or uncertainty-free rows.
 
 The candidate factorization boundary, bin-integration warning, and unresolved
 physics interfaces are recorded in [`FORMALISM.md`](FORMALISM.md).

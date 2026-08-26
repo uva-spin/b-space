@@ -16,6 +16,23 @@ class SidisDataTests(unittest.TestCase):
             self.assertEqual(table.columns[:3], ("x", "x__2", "M"))
             self.assertEqual(table.metadata["name"], "Example")
 
+    def test_repeated_headers_are_not_counted_as_rows_and_blocks_are_retained(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "blocked.csv"
+            path.write_text(
+                "#: RE,E P --> E PI+ X\n"
+                "x,M,stat +,stat -\n"
+                "0.1,1.0,0.1,-0.1\n"
+                "#: RE,E DEUT --> E DEUT PI+ X\n"
+                "x,M,stat +,stat -\n"
+                "0.2,2.0,0.2,-0.2\n"
+            )
+            table = read_hepdata_csv(path)
+            self.assertEqual(len(table.rows), 2)
+            self.assertEqual(len(table.row_metadata), 2)
+            self.assertEqual(table.row_metadata[0]["reaction"], "E P --> E PI+ X")
+            self.assertEqual(table.row_metadata[1]["reaction"], "E DEUT --> E DEUT PI+ X")
+
     def test_transverse_and_uncertainty_profile(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "table.csv"

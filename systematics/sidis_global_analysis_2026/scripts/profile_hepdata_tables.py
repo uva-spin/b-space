@@ -31,6 +31,7 @@ def main() -> None:
             "with_transverse_momentum": sum(item["has_transverse_momentum"] for item in profiles),
             "with_statistical_columns": sum(item["has_statistical_columns"] for item in profiles),
             "with_systematic_columns": sum(item["has_systematic_columns"] for item in profiles),
+            "with_uncertainty_columns": sum(item["has_uncertainty_columns"] for item in profiles),
         },
         "profiles": profiles,
         "selection_authorized": False,

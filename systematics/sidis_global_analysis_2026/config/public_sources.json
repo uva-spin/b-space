@@ -3,6 +3,28 @@
   "source_policy": "public versioned HEPData records; download metadata and CSV archive before any row selection",
   "records": [
     {
+      "record": "46860",
+      "collaboration": "HERMES",
+      "title": "Multiplicity of charged and neutral pions in deep-inelastic scattering of 27.5-GeV positrons on hydrogen",
+      "doi": "10.17182/hepdata.46860",
+      "publication": "Eur. Phys. J. C 71 (2011) 1576",
+      "observable": "charged and neutral pion multiplicities versus z, x, and Q^2 projections",
+      "target": "hydrogen",
+      "status": "collinear_complement_pending_definition_and_overlap_audit",
+      "source_url": "https://www.hepdata.net/record/46860"
+    },
+    {
+      "record": "ins1236358",
+      "collaboration": "COMPASS",
+      "title": "Hadron Transverse Momentum Distributions in Muon Deep Inelastic Scattering at 160 GeV/c",
+      "doi": "10.17182/hepdata.61432",
+      "publication": "Eur. Phys. J. C 73 (2013) 2531",
+      "observable": "charged-hadron multiplicities versus x_B, Q^2, W^2, z, and p_T^2",
+      "target": "6LiD isoscalar target",
+      "status": "historical_transverse_candidate_pending_overlap_audit",
+      "source_url": "https://www.hepdata.net/record/ins1236358"
+    },
+    {
       "record": "ins1208547",
       "collaboration": "HERMES",
       "title": "Multiplicities of charged pions and kaons from semi-inclusive deep-inelastic scattering by the proton and the deuteron",

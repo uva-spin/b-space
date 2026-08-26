@@ -1,0 +1,11 @@
+{
+  "campaign": "sidis_global_analysis_2026",
+  "status": "search_boundary_recorded_not_fit_inputs",
+  "search_date": "2026-08-26",
+  "excluded": [
+    {"hepdata_record": "13387", "collaboration": "HERMES", "title": "Hadronization in semi-inclusive deep-inelastic scattering on nuclei", "source_url": "https://www.hepdata.net/record/13387", "reason": "nuclear ratios require an explicit nuclear-hadronization model"},
+    {"search_class": "SIDIS spin-asymmetry records", "example_source_url": "https://www.hepdata.net/record/59737", "reason": "spin-dependent observables are outside the unpolarized multiplicity scope"},
+    {"search_class": "JLab Hall A SIDIS spin-asymmetry records", "example_source_url": "https://www.hepdata.net/search/?collaboration=Jefferson+Lab+Hall+A", "reason": "polarized/asymmetry observables are outside the current scope"}
+  ],
+  "policy": "Excluded records may be reopened only with a new formalism and scope manifest."
+}

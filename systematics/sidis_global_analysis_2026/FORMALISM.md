@@ -29,6 +29,13 @@ composition, and DIS denominator are caller-supplied. The current
 radial integral with explicit `qT=P_hT/z` and `b db/(2 pi)` conventions. It is
 a scalar reference boundary, not a final multiplicity prediction.
 
+`sidis_dataset.canonicalize_table` is the corresponding data boundary. It
+requires explicit mappings for value, axes, bin edges, and uncertainty columns
+or comment-defined block intervals, and preserves source/table/row identity,
+block metadata, and asymmetric uncertainty components. Missing or ambiguous
+uncertainty mappings fail closed. The COMPASS 2013 transverse tables therefore
+remain distinct from the stat/sys convention of the COMPASS 2018 grid.
+
 ## Multiplicity and bin integration
 
 The first candidate observable is a multiplicity: a SIDIS cross section (or

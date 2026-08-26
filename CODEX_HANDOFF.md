@@ -122,9 +122,12 @@ archived evidence, not alternate production.
 
 `systematics/sidis_global_analysis_2026/` is a separate discovery workspace for
 a complete shared-DY-plus-SIDIS unpolarized TMD analysis. Its first
-public-source harvest covers five version-1 HEPData records (235 tables,
-31,178 rows, 178 transverse-momentum tables), with source hashes, inventories,
-and a metadata-preserving reader/profiler. These remain provenance candidates:
+public-source harvest covers seven version-1 HEPData records (287 tables,
+50,722 rows, 224 transverse-momentum tables), with source hashes, inventories,
+and a metadata-preserving reader/profiler. The reader now skips repeated
+target/charge headers and retains row-level block metadata; the corrected
+inventory is 287 tables, 50,722 rows, and 33,740 transverse-momentum
+candidate rows. These remain provenance candidates:
 no SIDIS rows, observable convention, TMDFF model, fit, replica ensemble, or
 production claim is approved. SIDIS requires its own data provenance,
 fragmentation-function interface, bin/covariance treatment, scalar closure,

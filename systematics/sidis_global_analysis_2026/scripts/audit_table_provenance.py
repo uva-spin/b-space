@@ -27,7 +27,7 @@ def normalized(value: str) -> str:
 
 
 def record_id(path: str) -> str:
-    match = re.search(r"/hepdata/(ins\d+)/", path)
+    match = re.search(r"/hepdata/([^/]+)/", path)
     if match is None:
         raise ValueError(f"cannot identify HEPData record from {path!r}")
     return match.group(1)
@@ -55,9 +55,9 @@ def axis_candidates(columns: list[str]) -> dict[str, list[str]]:
             result["z"].append(column)
         if "q2" in token or "q2" in token:
             result["q2"].append(column)
-        if "pht2" in token or "phperp2" in token:
+        if not any(bound in token for bound in ("low", "high")) and ("pht2" in token or "phperp2" in token or token.startswith("pt2")):
             result["pht2"].append(column)
-        elif "pht" in token or "phperp" in token or token.startswith("pt"):
+        elif not any(bound in token for bound in ("low", "high")) and ("pht" in token or "phperp" in token or token.startswith("pt")):
             result["pht"].append(column)
     return result
 
@@ -67,7 +67,7 @@ def table_audit(profile: dict, source: dict) -> dict:
     metadata = profile.get("metadata", {})
     candidates = axis_candidates(columns)
     bounds = [c for c in columns if normalized(c).endswith("low") or normalized(c).endswith("high")]
-    uncertainty = [c for c in columns if "stat" in normalized(c) or "sys" in normalized(c)]
+    uncertainty = [c for c in columns if any(token in normalized(c) for token in ("stat", "sys", "error", "uncert"))]
     value_columns = [
         c for c in columns
         if c not in uncertainty and c not in bounds
@@ -180,4 +180,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

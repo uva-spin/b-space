@@ -83,8 +83,13 @@ def main() -> None:
             "csv_table_count": len(csv_tables),
             "csv_tables": csv_tables,
         })
-    report = {"campaign": "sidis_global_analysis_2026", "status": "public_hepdata_records_downloaded", "records": results, "production_authorized": False}
     target = CAMPAIGN / "data/hepdata_download_manifest.json"
+    if args.record and target.exists():
+        previous = json.loads(target.read_text()).get("records", [])
+        by_record = {item["record"]: item for item in previous}
+        by_record.update({item["record"]: item for item in results})
+        results = [by_record[key] for key in sorted(by_record)]
+    report = {"campaign": "sidis_global_analysis_2026", "status": "public_hepdata_records_downloaded", "records": results, "production_authorized": False}
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps({"status": report["status"], "records": len(results)}, indent=2))
