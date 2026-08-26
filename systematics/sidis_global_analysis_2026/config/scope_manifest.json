@@ -1,0 +1,25 @@
+{
+  "campaign": "sidis_global_analysis_2026",
+  "status": "initialized_discovery_only",
+  "initialized": "2026-08-26",
+  "target": "complete shared-DY-plus-SIDIS unpolarized TMD global analysis",
+  "sidis_datasets": [],
+  "sidis_observables": [],
+  "approved_rows": 0,
+  "production_authorized": false,
+  "frozen_dependencies": {
+    "dy_production": "../../production/lambda1_empirical_reference_full96x50/",
+    "perturbative_provenance": "../perturbative_provenance_completion/",
+    "source_v22": "../../v22/",
+    "source_v23": "../../v23/"
+  },
+  "required_before_fit": [
+    "row-level SIDIS data and uncertainty provenance",
+    "observable and bin-integration convention lock",
+    "TMDFF and collinear-FF interface specification",
+    "independent scalar SIDIS reference and closure test",
+    "DY non-regression against frozen lambda=1 package",
+    "explicit replica/start/model-form uncertainty protocol"
+  ],
+  "production_files_modified": false
+}

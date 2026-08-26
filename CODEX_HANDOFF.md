@@ -25,6 +25,8 @@ tree. Historical handoffs under `systematics/` retain dated evidence; an old
    `systematics/full_n3ll_wy_production_2026/HANDOFF.md`, and
    `systematics/perturbative_provenance_completion/HANDOFF.md` before making
    any finite-`Y`, W+Y, or accuracy claim.
+6. `systematics/sidis_global_analysis_2026/README.md` and `HANDOFF.md` before
+   selecting SIDIS data or proposing a joint global fit.
 
 ## Immutability and claim discipline
 
@@ -116,6 +118,16 @@ incumbent result.
 and external-code diagnostics. Earlier Collins and pseudodata candidates are
 archived evidence, not alternate production.
 
+### New SIDIS/global-analysis campaign
+
+`systematics/sidis_global_analysis_2026/` is an initialized, separate discovery
+workspace for a complete shared-DY-plus-SIDIS unpolarized TMD analysis. It may
+read the frozen lambda=1 DY result and perturbative source stack, but it has no
+approved SIDIS rows, observable convention, TMDFF model, fit, replica ensemble,
+or production claim. SIDIS requires its own data provenance,
+fragmentation-function interface, bin/covariance treatment, scalar closure,
+and model/start identifiability gates before any joint refit.
+
 ## Status table
 
 | Workstream | Status | Interpretation |
@@ -128,6 +140,7 @@ archived evidence, not alternate production.
 | 24-row Tevatron unitary finite-Y | **Validated isolated scope** | Boundary diagnostic only |
 | 122-row Tevatron N3LL+NNLO W+Y | **Complete observable candidate, not TMD production** | No global/collider-wide claim |
 | LHCb finite-Y | **Fail-closed/out of scope** | Do not fit current subtraction table |
+| SIDIS/global analysis | **Initialized discovery phase** | No SIDIS or joint-global production claim yet |
 | Paper methods/figures | **Lambda=1 dossier available** | Manuscript scope must remain explicit |
 
 ## Reproduction entry points
