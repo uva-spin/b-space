@@ -159,22 +159,19 @@ $$
 The physical nonperturbative factor is then built by a monotone integral scaffold,
 
 $$
-I_\theta(x,b_T)
-=
-\int_0^{b_T} db'\,2b'\,A_\theta(x,b'),
-$$
-
-$$
-F_{\rm NP}(x,b_T)
-=
-\exp[-I_\theta(x,b_T)].
+\begin{aligned}
+I_\theta(x,b_T) &= \int_0^{b_T} db'\cdot 2b'\cdot A_\theta(x,b'),\\
+F_{\rm NP}(x,b_T) &= \exp[-I_\theta(x,b_T)].
+\end{aligned}
 $$
 
 This guarantees
 
 $$
-F_{\rm NP}(x,0)=1,\qquad
-\frac{dF_{\rm NP}}{db_T}\le 0
+\begin{aligned}
+F_{\rm NP}(x,0) &= 1,\\
+\frac{dF_{\rm NP}}{db_T} &\le 0.
+\end{aligned}
 $$
 
 on the ordered $b_T$ grid.
@@ -431,10 +428,10 @@ The $k_T$-space negative-tail diagnostics are not strict positivity constraints.
 The primary extraction is in $b_T$ space. The $k_T$-space representation is obtained afterward by a regularized finite-$b_T$ Hankel transform,
 
 $$
-f(k_T)
-=
-\frac{1}{2\pi}
-\int_0^\infty db_T\,b_T\,J_0(k_T b_T)\,\widetilde f(b_T).
+\begin{aligned}
+f(k_T) &= \frac{1}{2\pi}
+\int_0^\infty db_T\cdot b_T\cdot J_0(k_T b_T)\cdot \widetilde f(b_T).
+\end{aligned}
 $$
 
 The default frozen prescription uses
