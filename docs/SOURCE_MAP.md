@@ -3,6 +3,11 @@
 The public repository is a cleaned source release from the original working
 repository. This table records the important mappings.
 
+For the reconciled cross-workstream status and handoff order, start with the
+repository-level [`CODEX_HANDOFF.md`](../CODEX_HANDOFF.md). It records which
+artifacts are active, isolated, archived, or blocked and explains the boundary
+between this source release and the numerical archive.
+
 | Working-tree source | Public path | Included content |
 | --- | --- | --- |
 | `v22/src/` | `v22/src/` | OPE, hard factor, convolution, conventions, W assembly, and profiles. |

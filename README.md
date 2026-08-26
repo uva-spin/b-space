@@ -15,6 +15,9 @@ with the corrected `E288_300:99` row, explicit normalization priors, a controlle
 
 The complete source stack is included in this checkout. Start with:
 
+- [Current Codex/project handoff](CODEX_HANDOFF.md) — reconciled production,
+  systematics, W+Y, and reproducibility status.
+
 - [Matching and perturbative backend](docs/MATCHING.md)
 - [MCFM/DYTurbo external-engine and W+Y guide](docs/EXTERNAL_FIXED_ORDER.md)
 - [Reproducibility and execution guide](docs/REPRODUCIBILITY.md)
