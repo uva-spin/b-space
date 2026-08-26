@@ -1,0 +1,318 @@
+{
+  "campaign": "sidis_global_analysis_2026",
+  "status": "arxiv_tables_inventoried_not_fit_ready",
+  "clas_0809_1153": [
+    {
+      "source": "data/raw/global/arxiv_0809.1153/source/anc/pip_sidis_cs_table_zh_pt2.dat",
+      "header": [
+        "Q2",
+        "x",
+        "z",
+        "pT2",
+        "phi",
+        "ds/dxdQ2dzdpT2dphi",
+        "stat.err.",
+        "sys.err.",
+        "rad.cor."
+      ],
+      "axis_names": [
+        "Q2",
+        "x",
+        "z",
+        "pT2",
+        "phi"
+      ],
+      "observable": "ds/dx dQ2 dz dpT2 dphi",
+      "units_line": "[GeV2]                 [GeV2]   deg.   mub/GeV4/str     mub/GeV4/str  mub/GeV4/str",
+      "line_count": 112570,
+      "numeric_row_count": 112566,
+      "malformed_numeric_row_count": 0,
+      "column_ranges": {
+        "Q2": {
+          "min": 1.49,
+          "max": 6.61
+        },
+        "x": {
+          "min": 0.1468,
+          "max": 0.9063
+        },
+        "z": {
+          "min": 0.0682,
+          "max": 0.9063
+        },
+        "pT2": {
+          "min": 0.0049,
+          "max": 1.554
+        },
+        "phi": {
+          "min": 10.0,
+          "max": 350.0
+        },
+        "ds/dxdQ2dzdpT2dphi": {
+          "min": 6.2036e-06,
+          "max": 4.1789
+        },
+        "stat.err.": {
+          "min": 4.3041e-06,
+          "max": 2.381
+        },
+        "sys.err.": {
+          "min": 1.0024e-06,
+          "max": 11.642
+        },
+        "rad.cor.": {
+          "min": 0.0,
+          "max": 2.7256
+        }
+      },
+      "fit_ready": false,
+      "blocking_reason": "absolute cross section, radiative/acceptance convention, and covariance closure pending"
+    },
+    {
+      "source": "data/raw/global/arxiv_0809.1153/source/anc/pip_sidis_cs_table_xf_pt2.dat",
+      "header": [
+        "Q2",
+        "x",
+        "xF",
+        "pT2",
+        "phi",
+        "ds/dxdQ2dxFdpT2dphi",
+        "stat.err.",
+        "sys.err.",
+        "rad.cor."
+      ],
+      "axis_names": [
+        "Q2",
+        "x",
+        "xF",
+        "pT2",
+        "phi"
+      ],
+      "observable": "ds/dx dQ2 dxF dpT2 dphi",
+      "units_line": "[GeV2]               [GeV2]   deg.    mub/GeV4/str     mub/GeV4/str  mub/GeV4/str",
+      "line_count": 170356,
+      "numeric_row_count": 170352,
+      "malformed_numeric_row_count": 0,
+      "column_ranges": {
+        "Q2": {
+          "min": 1.49,
+          "max": 6.61
+        },
+        "x": {
+          "min": 0.1468,
+          "max": 0.9063
+        },
+        "xF": {
+          "min": -0.82,
+          "max": 0.82
+        },
+        "pT2": {
+          "min": 0.0049,
+          "max": 1.554
+        },
+        "phi": {
+          "min": 10.0,
+          "max": 350.0
+        },
+        "ds/dxdQ2dxFdpT2dphi": {
+          "min": 2.5896e-06,
+          "max": 2.9509
+        },
+        "stat.err.": {
+          "min": 2.665e-06,
+          "max": 2.0288
+        },
+        "sys.err.": {
+          "min": 3.9898e-07,
+          "max": 0.71691
+        },
+        "rad.cor.": {
+          "min": 0.0,
+          "max": 6.5762
+        }
+      },
+      "fit_ready": false,
+      "blocking_reason": "absolute cross section, radiative/acceptance convention, and covariance closure pending"
+    },
+    {
+      "source": "data/raw/global/arxiv_0809.1153/source/anc/pip_sidis_cs_table_zh_t.dat",
+      "header": [
+        "Q2",
+        "x",
+        "z",
+        "|t|",
+        "phi",
+        "ds/dxdQ2dzdtdphi",
+        "stat.err.",
+        "sys.err.",
+        "rad.cor."
+      ],
+      "axis_names": [
+        "Q2",
+        "x",
+        "z",
+        "|t|",
+        "phi"
+      ],
+      "observable": "ds/dx dQ2 dz dt dphi",
+      "units_line": "[GeV2]                 [GeV2]   deg.   mub/GeV4/str     mub/GeV4/str  mub/GeV4/str",
+      "line_count": 106415,
+      "numeric_row_count": 106411,
+      "malformed_numeric_row_count": 0,
+      "column_ranges": {
+        "Q2": {
+          "min": 1.49,
+          "max": 6.61
+        },
+        "x": {
+          "min": 0.1468,
+          "max": 0.8469
+        },
+        "z": {
+          "min": 0.0682,
+          "max": 0.9063
+        },
+        "|t|": {
+          "min": 0.24,
+          "max": 6.694
+        },
+        "phi": {
+          "min": 10.0,
+          "max": 350.0
+        },
+        "ds/dxdQ2dzdtdphi": {
+          "min": 4.2098e-09,
+          "max": 0.31821
+        },
+        "stat.err.": {
+          "min": 4.2565e-09,
+          "max": 0.14556
+        },
+        "sys.err.": {
+          "min": 7.8667e-10,
+          "max": 0.098015
+        },
+        "rad.cor.": {
+          "min": 0.0,
+          "max": 76.803
+        }
+      },
+      "fit_ready": false,
+      "blocking_reason": "absolute cross section, radiative/acceptance convention, and covariance closure pending"
+    },
+    {
+      "source": "data/raw/global/arxiv_0809.1153/source/anc/pip_sidis_cs_table_zg_v.dat",
+      "header": [
+        "Q2",
+        "x",
+        "zG",
+        "v",
+        "phi",
+        "ds/dxdQ2dzdvdphi",
+        "stat.err.",
+        "sys.err.",
+        "rad.cor."
+      ],
+      "axis_names": [
+        "Q2",
+        "x",
+        "zG",
+        "v",
+        "phi"
+      ],
+      "observable": "ds/dx dQ2 dz dv dphi",
+      "units_line": "[GeV2]                        deg.   mub/GeV2/str   mub/GeV4/str  mub/GeV4/str",
+      "line_count": 279474,
+      "numeric_row_count": 279470,
+      "malformed_numeric_row_count": 0,
+      "column_ranges": {
+        "Q2": {
+          "min": 1.49,
+          "max": 6.61
+        },
+        "x": {
+          "min": 0.1468,
+          "max": 0.8469
+        },
+        "zG": {
+          "min": 0.1194,
+          "max": 0.8469
+        },
+        "v": {
+          "min": 0.025,
+          "max": 0.975
+        },
+        "phi": {
+          "min": 10.0,
+          "max": 350.0
+        },
+        "ds/dxdQ2dzdvdphi": {
+          "min": 2.6681e-06,
+          "max": 2.332
+        },
+        "stat.err.": {
+          "min": 2.9833e-06,
+          "max": 1.4617
+        },
+        "sys.err.": {
+          "min": 4.4077e-07,
+          "max": 3.5285
+        },
+        "rad.cor.": {
+          "min": 0.0,
+          "max": 6.9851
+        }
+      },
+      "fit_ready": false,
+      "blocking_reason": "absolute cross section, radiative/acceptance convention, and covariance closure pending"
+    }
+  ],
+  "hall_c_1103_1649": {
+    "source": "data/raw/global/arxiv_1103.1649/source/prc2011_v2.tex",
+    "table_labels": [
+      "tab:xsect-vrs-pt2"
+    ],
+    "physical_row_count": 25,
+    "columns_per_physical_row": 8,
+    "observations_per_row": 8,
+    "expanded_observation_count": 200,
+    "fit_ready": false,
+    "blocking_reason": "absolute low-energy H/D cross sections require rho-subtraction, W/Mx, and covariance closure"
+  },
+  "hall_a_1610_02350": {
+    "source": "data/raw/global/arxiv_1610.02350/source/main_text_with_figs.tex",
+    "tables": [
+      {
+        "label": "xs_table_2510_p",
+        "physical_row_count": 40,
+        "observations_per_row": 2,
+        "expanded_observation_count": 80
+      },
+      {
+        "label": "xs_table_2510_m",
+        "physical_row_count": 40,
+        "observations_per_row": 2,
+        "expanded_observation_count": 80
+      },
+      {
+        "label": "xs_table_1010_p",
+        "physical_row_count": 40,
+        "observations_per_row": 2,
+        "expanded_observation_count": 80
+      },
+      {
+        "label": "xs_table_1010_m",
+        "physical_row_count": 40,
+        "observations_per_row": 2,
+        "expanded_observation_count": 80
+      }
+    ],
+    "physical_row_count": 160,
+    "expanded_observation_count": 320,
+    "fit_ready": false,
+    "blocking_reason": "3He nuclear impulse-approximation/dilution model and absolute cross-section covariance closure pending"
+  },
+  "selection_authorized": false,
+  "production_authorized": false,
+  "production_files_modified": false
+}

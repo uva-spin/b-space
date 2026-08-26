@@ -1,0 +1,195 @@
+{
+  "campaign": "sidis_global_analysis_2026",
+  "status": "1547_benchmark_audited_not_reproduced",
+  "literature_reference": "arXiv:2206.07598, Table 2/data.tex",
+  "reported_sidIs_total": 1547,
+  "reported_breakdown": {
+    "HERMES": 344,
+    "COMPASS": 1203
+  },
+  "cut_lock": {
+    "Q_min_GeV": 1.4,
+    "z_range": [
+      0.2,
+      0.7
+    ],
+    "pht_limit": "min[min(0.2 Q, 0.5 z Q)+0.3 GeV, z Q]",
+    "HERMES_choice": "vector-meson-subtracted zxpt-3D",
+    "COMPASS_choice": "vector-boson-subtracted release"
+  },
+  "hermes": {
+    "source": "hepdata:ins1208547",
+    "available_transverse_projection_tables": 16,
+    "available_primary_rows": 288,
+    "reported_literature_rows": 344,
+    "status": "incomplete_projection",
+    "blocking_reason": "the public HEPData projection has no Q or x axes and does not expose the full HERMES vector-meson-subtracted zxpt-3D supplemental archive/covariance sidecars used for the literature count",
+    "tables": [
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table17.csv",
+        "description": "pi+ multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.2-0.3.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table18.csv",
+        "description": "pi+ multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.3-0.4.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table19.csv",
+        "description": "pi+ multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.4-0.6.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table20.csv",
+        "description": "pi+ multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.6-0.8.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table21.csv",
+        "description": "pi- multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.2-0.3.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table22.csv",
+        "description": "pi- multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.3-0.4.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table23.csv",
+        "description": "pi- multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.4-0.6.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table24.csv",
+        "description": "pi- multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.6-0.8.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table25.csv",
+        "description": "K+ multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.2-0.3.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table26.csv",
+        "description": "K+ multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.3-0.4.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table27.csv",
+        "description": "K+ multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.4-0.6.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table28.csv",
+        "description": "K+ multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.6-0.8.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table29.csv",
+        "description": "K- multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.2-0.3.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table30.csv",
+        "description": "K- multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.3-0.4.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table31.csv",
+        "description": "K- multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.4-0.6.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      },
+      {
+        "table": "data/raw/global/hepdata_ins1208547/tables/HEPData-ins1208547-v1-csv/Table32.csv",
+        "description": "K- multiplicities from HERMES, Target: H, Target: D,  VM subtracted, Z in the range 0.6-0.8.",
+        "primary_rows": 18,
+        "axis_columns": [
+          "PT (proton) [GEV]",
+          "PT (deuteron) [GEV]"
+        ]
+      }
+    ]
+  },
+  "compass": {
+    "source": "hepdata:ins1624692",
+    "available_primary_rows": 4664,
+    "reported_literature_rows": 1203,
+    "cut_equation": "Q > 1.4 GeV; 0.2 < z < 0.7; |P_hT| < min[min(0.2 Q, 0.5 z Q)+0.3 GeV, z Q]; 0.1 < y < 0.9",
+    "representative_bin_policies": {
+      "published_Q2_value_z_mid_Pht_center": 1118,
+      "published_Q2_value_z_mid_Pht_low": 1168,
+      "published_Q2_value_z_mid_Pht_high": 1078,
+      "Q2_bin_midpoint_z_mid_Pht_center": 1285,
+      "Q2_bin_midpoint_z_mid_Pht_high": 1253
+    },
+    "status": "selection_convention_not_closed",
+    "blocking_reason": "the HEPData archive exposes bin centers/edges and metadata, but the literature's exact point-level representative values, W^2 treatment, duplicate policy, and source conversion are not encoded as a canonical selection manifest"
+  },
+  "available_projection_rows": 288,
+  "available_compass_rows": 4664,
+  "approved_rows": 0,
+  "selection_authorized": false,
+  "production_authorized": false,
+  "production_files_modified": false
+}

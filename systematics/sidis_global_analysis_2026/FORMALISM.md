@@ -7,15 +7,16 @@ published bin definition.
 
 ## Candidate process and variables
 
-The target process is unpolarized lepton--nucleon SIDIS, `l + N -> l' + h + X`,
-with `q = l-l'`, `Q^2 = -q^2`, Bjorken `x`, hadron energy fraction `z`, and
-hadron transverse momentum `P_hT` measured relative to the virtual-photon
-axis. A table may publish `P_hT` or `P_hT^2`; conversion is recorded per source
-table and is not inferred from a column name alone.
+The target process is unpolarized lepton--nucleon SIDIS,
+`l + N -> l' + h + X`, with `q = l-l'`, `Q^2 = -q^2`, Bjorken `x`, hadron
+energy fraction `z`, and hadron transverse momentum `P_hT` measured relative to
+the virtual-photon axis. A table may publish `P_hT` or `P_hT^2`; the conversion
+must be recorded per source table and is not inferred from a column name alone.
 
 ## Candidate leading-power W convolution
 
-For a spin-averaged structure function, a standard leading-power candidate is
+For a spin-averaged structure function, the radial part of a standard
+leading-power candidate is
 
 ```text
 F_UU,W(x,z,P_hT;Q) = H_UU(Q) * sum_a e_a^2 / z^2
@@ -24,54 +25,67 @@ F_UU,W(x,z,P_hT;Q) = H_UU(Q) * sum_a e_a^2 / z^2
 ```
 
 The `1/z^2`, hard factor, electroweak/leptonic prefactors, target/beam
-composition, and DIS denominator are caller-supplied. The current
-`sidis_observables.uu_structure_function` implements only the charge-weighted
-radial integral with explicit `qT=P_hT/z` and `b db/(2 pi)` conventions. It is
-a scalar reference boundary, not a final multiplicity prediction.
+composition, and DIS denominator are intentionally caller-supplied. The
+current `sidis_observables.uu_structure_function` implements only the charge
+weighted radial integral with the explicit `qT=P_hT/z` and `b db/(2 pi)`
+conventions. It is therefore a scalar reference boundary, not yet a final
+multiplicity prediction.
 
-For a table that publishes `P_hT^2`, the canonical interface keeps the
-published squared-bin edges and central value. Conversion to a `P_hT`
-integration variable must include the Jacobian in a source-specific
-bin-average closure; it is not a preprocessing square root. Multi-block
-HEPData correction factors are retained as `data_block=auxiliary` rows and
-require an explicit primary-block filter before they can enter a mapping.
+For a table that publishes `P_hT^2`, the canonical observable interface keeps
+the published squared-bin edges and central value. Any conversion to a
+`P_hT` integration variable must include the Jacobian and be part of the
+source-specific bin-average closure, not a preprocessing square root of the
+reported value. Correction-factor blocks in a multi-block HEPData CSV are
+retained as auxiliary rows with explicit `data_block=auxiliary` metadata; only
+a caller-declared primary block can enter a multiplicity mapping.
 
 `sidis_dataset.canonicalize_table` is the corresponding data boundary. It
-requires explicit mappings for value, axes, bin edges, and uncertainty columns
-or comment-defined block intervals, and preserves source/table/row identity,
-block metadata, and asymmetric uncertainty components. Missing or ambiguous
-uncertainty mappings fail closed. The COMPASS 2013 transverse tables therefore
-remain distinct from the stat/sys convention of the COMPASS 2018 grid. The
-source-specific validation report covers 16 HERMES target-block tables, 46
-COMPASS-2013 tables, and 162 COMPASS-2018 tables; it skips only explicit dash
-placeholders and excludes 9,328 auxiliary COMPASS-2018 correction rows.
+requires an explicit mapping for the value, axes, bin edges, and uncertainty
+columns (or comment-defined block intervals). It records source/table/row
+identity, target/hadron labels, block metadata, and asymmetric uncertainty
+components, and refuses missing or ambiguous uncertainty mappings. The
+COMPASS 2013 transverse tables use a `PT**2` axis, comment-defined `X_BJ`,
+`Q**2`, and `Z` intervals, and generic `error +/-` columns; they are not
+silently treated as the stat/sys convention used by the COMPASS 2018 grid.
+The source-specific validation report records 16 HERMES target-block tables,
+46 COMPASS-2013 tables, and 162 COMPASS-2018 tables. It explicitly skips
+published dash placeholders in the COMPASS-2013 rectangular pT grid and
+excludes the 9,328 COMPASS-2018 correction rows from the 4,664 primary
+observations. This is a provenance conversion check, not row approval.
 
 ## Multiplicity and bin integration
 
 The first candidate observable is a multiplicity: a SIDIS cross section (or
 yield) divided by the matching inclusive DIS cross section in the same
-published phase-space bin. Numerator and denominator must be integrated over
-the experiment's bin before forming the ratio whenever the source says the
-published value is bin-integrated. Evaluating both factors at average
+published phase-space bin. The numerator and denominator must be integrated
+over the experiment's bin before forming the ratio whenever the source says the
+published value is bin-integrated. Evaluating both factors at a table's average
 kinematics is a diagnostic only. Radiative, acceptance, vector-meson, and
-normalization corrections must follow the source and are not generated by the
-scalar module.
+normalization corrections must be applied exactly as documented by the source;
+they are not generated by the scalar module.
 
 ## Unlocked physics interfaces
 
-The following remain explicit blockers before a joint DY+SIDIS fit: collinear
-FF set and evolution; TMDFF parameterization and charge conjugation/favored
-channels; target composition and hadron-mass treatment; perturbative order,
-OPE coefficients, hard factor, and scales; finite-`Y` treatment; and
-point-to-point versus correlated covariance and normalization nuisances.
+The following remain explicit blockers before a joint DY+SIDIS fit:
 
-Until these are closed, raw statistical and systematic columns stay separate
-and no combined error is interpreted as a likelihood covariance.
+- collinear FF set and scale/evolution convention;
+- TMDFF nonperturbative parameterization, charge conjugation, favored and
+  unfavored channels, and hadron-mass treatment;
+- target composition (hydrogen, deuterium, or nuclear effective target);
+- perturbative order, OPE coefficient set, hard factor, and evolution scales;
+- finite-`Y` treatment and the valid `P_hT/Q` region;
+- point-to-point versus correlated systematic covariance and normalization
+  nuisance parameters.
+
+Until these are closed, the data inventory must retain raw statistical and
+systematic columns separately and no combined error should be interpreted as a
+likelihood covariance.
 
 ## Closure requirements
 
-Before any DNN or joint refit, evaluate analytic test functions, compare the
-Bessel integral to independent quadrature, and run a published-bin closure
-with source bin integration. Then verify that a read-only interface reproduces
-the frozen DY lambda=1 central before shared parameters move. These checks are
-separate from fit quality and from start/replica uncertainty.
+Before any DNN or joint refit, evaluate the scalar implementation on analytic
+test functions, compare the Bessel integral to an independent quadrature, and
+run a published-bin closure with the source's bin integration. Then verify
+that a read-only interface reproduces the frozen DY lambda=1 central before
+allowing shared parameters to move. These checks are separate from fit quality
+and from start/replica uncertainty.

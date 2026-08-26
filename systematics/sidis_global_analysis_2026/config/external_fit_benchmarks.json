@@ -1,0 +1,34 @@
+{
+  "campaign": "sidis_global_analysis_2026",
+  "status": "literature_benchmarks_not_reproduction_claims",
+  "benchmarks": [
+    {
+      "id": "arxiv:2206.07598",
+      "title": "Unpolarized Transverse Momentum Distributions from a global fit of Drell-Yan and Semi-Inclusive Deep-Inelastic Scattering data",
+      "source_url": "https://arxiv.org/abs/2206.07598",
+      "journal": "JHEP 10 (2022) 127",
+      "reported_total_points": 2031,
+      "reported_sidis_points": 1547,
+      "reported_sidis_scope": "HERMES and COMPASS unpolarized multiplicities",
+      "cut_summary": "Q > 1.4 GeV; 0.2 < z < 0.7; |P_hT| < min[min(0.2 Q, 0.5 z Q) + 0.3 GeV, z Q]; HERMES vector-meson-subtracted zxpt-3D tables and the COMPASS vector-boson-subtracted release; published W^2 and lepton-y cuts retained",
+      "reported_sidis_breakdown": {
+        "HERMES": 344,
+        "COMPASS": 1203,
+        "total": 1547
+      },
+      "use": "external count and cut-definition benchmark; reproduce independently before comparing fit quality",
+      "caveat": "The published 1547 is not a raw-table total and cannot be used as an unexplained normalization target. Point-level selection, duplicated projections, vector-meson subtraction, and error treatment must be reconstructed from the paper and source tables. The paper's HERMES zxpt-3D supplemental archive and covariance sidecars are not yet mirrored here, so a literal 344-row HERMES reproduction remains pending."
+    },
+    {
+      "id": "arxiv:2405.13833",
+      "title": "Flavor dependence of unpolarized quark Transverse Momentum Distributions from a global fit",
+      "source_url": "https://arxiv.org/abs/2405.13833",
+      "journal": "JHEP 08 (2024) 232",
+      "reported_sidis_scope": "updated HERMES/COMPASS unpolarized SIDIS within a global N3LL fit",
+      "reported_fit_quality": "chi2/Ndat = 1.08 for the combined DY+SIDIS analysis",
+      "use": "formalism, dataset-selection, and flavor-dependent TMDFF benchmark",
+      "caveat": "This is a literature comparison, not a source of raw rows. Its exact point count, cuts, normalization factors, and covariance conventions must be recorded from the paper before reproducing any result. The 2022 analysis reports SIDIS-specific normalization factors for higher-order corrections; these are a formalism benchmark, not an instruction to rescale our data silently."
+    }
+  ],
+  "benchmark_policy": "Use the 1547-point result as a reproducibility checkpoint for the clean HERMES/COMPASS stage, then add other global families progressively. Do not pad or force a fit to reach 1547 by counting incompatible diagnostic observables."
+}

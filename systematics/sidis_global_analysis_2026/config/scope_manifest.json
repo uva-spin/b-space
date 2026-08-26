@@ -1,9 +1,22 @@
 {
   "campaign": "sidis_global_analysis_2026",
-  "status": "public_source_harvest_complete_discovery_only",
+  "status": "global_candidate_harvest_complete_staged_fit_not_started",
   "initialized": "2026-08-26",
   "target": "complete shared-DY-plus-SIDIS unpolarized TMD global analysis",
   "candidate_records": ["46860", "ins1236358", "ins1208547", "ins1624692", "ins1444985", "ins1483098", "ins2840545"],
+  "global_registry": "config/global_sources.json",
+  "global_registry_record_count": 22,
+  "global_registry_harvested_record_count": 19,
+  "global_registry_hepdata_table_count": 582,
+  "global_registry_hepdata_row_count": 57358,
+  "external_fit_benchmarks": "config/external_fit_benchmarks.json",
+  "staged_fit_order": [
+    "reproduce the literature HERMES/COMPASS 1547-point post-cut benchmark",
+    "add one clean HERMES/COMPASS family at a time with leave-one-family-out checks",
+    "add JLab CLAS proton ancillary tables and Hall C H/D tables after absolute-cross-section closure",
+    "add EMC/E665 historical tables after current-fragmentation and normalization closure",
+    "retain H1/ZEUS current-region and nuclear/jet/remnant observables as diagnostics unless a dedicated formalism passes closure"
+  ],
   "sidis_datasets": [],
   "sidis_observables": [],
   "harvested_record_count": 7,
@@ -16,7 +29,7 @@
   "approved_rows": 0,
   "production_authorized": false,
   "frozen_dependencies": {
-    "dy_production": "../../production/lambda1_empirical_reference_full96x50/",
+    "dy_production": "../dataset_identifiability_campaign_2026/production_lambda1_empirical_reference_full96x50/",
     "perturbative_provenance": "../perturbative_provenance_completion/",
     "source_v22": "../../v22/",
     "source_v23": "../../v23/"

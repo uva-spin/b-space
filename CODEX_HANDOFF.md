@@ -121,17 +121,25 @@ archived evidence, not alternate production.
 ### New SIDIS/global-analysis campaign
 
 `systematics/sidis_global_analysis_2026/` is a separate discovery workspace for
-a complete shared-DY-plus-SIDIS unpolarized TMD analysis. Its first
-public-source harvest covers seven version-1 HEPData records (287 tables,
-50,722 rows, 224 transverse-momentum tables), with source hashes, inventories,
-and a metadata-preserving reader/profiler. The reader now skips repeated
-target/charge headers and retains row-level block metadata; the corrected
-inventory is 287 tables, 50,722 rows, and 33,740 transverse-momentum
-candidate rows. These remain provenance candidates:
-no SIDIS rows, observable convention, TMDFF model, fit, replica ensemble, or
-production claim is approved. SIDIS requires its own data provenance,
-fragmentation-function interface, bin/covariance treatment, scalar closure,
-and model/start identifiability gates before any joint refit.
+a complete shared-DY-plus-SIDIS unpolarized TMD analysis. Its registry now
+contains 22 public-source identities spanning the HERMES/COMPASS core, JLab
+CLAS/Hall A/Hall C, EMC, E665, H1, and ZEUS. The harvest contains 16 HEPData
+records (582 tables, 57,358 parsed rows; 35,963 primary and 21,395 auxiliary
+rows) and three extracted arXiv source packages. The source-only inventory
+also records 668,799 CLAS ancillary cross-section rows, 25 Hall-C pT2 rows,
+and 160 Hall-A TeX rows. These remain provenance candidates: no SIDIS rows,
+observable convention, TMDFF model, fit, replica ensemble, or production claim
+is approved. SIDIS requires its own data provenance, fragmentation-function
+interface, bin/covariance treatment, scalar closure, and model/start
+identifiability gates before any joint refit.
+
+The literature benchmark audit is in
+`systematics/sidis_global_analysis_2026/reports/sidis_1547_benchmark_audit.md`.
+The published 1,547 HERMES/COMPASS points are a post-cut selection rather than
+a raw-table total. The available HERMES projection has 288 rows and lacks the
+required Q/x axes and covariance sidecars; deterministic COMPASS bin choices
+give 1,078--1,285 rows around the reported 1,203. A row-level selection
+manifest is therefore still required before fitting.
 
 ## Status table
 
@@ -145,7 +153,7 @@ and model/start identifiability gates before any joint refit.
 | 24-row Tevatron unitary finite-Y | **Validated isolated scope** | Boundary diagnostic only |
 | 122-row Tevatron N3LL+NNLO W+Y | **Complete observable candidate, not TMD production** | No global/collider-wide claim |
 | LHCb finite-Y | **Fail-closed/out of scope** | Do not fit current subtraction table |
-| SIDIS/global analysis | **Public-source harvest/discovery phase** | Five HEPData records profiled; no SIDIS or joint-global production claim yet |
+| SIDIS/global analysis | **Global candidate harvest/discovery phase** | 22 identities, 16 HEPData records, and three arXiv packages inventoried; no SIDIS or joint-global production claim |
 | Paper methods/figures | **Lambda=1 dossier available** | Manuscript scope must remain explicit |
 
 ## Reproduction entry points
