@@ -11,3 +11,7 @@ in the manifest, and rebuild the inventory before selecting any rows.
 No row is approved until its observable definition, units, target/hadron
 identity, bin integration, radiative/acceptance treatment, and covariance or
 normalization provenance have been reviewed.
+
+`hermes_database_manifest.json` records the public HERMES database page hash
+and covariance/download links; it does not assert that the linked DESY archive
+was downloaded.

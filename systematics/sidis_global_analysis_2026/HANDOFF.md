@@ -48,6 +48,10 @@ statistical covariance matrices. The pointer and archive URL are recorded in
 `config/public_sources.json`; the supplemental archive has not yet been
 mirrored, so the HEPData CSV remains a value-table candidate rather than a
 covariance-complete HERMES input.
+`scripts/fetch_hermes_database_metadata.py` records the page hash, documented
+binning/covariance warnings, and proton/deuteron `zpt-3D` transverse-momentum
+download links in `data/hermes_database_manifest.json`; the concise
+interpretation is in `reports/hermes_database_provenance.md`.
 
 Reproduce the source-only harvest with:
 

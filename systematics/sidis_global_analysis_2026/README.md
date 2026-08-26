@@ -75,6 +75,10 @@ radiative factors, and finite-Y terms remain explicit until the formalism is
 locked. Five scalar unit tests pass. The source-only drivers are
 `scripts/fetch_hepdata_records.py`, `scripts/profile_hepdata_tables.py`, and
 `scripts/build_source_inventory.py`.
+`fetch_hermes_database_metadata.py` records the supplemental HERMES database
+page hash and covariance/download links; its large DESY archive is not bundled.
+`audit_table_provenance.py` produces the conservative table/row audit without
+selecting rows.
 
 The candidate factorization boundary, bin-integration warning, and unresolved
 physics interfaces are recorded in [`FORMALISM.md`](FORMALISM.md).

@@ -1,0 +1,81 @@
+{
+  "campaign": "sidis_global_analysis_2026",
+  "status": "hermes_database_metadata_recorded_archive_pending",
+  "source_url": "https://hermesmults.appspot.com/",
+  "retrieved_date": "2026-08-26",
+  "page_sha256": "a43b3c84a13483560d000e0e027693ef1d58a165d1a1b8d63b44947a2c7e012f",
+  "download_all_url": "http://www-hermes.desy.de/multiplicities/database/data/HERMES-multiplicities.tar.gz",
+  "relevant_link_count": 1,
+  "selection_links": [
+    "http://www-hermes.desy.de/multiplicities/database/data/HERMES-multiplicities.tar.gz",
+    "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.covmat_mults.list.gz",
+    "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.mults.tar.gz",
+    "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.mults_kminus.list.gz",
+    "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.mults_kplus.list.gz",
+    "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.mults_piminus.list.gz",
+    "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.mults_piplus.list.gz",
+    "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.deuteron.zpt-3D.pt-proj.vmsub.covmat_mults.list.gz",
+    "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.deuteron.zpt-3D.pt-proj.vmsub.mults.tar.gz",
+    "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.deuteron.zpt-3D.pt-proj.vmsub.mults_kminus.list.gz",
+    "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.deuteron.zpt-3D.pt-proj.vmsub.mults_kplus.list.gz",
+    "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.deuteron.zpt-3D.pt-proj.vmsub.mults_piminus.list.gz",
+    "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.deuteron.zpt-3D.pt-proj.vmsub.mults_piplus.list.gz"
+  ],
+  "selection_queries": [
+    {
+      "query": {
+        "what": "mults",
+        "targ": "proton",
+        "tag": "vmsub",
+        "conf": "zpt-3D",
+        "proj": "pt"
+      },
+      "status": "links_recorded_no_archive_download",
+      "links": [
+        "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.covmat_mults.list.gz",
+        "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.mults.tar.gz",
+        "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.mults_kminus.list.gz",
+        "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.mults_kplus.list.gz",
+        "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.mults_piminus.list.gz",
+        "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.mults_piplus.list.gz"
+      ]
+    },
+    {
+      "query": {
+        "what": "mults",
+        "targ": "deuteron",
+        "tag": "vmsub",
+        "conf": "zpt-3D",
+        "proj": "pt"
+      },
+      "status": "links_recorded_no_archive_download",
+      "links": [
+        "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.deuteron.zpt-3D.pt-proj.vmsub.covmat_mults.list.gz",
+        "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.deuteron.zpt-3D.pt-proj.vmsub.mults.tar.gz",
+        "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.deuteron.zpt-3D.pt-proj.vmsub.mults_kminus.list.gz",
+        "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.deuteron.zpt-3D.pt-proj.vmsub.mults_kplus.list.gz",
+        "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.deuteron.zpt-3D.pt-proj.vmsub.mults_piminus.list.gz",
+        "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.deuteron.zpt-3D.pt-proj.vmsub.mults_piplus.list.gz"
+      ]
+    }
+  ],
+  "observations": {
+    "recommended_z_lower_cut": "z > 0.2 is recommended for general use",
+    "high_z_warning": "z > 0.8 requires caution because exclusive contributions grow",
+    "statistical_correlation": "unfolding induces statistical correlations; covariance matrices are provided",
+    "systematic_treatment": "systematic uncertainties are described as point-to-point on the database page",
+    "bin_integration": "numerator and denominator are integrated separately over each kinematic bin",
+    "observations_found": {
+      "z_cut": false,
+      "high_z": false,
+      "covariance": true,
+      "bin_integrated": true
+    }
+  },
+  "archive_downloaded": false,
+  "covariance_downloaded": false,
+  "row_selection_authorized": false,
+  "production_authorized": false,
+  "note": "The DESY archive host was unreachable in this run; links are retained for a later retry."
+}
+
