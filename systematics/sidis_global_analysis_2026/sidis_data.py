@@ -4,9 +4,12 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import csv
+import gzip
 from pathlib import Path
 import re
 from typing import Iterable
+
+import numpy as np
 
 CAMPAIGN_ROOT = Path(__file__).resolve().parent
 
@@ -17,6 +20,35 @@ class SidisTable:
     metadata: dict[str, str]
     columns: tuple[str, ...]
     rows: tuple[dict[str, str], ...]
+
+
+def read_covariance_matrix(path: str | Path, expected_size: int | None = None) -> np.ndarray:
+    """Read a numeric square covariance matrix from plain text or ``.gz``."""
+
+    source = Path(path)
+    opener = gzip.open if source.suffix == ".gz" else open
+    with opener(source, "rt", encoding="utf-8") as handle:
+        rows: list[list[float]] = []
+        for line_number, raw in enumerate(handle, start=1):
+            line = raw.strip()
+            if not line or line.startswith("#"):
+                continue
+            tokens = line.replace(",", " ").split()
+            try:
+                row = [float(token) for token in tokens]
+            except ValueError as exc:
+                raise ValueError(f"non-numeric covariance token at {source}:{line_number}") from exc
+            rows.append(row)
+    if not rows or any(len(row) != len(rows) for row in rows):
+        raise ValueError(f"covariance matrix must be non-empty and square: {source}")
+    matrix = np.asarray(rows, dtype=float)
+    if expected_size is not None and matrix.shape != (expected_size, expected_size):
+        raise ValueError(f"covariance shape {matrix.shape} does not match expected size {expected_size}")
+    if np.any(~np.isfinite(matrix)):
+        raise ValueError(f"covariance matrix contains non-finite values: {source}")
+    if not np.allclose(matrix, matrix.T, rtol=1.0e-8, atol=1.0e-12):
+        raise ValueError(f"covariance matrix is not symmetric: {source}")
+    return matrix
 
 
 def _unique_columns(columns: Iterable[str]) -> tuple[str, ...]:

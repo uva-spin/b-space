@@ -4,7 +4,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from sidis_data import profile_table, read_hepdata_csv  # noqa: E402
+from sidis_data import profile_table, read_hepdata_csv, read_covariance_matrix  # noqa: E402
 
 
 class SidisDataTests(unittest.TestCase):
@@ -24,6 +24,16 @@ class SidisDataTests(unittest.TestCase):
             self.assertTrue(profile["has_transverse_momentum"])
             self.assertTrue(profile["has_statistical_columns"])
             self.assertTrue(profile["has_systematic_columns"])
+
+    def test_covariance_reader_accepts_compressed_symmetric_matrix(self):
+        import gzip
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "covariance.list.gz"
+            with gzip.open(path, "wt", encoding="utf-8") as handle:
+                handle.write("# covariance\n1.0,0.2\n0.2,2.0\n")
+            matrix = read_covariance_matrix(path, expected_size=2)
+            self.assertEqual(matrix.shape, (2, 2))
 
 
 if __name__ == "__main__":
