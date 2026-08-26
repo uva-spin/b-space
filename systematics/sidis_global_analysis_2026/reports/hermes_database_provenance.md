@@ -10,6 +10,11 @@ over each bin, not from a ratio evaluated at average kinematics.
 
 `data/hermes_database_manifest.json` records the page hash and the links for
 the proton/deuteron `zpt-3D` `P_hperp` projection queried by the harvester.
-The linked DESY archive is not bundled in this source release; a local retry
-may populate it when reachable. Until then, the HEPData tables are not treated
-as covariance-complete HERMES inputs.
+The linked DESY archive was unreachable during this run, so
+`archive_downloaded` and `covariance_downloaded` remain false. The HEPData
+tables are therefore not treated as covariance-complete HERMES inputs.
+
+A same-day retry of the proton `vmsub/zpt-3D/pt-proj` archive over both HTTP
+and HTTPS timed out; the attempted URLs and result are recorded in
+`data/hermes_database_manifest.json`. No partial archive was retained and the
+selection gate remains closed.

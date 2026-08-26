@@ -74,6 +74,14 @@
   },
   "archive_downloaded": false,
   "covariance_downloaded": false,
+  "retry_2026_08_26": {
+    "status": "desy_http_and_https_endpoints_timed_out",
+    "attempted": [
+      "http://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.mults.tar.gz",
+      "https://www-hermes.desy.de/multiplicities/database/data/vmsub/zpt-3D/pt-proj/hermes.proton.zpt-3D.pt-proj.vmsub.mults.tar.gz"
+    ],
+    "raw_archive_written": false
+  },
   "row_selection_authorized": false,
   "production_authorized": false,
   "note": "The DESY archive host was unreachable in this run; links are retained for a later retry."
