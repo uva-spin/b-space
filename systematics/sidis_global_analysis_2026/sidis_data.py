@@ -12,6 +12,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import csv
 import gzip
+from collections import Counter
 from pathlib import Path
 import re
 from typing import Iterable
@@ -80,6 +81,10 @@ def read_hepdata_csv(path: str | Path) -> SidisTable:
     path = Path(path)
     metadata: dict[str, str] = {}
     header: list[str] | None = None
+    active_header: list[str] | None = None
+    active_columns: tuple[str, ...] = ()
+    all_columns: list[str] = []
+    active_block = "primary"
     rows: list[dict[str, str]] = []
     row_metadata: list[dict[str, str]] = []
     current_block: dict[str, str] = {}
@@ -95,43 +100,114 @@ def read_hepdata_csv(path: str | Path) -> SidisTable:
                 value = next((field for field in reversed(fields[1:]) if field), "")
                 if key == "re":
                     current_block["reaction"] = value
-                elif key == "z":
-                    current_block["z_bin"] = value
+                elif _metadata_axis(key) == "z":
+                    _store_axis_metadata(current_block, "z", value)
                 elif key.startswith("e("):
                     current_block["beam_energy"] = body
                 elif key.startswith("plab"):
                     current_block["beam_energy"] = value
-                elif key.startswith("x_bj") or key == "x":
-                    current_block["x_bin"] = value
-                elif key.startswith("q**2") or key.startswith("q2"):
-                    current_block["q2_bin"] = value
+                elif _metadata_axis(key) == "x":
+                    _store_axis_metadata(current_block, "x", value)
+                elif _metadata_axis(key) == "q2":
+                    _store_axis_metadata(current_block, "q2", value)
+                elif _metadata_axis(key) == "y":
+                    _store_axis_metadata(current_block, "y", value)
             continue
         if not line.strip():
             continue
-        candidate = next(csv.reader([line]))
         if header is None:
+            candidate = next(csv.reader([line]))
             # A few records contain an unprefixed prose continuation before the
             # actual CSV header.
             if len(candidate) < 2:
                 continue
             header = candidate
+            active_header = candidate
+            active_columns = _unique_columns(candidate)
+            all_columns.extend(active_columns)
         else:
             candidate = next(csv.reader([line]))
             if len(candidate) == len(header) and all(_normalized(left) == _normalized(right) for left, right in zip(candidate, header)):
+                active_header = header
+                active_columns = _unique_columns(header)
+                active_block = "primary"
+                continue
+            if _looks_like_data_header(candidate):
+                active_header = candidate
+                active_columns = _unique_columns(candidate)
+                active_block = "primary" if _same_header(candidate, header) else "auxiliary"
+                for column in active_columns:
+                    if column not in all_columns:
+                        all_columns.append(column)
                 continue
             if not any(value.strip() for value in candidate):
                 continue
-            padded = candidate + [""] * (len(header) - len(candidate))
-            rows.append(dict(zip(_unique_columns(header), padded[: len(header)])))
-            row_metadata.append(dict(current_block))
+            if active_header is None:
+                active_header = header
+                active_columns = _unique_columns(header)
+            padded = candidate + [""] * (len(active_header) - len(candidate))
+            rows.append(dict(zip(active_columns, padded[: len(active_header)])))
+            block = dict(current_block)
+            block["data_block"] = active_block
+            row_metadata.append(block)
     if header is None:
         raise ValueError(f"HEPData table has no header: {path}")
-    columns = _unique_columns(header)
+    columns = tuple(all_columns or _unique_columns(header))
     return SidisTable(path, metadata, columns, tuple(rows), tuple(row_metadata))
 
 
 def _normalized(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", name.lower())
+
+
+def _same_header(left: Iterable[str], right: Iterable[str] | None) -> bool:
+    if right is None:
+        return False
+    left_values, right_values = tuple(left), tuple(right)
+    return len(left_values) == len(right_values) and all(
+        _normalized(a) == _normalized(b) for a, b in zip(left_values, right_values)
+    )
+
+
+def _looks_like_data_header(candidate: list[str]) -> bool:
+    if len(candidate) < 2:
+        return False
+    try:
+        float(candidate[0].strip())
+    except ValueError:
+        pass
+    else:
+        return False
+    tokens = [_normalized(item) for item in candidate]
+    return any("low" in token or "high" in token for token in tokens)
+
+
+def _metadata_axis(key: str) -> str | None:
+    token = _normalized(key)
+    if token in {"x", "xb", "xbj"} or token.startswith("xbj"):
+        return "x"
+    if token in {"q2", "q2gev2"} or token.startswith("q2"):
+        return "q2"
+    if token == "z" or token.startswith("zgev"):
+        return "z"
+    if token == "y":
+        return "y"
+    return None
+
+
+def _store_axis_metadata(block: dict[str, str], axis: str, value: str) -> None:
+    text = value.strip()
+    block[f"{axis}_value"] = text
+    match = re.search(
+        r"\(\s*BIN\s*=\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)"
+        r"\s+TO\s+([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)\s*\)",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if match:
+        block[f"{axis}_bin"] = f"{match.group(1)}-{match.group(2)}"
+    elif text:
+        block[f"{axis}_bin"] = text
 
 
 def _axis_columns(columns: Iterable[str]) -> dict[str, str | None]:
@@ -179,6 +255,9 @@ def profile_table(table: SidisTable) -> dict:
         "columns": list(table.columns),
         "row_count": len(table.rows),
         "block_count": len({tuple(sorted(item.items())) for item in table.row_metadata}) if table.row_metadata else 0,
+        "data_block_counts": dict(Counter(
+            item.get("data_block", "primary") for item in table.row_metadata
+        )) if table.row_metadata else {"primary": len(table.rows)},
         "axes": axes,
         "axis_ranges": {},
         "has_statistical_columns": any("stat" in _normalized(c) for c in table.columns),
@@ -187,6 +266,8 @@ def profile_table(table: SidisTable) -> dict:
         "has_transverse_momentum": axes["pht"] is not None or axes["pht2"] is not None,
         "warnings": [],
     }
+    profile["primary_row_count"] = profile["data_block_counts"].get("primary", 0)
+    profile["auxiliary_row_count"] = profile["data_block_counts"].get("auxiliary", 0)
     for axis, column in axes.items():
         values = _float_values(table, column)
         if values:

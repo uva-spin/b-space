@@ -29,12 +29,22 @@ composition, and DIS denominator are caller-supplied. The current
 radial integral with explicit `qT=P_hT/z` and `b db/(2 pi)` conventions. It is
 a scalar reference boundary, not a final multiplicity prediction.
 
+For a table that publishes `P_hT^2`, the canonical interface keeps the
+published squared-bin edges and central value. Conversion to a `P_hT`
+integration variable must include the Jacobian in a source-specific
+bin-average closure; it is not a preprocessing square root. Multi-block
+HEPData correction factors are retained as `data_block=auxiliary` rows and
+require an explicit primary-block filter before they can enter a mapping.
+
 `sidis_dataset.canonicalize_table` is the corresponding data boundary. It
 requires explicit mappings for value, axes, bin edges, and uncertainty columns
 or comment-defined block intervals, and preserves source/table/row identity,
 block metadata, and asymmetric uncertainty components. Missing or ambiguous
 uncertainty mappings fail closed. The COMPASS 2013 transverse tables therefore
-remain distinct from the stat/sys convention of the COMPASS 2018 grid.
+remain distinct from the stat/sys convention of the COMPASS 2018 grid. The
+source-specific validation report covers 16 HERMES target-block tables, 46
+COMPASS-2013 tables, and 162 COMPASS-2018 tables; it skips only explicit dash
+placeholders and excludes 9,328 auxiliary COMPASS-2018 correction rows.
 
 ## Multiplicity and bin integration
 

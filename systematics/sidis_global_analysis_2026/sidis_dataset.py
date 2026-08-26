@@ -56,6 +56,8 @@ class SidisColumnMap:
     sys_columns: tuple[str, str] | None = None
     total_columns: tuple[str, str] | None = None
     required_axes: tuple[str, ...] = ()
+    block_filters: Mapping[str, str] = field(default_factory=dict)
+    skip_missing_values: bool = False
     observable: str = "MULT"
     target: str | None = None
     hadron: str | None = None
@@ -99,6 +101,9 @@ def canonicalize_table(table: SidisTable, mapping: SidisColumnMap, *, source: st
     for axis in mapping.required_axes:
         if axis not in mapping.axis_columns and axis not in mapping.metadata_axes:
             raise ValueError(f"required axis {axis!r} has no explicit mapping")
+    for key in mapping.block_filters:
+        if len(table.row_metadata) == 0:
+            raise ValueError(f"block filter {key!r} requires row metadata")
     for axis, (low, high) in mapping.bin_columns.items():
         if low not in columns or high not in columns:
             raise KeyError(f"bin columns for {axis!r} are not in {table.path}")
@@ -107,10 +112,15 @@ def canonicalize_table(table: SidisTable, mapping: SidisColumnMap, *, source: st
     table_name = table.metadata.get("name", table.path.name)
     observations = []
     for row_index, row in enumerate(table.rows):
+        block = dict(table.row_metadata[row_index]) if table.row_metadata else {}
+        if any(block.get(key) != expected for key, expected in mapping.block_filters.items()):
+            continue
+        raw_value = row.get(mapping.value, "").strip()
+        if mapping.skip_missing_values and raw_value in {"", "-", "–", "—"}:
+            continue
         value = _number(row.get(mapping.value), label="value")
         if value is None:
             raise ValueError(f"missing value at row {row_index} in {table.path}")
-        block = dict(table.row_metadata[row_index]) if table.row_metadata else {}
         axes = {}
         for axis, column in mapping.axis_columns.items():
             parsed = _number(row.get(column), label=f"{axis} axis")
@@ -140,4 +150,6 @@ def canonicalize_table(table: SidisTable, mapping: SidisColumnMap, *, source: st
         if require_uncertainty and not uncertainties:
             raise ValueError(f"no explicit uncertainty mapping at row {row_index} in {table.path}")
         observations.append(SidisObservation(source, table_name, row_index, mapping.observable, value, axes, bins, uncertainties, block, mapping.target, mapping.hadron))
+    if mapping.block_filters and not observations:
+        raise ValueError(f"block filter selected no rows in {table.path}")
     return tuple(observations)

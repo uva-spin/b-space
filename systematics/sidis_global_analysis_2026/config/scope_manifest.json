@@ -8,8 +8,11 @@
   "sidis_observables": [],
   "harvested_record_count": 7,
   "harvested_table_count": 287,
-  "harvested_row_count": 50722,
+  "harvested_row_count": 50359,
+  "harvested_primary_row_count": 29073,
+  "harvested_auxiliary_row_count": 21286,
   "harvested_transverse_momentum_table_count": 224,
+  "harvested_primary_transverse_candidate_row_count": 24088,
   "approved_rows": 0,
   "production_authorized": false,
   "frozen_dependencies": {

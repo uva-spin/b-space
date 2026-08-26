@@ -26,6 +26,8 @@ def main() -> None:
         profile = {
             "tables": len(items),
             "rows": sum(item["row_count"] for item in items),
+            "primary_rows": sum(item.get("primary_row_count", item["row_count"]) for item in items),
+            "auxiliary_rows": sum(item.get("auxiliary_row_count", 0) for item in items),
             "transverse_momentum_tables": sum(item["has_transverse_momentum"] for item in items),
             "tables_with_statistical_columns": sum(item["has_statistical_columns"] for item in items),
             "tables_with_systematic_columns": sum(item["has_systematic_columns"] for item in items),
@@ -34,11 +36,11 @@ def main() -> None:
     report = {"campaign": "sidis_global_analysis_2026", "status": "public_sources_downloaded_and_profiled_not_fit_ready", "record_count": len(records), "records": records, "approved_rows": 0, "selection_authorized": False, "production_authorized": False}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")
-    lines = ["# Public SIDIS source inventory", "", "Status: downloaded and profiled; not fit-ready and no rows approved.", "", "| Record | Collaboration | Tables | Rows | pT tables | Status |", "| --- | --- | ---: | ---: | ---: | --- |"]
+    lines = ["# Public SIDIS source inventory", "", "Status: downloaded and profiled; not fit-ready and no rows approved.", "", "| Record | Collaboration | Tables | Raw rows | Primary rows | pT tables | Status |", "| --- | --- | ---: | ---: | ---: | ---: | --- |"]
     for item in records:
         p = item["profile"]
-        lines.append(f"| [{item['record']}]({item['source_url']}) | {item['collaboration']} | {p['tables']} | {p['rows']} | {p['transverse_momentum_tables']} | {item['status']} |")
-    lines += ["", "Archive SHA256 values and table metadata are in `data/hepdata_download_manifest.json` and `reports/public_source_inventory.json`.", "The profiler does not select rows or combine uncertainties into a fit covariance."]
+        lines.append(f"| [{item['record']}]({item['source_url']}) | {item['collaboration']} | {p['tables']} | {p['rows']} | {p['primary_rows']} | {p['transverse_momentum_tables']} | {item['status']} |")
+    lines += ["", "Archive SHA256 values and table metadata are in `data/hepdata_download_manifest.json` and `reports/public_source_inventory.json`.", "The profiler does not select rows or combine uncertainties into a fit covariance.", "Raw rows include explicitly marked auxiliary correction-factor blocks; primary rows are candidate measurements."]
     args.markdown.write_text("\n".join(lines) + "\n")
     print(json.dumps({"status": report["status"], "record_count": len(records), "approved_rows": 0}, indent=2))
 

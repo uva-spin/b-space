@@ -1,0 +1,17 @@
+{
+  "campaign": "sidis_global_analysis_2026",
+  "status": "covariance_inventory_complete_no_matrix_approved",
+  "policy": "record published covariance or uncertainty components without inferring correlations",
+  "records": [
+    {"record": "ins1208547", "scope": "HERMES identified pi/K multiplicities", "csv_components": ["stat", "sys"], "correlated_covariance": "advertised by supplemental HERMES database; archive not mirrored", "normalization": "not resolved", "status": "pending_supplemental_archive_and_bin_review"},
+    {"record": "ins1236358", "scope": "COMPASS 2013 charged-hadron pT2 multiplicities", "csv_components": ["total_asymmetric_error"], "correlated_covariance": "not supplied in downloaded CSV archive", "normalization": "not resolved", "status": "pending_error_semantics_and_overlap_review"},
+    {"record": "ins1624692", "scope": "COMPASS 2018 charged-hadron pT2 multiplicities", "csv_components": ["stat", "sys"], "correlated_covariance": "not supplied in downloaded CSV archive; correction blocks are not covariance", "normalization": "not resolved", "status": "pending_systematics_and_bin_review"},
+    {"record": "46860", "scope": "HERMES collinear pion projections", "csv_components": ["total_asymmetric_error"], "correlated_covariance": "not resolved", "normalization": "not resolved", "status": "deferred_collinear_complement"},
+    {"record": "ins1444985", "scope": "COMPASS 2017 pion/hadron collinear multiplicities", "csv_components": ["stat", "sys"], "correlated_covariance": "not supplied in downloaded CSV archive", "normalization": "not resolved", "status": "deferred_collinear_complement"},
+    {"record": "ins1483098", "scope": "COMPASS 2017 kaon collinear multiplicities", "csv_components": ["stat", "sys"], "correlated_covariance": "not supplied in downloaded CSV archive", "normalization": "not resolved", "status": "deferred_collinear_complement"},
+    {"record": "ins2840545", "scope": "COMPASS 2025 hydrogen collinear multiplicities", "csv_components": ["stat", "sys"], "correlated_covariance": "not supplied in downloaded CSV archive; correction factors require audit", "normalization": "radiative/vector-meson corrections are published and require audit", "status": "deferred_collinear_complement"}
+  ],
+  "matrix_reader": "sidis_data.read_covariance_matrix",
+  "likelihood_operations": "sidis_covariance.correlated_chi2",
+  "approval": {"rows_approved": 0, "covariance_approved": false, "production_authorized": false}
+}

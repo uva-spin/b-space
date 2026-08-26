@@ -34,18 +34,20 @@ The public search boundary and excluded nuclear/spin-dependent records are
 listed in `reports/public_source_search_boundary.md` and
 `config/excluded_public_sources.json`.
 
-| Source | Scope | Tables | Rows | Tables with transverse momentum | Current use |
-| --- | --- | ---: | ---: | ---: | --- |
-| HERMES `46860` | charged/neutral pion multiplicities, H, z/x/Q2 projections | 4 | 103 | 0 | collinear complement; definition/overlap audit pending |
-| COMPASS `ins1236358` | charged-hadron pT² distributions, 6LiD, x_B/Q²/z bins | 48 | 19,504 | 46 | historical transverse candidate; error convention/overlap audit pending |
-| HERMES `ins1208547` | identified pi+/K+, H/D, x_B/Q2/z/P_hperp | 64 | 1,136 | 16 | primary TMD candidate; row/covariance audit pending |
-| COMPASS `ins1624692` | charged h+/h-, 6LiD, x/Q2/z/P_hT2 | 162 | 14,316 | 162 | primary TMD candidate; row/covariance audit pending |
-| COMPASS `ins1444985` | pi+/- and h+/-, 6LiD, x/y/z | 4 | 6,236 | 0 | collinear complement; convention audit pending |
-| COMPASS `ins1483098` | K+/-, 6LiD, x/y/z | 2 | 3,098 | 0 | collinear complement; convention audit pending |
-| COMPASS `ins2840545` | pi+/K+/h+/-, H, x/y/z | 3 | 6,329 | 0 | collinear complement; full audit pending |
+| Source | Scope | Tables | Raw rows | Primary rows | pT tables | Current use |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| HERMES `46860` | charged/neutral pion multiplicities, H, z/x/Q2 projections | 4 | 103 | 103 | 0 | collinear complement; definition/overlap audit pending |
+| COMPASS `ins1236358` | charged-hadron pT² distributions, 6LiD, x_B/Q²/z bins | 48 | 19,504 | 19,504 | 46 | historical transverse candidate; generic-error/overlap audit pending |
+| HERMES `ins1208547` | identified pi+/K+, H/D, x_B/Q2/z/P_hperp | 64 | 1,136 | 1,136 | 16 | primary TMD candidate; row/covariance audit pending |
+| COMPASS `ins1624692` | charged h+/h-, 6LiD, x/Q2/z/P_hT2 | 162 | 13,992 | 4,664 | 162 | primary TMD candidate; auxiliary correction blocks excluded explicitly |
+| COMPASS `ins1444985` | pi+/- and h+/-, 6LiD, x/y/z | 4 | 6,220 | 1,244 | 0 | collinear complement; convention audit pending |
+| COMPASS `ins1483098` | K+/-, 6LiD, x/y/z | 2 | 3,090 | 618 | 0 | collinear complement; convention audit pending |
+| COMPASS `ins2840545` | pi+/K+/h+/-, H, x/y/z | 3 | 6,314 | 1,804 | 0 | collinear complement; full audit pending |
 
-Total: 287 tables and 50,722 rows; 224 tables expose a transverse-momentum
-axis. No rows, errors, or covariance matrices are approved for a fit. The
+Total: 287 tables and 50,359 parsed rows (29,073 primary measurement rows and
+21,286 explicitly marked auxiliary correction-factor rows); 224 tables expose
+a transverse-momentum axis. The primary transverse candidate count is 24,088
+rows. No rows, errors, or covariance matrices are approved for a fit. The
 public checkout carries manifests, scripts, hashes, and inventory only; raw
 archives remain local inputs.
 
@@ -59,6 +61,10 @@ covariance-complete HERMES input.
 binning/covariance warnings, and proton/deuteron `zpt-3D` transverse-momentum
 download links in `data/hermes_database_manifest.json`; the concise
 interpretation is in `reports/hermes_database_provenance.md`.
+The uncertainty/covariance boundary is summarized in
+`config/covariance_manifest.json` and `reports/covariance_readiness.md`:
+COMPASS HEPData archives provide component columns but no complete correlated
+matrix, while the HERMES matrix archive remains pending.
 
 Reproduce the source-only harvest with:
 
@@ -73,19 +79,23 @@ python scripts/build_source_inventory.py
 `FORMALISM.md` records the candidate leading-power W boundary and the
 unresolved multiplicity/covariance interfaces. `sidis_data.py` is a
 metadata-preserving CSV reader/profiler and strict plain-text/gzip covariance
-reader that handles duplicate labels, HEPData description continuations, and
-repeated target/charge headers while retaining row-level block metadata.
+reader that handles duplicate labels, TeX-labelled kinematic intervals,
+repeated target/charge headers, and auxiliary correction blocks while retaining
+row-level block metadata.
 `sidis_observables.py`
 implements a scalar-tested radial PDF-times-TMDFF Bessel convolution with
 explicit `qT=P_hT/z` and `b db/(2 pi)` conventions and a guarded multiplicity
 ratio. It returns the structure-function piece only; experiment-specific
 prefactors, DIS denominators, target/beam composition, radiative factors, and
 Y terms remain explicit until their conventions are locked. The public source
-checkout has ten passing unit tests, including covariance, repeated-header,
-and explicit canonicalization regressions.
+checkout has sixteen passing unit tests, including covariance, repeated-header,
+auxiliary-block, strict-covariance, and explicit canonicalization regressions.
 `sidis_dataset.py` is the explicit row-to-observation adapter: it requires
-caller-supplied column/block mappings, supports pT² and asymmetric errors, and
-preserves provenance while rejecting ambiguous or uncertainty-free rows.
+caller-supplied column/block mappings, supports pT² and asymmetric errors,
+target/data-block filters, and explicit published-placeholder handling while
+preserving provenance and rejecting ambiguity. The source-specific
+`scripts/validate_candidate_mappings.py` driver validates all transverse tables
+without approving rows.
 `audit_table_provenance.py` records the conservative table/row audit without
 selecting rows, while `summarize_candidate_scopes.py` groups audited rows into
 first-conversion, cross-check, combined, and collinear-complement options.
@@ -135,7 +145,8 @@ first-conversion, cross-check, combined, and collinear-complement options.
 | Date | Decision | Evidence | Status |
 | --- | --- | --- | --- |
 | 2026-08-26 | Create separate SIDIS/global-analysis campaign | Existing DY production and systematics are frozen; SIDIS requires a TMDFF and new observable/covariance closure | Initialized |
-| 2026-08-26 | Harvest seven version-1 public HEPData records | 287 tables and 50,722 rows profiled; 224 tables expose transverse momentum; no rows or covariance selected | Discovery only |
-| 2026-08-26 | Add convention-explicit SIDIS software boundary | Metadata-preserving reader/profiler, radial PDF×TMDFF convolution, guarded ratio, and ten public scalar tests pass | Discovery only |
-| 2026-08-26 | Correct repeated-block parsing before row audit | HERMES/COMPASS CSVs can repeat headers between target or charge blocks; the reader now skips those headers and retains block metadata. Corrected inventory is 287 tables, 50,722 rows, 224 transverse-momentum tables, and 33,740 candidate transverse-momentum rows; no rows are selected | Discovery only |
-| 2026-08-26 | Add explicit canonical observation adapter | `sidis_dataset.py` converts only caller-mapped value/axis/error columns, supports comment-defined intervals and pT², preserves row provenance, and fails closed on ambiguity; ten public tests pass | Discovery only |
+| 2026-08-26 | Harvest seven version-1 public HEPData records | 287 tables and 50,359 parsed rows (29,073 primary, 21,286 auxiliary); 224 tables expose transverse momentum; no rows or covariance selected | Discovery only |
+| 2026-08-26 | Add convention-explicit SIDIS software boundary | Metadata-preserving reader/profiler, radial PDF×TMDFF convolution, guarded ratio, strict covariance operations, and sixteen scalar tests pass | Discovery only |
+| 2026-08-26 | Correct repeated/multi-block parsing before row audit | HERMES/COMPASS CSVs can repeat headers between target or charge blocks and append correction-factor blocks; the reader now retains block metadata and marks auxiliary headers. Corrected inventory is 287 tables, 50,359 parsed rows, 224 transverse-momentum tables, and 24,088 primary transverse candidate rows; no rows are selected | Discovery only |
+| 2026-08-26 | Add explicit canonical observation adapter | `sidis_dataset.py` converts only caller-mapped value/axis/error columns, supports comment-defined intervals, pT², target/data-block filters, explicit placeholder handling, preserves row provenance, and fails closed on ambiguity; public tests cover the boundary | Discovery only |
+| 2026-08-26 | Validate source-specific candidate mappings | HERMES 16/16 tables -> 288 target-block observations; COMPASS 2013 46/46 -> 18,624 observations after explicit dash-placeholder handling; COMPASS 2018 162/162 -> 4,664 primary observations with 9,328 auxiliary correction rows excluded by an explicit block filter. No rows are approved and covariance remains unresolved | Discovery only |

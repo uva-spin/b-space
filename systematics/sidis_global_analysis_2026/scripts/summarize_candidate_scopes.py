@@ -21,11 +21,13 @@ def main() -> None:
     by_record = {}
     for item in audit["audits"]:
         record = item["record"]
-        entry = by_record.setdefault(record, {"tables": 0, "rows": 0, "tmd_tables": 0, "tmd_rows": 0})
+        entry = by_record.setdefault(record, {"tables": 0, "rows": 0, "raw_rows": 0, "auxiliary_rows": 0, "tmd_tables": 0, "tmd_rows": 0})
         entry["tables"] += 1
-        entry["rows"] += item["row_count"]
+        entry["rows"] += item.get("primary_row_count", item["row_count"])
+        entry["raw_rows"] += item["row_count"]
+        entry["auxiliary_rows"] += item.get("auxiliary_row_count", 0)
         entry["tmd_tables"] += int(item["candidate_tmd_multiplicity"])
-        entry["tmd_rows"] += item["row_count"] if item["candidate_tmd_multiplicity"] else 0
+        entry["tmd_rows"] += item.get("primary_row_count", item["row_count"]) if item["candidate_tmd_multiplicity"] else 0
 
     def totals(records, key):
         return sum(by_record[r][key] for r in records)
@@ -37,13 +39,16 @@ def main() -> None:
         {"name": "combined_transverse_candidate", "records": ["ins1208547", "ins1236358", "ins1624692"], "role": "future combined transverse-momentum scope", "observable": "identified and unidentified charged-hadron multiplicities", "tables": totals(["ins1208547", "ins1236358", "ins1624692"], "tmd_tables"), "rows": totals(["ins1208547", "ins1236358", "ins1624692"], "tmd_rows"), "uncertainty_state": "not closed; source overlap, covariance, target composition, and bin conventions must be resolved jointly", "blocking_items": ["complete each source audit", "define overlap/leave-one-experiment-out protocol"], "decision": "deferred_until_individual_scopes_close"},
         {"name": "collinear_ff_complements", "records": ["46860", "ins1444985", "ins1483098", "ins2840545"], "role": "fragmentation-normalization complements, not direct transverse fit inputs", "observable": "z/x/y multiplicity projections without a transverse-momentum axis", "tables": totals(["46860", "ins1444985", "ins1483098", "ins2840545"], "tables"), "rows": totals(["46860", "ins1444985", "ins1483098", "ins2840545"], "rows"), "uncertainty_state": "value and stat/sys/error columns present in HEPData, but normalization/correlation conventions remain open", "blocking_items": ["lock multiplicity denominator and FF convention", "test compatibility with transverse datasets"], "decision": "deferred_complement"},
     ]
+    for scope in scopes:
+        scope["raw_rows"] = totals(scope["records"], "raw_rows")
+        scope["auxiliary_rows"] = totals(scope["records"], "auxiliary_rows")
     report = {"campaign": "sidis_global_analysis_2026", "status": "candidate_scope_options_summarized_no_rows_selected", "audit_source": str(args.audit), "scopes": scopes, "selection_authorized": False, "production_authorized": False}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")
-    lines = ["# SIDIS candidate scope options", "", "Status: options summarized from the row/table audit; no rows selected or approved.", "", "| Scope | Role | TMD tables | Rows | Decision |", "| --- | --- | ---: | ---: | --- |"]
+    lines = ["# SIDIS candidate scope options", "", "Status: options summarized from the row/table audit; no rows selected or approved.", "", "| Scope | Role | TMD tables | Primary rows | Raw rows | Decision |", "| --- | --- | ---: | ---: | ---: | --- |"]
     for item in scopes:
-        lines.append(f"| `{item['name']}` | {item['role']} | {item['tables']} | {item['rows']} | {item['decision']} |")
-    lines += ["", "The modern COMPASS 2018 grid is the best first scalar-conversion candidate once its bin/covariance convention is locked. HERMES is the strongest identified-hadron cross-check because its supplemental database advertises statistical covariance. COMPASS 2013 is retained as an independent pT^2 cross-check, not silently merged with the 2018 grid.", "Collinear sources remain fragmentation complements until the multiplicity denominator and normalization conventions are implemented and tested."]
+        lines.append(f"| `{item['name']}` | {item['role']} | {item['tables']} | {item['rows']} | {item['raw_rows']} | {item['decision']} |")
+    lines += ["", "The modern COMPASS 2018 grid is the best first scalar-conversion candidate once its bin/covariance convention is locked. HERMES is the strongest identified-hadron cross-check because its supplemental database advertises statistical covariance. COMPASS 2013 is retained as an independent pT^2 cross-check, not silently merged with the 2018 grid.", "Collinear sources remain fragmentation complements until the multiplicity denominator and normalization conventions are implemented and tested.", "Primary rows exclude explicitly marked auxiliary correction-factor blocks; raw row counts remain available in the JSON report."]
     args.markdown.write_text("\n".join(lines) + "\n")
     print(json.dumps({"status": report["status"], "scope_count": len(scopes)}, indent=2))
 

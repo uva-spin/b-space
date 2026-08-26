@@ -6,8 +6,8 @@
   "scopes": [
     {"name": "hermes_identified_transverse", "records": ["ins1208547"], "tmd_tables": 16, "rows": 288, "decision": "candidate_after_covariance_and_bin_audit"},
     {"name": "compass_2013_transverse", "records": ["ins1236358"], "tmd_tables": 46, "rows": 19136, "decision": "candidate_for_independent_cross_check_not_first_fit"},
-    {"name": "compass_2018_transverse", "records": ["ins1624692"], "tmd_tables": 162, "rows": 14316, "decision": "candidate_for_first_scalar_conversion_after_convention_lock"},
-    {"name": "combined_transverse_candidate", "records": ["ins1208547", "ins1236358", "ins1624692"], "tmd_tables": 224, "rows": 33740, "decision": "deferred_until_individual_scopes_close"},
-    {"name": "collinear_ff_complements", "records": ["46860", "ins1444985", "ins1483098", "ins2840545"], "tables": 13, "rows": 15766, "decision": "deferred_complement"}
+    {"name": "compass_2018_transverse", "records": ["ins1624692"], "tmd_tables": 162, "rows": 4664, "raw_rows": 13992, "decision": "candidate_for_first_scalar_conversion_after_convention_lock"},
+    {"name": "combined_transverse_candidate", "records": ["ins1208547", "ins1236358", "ins1624692"], "tmd_tables": 224, "rows": 24088, "raw_rows": 34632, "decision": "deferred_until_individual_scopes_close"},
+    {"name": "collinear_ff_complements", "records": ["46860", "ins1444985", "ins1483098", "ins2840545"], "tables": 13, "rows": 3769, "raw_rows": 15727, "decision": "deferred_complement"}
   ]
 }

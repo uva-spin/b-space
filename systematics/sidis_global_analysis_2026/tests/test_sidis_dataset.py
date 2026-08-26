@@ -32,6 +32,28 @@ class SidisDatasetTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_interval("z > 0.2")
 
+    def test_block_filter_and_placeholder_policy_are_explicit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "blocked.csv"
+            path.write_text(
+                "#: RE,E P --> E PI+ X\nP_hT,M,stat +,stat -\n0.2,1,0.1,-0.1\n"
+                "#: RE,E DEUT --> E DEUT PI+ X\nP_hT,M,stat +,stat -\n0.3,2,0.2,-0.2\n"
+            )
+            table = read_hepdata_csv(path)
+            rows = canonicalize_table(
+                table,
+                SidisColumnMap(
+                    value="M", axis_columns={"pht": "P_hT"},
+                    stat_columns=("stat +", "stat -"),
+                    required_axes=("pht",),
+                    block_filters={"reaction": "E DEUT --> E DEUT PI+ X"},
+                    target="D",
+                ),
+                source="synthetic",
+            )
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0].target, "D")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -99,6 +99,9 @@ def table_audit(profile: dict, source: dict) -> dict:
         "target_record_scope": source["target"],
         "observable_class": observable_class(profile),
         "row_count": profile["row_count"],
+        "primary_row_count": profile.get("primary_row_count", profile["row_count"]),
+        "auxiliary_row_count": profile.get("auxiliary_row_count", 0),
+        "data_block_counts": profile.get("data_block_counts", {"primary": profile["row_count"]}),
         "axis_columns_profiled": profile.get("axes", {}),
         "axis_columns_candidates": candidates,
         "bin_bound_columns": bounds,
@@ -132,7 +135,7 @@ def main() -> None:
         "tables": len(audits),
         "rows": sum(item["row_count"] for item in audits),
         "tmd_candidate_tables": sum(item["candidate_tmd_multiplicity"] for item in audits),
-        "tmd_candidate_rows": sum(item["row_count"] for item in audits if item["candidate_tmd_multiplicity"]),
+        "tmd_candidate_rows": sum(item["primary_row_count"] for item in audits if item["candidate_tmd_multiplicity"]),
         "multiplicity_tables": sum(item["observable_class"] == "multiplicity" for item in audits),
         "asymmetry_tables": sum(item["observable_class"] == "asymmetry" for item in audits),
         "unresolved_tables": sum(item["observable_class"] == "other_or_unresolved" for item in audits),
@@ -162,7 +165,7 @@ def main() -> None:
         items = [item for item in audits if item["record"] == recid]
         lines.append(
             f"| {recid} | {sum(item['candidate_tmd_multiplicity'] for item in items)} "
-            f"| {sum(item['row_count'] for item in items if item['candidate_tmd_multiplicity'])} "
+            f"| {sum(item['primary_row_count'] for item in items if item['candidate_tmd_multiplicity'])} "
             f"| {sum(item['observable_class'] == 'multiplicity' for item in items)} "
             f"| {sum(item['observable_class'] == 'asymmetry' for item in items)} "
             f"| {sum(item['observable_class'] == 'other_or_unresolved' for item in items)} |"
@@ -170,6 +173,7 @@ def main() -> None:
     lines += [
         "",
         "Every table records candidate axes, value columns, bin-edge columns, and uncertainty columns.",
+        "For multi-block CSVs, candidate rows count only the explicitly marked primary data block; auxiliary correction-factor rows remain in the raw audit.",
         "Tables with multiple possible axis columns require a published mapping review before conversion.",
         "The CSV submissions do not by themselves close correlated covariance or normalization treatment.",
         "See `row_level_provenance_audit.json` for the complete machine-readable audit.",

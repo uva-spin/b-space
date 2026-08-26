@@ -52,6 +52,23 @@ class SidisDataTests(unittest.TestCase):
             matrix = read_covariance_matrix(path, expected_size=2)
             self.assertEqual(matrix.shape, (2, 2))
 
+    def test_tex_bins_and_auxiliary_blocks_are_explicit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "multi.csv"
+            path.write_text(
+                "#: $x$,,,0.15 (BIN=0.1 TO 0.2)\n"
+                "#: $Q^2$,,,2 (BIN=1 TO 3)\n"
+                "#: $z$,,,0.25 (BIN=0.2 TO 0.3)\n"
+                "P_T**2,P_T**2 LOW,P_T**2 HIGH,M,stat +,stat -,sys +,sys -\n"
+                "0.1,0.0,0.2,1.0,0.1,-0.1,0.2,-0.2\n"
+                "P_T**2,P_T**2 LOW,P_T**2 HIGH,C\n"
+                "0.1,0.0,0.2,0.99\n"
+            )
+            table = read_hepdata_csv(path)
+            self.assertEqual(table.row_metadata[0]["x_bin"], "0.1-0.2")
+            self.assertEqual(table.row_metadata[0]["data_block"], "primary")
+            self.assertEqual(table.row_metadata[1]["data_block"], "auxiliary")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,12 @@
+{
+  "campaign": "sidis_global_analysis_2026",
+  "status": "explicit_candidate_mappings_validated_no_rows_approved",
+  "note": "Summary from the local version-1 HEPData archives; rerun the validator after fetching raw archives for table-level details.",
+  "records": [
+    {"record": "ins1208547", "tables_validated": 16, "expected_tables": 16, "published_candidate_rows": 288, "canonical_observations": 288, "mapping_id": "hermes_identified_pht_projection_target_blocks", "fit_readiness": "integrated_projection_requires_acceptance_or_bin_average_convention"},
+    {"record": "ins1236358", "tables_validated": 46, "expected_tables": 46, "published_candidate_rows": 19136, "canonical_observations": 18624, "mapping_id": "compass_2013_pt2_generic_total_error", "fit_readiness": "candidate_after_generic_error_and_bin_covariance_review"},
+    {"record": "ins1624692", "tables_validated": 162, "expected_tables": 162, "published_rows_including_auxiliary_blocks": 13992, "canonical_observations": 4664, "auxiliary_correction_rows_excluded": 9328, "mapping_id": "compass_2018_pt2_stat_sys", "fit_readiness": "candidate_after_covariance_and_bin_convention_review"}
+  ],
+  "approved_rows": 0,
+  "production_authorized": false
+}
