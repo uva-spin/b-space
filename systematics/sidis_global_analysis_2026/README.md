@@ -66,8 +66,9 @@ covariance matrix.
 
 ## Software boundary
 
-`sidis_data.py` provides a metadata-preserving HEPData CSV reader and schema
-profiler. `sidis_observables.py` provides a convention-explicit radial
+`sidis_data.py` provides a metadata-preserving HEPData CSV reader/schema
+profiler and a strict plain-text/gzip covariance-matrix reader for future
+HERMES sidecars. `sidis_observables.py` provides a convention-explicit radial
 PDF-times-TMDFF Bessel convolution using `qT=P_hT/z` and `b db/(2 pi)`, plus a
 guarded multiplicity ratio. It returns the SIDIS structure-function piece
 only; experiment-specific prefactors, DIS denominators, target composition,

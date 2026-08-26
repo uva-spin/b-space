@@ -66,8 +66,8 @@
     "systematic_treatment": "systematic uncertainties are described as point-to-point on the database page",
     "bin_integration": "numerator and denominator are integrated separately over each kinematic bin",
     "observations_found": {
-      "z_cut": false,
-      "high_z": false,
+      "z_cut": true,
+      "high_z": true,
       "covariance": true,
       "bin_integrated": true
     }
@@ -78,4 +78,3 @@
   "production_authorized": false,
   "note": "The DESY archive host was unreachable in this run; links are retained for a later retry."
 }
-

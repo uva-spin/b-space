@@ -65,7 +65,8 @@ python scripts/build_source_inventory.py
 
 `FORMALISM.md` records the candidate leading-power W boundary and the
 unresolved multiplicity/covariance interfaces. `sidis_data.py` is a
-metadata-preserving CSV reader/profiler that handles
+metadata-preserving CSV reader/profiler and strict plain-text/gzip covariance
+reader that handles
 duplicate labels and HEPData description continuations. `sidis_observables.py`
 implements a scalar-tested radial PDF-times-TMDFF Bessel convolution with
 explicit `qT=P_hT/z` and `b db/(2 pi)` conventions and a guarded multiplicity

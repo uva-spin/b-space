@@ -13,6 +13,7 @@ from datetime import date
 import hashlib
 import json
 from html.parser import HTMLParser
+from html import unescape
 from pathlib import Path
 import re
 
@@ -83,7 +84,7 @@ def main() -> None:
             query_reports.append({"query": query, "status": "query_failed", "error": str(exc), "links": []})
     archive_links = sorted({item["href"] for item in relevant if item["href"].lower().endswith((".tar.gz", ".list.gz"))})
     archive_links.extend(link for item in query_reports for link in item["links"] if link not in archive_links)
-    lower = re.sub(r"\s+", " ", text.lower())
+    lower = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", unescape(text)).lower())
     observations = {
         "recommended_z_lower_cut": "z > 0.2 is recommended for general use",
         "high_z_warning": "z > 0.8 requires caution because exclusive contributions grow",
