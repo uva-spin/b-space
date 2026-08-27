@@ -1,0 +1,401 @@
+{
+  "status": "initial_joint_dy_sidis_validation_complete_not_production",
+  "scope": "329 frozen lambda=1 DY rows plus 746 identified COMPASS 2026 pi/K collinear rows",
+  "trials": [
+    {
+      "name": "nnff10_binavg_3000",
+      "path": "/home/dustin/work/project/bT-TMD/systematics/sidis_global_analysis_2026/outputs/initial_joint_dy_compass_collinear_binavg_pilot_reoptimized",
+      "ff_family": "nnff10_nnlo",
+      "kinematic_mode": "bin_average",
+      "rows_available": 746,
+      "rows_fit": 745,
+      "rows_excluded": [
+        {
+          "row_id": "hepdata:ins3096394:TableK+-K-:row601",
+          "hadron": "K",
+          "charge": "-",
+          "ratio": -0.03497866057006538,
+          "reason": "nonpositive_or_nonfinite_fixed_order_collinear_ratio"
+        }
+      ],
+      "objective": {
+        "dy_chi2": 129.7474792296436,
+        "sidis_chi2": 16347.378767705408,
+        "total_chi2": 16477.12624693505,
+        "dy_chi2_per_row": 0.3943692377800717,
+        "sidis_chi2_per_row": 21.942790292222025
+      },
+      "sidis_normalizations": {
+        "K+": 0.5580842314747139,
+        "K-": 0.4401125560967861,
+        "pi+": 0.7639415698096861,
+        "pi-": 0.9129867031470693
+      },
+      "sidis_normalization_initialization": {
+        "K+": 0.5932801608809732,
+        "K-": 0.4663929277095835,
+        "pi+": 0.8026815375357973,
+        "pi-": 0.9683568021552296
+      },
+      "groups": {
+        "K+": {
+          "rows": 186,
+          "chi2": 7956.33401071917,
+          "chi2_per_row": 42.775989304941774,
+          "mean_pull": 0.8808564563120536,
+          "rms_pull": 6.54033556516344
+        },
+        "K-": {
+          "rows": 185,
+          "chi2": 3039.4417999132356,
+          "chi2_per_row": 16.42941513466614,
+          "mean_pull": 0.13440648391877055,
+          "rms_pull": 4.053321494116417
+        },
+        "pi+": {
+          "rows": 187,
+          "chi2": 1444.6157199206114,
+          "chi2_per_row": 7.725217753586157,
+          "mean_pull": -0.40646995884066894,
+          "rms_pull": 2.7794275945932028
+        },
+        "pi-": {
+          "rows": 187,
+          "chi2": 3906.98723715239,
+          "chi2_per_row": 20.89297987782027,
+          "mean_pull": 0.37749276247386854,
+          "rms_pull": 4.570883927406194
+        }
+      },
+      "history": {
+        "epochs_recorded": 3000,
+        "last_total_chi2": 16589.960045107884,
+        "last_five_total_chi2": [
+          16913.532274038247,
+          16830.532537547788,
+          16748.88893990438,
+          16668.648739217184,
+          16589.960045107884
+        ],
+        "tail_relative_change": -0.04393229368664151
+      },
+      "classification": "external-FF primary diagnostic"
+    },
+    {
+      "name": "nnff10_binavg_2500",
+      "path": "/home/dustin/work/project/bT-TMD/systematics/sidis_global_analysis_2026/outputs/initial_joint_dy_compass_collinear_binavg_pilot_converged",
+      "ff_family": "nnff10_nnlo",
+      "kinematic_mode": "bin_average",
+      "rows_available": 746,
+      "rows_fit": 745,
+      "rows_excluded": [
+        {
+          "row_id": "hepdata:ins3096394:TableK+-K-:row601",
+          "hadron": "K",
+          "charge": "-",
+          "ratio": -0.03497866057006538,
+          "reason": "nonpositive_or_nonfinite_fixed_order_collinear_ratio"
+        }
+      ],
+      "objective": {
+        "dy_chi2": 129.71899438603307,
+        "sidis_chi2": 12759.459927976113,
+        "total_chi2": 12889.178922362147,
+        "dy_chi2_per_row": 0.3942826577083072,
+        "sidis_chi2_per_row": 17.126791849632365
+      },
+      "sidis_normalizations": {
+        "K+": 0.417302469121738,
+        "K-": 0.4039088603442644,
+        "pi+": 0.7525557761002916,
+        "pi-": 0.8167752223363991
+      },
+      "sidis_normalization_initialization": {
+        "K+": 0.5932801608809732,
+        "K-": 0.4663929277095835,
+        "pi+": 0.8026815375357973,
+        "pi-": 0.9683568021552296
+      },
+      "groups": {
+        "K+": {
+          "rows": 186,
+          "chi2": 5270.022481620512,
+          "chi2_per_row": 28.333454202260818,
+          "mean_pull": -2.3820717822741897,
+          "rms_pull": 5.322917827870426
+        },
+        "K-": {
+          "rows": 185,
+          "chi2": 2880.7894417944167,
+          "chi2_per_row": 15.571834820510361,
+          "mean_pull": -0.6953642005596289,
+          "rms_pull": 3.9461164225742706
+        },
+        "pi+": {
+          "rows": 187,
+          "chi2": 1430.7692410445698,
+          "chi2_per_row": 7.651172412003047,
+          "mean_pull": -0.6592514940990344,
+          "rms_pull": 2.7660752722952147
+        },
+        "pi-": {
+          "rows": 187,
+          "chi2": 3177.878763516615,
+          "chi2_per_row": 16.994004082976552,
+          "mean_pull": -1.4364408017944414,
+          "rms_pull": 4.122378449751618
+        }
+      },
+      "history": {
+        "epochs_recorded": 2500,
+        "last_total_chi2": 13062.523866264504,
+        "last_five_total_chi2": [
+          13062.536353991243,
+          13062.648140962448,
+          13062.52935647627,
+          13062.539288449923,
+          13062.523866264504
+        ],
+        "tail_relative_change": -7.032275992942713e-07
+      },
+      "classification": "external-FF primary diagnostic"
+    },
+    {
+      "name": "haps_binavg_1500_circular",
+      "path": "/home/dustin/work/project/bT-TMD/systematics/sidis_global_analysis_2026/outputs/initial_joint_dy_compass_collinear_haps_binavg_pilot_reoptimized",
+      "ff_family": "haps_nnlo",
+      "kinematic_mode": "bin_average",
+      "rows_available": 746,
+      "rows_fit": 746,
+      "rows_excluded": [],
+      "objective": {
+        "dy_chi2": 129.73838569293102,
+        "sidis_chi2": 2194.0798645504365,
+        "total_chi2": 2323.8182502433674,
+        "dy_chi2_per_row": 0.39434159785085415,
+        "sidis_chi2_per_row": 2.9411258237941507
+      },
+      "sidis_normalizations": {
+        "K+": 1.289828833435657,
+        "K-": 1.260691833246573,
+        "pi+": 1.3037520231932316,
+        "pi-": 1.32058598970151
+      },
+      "sidis_normalization_initialization": {
+        "K+": 1.3298372783591215,
+        "K-": 1.3215985854077774,
+        "pi+": 1.3402863883358667,
+        "pi-": 1.3659848308826819
+      },
+      "groups": {
+        "K+": {
+          "rows": 186,
+          "chi2": 408.83443039594124,
+          "chi2_per_row": 2.1980345720211893,
+          "mean_pull": -0.23940253210026463,
+          "rms_pull": 1.4825770037408477
+        },
+        "K-": {
+          "rows": 186,
+          "chi2": 351.9073365322208,
+          "chi2_per_row": 1.891974927592585,
+          "mean_pull": -0.3465325097188571,
+          "rms_pull": 1.37549079516825
+        },
+        "pi+": {
+          "rows": 187,
+          "chi2": 692.9955204927187,
+          "chi2_per_row": 3.7058583983567845,
+          "mean_pull": -0.3821329014470279,
+          "rms_pull": 1.925060621995262
+        },
+        "pi-": {
+          "rows": 187,
+          "chi2": 740.3425771295551,
+          "chi2_per_row": 3.9590512145965517,
+          "mean_pull": -0.4498967407161196,
+          "rms_pull": 1.9897364686300927
+        }
+      },
+      "history": {
+        "epochs_recorded": 1500,
+        "last_total_chi2": 2353.041768063674,
+        "last_five_total_chi2": [
+          2353.0330183543783,
+          2353.0759972554274,
+          2353.0355001863527,
+          2353.0282577302933,
+          2353.041768063674
+        ],
+        "tail_relative_change": -6.15888471622164e-06
+      },
+      "classification": "circular external comparison: HAPS FFs were fitted using modern SIDIS data"
+    },
+    {
+      "name": "nnff10_midpoint_legacy",
+      "path": "/home/dustin/work/project/bT-TMD/systematics/sidis_global_analysis_2026/outputs/initial_joint_dy_compass_collinear_pilot",
+      "ff_family": null,
+      "kinematic_mode": null,
+      "rows_available": 746,
+      "rows_fit": 745,
+      "rows_excluded": [
+        {
+          "row_id": "hepdata:ins3096394:TableK+-K-:row601",
+          "hadron": "K",
+          "charge": "-",
+          "ratio": -0.0764359918403707,
+          "reason": "nonpositive_or_nonfinite_fixed_order_collinear_ratio"
+        }
+      ],
+      "objective": {
+        "dy_chi2": 129.7759451892999,
+        "sidis_chi2": 92691.99970571758,
+        "total_chi2": 92821.77565090689,
+        "dy_chi2_per_row": 0.3944557604537991,
+        "sidis_chi2_per_row": 124.41879155129877
+      },
+      "sidis_normalizations": {
+        "K+": 0.9704098609640817,
+        "K-": 0.9704025264149818,
+        "pi+": 0.9708705279849944,
+        "pi-": 0.9712060640471829
+      },
+      "sidis_normalization_initialization": {},
+      "groups": {
+        "K+": {
+          "rows": 186,
+          "chi2": 45084.55736877493,
+          "chi2_per_row": 242.39009338051036,
+          "mean_pull": 10.206156409967306,
+          "rms_pull": 15.568882213585868
+        },
+        "K-": {
+          "rows": 185,
+          "chi2": 37271.5565354577,
+          "chi2_per_row": 201.46787316463622,
+          "mean_pull": 12.122431465421679,
+          "rms_pull": 14.193937901957872
+        },
+        "pi+": {
+          "rows": 187,
+          "chi2": 5636.152032261677,
+          "chi2_per_row": 30.139850439902016,
+          "mean_pull": 3.9026923166832836,
+          "rms_pull": 5.489977271346578
+        },
+        "pi-": {
+          "rows": 187,
+          "chi2": 4699.733769223273,
+          "chi2_per_row": 25.132266145579,
+          "mean_pull": 1.086333539935008,
+          "rms_pull": 5.013209166350332
+        }
+      },
+      "history": {
+        "epochs_recorded": 1500,
+        "last_total_chi2": 92831.06508011422,
+        "last_five_total_chi2": [
+          95391.7058483873,
+          94744.73772139804,
+          94102.34556836242,
+          93464.6276830602,
+          92831.06508011422
+        ],
+        "tail_relative_change": -0.05942518165200194
+      },
+      "classification": "legacy optimizer-control diagnostic"
+    }
+  ],
+  "nnff10_replica_profiles": {
+    "midpoint": {
+      "status": "nnff10_external_replica_closure_diagnostic_complete_not_fit",
+      "scope": "/home/dustin/work/project/bT-TMD/systematics/sidis_global_analysis_2026/data/derived/compass_collinear_provisional/compass_collinear_provisional.csv",
+      "model": "NNPDF40_nnlo_as_01180 + NNFF10 NNLO central/MC members; massless LO multiplicity ratio",
+      "kinematics": {
+        "mode": "midpoint",
+        "quadrature_order": 4
+      },
+      "members_requested": 101,
+      "members_with_any_positive_prediction": 101,
+      "normalization_prior": {
+        "parameter": "log hadron-charge scale",
+        "width": 0.1
+      },
+      "central_member": {
+        "member": 0,
+        "chi2_profiled": 13084.729490890226,
+        "chi2_per_valid_row": 17.56339528978554,
+        "valid_rows": 745,
+        "excluded_rows": 1
+      },
+      "best_member": {
+        "member": 40,
+        "chi2_profiled": 8408.188164312567,
+        "chi2_per_valid_row": 19.37370544772481,
+        "valid_rows": 434,
+        "excluded_rows": 312
+      },
+      "best_member_all_rows_valid": {
+        "member": 68,
+        "chi2_profiled": 8828.698991593272,
+        "chi2_per_row": 11.83471714690787,
+        "valid_rows": 746,
+        "excluded_rows": 0
+      },
+      "quantiles_chi2_per_row": {
+        "0.05": 13.925418286921172,
+        "0.5": 20.431566730129543,
+        "0.95": 42.64949837529706
+      },
+      "interpretation": "FF replica propagation is a model/theory variation; it is not a replacement for the missing perturbative SIDIS coefficient-function and denominator implementation.",
+      "production_files_modified": false,
+      "promotion_authorized": false
+    },
+    "bin_average": {
+      "status": "nnff10_external_replica_closure_diagnostic_complete_not_fit",
+      "scope": "/home/dustin/work/project/bT-TMD/systematics/sidis_global_analysis_2026/data/derived/compass_collinear_provisional/compass_collinear_provisional.csv",
+      "model": "NNPDF40_nnlo_as_01180 + NNFF10 NNLO central/MC members; massless LO multiplicity ratio",
+      "kinematics": {
+        "mode": "bin_average",
+        "quadrature_order": 4
+      },
+      "members_requested": 101,
+      "members_with_any_positive_prediction": 101,
+      "normalization_prior": {
+        "parameter": "log hadron-charge scale",
+        "width": 0.1
+      },
+      "central_member": {
+        "member": 0,
+        "chi2_profiled": 12930.201676763325,
+        "chi2_per_valid_row": 17.355975405051442,
+        "valid_rows": 745,
+        "excluded_rows": 1
+      },
+      "best_member": {
+        "member": 40,
+        "chi2_profiled": 8453.858682927845,
+        "chi2_per_valid_row": 19.257081282295776,
+        "valid_rows": 439,
+        "excluded_rows": 307
+      },
+      "quantiles_chi2_per_row": {
+        "0.05": 13.66883770652056,
+        "0.5": 20.436845220927182,
+        "0.95": 40.798609621697906
+      },
+      "interpretation": "FF replica propagation is a model/theory variation; it is not a replacement for the missing perturbative SIDIS coefficient-function and denominator implementation.",
+      "production_files_modified": false,
+      "promotion_authorized": false
+    }
+  },
+  "conclusions": [
+    "The reinitialized joint optimizer is materially better behaved than the legacy all-scales-near-one pilot, but central NNFF10 still gives a poor scalar SIDIS closure (17.13 chi2/row in the 2500-epoch run).",
+    "The HAPS comparison reaches 2.94 chi2/row, but HAPS is not independent because its FFs incorporate modern COMPASS SIDIS information; it is a diagnostic, not evidence that the observable implementation is closed.",
+    "Across all 101 NNFF10 members, the best raw member can make many rows non-positive and is invalid; the best member with all 746 rows positive remains a poor closure candidate. FF replicas alone do not resolve the mismatch.",
+    "DY non-regression is demonstrated in every pilot (about 0.394 chi2/row), while no pilot is authorized for production or for TMDFF uncertainty propagation."
+  ],
+  "next_gate": "Implement and independently validate the NNLO SIDIS coefficient-function plus inclusive-DIS denominator/normalization interface, then rerun the same scope before adding HERMES or transverse TMDFF data.",
+  "production_files_modified": false,
+  "promotion_authorized": false
+}

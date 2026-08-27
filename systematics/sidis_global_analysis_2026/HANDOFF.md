@@ -326,3 +326,37 @@ arXiv:2405.13833 states that it uses the same dataset and makes the SIDIS
 normalization-factor construction explicit. These references do not authorize
 silently adding JLab, EMC/E665, H1/ZEUS, or nuclear/current-region tables to
 the 1,547-point fit; each additional family must pass the stage-specific gates.
+
+## Corrected initial joint-fit validation (2026-08-26)
+
+The campaign has now executed a real isolated joint fit: the frozen 329-row
+lambda=1 DY W-only anchor plus a provisional 746-row identified COMPASS 2026
+pi/K collinear scope. The corrected NNFF10 NNLO bin-average run is recorded in
+`outputs/initial_joint_dy_compass_collinear_binavg_pilot_converged/` and gives
+DY chi2/row = 0.3943 and SIDIS chi2/row = 17.13 for 745 fitted rows. One
+signed fixed-order K- central prediction is negative and excluded explicitly;
+no positivity clamp is used. A HAPS NNLO comparison reaches SIDIS chi2/row
+= 2.94, but is circular because those FFs used modern COMPASS SIDIS data and
+is not an independent closure candidate. The complete trial register is in
+`reports/initial_fit_trials.{json,md}`.
+
+All 101 NNFF10 members were profiled in midpoint and bin-average modes. The
+raw lowest-objective member is invalid because it makes hundreds of rows
+non-positive; the best member with every row positive still leaves a large
+residual. The first run's all-scales-near-one normalization transient was
+removed by initializing only the four SIDIS scalar nuisances near their
+data/theory medians (the 10% priors remain). The DY anchor stays at about
+0.394 chi2/row in every pilot. This demonstrates the software path and DY
+non-regression, but does not close the physics gate.
+
+The present work is explicitly **not** a production/global/TMD result. The
+COMPASS addendum has no transverse axis or full covariance; HERMES zxpt-3D
+identity/covariance remain unresolved; and the proper independently validated
+NNLO SIDIS coefficient-function plus inclusive-DIS denominator/normalization
+interface is still required. Do not use the HAPS comparison as a central fit,
+do not promote the provisional rows, and do not modify frozen DY files. Local
+source additions include `config/ff_sets.json`, `sidis_ff.py`,
+`scripts/run_initial_joint_dy_sidis_fit.py`,
+`scripts/profile_nnff10_replicas.py`,
+`scripts/summarize_initial_fit_trials.py`, the dedicated tests, and the trial
+reports; raw FF grids and fit outputs remain outside the public source tree.

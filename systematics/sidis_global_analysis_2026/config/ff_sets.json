@@ -1,0 +1,51 @@
+{
+  "campaign": "sidis_global_analysis_2026",
+  "status": "collinear_ff_choice_for_isolated_joint_closure_pilot_not_production",
+  "lhapdf_data_source": "https://lhapdfsets.web.cern.ch/current/",
+  "lhapdf_density_convention": "LHAPDF xfxQ(pid,z,Q) is interpreted as z*D_pid^h(z,Q); the adapter returns xfxQ/z.",
+  "stage1_primary": {
+    "family": "NNFF10_nnlo",
+    "order": "NNLO",
+    "selection_reason": "The clean HERMES/COMPASS stage reaches Q above about 1.4 GeV; NNFF10 has NNLO grids with Qmin=1 GeV and 101 Monte-Carlo members for pions and kaons.",
+    "hadron_sets": {
+      "pi+": "NNFF10_PIp_nnlo",
+      "pi-": "NNFF10_PIm_nnlo",
+      "K+": "NNFF10_KAp_nnlo",
+      "K-": "NNFF10_KAm_nnlo"
+    },
+    "uncertainty": "101-member replica ensemble; member 0 is the central/average member and members 1--100 are retained as an external FF uncertainty component.",
+    "reference": "arXiv:1706.07049",
+    "fit_role": "fixed collinear baseline for the first SIDIS/TMDFF closure; not a fitted FF normalization"
+  },
+  "challengers": [
+    {
+      "family": "NPC23_nnlo",
+      "order": "NNLO",
+      "sets": ["NPC23_PIp_nnlo", "NPC23_PIm_nnlo", "NPC23_KAp_nnlo", "NPC23_KAm_nnlo"],
+      "selection_reason": "Newer NNLO FF grids, but their Qmin is too high for the low-Q HERMES/JLab stages; retain as a theory/model-form challenger where kinematics allow.",
+      "reference": "arXiv:2401.02781 and arXiv:2407.04422"
+    },
+    {
+      "family": "NPC23_lowQ_nlo",
+      "order": "NLO",
+      "sets": ["NPC23_lowQ_PIp_nlo", "NPC23_lowQ_PIm_nlo", "NPC23_lowQ_KAp_nlo", "NPC23_lowQ_KAm_nlo"],
+      "selection_reason": "Qmin about 1.3 GeV and useful for low-energy diagnostics, but NLO is not the central N3LL/NNLO FF choice; use only as an explicitly labelled lower-order variation.",
+      "reference": "arXiv:2502.17837"
+    }
+  ],
+  "unidentified_hadrons": {
+    "policy": "no silent pion-plus-kaon substitution",
+    "required": "Use a dedicated charged-hadron FF or define the pion/kaon/proton/Lambda composition and its model uncertainty explicitly before fitting COMPASS h+/-.",
+    "paper_benchmark_sum_is": "The MAPTMD22 paper's pion-plus-kaon approximation is retained as a comparison-only model variation, not the default production convention."
+  },
+  "tmdff_boundary": {
+    "collinear_ff": "LHAPDF member and order are fixed by the selected family.",
+    "tmdff_nonperturbative": "A separate positive, smooth FiLM-compatible factor D_NP(hadron, pid, z, bT; Q0) multiplies the perturbatively matched FF.",
+    "evolution_and_matching": "Must be supplied by the shared N3LL implementation and validated independently; this adapter does not approximate it.",
+    "normalization": "Do not fit an unconstrained FF amplitude that can trade against the PDF. Dataset normalization nuisances and external FF uncertainties remain separate."
+  },
+  "approved_rows": 0,
+  "provisional_fit_scope": "746 identified COMPASS 2026 pi/K rows; one central NNFF10 negative row is excluded from the pilot objective and remains unapproved",
+  "production_authorized": false,
+  "production_files_modified": false
+}

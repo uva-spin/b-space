@@ -111,3 +111,26 @@ run a published-bin closure with the source's bin integration. Then verify
 that a read-only interface reproduces the frozen DY lambda=1 central before
 allowing shared parameters to move. These checks are separate from fit quality
 and from start/replica uncertainty.
+
+## Current pilot implementation status (2026-08-26)
+
+The scalar boundary has now been exercised in an isolated joint pilot. The
+provisional COMPASS identified pi/K scope carries reconstructed bin edges and
+uses a four-point Gauss--Legendre average with the massless LO DIS weight
+`[1+(1-y)^2]/y`; the numerator and denominator are integrated consistently
+within that diagnostic convention before their ratio is formed. The fitting
+driver is `scripts/run_initial_joint_dy_sidis_fit.py`. It retains signed
+fixed-order FF values and excludes non-positive predictions explicitly rather
+than clipping them. The frozen DY lambda=1 central prediction is read-only and
+is numerically unchanged.
+
+An exploratory APFEL++ SIDIS coefficient probe was also run outside the fit
+environment using `InitializeSIDIS` and the published factorized C20/C21
+operators. It confirms the APFEL distribution convention and the required
+`alpha_s/(4 pi)` expansion; the LO APFEL result agrees with the direct Python
+ratio at the few-percent interpolation level on the coarse probe grid. The
+probe's NLO numerator output is retained only as a diagnostic. It is not yet a
+production prediction because the inclusive-DIS denominator, phase-space
+integration, scale choices, and complete NNLO normalization factor still need
+an independent closure test. In particular, do not substitute the exploratory
+NLO output for the current pilot or call it a validated N3LL SIDIS result.

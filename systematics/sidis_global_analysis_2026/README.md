@@ -7,9 +7,14 @@ documented TMD-fragmentation sector. It relies on the frozen DY result and
 perturbative conventions as read-only inputs; it does not modify or replace
 them.
 
-**Status:** broad public-source registry and harvest complete; staged
-discovery/provenance phase; no SIDIS dataset, fit, replica ensemble, or
-global-production claim has been approved.
+**Status (2026-08-26):** source inventory and isolated interface validation
+are complete enough for a first joint software pilot. A real 329-row frozen-DY
+plus 746-row identified-COMPASS collinear SIDIS fit has been run, together
+with a 101-member NNFF10 closure profile. It is explicitly **not** a
+production or global result: scalar SIDIS closure remains poor with the
+independent NNFF10 boundary, HERMES identity/covariance is unresolved, and
+the proper perturbative SIDIS coefficient/denominator interface remains a
+required gate. No frozen DY production file has changed.
 
 ## Dependency boundary
 
@@ -169,6 +174,27 @@ The complete progressive fitting protocol is locked in
 benchmark, extension, JLab, historical, diagnostic, or deferred stage. The rule
 is to harvest the full candidate universe but fit one provenance-closed family at
 a time; there is no all-at-once likelihood in this campaign.
+
+## First actual joint DY+SIDIS pilot (2026-08-26)
+
+The first joint software path has been exercised on real rows without
+modifying the DY production package. `scripts/run_initial_joint_dy_sidis_fit.py`
+combines the frozen 329-row lambda=1 W-only DY anchor with a provisional
+746-row identified COMPASS 2026 pi/K collinear scope. The corrected NNFF10
+NNLO bin-average pilot gives DY chi2/row = 0.3943 and SIDIS chi2/row = 17.13
+for 745 fitted rows; one signed fixed-order K- central prediction is negative
+and is excluded explicitly. The HAPS comparison gives 2.94 SIDIS chi2/row but
+is circular because those FFs used modern COMPASS SIDIS information. Neither
+run is production-authorized. See `reports/initial_fit_trials.{json,md}` and
+`reports/initial_fit_decision.md`.
+
+The all-member NNFF10 midpoint and bin-average closure profiles are retained
+as external FF/theory diagnostics. The raw lowest-objective member becomes
+non-positive for hundreds of rows, while the best all-rows-valid member still
+does not close the data. The COMPASS addendum has no transverse axis, so this
+pilot does not identify a TMDFF width; HERMES identity/covariance and the
+validated NNLO coefficient-function plus inclusive-DIS denominator interface
+remain open gates.
 
 ## Immediate next action
 

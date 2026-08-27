@@ -162,7 +162,7 @@ once. No rows are approved and no production fit is authorized.
 | 24-row Tevatron unitary finite-Y | **Validated isolated scope** | Boundary diagnostic only |
 | 122-row Tevatron N3LL+NNLO W+Y | **Complete observable candidate, not TMD production** | No global/collider-wide claim |
 | LHCb finite-Y | **Fail-closed/out of scope** | Do not fit current subtraction table |
-| SIDIS/global analysis | **Global candidate harvest/discovery phase** | 22 identities, 16 HEPData records, and three arXiv packages inventoried; no SIDIS or joint-global production claim |
+| SIDIS/global analysis | **Initial joint closure pilot; not production** | 329 frozen-DY + 746 COMPASS collinear rows fit in isolation; independent NNFF10 closure remains poor and HERMES/transverse gates are open |
 | Paper methods/figures | **Lambda=1 dossier available** | Manuscript scope must remain explicit |
 
 ## Reproduction entry points
@@ -192,3 +192,22 @@ evidence, fit and stationarity gates, uncertainty audit, and an explicit
 promotion transaction. Open scientific work includes any stronger but
 fit-preserving `F_NP` constraint, PDF-through-refit propagation, fixed-target
 finite-`Y` closure, and a defensible scope for LHCb/global W+Y.
+
+### SIDIS initial joint-fit update (2026-08-26)
+
+The isolated SIDIS campaign now has a real joint software pilot, not just a
+source inventory. The corrected NNFF10 NNLO bin-average run combines the
+frozen 329-row lambda=1 DY W-only anchor with 746 identified COMPASS 2026 pi/K
+collinear rows (745 fitted after one explicitly excluded negative signed FF
+prediction). It gives DY chi2/row 0.3943 and SIDIS chi2/row 17.13. A HAPS
+comparison gives 2.94 SIDIS chi2/row but is circular because its FFs used
+modern COMPASS SIDIS information. All 101 NNFF10 members were profiled; the
+raw lowest-objective member is invalid if it makes hundreds of rows
+non-positive, and the best all-rows-valid member still leaves a large
+residual. Details are in `systematics/sidis_global_analysis_2026/reports/`.
+
+This is explicitly not a global/TMD production result. The COMPASS addendum
+has no transverse axis or full covariance, HERMES zxpt-3D identity/covariance
+remain unresolved, and the proper NNLO SIDIS coefficient plus inclusive-DIS
+denominator/normalization interface still needs independent closure. Frozen
+DY production files are unchanged.

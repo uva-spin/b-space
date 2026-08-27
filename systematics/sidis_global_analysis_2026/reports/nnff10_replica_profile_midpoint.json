@@ -1,0 +1,44 @@
+{
+  "status": "nnff10_external_replica_closure_diagnostic_complete_not_fit",
+  "scope": "/home/dustin/work/project/bT-TMD/systematics/sidis_global_analysis_2026/data/derived/compass_collinear_provisional/compass_collinear_provisional.csv",
+  "model": "NNPDF40_nnlo_as_01180 + NNFF10 NNLO central/MC members; massless LO multiplicity ratio",
+  "kinematics": {
+    "mode": "midpoint",
+    "quadrature_order": 4
+  },
+  "members_requested": 101,
+  "members_with_any_positive_prediction": 101,
+  "normalization_prior": {
+    "parameter": "log hadron-charge scale",
+    "width": 0.1
+  },
+  "central_member": {
+    "member": 0,
+    "chi2_profiled": 13084.729490890226,
+    "chi2_per_valid_row": 17.56339528978554,
+    "valid_rows": 745,
+    "excluded_rows": 1
+  },
+  "best_member": {
+    "member": 40,
+    "chi2_profiled": 8408.188164312567,
+    "chi2_per_valid_row": 19.37370544772481,
+    "valid_rows": 434,
+    "excluded_rows": 312
+  },
+  "best_member_all_rows_valid": {
+    "member": 68,
+    "chi2_profiled": 8828.698991593272,
+    "chi2_per_row": 11.83471714690787,
+    "valid_rows": 746,
+    "excluded_rows": 0
+  },
+  "quantiles_chi2_per_row": {
+    "0.05": 13.925418286921172,
+    "0.5": 20.431566730129543,
+    "0.95": 42.64949837529706
+  },
+  "interpretation": "FF replica propagation is a model/theory variation; it is not a replacement for the missing perturbative SIDIS coefficient-function and denominator implementation.",
+  "production_files_modified": false,
+  "promotion_authorized": false
+}
