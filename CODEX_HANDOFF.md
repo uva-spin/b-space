@@ -211,3 +211,16 @@ has no transverse axis or full covariance, HERMES zxpt-3D identity/covariance
 remain unresolved, and the proper NNLO SIDIS coefficient plus inclusive-DIS
 denominator/normalization interface still needs independent closure. Frozen
 DY production files are unchanged.
+
+The APFEL follow-up has now completed an isolated massless NLO SIDIS
+coefficient/denominator diagnostic. `scripts/apfel_sidis_nlo_denominator_probe.cpp`
+uses the SIDIS C20/C21/CL1 operators and APFEL's complete Observable path for
+inclusive-DIS F2/FL, with NNPDF40 and NNFF10 NLO member zero. The midpoint fit
+gives SIDIS chi2/row 12.9775 on 738 positive rows; a four-point x/y/z
+bin-averaged run gives 12.7967, with DY unchanged at 0.3943/row. Eight
+non-positive K- theory ratios are explicit exclusions, not positivity-clipped
+values. These are interface-validation milestones, not production results:
+independent bin-integral/order checks, heavy-quark/threshold and scale
+choices, covariance, TMDFF transverse closure, and HERMES identity/covariance
+remain open. See the campaign `HANDOFF.md`, `FORMALISM.md`, and
+`reports/apfel_sidis_interface_probe.{json,md}`.
