@@ -134,3 +134,27 @@ production prediction because the inclusive-DIS denominator, phase-space
 integration, scale choices, and complete NNLO normalization factor still need
 an independent closure test. In particular, do not substitute the exploratory
 NLO output for the current pilot or call it a validated N3LL SIDIS result.
+
+### APFEL NLO denominator follow-up (2026-08-26)
+
+That denominator interface has now been exercised in a separate C++ probe,
+`scripts/apfel_sidis_nlo_denominator_probe.cpp`. It uses APFEL++'s
+`InitializeSIDIS` operators for the SIDIS numerator and its
+`BuildStructureFunctions`/`Observable` path for NLO inclusive-DIS F2 and FL,
+with the same NNPDF40 NLO member and `alpha_s/(4 pi)` convention. The
+lower-level direct overload is not used for the denominator because it does
+not include the pure NLO coefficient/PDF terms in this APFEL version; this
+implementation detail is recorded in the probe comments and report.
+
+The full-denominator row table is
+`outputs/apfel_sidis_nlo_full_den_probe.csv`; 738/746 rows have positive
+ratios and eight K- rows are explicitly non-positive. The isolated fit using
+that table is in
+`outputs/initial_joint_dy_compass_apfel_nlo_full_den_probe_validated_named/`
+and gives DY chi2/row 0.3943 and SIDIS chi2/row 12.9775 on 738 rows. This is
+an interface improvement over the LO/bin-average diagnostic, but it is not a
+validated production observable: the current table is evaluated at bin
+midpoints, does not yet implement the full published phase-space integral,
+does not close heavy-quark/threshold and scale variations, and still uses the
+pilot quadrature-only covariance. Therefore it cannot be called a complete
+NLO/NNLO or N3LL SIDIS result.

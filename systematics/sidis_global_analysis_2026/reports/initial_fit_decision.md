@@ -92,3 +92,26 @@ next gate is a validated NNLO SIDIS coefficient-function plus inclusive-DIS
 denominator/kinematic-normalization interface. HERMES identity and covariance,
 full covariance treatment, transverse TMDFF data, and finite-Y scope remain
 open. Frozen DY production files are unchanged.
+
+## APFEL NLO denominator follow-up
+
+The coefficient/interface test has progressed in isolation. The C++ driver
+`scripts/apfel_sidis_nlo_denominator_probe.cpp` uses APFEL++'s SIDIS C20/C21/CL1
+operators for the numerator and its `Observable` implementation for the NLO
+inclusive-DIS F2/FL denominator, with NNPDF40 NLO and NNFF10 NLO member zero.
+This corrects the earlier exploratory ratio that retained an LO denominator.
+
+The full row table is `outputs/apfel_sidis_nlo_full_den_probe.csv`; 738 of 746
+rows have positive ratios. The eight non-positive K- rows remain explicit
+exclusions in the fit manifest. The named normalized ratio table and the
+corresponding isolated joint fit are:
+
+* `outputs/apfel_sidis_nlo_full_den_ratio_named.csv`
+* `outputs/initial_joint_dy_compass_apfel_nlo_full_den_probe_validated_named/`
+
+The fit gives DY chi2/row = 0.3943 and SIDIS chi2/row = 12.9775 on 738 rows.
+This is an improvement over the independent NNFF10 LO/bin-average pilot
+(17.1268 SIDIS chi2/row), but it remains a diagnostic: the current APFEL table
+is midpoint-evaluated, not a full published-bin integral, and heavy-quark,
+scale, covariance, and HERMES identity/covariance closure are still open. No
+SIDIS row or frozen DY production file has been promoted.

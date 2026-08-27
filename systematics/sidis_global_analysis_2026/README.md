@@ -90,6 +90,47 @@ experimental covariance.
   radiative-correction extension passes its own closure gate before entering a
   global production fit.
 
+## What the HERMES/COMPASS gates require
+
+The HERMES/COMPASS gates are data-identity and observable-closure checks, not
+instructions to copy either external paper.  They prevent a numerically good
+fit to the wrong rows, bin convention, or observable from being mistaken for a
+physical SIDIS result.
+
+**HERMES data identity.**  We need the official vector-meson-subtracted
+`zxpt-3D` value files and their statistical/correlated-systematic covariance,
+with stable row IDs and the published Q, x, z, y, W, and transverse-momentum
+bin edges.  The available HEPData projection currently has 288 primary rows
+and omits Q/x, whereas the literature checkpoint contains 344 HERMES rows.
+Until the supplemental archive is mirrored or an equivalent row-level source
+is validated, the HERMES count and covariance cannot be certified.
+
+**COMPASS data identity.**  We need one declared vector-boson-subtracted
+release, a row-level selection manifest for the 1,203-point checkpoint, and a
+fixed rule for interpreting Q2, x, z, y, W, and `P_T^2` bins (including whether
+bin centers, published averages, or numerical bin integration are used).
+Statistical, point-to-point systematic, correlated normalization, and
+auxiliary correction blocks must remain distinguishable.  The available
+HEPData archive contains multiple grids and 4,664 primary rows; reasonable
+published-bin choices select 1,078--1,285 rows, so an unrecorded choice would
+not be reproducible.
+
+**Observable closure.**  Before fitting, the code must implement the exact
+published quantity (initially a multiplicity, not an absolute cross section):
+integrate the SIDIS numerator and inclusive-DIS denominator over the same bin
+before taking their ratio when required; preserve the `P_hT^2` Jacobian when
+integrating in `P_hT`; apply target/beam composition, hadron masses, radiative
+and vector-meson/vector-boson corrections, and normalization conventions as
+documented; and state the perturbative order, OPE coefficients, evolution
+scales, TMDFF boundary, and finite-Y scope.  The plain W-term and any
+kinematics-dependent collinear-normalization factor are to be evaluated as
+separate theory options, never hidden in a fitted nuisance.
+
+The current status is therefore deliberate: the identified COMPASS addendum
+is an isolated provisional closure scope, not globally approved data. The
+LHAPDF FF adapter and joint-fit plumbing have been exercised, but the poor
+closure and incomplete HERMES/transverse gates prevent promotion.
+
 ## Planned directory layout
 
 ```text
@@ -109,6 +150,29 @@ remain outside the public source release and must be referenced by hashes and
 portable manifests.
 
 ## Software extension already in place
+
+## First actual joint DY+SIDIS pilot (2026-08-26)
+
+The fitting path has now been exercised on real rows without modifying the DY
+production package. `scripts/run_initial_joint_dy_sidis_fit.py` combines the
+frozen 329-row lambda=1 W-only DY anchor with a provisional 746-row identified
+COMPASS 2026 pi/K collinear scope. The corrected NNFF10 NNLO bin-average run
+(`outputs/initial_joint_dy_compass_collinear_binavg_pilot_converged/`) gives
+DY chi2/row = 0.3943 and SIDIS chi2/row = 17.13 for 745 fitted rows; one
+central signed fixed-order K- row is excluded explicitly because its ratio is
+negative. The HAPS comparison reaches 2.94 SIDIS chi2/row but is circular,
+since those FFs were fitted using modern COMPASS SIDIS information. Neither
+run is production-authorized.
+
+All 101 NNFF10 members were separately profiled in midpoint and bin-average
+modes. The raw lowest-objective member becomes non-positive for hundreds of
+rows and is invalid; the best member with all rows positive remains a poor
+closure candidate. The complete trial and replica register is
+`reports/initial_fit_trials.{json,md}`. This is an initial **collinear** fit:
+the addendum has no transverse axis, so it does not yet identify a TMDFF width,
+and the implementation still requires an independently validated NNLO SIDIS
+coefficient-function plus inclusive-DIS denominator/normalization interface.
+HERMES zxpt-3D identity/covariance and full SIDIS covariance remain open.
 
 `sidis_data.py` provides a metadata-preserving HEPData CSV reader/schema
 profiler and a strict plain-text/gzip covariance-matrix reader for future
@@ -175,27 +239,6 @@ benchmark, extension, JLab, historical, diagnostic, or deferred stage. The rule
 is to harvest the full candidate universe but fit one provenance-closed family at
 a time; there is no all-at-once likelihood in this campaign.
 
-## First actual joint DY+SIDIS pilot (2026-08-26)
-
-The first joint software path has been exercised on real rows without
-modifying the DY production package. `scripts/run_initial_joint_dy_sidis_fit.py`
-combines the frozen 329-row lambda=1 W-only DY anchor with a provisional
-746-row identified COMPASS 2026 pi/K collinear scope. The corrected NNFF10
-NNLO bin-average pilot gives DY chi2/row = 0.3943 and SIDIS chi2/row = 17.13
-for 745 fitted rows; one signed fixed-order K- central prediction is negative
-and is excluded explicitly. The HAPS comparison gives 2.94 SIDIS chi2/row but
-is circular because those FFs used modern COMPASS SIDIS information. Neither
-run is production-authorized. See `reports/initial_fit_trials.{json,md}` and
-`reports/initial_fit_decision.md`.
-
-The all-member NNFF10 midpoint and bin-average closure profiles are retained
-as external FF/theory diagnostics. The raw lowest-objective member becomes
-non-positive for hundreds of rows, while the best all-rows-valid member still
-does not close the data. The COMPASS addendum has no transverse axis, so this
-pilot does not identify a TMDFF width; HERMES identity/covariance and the
-validated NNLO coefficient-function plus inclusive-DIS denominator interface
-remain open gates.
-
 ## Immediate next action
 
 The first benchmark audit is now reproducible with
@@ -226,3 +269,22 @@ family-out checks. EMC/E665 and H1/ZEUS current-region or nuclear sources
 remain explicit diagnostics until their observable, factorization, and
 covariance conventions close. Until these gates are met, no rows may enter a
 fit.
+
+## Initial joint DY+SIDIS pilot and APFEL interface status
+
+The campaign has now executed a real isolated joint fit: the frozen 329-row
+lambda=1 DY W-only anchor plus the identified 746-row COMPASS 2026 pi/K
+collinear scope. The independent NNFF10 NNLO bin-average pilot is recorded in
+`reports/initial_fit_trials.{json,md}` and is not production. Its DY
+chi2/row is 0.3943 and its SIDIS closure is 17.13 chi2/row on 745 rows.
+
+The follow-up `scripts/apfel_sidis_nlo_denominator_probe.cpp` evaluates the
+massless NLO SIDIS C20/C21/CL1 operators and an NLO inclusive-DIS F2/FL
+denominator through APFEL++'s complete Observable path. The isolated fit using
+the resulting midpoint ratio gives DY chi2/row 0.3943 and SIDIS chi2/row
+12.9775 on 738 positive rows; eight non-positive K- ratios are explicitly
+excluded, never clipped. This is a theory-interface diagnostic, not a global
+or N3LL production result: bin integration, scale/threshold and heavy-quark
+choices, covariance, TMDFF transverse closure, and HERMES identity/covariance
+remain open. See `reports/apfel_sidis_interface_probe.{json,md}` and
+`HANDOFF.md` for restart commands and limitations.

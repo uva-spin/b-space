@@ -189,6 +189,10 @@ def main() -> None:
     ap.add_argument("--kinematic-mode", choices=("midpoint", "bin_average"), default="bin_average")
     ap.add_argument("--quadrature-order", type=int, default=4)
     ap.add_argument("--ff-family", choices=tuple(FF_FAMILIES), default="nnff10_nnlo")
+    ap.add_argument("--ratio-csv", type=Path, default=None,
+                    help="optional row_id,ratio CSV from an external theory probe")
+    ap.add_argument("--ratio-column", default="ratio",
+                    help="column in --ratio-csv containing the SIDIS ratio")
     ap.add_argument("--out", type=Path, default=OUT)
     args = ap.parse_args()
     torch.manual_seed(args.seed)
@@ -208,10 +212,32 @@ def main() -> None:
     pdf = lhapdf.mkPDF("NNPDF40_nnlo_as_01180", 0)
     ff_sets = FF_FAMILIES[args.ff_family]
     ff_members = {key: LHAPDFFMember(name, 0) for key, name in ff_sets.items()}
-    ratio, excluded = compute_collinear_ratio(
-        sidis, pdf, ff_members, mode=args.kinematic_mode,
-        quadrature_order=args.quadrature_order,
-    )
+    if args.ratio_csv is None:
+        ratio, excluded = compute_collinear_ratio(
+            sidis, pdf, ff_members, mode=args.kinematic_mode,
+            quadrature_order=args.quadrature_order,
+        )
+        ratio_source = "internal massless LO PDF/FF ratio diagnostic"
+    else:
+        external = pd.read_csv(args.ratio_csv)
+        required = {"row_id", args.ratio_column}
+        missing = required.difference(external.columns)
+        if missing:
+            raise ValueError(f"external ratio CSV missing columns: {sorted(missing)}")
+        if external["row_id"].astype(str).duplicated().any():
+            raise ValueError("external ratio CSV has duplicate row_id values")
+        ratio_map = external.set_index(external["row_id"].astype(str))[args.ratio_column]
+        ratio = sidis["row_id"].astype(str).map(ratio_map).to_numpy(float)
+        excluded = []
+        for row_id, value, hadron, charge in zip(
+                sidis.row_id.astype(str), ratio, sidis.hadron, sidis.charge):
+            if not np.isfinite(value) or value <= 0.0:
+                excluded.append({
+                    "row_id": row_id, "hadron": str(hadron), "charge": str(charge),
+                    "ratio": None if not np.isfinite(value) else float(value),
+                    "reason": "external_theory_ratio_nonpositive_or_missing",
+                })
+        ratio_source = f"external ratio probe: {args.ratio_csv} column {args.ratio_column}"
     valid = np.isfinite(ratio) & (ratio > 0.0)
     sidis_fit = sidis.loc[valid].reset_index(drop=True)
     ratio_fit = ratio[valid]
@@ -350,6 +376,7 @@ def main() -> None:
                "member_policy": "central only in pilot"},
         "kinematics": {"mode": args.kinematic_mode, "quadrature_order": int(args.quadrature_order),
                        "bin_average_weight": "massless LO DIS [1+(1-y)^2]/y; diagnostic only"},
+        "ratio_source": ratio_source,
         "sidis_scope": str(SIDIS_DATA),
         "dy_scope": str(DY_PREDICTIONS),
         "limitations": [

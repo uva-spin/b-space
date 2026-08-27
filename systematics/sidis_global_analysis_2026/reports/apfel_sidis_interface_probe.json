@@ -1,30 +1,52 @@
 {
-  "status": "exploratory_apfel_sidis_coefficient_probe_complete_not_fit",
-  "backend": "APFEL++ InitializeSIDIS (local build outside source tree)",
+  "status": "exploratory_apfel_sidis_coefficient_and_denominator_probe_complete_not_production",
+  "backend": "APFEL++ InitializeSIDIS plus BuildStructureFunctions (local build outside source tree)",
   "scope": "746 identified COMPASS 2026 pi/K collinear rows",
   "pdf": "NNPDF40_nlo_as_01180 member 0",
   "ff": "NNFF10 identified pion/kaon NLO grids member 0",
   "expansion": "alpha_s/(4 pi)",
-  "operators": ["C20qq", "C21qq", "C21qg", "C21gq", "CL1qq", "CL1qg", "CL1gq"],
+  "operators": [
+    "C20qq",
+    "C21qq",
+    "C21qg",
+    "C21gq",
+    "CL1qq",
+    "CL1qg",
+    "CL1gq"
+  ],
   "lo_positive_rows": 740,
-  "nlo_positive_rows": 738,
-  "python_lo_crosscheck": {
-    "median_relative_difference": 0.0247683716,
-    "p95_relative_difference": 0.04489383999,
-    "max_absolute_difference": 0.1728375311,
-    "note": "coarse degree-3 APFEL interpolation grid; differences are an interpolation diagnostic, not a physics discrepancy"
+  "nlo_numerator_positive_rows": 738,
+  "nlo_full_den_positive_rows": 738,
+  "full_to_lo_den_numerator_ratio_quantiles": {
+    "0.05": 1.0079758208484435,
+    "0.50": 1.1199463728370085,
+    "0.95": 1.1676885651815705
   },
   "representative_row": {
     "row_id": "hepdata:ins3096394:TableK+-K-:row44",
     "x": 0.015,
     "z": 0.225,
-    "Q_GeV": 1.643844,
+    "Q_GeV": 1.64384415142,
     "y": 0.6,
-    "lo_ratio": 1.14542,
-    "nlo_ratio": 1.17861
+    "lo_ratio": 1.14542047503,
+    "nlo_numerator_lo_den_ratio": 1.17861147766,
+    "nlo_full_den_ratio": 1.35676374959
   },
-  "denominator_scope": "LO DIS denominator retained in this probe; full NLO/NNLO inclusive denominator and bin-integrated normalization are not yet validated",
-  "fit_used": false,
+  "denominator_scope": "NLO massless inclusive DIS F2 and FL through APFEL Observable interface; bin integration and heavy-quark scheme are not yet validated",
+  "fit": {
+    "path": "/home/dustin/work/project/bT-TMD/systematics/sidis_global_analysis_2026/outputs/initial_joint_dy_compass_apfel_nlo_full_den_probe_validated_named",
+    "dy_chi2_per_row": 0.39428420914982704,
+    "sidis_chi2_per_row": 12.97747933983238,
+    "sidis_rows_fit": 738,
+    "sidis_rows_excluded": 8,
+    "sidis_normalizations": {
+      "K+": 0.33319258077850045,
+      "K-": 0.34512397769146136,
+      "pi+": 0.5125627018965423,
+      "pi-": 0.5565469372440538
+    }
+  },
+  "fit_used": true,
   "production_files_modified": false,
   "promotion_authorized": false
 }
