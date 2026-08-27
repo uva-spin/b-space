@@ -152,9 +152,10 @@ ratios and eight K- rows are explicitly non-positive. The isolated fit using
 that table is in
 `outputs/initial_joint_dy_compass_apfel_nlo_full_den_probe_validated_named/`
 and gives DY chi2/row 0.3943 and SIDIS chi2/row 12.9775 on 738 rows. This is
-an interface improvement over the LO/bin-average diagnostic, but it is not a
-validated production observable: the current table is evaluated at bin
-midpoints, does not yet implement the full published phase-space integral,
-does not close heavy-quark/threshold and scale variations, and still uses the
-pilot quadrature-only covariance. Therefore it cannot be called a complete
-NLO/NNLO or N3LL SIDIS result.
+an interface improvement over the LO/bin-average diagnostic. A second run with
+the probe's `--bin-average` mode applies four-point Gauss--Legendre quadrature
+over the published x/y/z edges and gives SIDIS chi2/row 12.7967, versus 12.9775
+for the midpoint table. These are still not validated production observables:
+independent bin-integral/order checks, heavy-quark, scale, and covariance
+closure remain open, as does HERMES identity/covariance. Therefore this cannot
+be called a complete NLO/NNLO or N3LL SIDIS result.

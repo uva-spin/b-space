@@ -12,14 +12,17 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 PROBE = ROOT / "outputs/apfel_sidis_nlo_full_den_probe.csv"
-FIT = ROOT / "outputs/initial_joint_dy_compass_apfel_nlo_full_den_probe_validated_named/fit_summary.json"
+FITS = {
+    "midpoint": ROOT / "outputs/initial_joint_dy_compass_apfel_nlo_full_den_probe_validated_named/fit_summary.json",
+    "bin_average": ROOT / "outputs/initial_joint_dy_compass_apfel_nlo_full_den_binavg_probe_validated/fit_summary.json",
+}
 OUT_JSON = ROOT / "reports/apfel_sidis_interface_probe.json"
 OUT_MD = ROOT / "reports/apfel_sidis_interface_probe.md"
 
 
 def main() -> None:
     table = pd.read_csv(PROBE)
-    fit = json.loads(FIT.read_text()) if FIT.exists() else None
+    fits = {name: json.loads(path.read_text()) for name, path in FITS.items() if path.exists()}
     finite = np.isfinite(table.nlo_full_den_ratio.to_numpy(float))
     positive = finite & (table.nlo_full_den_ratio.to_numpy(float) > 0)
     ratio_shift = table.nlo_full_den_ratio / table.nlo_numerator_lo_den_ratio
@@ -51,15 +54,18 @@ def main() -> None:
             "nlo_full_den_ratio": float(representative.nlo_full_den_ratio),
         },
         "denominator_scope": "NLO massless inclusive DIS F2 and FL through APFEL Observable interface; bin integration and heavy-quark scheme are not yet validated",
-        "fit": None if fit is None else {
-            "path": str(FIT.parent),
-            "dy_chi2_per_row": fit["objective"]["dy_chi2_per_row"],
-            "sidis_chi2_per_row": fit["objective"]["sidis_chi2_per_row"],
-            "sidis_rows_fit": fit["sidis_rows_fit"],
-            "sidis_rows_excluded": len(fit["sidis_rows_excluded"]),
-            "sidis_normalizations": fit["sidis_normalizations"],
+        "fits": {
+            name: {
+                "path": str(FITS[name].parent),
+                "dy_chi2_per_row": fit["objective"]["dy_chi2_per_row"],
+                "sidis_chi2_per_row": fit["objective"]["sidis_chi2_per_row"],
+                "sidis_rows_fit": fit["sidis_rows_fit"],
+                "sidis_rows_excluded": len(fit["sidis_rows_excluded"]),
+                "sidis_normalizations": fit["sidis_normalizations"],
+            }
+            for name, fit in fits.items()
         },
-        "fit_used": fit is not None,
+        "fit_used": bool(fits),
         "production_files_modified": False,
         "promotion_authorized": False,
     }
@@ -74,10 +80,11 @@ def main() -> None:
         "",
         "The full denominator is now assembled through APFEL's Observable path, which includes the NLO coefficient-function and PDF-evolution terms. The remaining validation gates are bin-averaged phase-space integration, scale/threshold choices, and covariance-consistent normalization. The eight non-positive rows are retained in the manifest and excluded from the positive-ratio pilot rather than positivity-clipped.",
     ]
-    if fit is not None:
+    if fits:
+        bin_fit = fits.get("bin_average", fits.get("midpoint"))
         lines += [
             "",
-            f"The corresponding isolated joint-fit diagnostic gives DY chi2/row = {fit['objective']['dy_chi2_per_row']:.4f} and SIDIS chi2/row = {fit['objective']['sidis_chi2_per_row']:.4f} on {fit['sidis_rows_fit']} rows, with {len(fit['sidis_rows_excluded'])} rows excluded for non-positive theory ratios. This is an interface test, not a promotion candidate.",
+            f"The corresponding isolated joint-fit diagnostic gives DY chi2/row = {bin_fit['objective']['dy_chi2_per_row']:.4f} and SIDIS chi2/row = {bin_fit['objective']['sidis_chi2_per_row']:.4f} on {bin_fit['sidis_rows_fit']} rows with bin-averaged ratios, with {len(bin_fit['sidis_rows_excluded'])} rows excluded for non-positive theory ratios. The midpoint variant gives SIDIS chi2/row = {fits.get('midpoint', bin_fit)['objective']['sidis_chi2_per_row']:.4f}. These are interface tests, not promotion candidates.",
         ]
     lines += ["", "No frozen production files were modified."]
     OUT_MD.write_text("\n".join(lines) + "\n")

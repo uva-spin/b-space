@@ -22,6 +22,7 @@ TRIALS = {
     "nnff10_binavg_2500": ROOT / "outputs/initial_joint_dy_compass_collinear_binavg_pilot_converged",
     "haps_binavg_1500_circular": ROOT / "outputs/initial_joint_dy_compass_collinear_haps_binavg_pilot_reoptimized",
     "apfel_nlo_full_den_diagnostic": ROOT / "outputs/initial_joint_dy_compass_apfel_nlo_full_den_probe_validated_named",
+    "apfel_nlo_full_den_binavg_diagnostic": ROOT / "outputs/initial_joint_dy_compass_apfel_nlo_full_den_binavg_probe_validated",
     "nnff10_midpoint_legacy": ROOT / "outputs/initial_joint_dy_compass_collinear_pilot",
 }
 PROFILE = ROOT / "reports/nnff10_replica_profile.json"
@@ -99,7 +100,7 @@ def main() -> None:
             "The reinitialized joint optimizer is materially better behaved than the legacy all-scales-near-one pilot, but central NNFF10 still gives a poor scalar SIDIS closure (17.13 chi2/row in the 2500-epoch run).",
             "The HAPS comparison reaches 2.94 chi2/row, but HAPS is not independent because its FFs incorporate modern COMPASS SIDIS information; it is a diagnostic, not evidence that the observable implementation is closed.",
             "Across all 101 NNFF10 members, the best raw member can make many rows non-positive and is invalid; the best member with all 746 rows positive remains a poor closure candidate. FF replicas alone do not resolve the mismatch.",
-            "The APFEL SIDIS-NLO numerator with a full massless NLO inclusive-DIS denominator gives 12.98 chi2/row on 738 positive rows (the earlier LO-denominator diagnostic gave 12.75); eight rows remain non-positive and bin-integrated normalization is still unvalidated.",
+            "The APFEL SIDIS-NLO numerator with a full massless NLO inclusive-DIS denominator gives 12.98 chi2/row at midpoints and 12.80 with four-point x/y/z bin averaging on 738 positive rows (the earlier LO-denominator diagnostic gave 12.75); eight rows remain non-positive and full production normalization is still unvalidated.",
             "DY non-regression is demonstrated in every pilot (about 0.394 chi2/row), while no pilot is authorized for production or for TMDFF uncertainty propagation.",
         ],
         "next_gate": "Implement and independently validate the NNLO SIDIS coefficient-function plus inclusive-DIS denominator/normalization interface, then rerun the same scope before adding HERMES or transverse TMDFF data.",

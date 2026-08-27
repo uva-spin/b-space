@@ -7,6 +7,6 @@ Relative to the LO-denominator numerator diagnostic, the full-denominator ratio 
 
 The full denominator is now assembled through APFEL's Observable path, which includes the NLO coefficient-function and PDF-evolution terms. The remaining validation gates are bin-averaged phase-space integration, scale/threshold choices, and covariance-consistent normalization. The eight non-positive rows are retained in the manifest and excluded from the positive-ratio pilot rather than positivity-clipped.
 
-The corresponding isolated joint-fit diagnostic gives DY chi2/row = 0.3943 and SIDIS chi2/row = 12.9775 on 738 rows, with 8 rows excluded for non-positive theory ratios. This is an interface test, not a promotion candidate.
+The corresponding isolated joint-fit diagnostic gives DY chi2/row = 0.3943 and SIDIS chi2/row = 12.7967 on 738 rows with bin-averaged ratios, with 8 rows excluded for non-positive theory ratios. The midpoint variant gives SIDIS chi2/row = 12.9775. These are interface tests, not promotion candidates.
 
 No frozen production files were modified.

@@ -115,3 +115,9 @@ This is an improvement over the independent NNFF10 LO/bin-average pilot
 is midpoint-evaluated, not a full published-bin integral, and heavy-quark,
 scale, covariance, and HERMES identity/covariance closure are still open. No
 SIDIS row or frozen DY production file has been promoted.
+
+A separate four-point x/y/z bin-averaged APFEL run is in
+`outputs/initial_joint_dy_compass_apfel_nlo_full_den_binavg_probe_validated/`.
+It gives SIDIS chi2/row = 12.7967 on the same 738 positive rows while leaving
+DY at 0.3943/row. This modest shift is recorded as an integration diagnostic,
+not as a new uncertainty component or production replacement.

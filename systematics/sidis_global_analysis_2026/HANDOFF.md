@@ -539,11 +539,20 @@ is an improvement relative to the independent NNFF10 LO/bin-average pilot's
 four hadron-charge scales remain substantially below unity, so the remaining
 residual is not just a hidden normalization shift.
 
+The same probe was then run with `--bin-average`, using four-point
+Gauss--Legendre quadrature over each published x/y/z box and the reconstructed
+massless DIS relation `Q^2=2 M_N E x y`. Its normalized ratio is
+`outputs/apfel_sidis_nlo_full_den_binavg_ratio.csv`, and its isolated fit is
+`outputs/initial_joint_dy_compass_apfel_nlo_full_den_binavg_probe_validated/`.
+The bin-averaged fit gives DY chi2/row = 0.3943 and SIDIS chi2/row = 12.7967
+on the same 738 positive rows. The modest change from the midpoint result is
+an integration effect, not an uncertainty estimate.
+
 The machine and human records are
 `reports/apfel_sidis_interface_probe.{json,md}` and the updated
-`reports/initial_fit_trials.{json,md}`. Remaining gates are: bin-averaged
-APFEL evaluation over the published x/y/z edges; explicit scale and threshold
-variation; heavy-quark and target treatment; covariance/normalization
-reconstruction; and independent HERMES identity/covariance. The COMPASS
+`reports/initial_fit_trials.{json,md}`. Remaining gates are: independent
+bin-integral/order cross-checks; explicit scale and threshold variation;
+heavy-quark and target treatment; covariance/normalization reconstruction; and
+independent HERMES identity/covariance. The COMPASS
 addendum remains collinear-only and cannot constrain a TMDFF transverse factor.
 No frozen production file was modified.

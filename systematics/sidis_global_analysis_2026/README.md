@@ -284,7 +284,8 @@ denominator through APFEL++'s complete Observable path. The isolated fit using
 the resulting midpoint ratio gives DY chi2/row 0.3943 and SIDIS chi2/row
 12.9775 on 738 positive rows; eight non-positive K- ratios are explicitly
 excluded, never clipped. This is a theory-interface diagnostic, not a global
-or N3LL production result: bin integration, scale/threshold and heavy-quark
-choices, covariance, TMDFF transverse closure, and HERMES identity/covariance
-remain open. See `reports/apfel_sidis_interface_probe.{json,md}` and
+or N3LL production result: independent bin-integral/order checks,
+scale/threshold and heavy-quark choices, covariance, TMDFF transverse closure,
+and HERMES identity/covariance remain open. See
+`reports/apfel_sidis_interface_probe.{json,md}` and
 `HANDOFF.md` for restart commands and limitations.

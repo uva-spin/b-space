@@ -13,6 +13,7 @@
 #include <apfel/structurefunctionbuilder.h>
 #include <LHAPDF/LHAPDF.h>
 
+#include <array>
 #include <cmath>
 #include <cstdlib>
 #include <fstream>
@@ -55,12 +56,13 @@ double sidis_operator(const apfel::DoubleObject<apfel::Operator>& object,
 }
 
 int main(int argc, char** argv) {
-  if (argc != 3) {
-    std::cerr << "usage: apfel_sidis_nlo_denominator_probe input.csv output.csv\n";
+  if (argc < 3 || argc > 4 || (argc == 4 && std::string(argv[3]) != "--bin-average")) {
+    std::cerr << "usage: apfel_sidis_nlo_denominator_probe input.csv output.csv [--bin-average]\n";
     return 2;
   }
   const std::string input = argv[1];
   const std::string output = argv[2];
+  const bool bin_average = argc == 4;
   const std::string pdf_name = std::getenv("SIDIS_PDF")
       ? std::getenv("SIDIS_PDF") : "NNPDF40_nlo_as_01180";
   const std::string ff_prefix = std::getenv("SIDIS_FF_PREFIX")
@@ -118,11 +120,69 @@ int main(int argc, char** argv) {
   for (const auto& required : {"row_id", "hadron", "charge", "x", "z",
                                "Q_reconstructed", "y"})
     if (!index.count(required)) throw std::runtime_error(std::string("missing column ") + required);
+  if (bin_average)
+    for (const auto& required : {"x_low", "x_high", "y_low", "y_high", "z_low", "z_high"})
+      if (!index.count(required)) throw std::runtime_error(std::string("missing bin edge column ") + required);
 
   std::ofstream out(output);
   out << "row_id,hadron,charge,x,z,Q_reconstructed,y,lo_ratio,"
          "nlo_numerator_lo_den_ratio,nlo_full_den_ratio,f2_dis_nlo,fl_dis_nlo\n";
   out << std::setprecision(12);
+  const std::array<double, 4> quad_nodes = {
+      -0.8611363115940526, -0.3399810435848563,
+       0.3399810435848563,  0.8611363115940526};
+  const std::array<double, 4> quad_weights = {
+       0.3478548451374538,  0.6521451548625461,
+       0.6521451548625461,  0.3478548451374538};
+
+  // Return LO, NLO/LO-DIS, NLO/NLO-DIS, F2_DIS, FL_DIS at one point.
+  const auto point_ratio = [&](double xx, double zz, double qq, double yy,
+                               LHAPDF::PDF* ff) -> std::array<double, 5> {
+    std::map<int, apfel::Distribution> pdf_dist;
+    std::map<int, apfel::Distribution> ff_dist;
+    pdf_dist.emplace(0, apfel::Distribution(gx, [&, qq](double grid_x) {
+      return pdf->xfxQ(21, grid_x, qq);
+    }));
+    for (int pid = 1; pid <= 6; ++pid) {
+      for (const int signed_pid : {pid, -pid}) {
+        const int swap = neutron_swap.at(signed_pid);
+        pdf_dist.emplace(signed_pid, apfel::Distribution(gx, [&, signed_pid, swap, qq](double grid_x) {
+          return 0.5 * (pdf->xfxQ(signed_pid, grid_x, qq)
+                        + pdf->xfxQ(swap, grid_x, qq));
+        }));
+      }
+    }
+    for (const int pid : pids)
+      ff_dist.emplace(pid, apfel::Distribution(gz, [&, pid, qq](double grid_z) {
+        return ff->xfxQ(pid, grid_z, qq);
+      }));
+    ff_dist.emplace(21, apfel::Distribution(gz, [&, qq](double grid_z) {
+      return ff->xfxQ(21, grid_z, qq);
+    }));
+    const double f2 = f2_observable.at(0).Evaluate(xx, qq);
+    const double fl = fl_observable.at(0).Evaluate(xx, qq);
+    double f20 = 0.0;
+    double f21 = 0.0;
+    double fl1 = 0.0;
+    double denominator_lo = 0.0;
+    for (const int pid : pids) {
+      f20 += charge2.at(pid) * sidis_operator(sidis.C20qq, pdf_dist.at(pid), ff_dist.at(pid), xx, zz);
+      f21 += charge2.at(pid) * sidis_operator(sidis.C21qq, pdf_dist.at(pid), ff_dist.at(pid), xx, zz);
+      f21 += charge2.at(pid) * sidis_operator(sidis.C21qg, pdf_dist.at(pid), ff_dist.at(21), xx, zz);
+      f21 += charge2.at(pid) * sidis_operator(sidis.C21gq, pdf_dist.at(pid), ff_dist.at(pid), xx, zz);
+      fl1 += charge2.at(pid) * sidis_operator(sidis.CL1qq, pdf_dist.at(pid), ff_dist.at(pid), xx, zz);
+      fl1 += charge2.at(pid) * sidis_operator(sidis.CL1qg, pdf_dist.at(pid), ff_dist.at(21), xx, zz);
+      fl1 += charge2.at(pid) * sidis_operator(sidis.CL1gq, pdf_dist.at(pid), ff_dist.at(pid), xx, zz);
+      denominator_lo += charge2.at(pid) * pdf_dist.at(pid).Evaluate(xx);
+    }
+    const double as = pdf->alphasQ(qq) / (4.0 * M_PI);
+    const double yplus = 1.0 + (1.0 - yy) * (1.0 - yy);
+    const double numerator = yplus * (f20 + as * f21) - yy * yy * as * fl1;
+    return {f20 / (zz * denominator_lo),
+            numerator / (zz * (yplus * denominator_lo)),
+            numerator / (zz * (yplus * f2 - yy * yy * fl)), f2, fl};
+  };
+
   while (std::getline(stream, line)) {
     if (line.empty()) continue;
     const auto fields = split(line);
@@ -132,58 +192,47 @@ int main(int argc, char** argv) {
             std::stod(fields[index["Q_reconstructed"]]), std::stod(fields[index["y"]])};
     const std::string hadron_charge = row.hadron + row.charge;
     const auto ff = ffs.at(hadron_charge);
-    std::map<int, apfel::Distribution> pdf_dist;
-    std::map<int, apfel::Distribution> ff_dist;
-    pdf_dist.emplace(0, apfel::Distribution(gx, [&](double xx) {
-      return pdf->xfxQ(21, xx, row.q);
-    }));
-    // PhysToQCDEv requires all light/heavy +/- flavours, including top,
-    // even though top is inactive and absent from the SIDIS charge sum.
-    for (int pid = 1; pid <= 6; ++pid) {
-      for (const int signed_pid : {pid, -pid}) {
-        const int swap = neutron_swap.at(signed_pid);
-        pdf_dist.emplace(signed_pid, apfel::Distribution(gx, [&, signed_pid, swap](double xx) {
-          return 0.5 * (pdf->xfxQ(signed_pid, xx, row.q) + pdf->xfxQ(swap, xx, row.q));
-        }));
+    std::array<double, 5> values{};
+    if (!bin_average) {
+      values = point_ratio(row.x, row.z, row.q, row.y, ff);
+    } else {
+      const double xlo = std::stod(fields[index["x_low"]]);
+      const double xhi = std::stod(fields[index["x_high"]]);
+      const double ylo = std::stod(fields[index["y_low"]]);
+      const double yhi = std::stod(fields[index["y_high"]]);
+      const double zlo = std::stod(fields[index["z_low"]]);
+      const double zhi = std::stod(fields[index["z_high"]]);
+      const double nx = 0.5 * (xhi - xlo), ny = 0.5 * (yhi - ylo), nz = 0.5 * (zhi - zlo);
+      double xy_norm = 0.0;
+      std::array<double, 3> integrated = {0.0, 0.0, 0.0};
+      for (int ix = 0; ix < 4; ++ix) {
+        const double xx = 0.5 * (xhi + xlo) + nx * quad_nodes[ix];
+        for (int iy = 0; iy < 4; ++iy) {
+          const double yy = 0.5 * (yhi + ylo) + ny * quad_nodes[iy];
+          const double qq = std::sqrt(2.0 * 0.9382720813 * 160.0 * xx * yy);
+          if (qq < 1.0) throw std::runtime_error("bin quadrature reaches Q below FF grid");
+          const double xy_weight = quad_weights[ix] * quad_weights[iy] * nx * ny
+                                   * (1.0 + (1.0 - yy) * (1.0 - yy)) / yy;
+          xy_norm += xy_weight;
+          for (int iz = 0; iz < 4; ++iz) {
+            const double zz = 0.5 * (zhi + zlo) + nz * quad_nodes[iz];
+            const auto point = point_ratio(xx, zz, qq, yy, ff);
+            const double z_weight = quad_weights[iz] * nz / (zhi - zlo);
+            for (int component = 0; component < 3; ++component)
+              integrated[component] += xy_weight * z_weight * point[component];
+          }
+        }
       }
+      values[0] = integrated[0] / xy_norm;
+      values[1] = integrated[1] / xy_norm;
+      values[2] = integrated[2] / xy_norm;
+      const auto center = point_ratio(row.x, row.z, row.q, row.y, ff);
+      values[3] = center[3];
+      values[4] = center[4];
     }
-    for (const int pid : pids) {
-      const int swap = neutron_swap.at(pid);
-      ff_dist.emplace(pid, apfel::Distribution(gz, [&, pid](double zz) {
-        return ff->xfxQ(pid, zz, row.q);
-      }));
-    }
-    ff_dist.emplace(21, apfel::Distribution(gz, [&](double zz) {
-      return ff->xfxQ(21, zz, row.q);
-    }));
-
-    const double f2 = f2_observable.at(0).Evaluate(row.x, row.q);
-    const double fl = fl_observable.at(0).Evaluate(row.x, row.q);
-
-    double f20 = 0.0;
-    double f21 = 0.0;
-    double fl1 = 0.0;
-    double denominator_lo = 0.0;
-    for (const int pid : pids) {
-      f20 += charge2.at(pid) * sidis_operator(sidis.C20qq, pdf_dist.at(pid), ff_dist.at(pid), row.x, row.z);
-      f21 += charge2.at(pid) * sidis_operator(sidis.C21qq, pdf_dist.at(pid), ff_dist.at(pid), row.x, row.z);
-      f21 += charge2.at(pid) * sidis_operator(sidis.C21qg, pdf_dist.at(pid), ff_dist.at(21), row.x, row.z);
-      f21 += charge2.at(pid) * sidis_operator(sidis.C21gq, pdf_dist.at(pid), ff_dist.at(pid), row.x, row.z);
-      fl1 += charge2.at(pid) * sidis_operator(sidis.CL1qq, pdf_dist.at(pid), ff_dist.at(pid), row.x, row.z);
-      fl1 += charge2.at(pid) * sidis_operator(sidis.CL1qg, pdf_dist.at(pid), ff_dist.at(21), row.x, row.z);
-      fl1 += charge2.at(pid) * sidis_operator(sidis.CL1gq, pdf_dist.at(pid), ff_dist.at(pid), row.x, row.z);
-      denominator_lo += charge2.at(pid) * pdf_dist.at(pid).Evaluate(row.x);
-    }
-    const double as = pdf->alphasQ(row.q) / (4.0 * M_PI);
-    const double yplus = 1.0 + (1.0 - row.y) * (1.0 - row.y);
-    const double lo_ratio = f20 / (row.z * denominator_lo);
-    const double nlo_num_lo_den = (yplus * (f20 + as * f21) - row.y * row.y * as * fl1)
-                                  / (row.z * (yplus * denominator_lo));
-    const double nlo_full_den = (yplus * (f20 + as * f21) - row.y * row.y * as * fl1)
-                                / (row.z * (yplus * f2 - row.y * row.y * fl));
     out << row.id << ',' << row.hadron << ',' << row.charge << ',' << row.x << ',' << row.z << ','
-        << row.q << ',' << row.y << ',' << lo_ratio << ',' << nlo_num_lo_den << ','
-        << nlo_full_den << ',' << f2 << ',' << fl << '\n';
+        << row.q << ',' << row.y << ',' << values[0] << ',' << values[1] << ','
+        << values[2] << ',' << values[3] << ',' << values[4] << '\n';
   }
   return 0;
 }
